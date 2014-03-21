@@ -5,10 +5,11 @@ from __future__ import unicode_literals
 AUTHOR = 'Spencer Boucher'
 SITENAME = 'justmytwospence'
 SITEURL = ''
-
 TIMEZONE = 'Europe/Paris'
-
 DEFAULT_LANG = 'en'
+
+THEME = 'bootstrap3'
+HIDE_SIDEBAR = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -28,4 +29,4 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
