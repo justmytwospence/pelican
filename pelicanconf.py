@@ -9,7 +9,14 @@ TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = 'en'
 
 THEME = 'bootstrap3'
+BOOTSTRAP_THEME = 'spacelab'
 HIDE_SIDEBAR = True
+
+STATIC_PATHS = ['images', 'pdfs']
+MARKUP = ('md', 'ipynb')
+PLUGIN_PATH = 'pelican-plugins'
+PLUGINS = ['ipythonnb', 'liquid_tags.notebook']
+EXTRA_HEADER = open('_nb_header.html').read()
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
