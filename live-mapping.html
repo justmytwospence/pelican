@@ -506,7 +506,7 @@ justmytwospence            </a>
 <p><br></p>
 <p>Last but not least, we need this script to run automatically. Because we've written the script to transplant 24 hours of data, we'll need to run it once a day in order to capture all of the data that's being generated. I tried to set up my web host, <a href="https://laughingsquid.us/" target="_blank">LaughingSquid</a>, to do this, but unfortunately they don't grant shell access so we can't install all those fancy python modules that we've already used. Its totally possible to rewrite the script to use only modules from the <a href="http://docs.python.org/2/library/" target="_blank">Python Standard Library</a>, but this would turn a simple task into a tedious one. Manually implementing OAuth in particular would be a total pain in the rear, and classes are just about to resume after all, so a different solution is in order. Let's spin up a <a href="http://aws.amazon.com/" target="_blank">"micro" EC2 instance</a> instead. This gives us free reign to install whatever we need for the low low cost of ¢.02 per hour. This does start to add up, but our Master's program gives us some pretty substantial Amazon Web Services credit that goes mostly unused, so we aren't too upset :). UPDATE: A new post provides details about how to schedule Amazon EC2 instances - <a href="http://www.spencerboucher.com/ec2-apis/">http://www.spencerboucher.com/ec2-apis/</a>.</p>
 <p>After <code>pip install</code>ing everything we need and <code>scp</code>ing our python script (let's call it update.py) into the home directory of our remote server, all we need to do is set up a crontab with the <code>crontab -e</code> command and add the following line:</p>
-<div class="highlight"><pre><span class="err">@</span><span class="n">daily</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">~/</span><span class="n">update</span><span class="p">.</span><span class="n">py</span>
+<div class="highlight"><pre>@daily /usr/bin/python ~/update.py
 </pre></div>
 
 
@@ -551,72 +551,6 @@ justmytwospence            </a>
     </section>
 
         </div>
-        <div class="col-sm-3" id="aboutme">
-    <p>
-        <img width="100%" class="img-thumbnail" src="images/avatar.png"/>
-    </p>
-<p>
-    <strong>About Spencer Boucher</strong><br/>
-    Spencer
-</p>        </div>
-        <div class="col-sm-3 well well-sm" id="sidebar">
-
-<aside>
-    <section>
-        <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-                  <ul class="list-group" id="social">
-                    <li class="list-group-item"><a href="http://github.com/justmytwospence"><i
-                            class="fa fa-github-square fa-lg"></i> GitHub
-                    </a></li>
-                    <li class="list-group-item"><a href="http://linkedin.com/in/spencerboucher"><i
-                            class="fa fa-linkedin-square fa-lg"></i> LinkedIn
-                    </a></li>
-                  </ul>
-                </li>
-
-
-
-                <li class="list-group-item"><a href="http://justmytwospence.github.com/pelican/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                    <ul class="list-group list-inline tagcloud" id="tags">
-                        <li class="list-group-item tag-4">
-                            <a href="http://justmytwospence.github.com/pelican/tag/cartography.html">
-                                cartography
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="http://justmytwospence.github.com/pelican/tag/pelican.html">
-                                pelican
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="http://justmytwospence.github.com/pelican/tag/publishing.html">
-                                publishing
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="http://justmytwospence.github.com/pelican/tag/python.html">
-                                python
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-1">
-                            <a href="http://justmytwospence.github.com/pelican/tag/test.html">
-                                Test
-                            </a>
-                        </li>
-                    </ul>
-                </li>    
-
-    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
-        <div id="gh_repos">
-            <p class="list-group-item">Status updating...</p>
-        </div>
-    </li>
-
-        </ul>
-    </section>
-
-</aside>        </div>
     </div>
 </div>
 <footer>
