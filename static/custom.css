@@ -17,7 +17,7 @@ header.page-header {
 pre {
 	padding: 0px;
 }
-#highlight pre {
+div#highlight pre {
 	padding: 10px;
 }
 
