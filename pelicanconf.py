@@ -7,16 +7,20 @@ SITENAME = 'justmytwospence'
 SITEURL = ''
 TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = 'en'
+DEFAULT_DATE = 'fs'
 
 THEME = 'bootstrap3'
-BOOTSTRAP_THEME = 'spacelab'
+#BOOTSTRAP_THEME = 'lumen'
+BOOTSTRAP_NAVBAR_INVERSE = True
 HIDE_SIDEBAR = True
 
 STATIC_PATHS = ['images', 'pdfs']
 MARKUP = ('md', 'ipynb')
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['ipythonnb', 'liquid_tags.notebook']
-EXTRA_HEADER = open('_nb_header.html').read()
+EXTRA_HEADER = open('_nb_header_custom.html').read()
+
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -33,7 +37,7 @@ LINKS =  (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
