@@ -122,7 +122,7 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
 	&lt;div class="buttons"&gt;
 		&lt;div class="button" id="add"&gt;Add&lt;/div&gt;
 		&lt;div class="button" id="remove"&gt;Remove&lt;/div&gt;
-		&lt;div id="svg"&gt;&lt;/div&gt;
+		&lt;div id="svg"&gt;&lt;/div&gt;	
 	&lt;/div&gt;
 
 	&lt;script type="text/javascript"&gt;
