@@ -32,23 +32,24 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
   &lt;/ul&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;/br&gt;
 &lt;ul class="nav nav-pills"&gt;
   &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/br&gt;
 &lt;form class="navbar-form navbar-left" role="search"&gt;
   &lt;div class="form-group"&gt;
     &lt;input type="text" class="form-control" placeholder="Search"&gt;
   &lt;/div&gt;
   &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
-
+&lt;/br&gt;
 &lt;div class="alert alert-warning alert-dismissable"&gt;
   &lt;button type="button" class="close" data-dismiss="alert" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
   &lt;strong&gt;Warning!&lt;/strong&gt; Better check yourself, you're not looking too good.
-&lt;/div&gt;</summary><category term="Test"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
+&lt;/div&gt;&lt;/p&gt;</summary><category term="Test"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
 	&lt;script src="http://d3js.org/d3.v3.min.js" charset="utf-8"&gt;&lt;/script&gt;
 	&lt;style&gt;
 		rect:active {
