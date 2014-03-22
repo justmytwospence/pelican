@@ -23,3 +23,7 @@ div.highlight {
 div.input_area.box-flex1 {
 	padding: 10px;
 }
+
+article a.btn {
+	margin-top: 10px;
+}
