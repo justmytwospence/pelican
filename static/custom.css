@@ -17,6 +17,9 @@ header.page-header {
 pre {
 	padding: 0px;
 }
+#highlight pre {
+	padding: 10px;
+}
 
 div.input_area.box-flex1 {
 	padding: 10px;
