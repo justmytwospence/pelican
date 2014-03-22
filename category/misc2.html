@@ -398,6 +398,44 @@ justmytwospence            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">Interactive Rcharts test</a></h2>
+                <div class="summary">
+<h1>Homework 1: Basic Charts</h1>
+
+<p>Load packages/data</p>
+
+<pre><code class="r">library(rCharts)
+library(knitr)
+hair_eye_male = subset(as.data.frame(HairEyeColor), Sex == &quot;Male&quot;)
+n1 &lt;- nPlot(Freq ~ Hair, group = &#39;Eye&#39;, 
+  data = hair_eye_male, type = &#39;multiBarChart&#39;
+)
+n1$set(width = 600)
+n1$show(&#39;inline&#39;, include_assets = TRUE, cdn = TRUE)
+</code></pre>
+
+<p><link rel="stylesheet" href="http://nvd3.org/assets/css/nv.d3.css"></p>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+
+<script type="text/javascript" src="http://timelyportfolio.github.io/rCharts_nvd3_tests/libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+
+<script type="text/javascript" src="http://nvd3.org/assets/lib/fisheye.js"></script> 
+
+<p><style>
+  .rChart {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 600px;
+    height ...</style></p>
+                    <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://justmytwospence.github.com/pelican/knitr-test.html">Knitr Test</a></h2>
                 <div class="summary">
 <h1>Product differentiation model</h1>
