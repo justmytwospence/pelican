@@ -1,11 +1,6 @@
-div.highlight {
-	margin-top: 10px;
-}
-
 footer {
 	padding-bottom: 20px;
 }
-
 footer.post-info {
 	padding-bottom: 0px;
 }
@@ -16,6 +11,10 @@ header.page-header {
 
 pre {
 	padding: 0px;
+	margin-top: 10px;
+}
+div.highlight {
+	margin-top: 10px;
 }
 .highlight pre {
 	padding: 10px;
