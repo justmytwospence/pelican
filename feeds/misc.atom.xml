@@ -79,7 +79,7 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
 
             var colorScale = d3.scale.linear()
                                 .domain([d3.min(dataset, value), d3.max(dataset, value)])
-                                .range(colorbrewer.GnBu[3])
+                                .range(["#e0f3db","#a8ddb5","#43a2ca"])
 
             var xAxis = d3.svg.axis()
                             .scale(xScale)
