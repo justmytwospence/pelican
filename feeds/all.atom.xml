@@ -567,36 +567,6 @@ n1$show(&amp;#39;inline&amp;#39;, include_assets = TRUE, cdn = TRUE)
     };
 &lt;/script&gt;
 
-&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
 </summary></entry><entry><title>Knitr Test</title><link href="http://justmytwospence.github.com/pelican/knitr-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:knitr-test.html</id><summary type="html">
 &lt;h1&gt;Product differentiation model&lt;/h1&gt;
 
@@ -1127,36 +1097,6 @@ ggplot() + geom_path(aes(x=p1_first$p1, y=p1_first$pi1)) +
 Location can be seen as a proxy for product differentiation too. While the model was seemingly limited to geographic constraints, it is easy to see that some prospective clients my see a luxury brand in the same way that someone could see proximity for substitutable goods.
 This simulation has shown that if a company can engage certain emotions in a customer, such as desirability, durability, or even design aesthetics, they can overcome some of the rigid limitations of competitive business and increase their company&amp;#39;s viability.&lt;/p&gt;
 
-&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
 </summary></entry><entry><title>First test post</title><link href="http://justmytwospence.github.com/pelican/first-test-post.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-20:first-test-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>Test of liquid_tags</title><link href="http://justmytwospence.github.com/pelican/test-of-liquid_tags.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-20:test-of-liquid_tags.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
@@ -9685,34 +9625,4 @@ awAAAAAAAACA1yBpDQAAAAAAAADwGiStAQAAAAAAAABe4/8B97OxzC6zAIQAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;It appears that &lt;strong&gt;the optimal commission rate is independent of the employee's coefficient of laziness&lt;/strong&gt;, even though the actual profit the firm makes most certainly is &lt;em&gt;not&lt;/em&gt;. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee's coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the same.&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry></feed>
+&lt;/div&gt;&lt;/p&gt;</summary></entry></feed>
