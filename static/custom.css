@@ -6,6 +6,18 @@ footer {
 	padding-bottom: 20px;
 }
 
+footer.post-info {
+	padding-bottom: 0px;
+}
+
 header.page-header {
 	margin-top: 0px;
+}
+
+pre {
+	padding: 0px;
+}
+
+div.input_area.box-flex1 {
+	padding: 10px;
 }
