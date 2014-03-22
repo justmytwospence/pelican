@@ -14,12 +14,22 @@ THEME = 'bootstrap3'
 BOOTSTRAP_NAVBAR_INVERSE = True
 
 HIDE_SIDEBAR = True
+#SHOW_ABOUTME = True
+#ABOUT_ME = "I'm spencer!"
+AVATAR = 'images/avatar.png'
 DISPLAY_TAGS_INLINE = True
 #GITHUB_USER = 'justmytwospence'
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
 
-STATIC_PATHS = ['images', 'pdfs']
+DISPLAY_ARTICLE_INFO = True
+	
+CUSTOM_CSS = 'static/custom.css'
+STATIC_PATHS = ['images', 'pdfs', 'raw_html', 'extra/custom.css']
+EXTRA_PATH_METADATA = {
+	'extra/custom.css': {'path': 'static/custom.css'}
+}
+
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['liquid_tags.notebook']
 EXTRA_HEADER = open('_nb_header_custom.html').read()
@@ -35,7 +45,7 @@ TRANSLATION_FEED_ATOM = None
 SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
           ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),)
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 8
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
