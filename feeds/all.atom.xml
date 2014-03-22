@@ -137,7 +137,8 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
 &lt;div class="alert alert-warning alert-dismissable"&gt;
   &lt;button type="button" class="close" data-dismiss="alert" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
   &lt;strong&gt;Warning!&lt;/strong&gt; Better check yourself, you're not looking too good.
-&lt;/div&gt;&lt;/p&gt;</summary><category term="Test"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
+&lt;/div&gt;&lt;/p&gt;</summary><category term="Test"></category></entry><entry><title>YouTube test</title><link href="http://justmytwospence.github.com/pelican/youtube-test-post.html" rel="alternate"></link><updated>2013-03-22T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-22:youtube-test-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;
+&lt;p&gt;{% youtube 8vw8t4O9JQM#t=47 %}&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
 	&lt;script src="http://d3js.org/d3.v3.min.js" charset="utf-8"&gt;&lt;/script&gt;
 	&lt;style&gt;
 		rect:active {
