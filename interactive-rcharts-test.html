@@ -401,7 +401,7 @@ justmytwospence            </a>
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-9">
 
     <section id="content">
         <article>
@@ -653,6 +653,64 @@ n1$show(&#39;inline&#39;, include_assets = TRUE, cdn = TRUE)
     </section>
 
         </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="http://github.com/justmytwospence"><i
+                            class="fa fa-github-square fa-lg"></i> GitHub
+                    </a></li>
+                    <li class="list-group-item"><a href="http://linkedin.com/in/spencerboucher"><i
+                            class="fa fa-linkedin-square fa-lg"></i> LinkedIn
+                    </a></li>
+                  </ul>
+                </li>
+
+
+
+                <li class="list-group-item"><a href="http://justmytwospence.github.com/pelican/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group list-inline tagcloud" id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="http://justmytwospence.github.com/pelican/tag/cartography.html">
+                                cartography
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://justmytwospence.github.com/pelican/tag/pelican.html">
+                                pelican
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://justmytwospence.github.com/pelican/tag/publishing.html">
+                                publishing
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://justmytwospence.github.com/pelican/tag/python.html">
+                                python
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-1">
+                            <a href="http://justmytwospence.github.com/pelican/tag/test.html">
+                                Test
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+
+    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+        <div id="gh_repos">
+            <p class="list-group-item">Status updating...</p>
+        </div>
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
     </div>
 </div>
 <footer>
@@ -673,6 +731,25 @@ n1$show(&#39;inline&#39;, include_assets = TRUE, cdn = TRUE)
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="http://justmytwospence.github.com/pelican/theme/js/respond.min.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!window.jXHR) {
+                var jxhr = document.createElement('script');
+                jxhr.type = 'text/javascript';
+                jxhr.src = 'http://justmytwospence.github.com/pelican/theme/js/jXHR.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(jxhr, s);
+            }
+
+            github.showRepos({
+                user: 'justmytwospence',
+                count: 5,
+                skip_forks: false,
+                target: '#gh_repos'
+            });
+        });
+    </script>
+    <script src="http://justmytwospence.github.com/pelican/theme/js/github.js" type="text/javascript"></script>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'justmytwospence'; // required: replace example with your forum shortname
