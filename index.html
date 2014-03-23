@@ -29,7 +29,7 @@
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
 
-    <style type="text/css">
+        <style type="text/css">
 .border-box-sizing{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
 .corner-all{border-radius:4px;}
 .hbox{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
@@ -398,48 +398,70 @@ justmytwospence            </a>
 
 <div class="container">
     <div class="row">
- <div class="col-sm-9">
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">Interactive Rcharts test</a></h2>
-                    <div class="summary">
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/location-spencer.html">Location |&nbsp;Spencer</a></h2>
-                    <div class="summary">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html"article.title }}</a></h2>
+                <div class="summary">
+
+	<p>Some&nbsp;configuration</p>
+
+	<pre><code class="r">library(knitr)
+		tidy.opts = list(width.cutoff = 80)
+		opts_chunk$set(fig.width = 10, fig.align = &quot;center&quot;, tidy = FALSE, warning = TRUE)
+		theme_set(theme_gray(base_size = 18))
+	</code></pre>
+
+	<p>Load&nbsp;packages/data</p>
+
+	<pre><code class="r">library(ggplot2) 
+		library(rCharts)
+		data(movies) 
+		data(EuStockMarkets)
+	</code></pre>
+
+	<p>Munge a&nbsp;bit</p>
+
+	<pre><code class="r">movies &lt;- subset(movies, budget &gt; 0)
+
+		genre &lt;- rep(NA, nrow(movies ...</code></pre>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/interactive-rcharts-test.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/location-spencer.html"article.title }}</a></h2>
+                <div class="summary">
   <div id="map"></div>
 
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/location-spencer.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html">Test of code&nbsp;blocks</a></h2>
-                    <div class="summary"><p>Test to see where summary shows up.</p>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/whats-a-mooc.html">What&#8217;s a&nbsp;Mooc?</a></h2>
-                    <div class="summary"><p>What do Robert de Niro and Coursera have in common?</p>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/whats-a-mooc.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/writelatex.html">writeLaTeX</a></h2>
-                    <div class="summary"><p>If you use \(\LaTeX\) and haven&#8217;t yet heard of
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/location-spencer.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html"article.title }}</a></h2>
+                <div class="summary"><p>Test to see where summary shows up.</p>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/test-of-code-blocks.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/whats-a-mooc.html"article.title }}</a></h2>
+                <div class="summary"><p>What do Robert de Niro and Coursera have in common?</p>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/whats-a-mooc.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/writelatex.html"article.title }}</a></h2>
+                <div class="summary"><p>If you use \(\LaTeX\) and haven&#8217;t yet heard of
 \(write\LaTeX\), do yourself a favor and check it out. On one level
 its a really great version of Google Docs for documents that are
 properly typeset, which is incredibly useful because a huge swathe of
 the documents created with ...</p>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/writelatex.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/writelatex.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
     
     <ul class="pagination">
             <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -515,11 +537,6 @@ the documents created with ...</p>
                             api
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/auto-scaling.html">
-                            auto scaling
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
                             aws
@@ -535,19 +552,9 @@ the documents created with ...</p>
                             cartography
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
-                            cloud
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
                             cron
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/crowdsourcing.html">
-                            crowdsourcing
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -560,6 +567,11 @@ the documents created with ...</p>
                             education
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
@@ -570,19 +582,9 @@ the documents created with ...</p>
                             neuroscience
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
-                            paradigm
-                        </a>
-                    </li>
                     <li class="list-group-item tag-1">
                         <a href="http://justmytwospence.github.com/pelican/tag/r.html">
                             R
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
-                            reveal.js
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -600,14 +602,34 @@ the documents created with ...</p>
                             Shiny
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/solarized.html">
+                            solarized
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/typesetting.html">
-                            typesetting
+                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
+                            superpower
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/technology.html">
+                            technology
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/university.html">
+                            university
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">
+                            writelatex
                         </a>
                     </li>
             </div>

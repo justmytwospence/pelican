@@ -29,7 +29,7 @@
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
 
-    <style type="text/css">
+        <style type="text/css">
 .border-box-sizing{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
 .corner-all{border-radius:4px;}
 .hbox{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
@@ -398,24 +398,46 @@ justmytwospence            </a>
 
 <div class="container">
     <div class="row">
- <div class="col-sm-9">
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">Interactive Rcharts test</a></h2>
-                    <div class="summary">
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html">Test of code&nbsp;blocks</a></h2>
-                    <div class="summary"><p>Test to see where summary shows up.</p>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/d3-page-template.html">D3 Page&nbsp;Template</a></h2>
-                    <div class="summary">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html"article.title }}</a></h2>
+                <div class="summary">
+
+	<p>Some&nbsp;configuration</p>
+
+	<pre><code class="r">library(knitr)
+		tidy.opts = list(width.cutoff = 80)
+		opts_chunk$set(fig.width = 10, fig.align = &quot;center&quot;, tidy = FALSE, warning = TRUE)
+		theme_set(theme_gray(base_size = 18))
+	</code></pre>
+
+	<p>Load&nbsp;packages/data</p>
+
+	<pre><code class="r">library(ggplot2) 
+		library(rCharts)
+		data(movies) 
+		data(EuStockMarkets)
+	</code></pre>
+
+	<p>Munge a&nbsp;bit</p>
+
+	<pre><code class="r">movies &lt;- subset(movies, budget &gt; 0)
+
+		genre &lt;- rep(NA, nrow(movies ...</code></pre>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/interactive-rcharts-test.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html"article.title }}</a></h2>
+                <div class="summary"><p>Test to see where summary shows up.</p>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/test-of-code-blocks.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/d3-page-template.html"article.title }}</a></h2>
+                <div class="summary">
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<style>
 		rect:active {
@@ -439,31 +461,31 @@ justmytwospence            </a>
 			background: -webkit-gradient(linear, left top, left bottom, from(#<span class="caps">85C1E8</span>), to(#<span class="caps">3395CD</span>));
 			background: -webkit-linear-gradient(top, #<span class="caps">85C1E8</span>, #<span class="caps">3395CD</span>);
 			background: -moz-linear-gradient(top ...</style>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/d3-page-template.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/knitr-test.html">Knitr&nbsp;Test</a></h2>
-                    <div class="summary">
-<h1>Product differentiation&nbsp;model</h1>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/d3-page-template.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/knitr-test.html"article.title }}</a></h2>
+                <div class="summary">
+	<h1>Product differentiation&nbsp;model</h1>
 
-<p><strong><span class="caps">MSAN603</span> Business Strategies for Big&nbsp;Data</strong></p>
+	<p><strong><span class="caps">MSAN603</span> Business Strategies for Big&nbsp;Data</strong></p>
 
-<p><em>Trevor Stephens, Spencer Boucher, and Lihua&nbsp;Cai</em></p>
+	<p><em>Trevor Stephens, Spencer Boucher, and Lihua&nbsp;Cai</em></p>
 
-<h2>Question&nbsp;1</h2>
+	<h2>Question&nbsp;1</h2>
 
-<h3>Point of&nbsp;Indifference</h3>
+	<h3>Point of&nbsp;Indifference</h3>
 
-<p>The geographic point of indifference is the point along our 1 dimensional space at which customers have no preference for one hospital over the other. Customers to the &ldquo;right ...</p>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/knitr-test.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
-                <article>
-                    <h2><a href="http://justmytwospence.github.com/pelican/test-of-liquid_tags.html">Test of&nbsp;liquid_tags</a></h2>
-                    <div class="summary"><p>
+	<p>The geographic point of indifference is the point along our 1 dimensional space at which customers have no preference for one hospital over the other. Customers to the &ldquo;right ...</p>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/knitr-test.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://justmytwospence.github.com/pelican/test-of-liquid_tags.html"article.title }}</a></h2>
+                <div class="summary"><p>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -483,10 +505,10 @@ In&nbsp;[1]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The way our firm pays its employees can be modelled thusly: <span class="math">\[\pi=a+\epsilon\]</span> <span class="math">\[U(w,a)=-e^{-(w-c\cdot a^{2})}\]</span> <span class="math">\[w=t+s\cdot \pi\]</span> Where <span class="math">\(t\)</span> is the employee&#8217;s base pay, <span class="math">\(U\)</span> is ...</p></div></p>
-                        <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/test-of-liquid_tags.html">   more ...</a>
-                    </div>
-                </article>
-                <hr/>
+                    <a class="btn btn-default btn-xs" href=SITEURL }}/test-of-liquid_tags.html">   more ...</a>
+                </div>
+            </article>
+            <hr/>
     
     </div>
 
@@ -543,11 +565,6 @@ In&nbsp;[1]:
                             api
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/auto-scaling.html">
-                            auto scaling
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
                             aws
@@ -563,19 +580,9 @@ In&nbsp;[1]:
                             cartography
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
-                            cloud
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
                             cron
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/crowdsourcing.html">
-                            crowdsourcing
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -588,6 +595,11 @@ In&nbsp;[1]:
                             education
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
@@ -598,19 +610,9 @@ In&nbsp;[1]:
                             neuroscience
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
-                            paradigm
-                        </a>
-                    </li>
                     <li class="list-group-item tag-1">
                         <a href="http://justmytwospence.github.com/pelican/tag/r.html">
                             R
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
-                            reveal.js
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -628,14 +630,34 @@ In&nbsp;[1]:
                             Shiny
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/solarized.html">
+                            solarized
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/typesetting.html">
-                            typesetting
+                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
+                            superpower
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/technology.html">
+                            technology
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/university.html">
+                            university
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">
+                            writelatex
                         </a>
                     </li>
             </div>
