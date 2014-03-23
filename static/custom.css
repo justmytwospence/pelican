@@ -39,6 +39,6 @@ div#tags.list-group.list-inline.tagcloud {
 	padding: 10px;
 }
 
-.my-list{
-	cursor: default;
+#sidebar .list-group, #sidebar .list-group-item {
+    background-color: auto;
 }
