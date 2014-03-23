@@ -1,6 +1,6 @@
 Title: Test of code blocks
 Date: 2014-03-21 10:20
-Tags: Test
+Category: Test
 Summary: Test to see where summary shows up.
 
 This is the content of my super blog post.
