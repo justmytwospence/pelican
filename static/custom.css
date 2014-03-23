@@ -40,5 +40,5 @@ div#tags.list-group.list-inline.tagcloud {
 }
 
 #sidebar .list-group, #sidebar .list-group-item {
-    background-color: auto;
+    background-color: auto !important;
 }
