@@ -11,7 +11,7 @@ DEFAULT_DATE = 'fs'
 
 # Theme
 THEME = 'bootstrap3'
-#BOOTSTRAP_THEME = 'slate'
+#BOOTSTRAP_THEME = 'lumen'
 BOOTSTRAP_NAVBAR_INVERSE = True
 
 # Sidebar
