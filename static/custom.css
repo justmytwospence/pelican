@@ -35,6 +35,6 @@ div.cell.border-box-sizing.code_cell.vbox {
 	padding: 0px;
 }
 
-div#tags.list-group list-inline tagcloud {
+div#tags.list-group.list-inline.tagcloud {
 	padding: 10px;
 }
