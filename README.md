@@ -2,6 +2,7 @@ The world of scientific computing is rapidly developing fantastic publication to
 - [D3.js](d3js.org)
 - [IPython (notebooks)](http://ipython.org/notebook)
 - [Knitr](http://yihui.name/knitr/)
+
 ... just to name a few. The web is integral to publishing from all these tools, but there's not currently a simple publishing platform that plays nice with all of them at once, out of the box. This is my attempt to create a blogging framework specifically for the data scientists who already know and love these tools, and need a place where they can all come together to publish their work.
 
 It is built with [Pelican](http://docs.getpelican.com), a static blogging framework that eats page templates written with liquid tags, together with posts written in reStructured text/markdown/HTML, and "bakes" your website into a collection of all the necessary HTML files. The static nature of these files means that it can be hosted on GitHub Pages and publishing is as simple as `git push`. I'm choosing to use the pelican-bootstrap3 template as a starting point, because the Bootstrap framework is highly customizable/flexible and relatively easy to pick up for us data-types who aren't designers. 
