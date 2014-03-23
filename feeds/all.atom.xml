@@ -248,8 +248,6 @@ n1$show('inline', include_assets = TRUE, cdn = TRUE)&lt;/code&gt;&lt;/pre&gt;
 		};
 	&lt;/script&gt;
 
-</summary></entry><entry><title>Location | Spencer</title><link href="http://justmytwospence.github.com/pelican/location-spencer.html" rel="alternate"></link><updated>2014-03-22T13:13:41+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-22:location-spencer.html</id><summary type="html">
-  &lt;div id="map"&gt;&lt;/div&gt;
 </summary></entry><entry><title>Test of code blocks</title><link href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html" rel="alternate"></link><updated>2014-03-21T10:20:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-21:test-of-code-blocks.html</id><summary type="html">&lt;p&gt;This is the content of my super blog&amp;nbsp;post.&lt;/p&gt;
 &lt;p&gt;Testing Python&amp;nbsp;code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;multiprocessing&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mp&lt;/span&gt;
