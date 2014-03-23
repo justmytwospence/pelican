@@ -51,11 +51,11 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
 &lt;div class="alert alert-warning alert-dismissable"&gt;
   &lt;button type="button" class="close" data-dismiss="alert" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
   &lt;strong&gt;Warning!&lt;/strong&gt; Better check yourself, you&amp;#8217;re not looking too good.
-&lt;/div&gt;&lt;/p&gt;</summary><category term="Test"></category></entry><entry><title>What do Robert de Niro and Coursera have in common?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very
+&lt;/div&gt;&lt;/p&gt;</summary><category term="Test"></category></entry><entry><title>What do Robert de Niro and Coursera have in common?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very
 similar to the one facing Coursera and&amp;nbsp;friends&amp;#8230;&lt;/p&gt;
 &lt;p&gt;From the 1973 movie &lt;a href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the
 education revolution wayy ahead of his time and had a pretty good grasp
-on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;</summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;[dropcap]I[/dropcap]f you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
+on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;</summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;[dropcap]I[/dropcap]f you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
 \(write\LaTeX\), do yourself a favor and check it out. On one level
 its a really great version of Google Docs for documents that are
 properly typeset, which is incredibly useful because a huge swathe of
@@ -325,37 +325,36 @@ completely terminates the&amp;nbsp;instance.&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://alestic.com/2011/11/ec2-schedule-instance"&gt;Running &lt;span class="caps"&gt;EC2&lt;/span&gt; Instances on a Recurring Schedule with Auto&amp;nbsp;Scaling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.robertsindall.co.uk/blog/how-to-use-amazons-auto-scaling-groups/"&gt;Summary of &lt;span class="caps"&gt;API&lt;/span&gt;&amp;nbsp;commands&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.cardinalpath.com/autoscaling-your-website-with-amazon-web-services-part-2/"&gt;Auto Scaling Your Website with Amazon Web&amp;nbsp;Services&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="api"></category><category term="auto scaling"></category><category term="aws"></category><category term="cloud"></category><category term="cron"></category><category term="ec2"></category></entry><entry><title>Titanic: Getting Started With R</title><link href="http://justmytwospence.github.com/pelican/titanic-getting-started-with-r.html" rel="alternate"></link><updated>2014-01-11T22:05:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-11:titanic-getting-started-with-r.html</id><summary type="html">&lt;p&gt;[dropcap]M[/dropcap]y friend and classmate &lt;a href="http://trevorstephens.com"&gt;Trevor Stephens&lt;/a&gt; has
+&lt;/ul&gt;</summary><category term="api"></category><category term="auto scaling"></category><category term="aws"></category><category term="cloud"></category><category term="cron"></category><category term="ec2"></category></entry><entry><title>Titanic: Getting Started With R</title><link href="http://justmytwospence.github.com/pelican/titanic-getting-started-with-r.html" rel="alternate"></link><updated>2014-01-11T22:05:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-11:titanic-getting-started-with-r.html</id><summary type="html">&lt;p&gt;[dropcap]M[/dropcap]y friend and classmate &lt;a href="http://trevorstephens.com"&gt;Trevor Stephens&lt;/a&gt; has
 created some &lt;a href="http://trevorstephens.com/post/72916401642/titanic-getting-started-with-r"&gt;pretty stellar R tutorials&lt;/a&gt; that will take you to about
 halfway up the leaderboard of Kaggle&amp;#8217;s &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted"&gt;Titanic: Machine Learning from
 Disaster&lt;/a&gt; competition. While the competition has a &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-python"&gt;Python tutorial&lt;/a&gt;
 and even a beginner&amp;#8217;s &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-excel"&gt;Excel tutorial&lt;/a&gt;, any R equivalent had been
 suspiciously lacking. This is the competition that served as our first
-foray into machine learning, so kudos to Trevor for giving back to the&amp;nbsp;community!&lt;/p&gt;</summary><category term="kaggle"></category><category term="machine learning"></category><category term="R"></category></entry><entry><title>Live mapping</title><link href="http://justmytwospence.github.com/pelican/live-mapping.html" rel="alternate"></link><updated>2014-01-08T08:50:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-08:live-mapping.html</id><summary type="html">&lt;p&gt;[dropcap]I[/dropcap]&amp;#8217;ve been wanting to do some more mapping stuff since
+foray into machine learning, so kudos to Trevor for giving back to the&amp;nbsp;community!&lt;/p&gt;</summary><category term="kaggle"></category><category term="machine learning"></category><category term="R"></category></entry><entry><title>Live mapping</title><link href="http://justmytwospence.github.com/pelican/live-mapping.html" rel="alternate"></link><updated>2014-01-08T08:50:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-08:live-mapping.html</id><summary type="html">&lt;p&gt;I&amp;#8217;ve been wanting to do some more mapping stuff since
 my first encounter with Leaflet a month or two ago while I was working
-on a project for [AutoGrid][]. I had my eye on CartoDB&amp;#8217;s time series
-library, [Torque][], because I had really wanted to do some time-series
+on a project for &lt;a href="http://auto-grid.com"&gt;AutoGrid&lt;/a&gt;. I had my eye on CartoDB&amp;#8217;s time series
+library, &lt;a href="https://github.com/cartodb/torque"&gt;Torque&lt;/a&gt;, because I had really wanted to do some time-series
 visualization, but time constraints and privacy issues with uploading
 data to CartoDB&amp;#8217;s servers prevented me from really exploring. Since I
 had a few days of free time over winter break, I played around with it a
-bit and came up with this: [spencerboucher.com/map][]. How&amp;#8217;d I do&amp;nbsp;it?&lt;/p&gt;
+bit and came up with this: &lt;a href="http://www.spencerboucher.com/map"&gt;spencerboucher.com/map&lt;/a&gt;. How&amp;#8217;d I do&amp;nbsp;it?&lt;/p&gt;
 &lt;p&gt;First I needed some geographic data, so I turned to a source of data
-I&amp;#8217;ve been collected for almost a year - my own location. [OpenPaths][]
+I&amp;#8217;ve been collected for almost a year - my own location. &lt;a href="http://openpaths.cc"&gt;OpenPaths&lt;/a&gt;
 is a mobile app that records your location at regular time intervals. I
 opted for every 30 minutes at first, then upped it to every 15 minutes
 when I discovered that the effect on battery life wasn&amp;#8217;t nearly as bad
-as I expected it to be. OpenPaths is a project of [the R&amp;amp;D department at
-The New York Times][] and they [claim][] that you are the only one with
+as I expected it to be. OpenPaths is a project of &lt;a href="http://nytlabs.com/"&gt;the R&amp;amp;D department at
+The New York Times&lt;/a&gt; and they &lt;a href="https://openpaths.cc/FAQ"&gt;claim&lt;/a&gt; that you are the only one with
 access to the collected data. Interestingly, you can grant various
-[research programs][] access to your data at your own discretion. Your
+&lt;a href="https://openpaths.cc/projects"&gt;research programs&lt;/a&gt; access to your data at your own discretion. Your
 data is conveniently downloadable as a csv, json, or kml file, so I
 easily pulled my dataset of \~3,000 time points since December 2012.
 Unfortunately, I made the switch from iPhone to Android around April
 (well, that part is fortunate), and forgot to re-download the app, so I
 only really have data from the around the first three months and last
 two months of&amp;nbsp;2013.&lt;/p&gt;
-&lt;p&gt;
-Turns out, making impressive maps with CartoDB is almost embarrassingly
+&lt;p&gt;Turns out, making impressive maps with CartoDB is almost embarrassingly
 easy. Their &lt;span class="caps"&gt;GUI&lt;/span&gt; is pretty intuitive and running queries on their
 postgreSQL database is simple. Even time series stuff built on the
 Torque backend is really just point and click. I decided that the best
@@ -363,157 +362,156 @@ way to visualize this data was with an aggregated hexbin heatmap of all
 my past locations, overlaid with a point-by-point replay with a
 time-slider. From there, it was just a one-line &lt;span class="caps"&gt;API&lt;/span&gt; call to host the map
 on my website (line 30 highlighted below), which is significantly easier
-than the legwork that went into crafting a Leaflet map &amp;#8220;manually.&amp;#8221;
+than the legwork that went into crafting a Leaflet map&amp;nbsp;&amp;#8220;manually.&amp;#8221;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;xhtml&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mark&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Map source code&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;map/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
-wzxhzdk:0
 
-
-[hr][dropcap]T[/dropcap]his is pretty awesome, but in light of how easy
+&lt;p&gt;This is pretty awesome, but in light of how easy
 it all was, I was almost disappointed. Can we take it one step further?
-Let&amp;#8217;s put on our [Quantified Self][] hats and set about to make this map
-*live*. There&amp;#8217;s three components to making this happen, so we&amp;#8217;ll step
+Let&amp;#8217;s put on our &lt;a href="http://quantifiedself.com/about/"&gt;Quantified Self&lt;/a&gt; hats and set about to make this map
+&lt;em&gt;live&lt;/em&gt;. There&amp;#8217;s three components to making this happen, so we&amp;#8217;ll step
 through them one at a time. First we need to access the most recent data
 from OpenPaths (there&amp;#8217;s an &lt;span class="caps"&gt;API&lt;/span&gt; for that!), and then we need to insert
 that data into CartoDB&amp;#8217;s database (guess what, there&amp;#8217;s an &lt;span class="caps"&gt;API&lt;/span&gt; for that
 too). Last but not least, we need to schedule that data transplant to
-occur on a regular basis. The Unix utility `cron` is the canonical tool
+occur on a regular basis. The Unix utility &lt;code&gt;cron&lt;/code&gt; is the canonical tool
 for this type of thing, so this seemed like a good time to learn how to
-use it.
-
-Python has a reputation for being a great &amp;#8220;glue&amp;#8221; language, so that&amp;#8217;s
+use&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Python has a reputation for being a great &amp;#8220;glue&amp;#8221; language, so that&amp;#8217;s
 what we&amp;#8217;ll use to build this
-script.[hr][dropcap]1[/dropcap]Programmatically accessing your data from
+script.
+&lt;br&gt;
+Programmatically accessing your data from
 OpenPaths is super simple. This piece of our script is pulled more or
-less verbatim from [the OpenPaths &lt;span class="caps"&gt;API&lt;/span&gt; documentation][]. Line 21
+less verbatim from &lt;a href="https://openpaths.cc/api"&gt;the OpenPaths &lt;span class="caps"&gt;API&lt;/span&gt; documentation&lt;/a&gt;. Line 21
 (highlighted below) is key - this is where we specify which data you
 want to pull for injection into the CartoDB database. Here we will grab
 the last 24 hours of data (\~96 readings, if you&amp;#8217;re collecting every 15
 minutes like me), getting the results in a nice &lt;span class="caps"&gt;JSON&lt;/span&gt;-formatted variable
-named `data`.
-
-~~~~ {.lang:python .mark:21 .decode:true title=&amp;#8221;OpenPaths &lt;span class="caps"&gt;API&lt;/span&gt;&amp;#8221;}
-import oauth2, time, urllib, urllib2, json
-
-&lt;span class="caps"&gt;ACCESS&lt;/span&gt; = &amp;#8216;redacted&amp;#8217;
-&lt;span class="caps"&gt;SECRET&lt;/span&gt; = &amp;#8216;redacted&amp;#8217;
-&lt;span class="caps"&gt;URL&lt;/span&gt; = &amp;#8216;https://openpaths.cc/api/1&amp;#8217;
-
-def build_auth_header(url, method):
-    params = {                                            
-        &amp;#8216;oauth_version&amp;#8217;: &amp;#8220;1.0&amp;#8221;,
-        &amp;#8216;oauth_nonce&amp;#8217;: oauth2.generate_nonce(),
-        &amp;#8216;oauth_timestamp&amp;#8217;: int(time.time()),
-    }
-    consumer = oauth2.Consumer(key=&lt;span class="caps"&gt;ACCESS&lt;/span&gt;, secret=&lt;span class="caps"&gt;SECRET&lt;/span&gt;)
-    params[&amp;#8216;oauth_consumer_key&amp;#8217;] = consumer.key 
-    request = oauth2.Request(method=method, url=url, parameters=params)    
-    signature_method = oauth2.SignatureMethod_HMAC_SHA1()
-    request.sign_request(signature_method, consumer, None)
-    return request.to_header()
-
-now = time.time()
-params = {&amp;#8216;start_time&amp;#8217;: now - 24*60*60, &amp;#8216;end_time&amp;#8217;: now} # get the last 24 hours
-query = &amp;#8220;%s?%s&amp;#8221; % (&lt;span class="caps"&gt;URL&lt;/span&gt;, urllib.urlencode(params))
-#print(query)
-try:
-    request = urllib2.Request(query)
-    request.headers = build_auth_header(&lt;span class="caps"&gt;URL&lt;/span&gt;, &amp;#8216;&lt;span class="caps"&gt;GET&lt;/span&gt;&amp;#8217;)
-    connection = urllib2.urlopen(request)
-    data = json.loads(&amp;#8221;.join(connection.readlines()))
-    print(json.dumps(data, indent=4))
-except urllib2.HTTPError as e:
-    print(e.read())
-
-wzxhzdk:1
-
-
-A few notes:
-
--   It would certainly be faster to insert all of the new data into the
-    database using a single `&lt;span class="caps"&gt;INSERT&lt;/span&gt;` statement, but that would require
+named &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;:::python
+  import oauth2, time, urllib, urllib2,&amp;nbsp;json&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;ACCESS&lt;/span&gt; = &amp;#8216;redacted&amp;#8217;
+  &lt;span class="caps"&gt;SECRET&lt;/span&gt; = &amp;#8216;redacted&amp;#8217;
+  &lt;span class="caps"&gt;URL&lt;/span&gt; =&amp;nbsp;&amp;#8216;https://openpaths.cc/api/1&amp;#8217;&lt;/p&gt;
+&lt;p&gt;def build_auth_header(url, method):
+      params = {                                          &lt;br /&gt;
+          &amp;#8216;oauth_version&amp;#8217;: &amp;#8220;1.0&amp;#8221;,
+          &amp;#8216;oauth_nonce&amp;#8217;: oauth2.generate_nonce(),
+          &amp;#8216;oauth_timestamp&amp;#8217;: int(time.time()),
+      }
+      consumer = oauth2.Consumer(key=&lt;span class="caps"&gt;ACCESS&lt;/span&gt;, secret=&lt;span class="caps"&gt;SECRET&lt;/span&gt;)
+      params[&amp;#8216;oauth_consumer_key&amp;#8217;] = consumer.key 
+      request = oauth2.Request(method=method, url=url, parameters=params)  &lt;br /&gt;
+      signature_method = oauth2.SignatureMethod_HMAC_SHA1()
+      request.sign_request(signature_method, consumer, None)
+      return&amp;nbsp;request.to_header()&lt;/p&gt;
+&lt;p&gt;now = time.time()
+  params = {&amp;#8216;start_time&amp;#8217;: now - 24&lt;em&gt;60&lt;/em&gt;60, &amp;#8216;end_time&amp;#8217;: now} # get the last 24 hours
+  query = &amp;#8220;%s?%s&amp;#8221; % (&lt;span class="caps"&gt;URL&lt;/span&gt;, urllib.urlencode(params))
+  #print(query)
+  try:
+      request = urllib2.Request(query)
+      request.headers = build_auth_header(&lt;span class="caps"&gt;URL&lt;/span&gt;, &amp;#8216;&lt;span class="caps"&gt;GET&lt;/span&gt;&amp;#8217;)
+      connection = urllib2.urlopen(request)
+      data = json.loads(&amp;#8221;.join(connection.readlines()))
+      print(json.dumps(data, indent=4))
+  except urllib2.HTTPError as e:
+      print(e.read())
+&lt;br&gt;
+Now we need to get our new &lt;code&gt;data&lt;/code&gt; variable into
+CartoDB&amp;#8217;s postgreSQL server. &lt;a href="http://developers.cartodb.com/documentation/sql-api.html"&gt;CartoDB&amp;#8217;s &lt;span class="caps"&gt;SQL&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; documentation&lt;/a&gt; makes
+this possible, and there&amp;#8217;s even a &lt;a href="https://github.com/vizzuality/cartodb-python"&gt;python module&lt;/a&gt; that wraps OAuth2 to
+simplify things. Although its still in the early stages of development,
+this module works fine for our current purposes; all we have to do is
+send it a string that holds the &lt;span class="caps"&gt;SQL&lt;/span&gt; query we want to run. So now we&amp;#8217;ll
+just write a for-loop that successively builds an &lt;code&gt;INSERT&lt;/code&gt; query for
+each element in &lt;code&gt;data&lt;/code&gt; (lines 18-20 highlighted&amp;nbsp;below).&lt;/p&gt;
+&lt;p&gt;:::python
+  from cartodb import CartoDBException,&amp;nbsp;CartoDBAPIKey&lt;/p&gt;
+&lt;p&gt;user =  &amp;#8216;spencer.g.boucher@gmail.com&amp;#8217;
+  password =  &amp;#8216;redacted&amp;#8217;
+  cartodb_domain = &amp;#8216;justmytwospence&amp;#8217;
+  API_KEY =&amp;#8217;redacted&amp;#8217;
+  cl = CartoDBAPIKey(API_KEY,&amp;nbsp;cartodb_domain)&lt;/p&gt;
+&lt;p&gt;for reading in data:
+      alt     = str(reading[&amp;#8216;alt&amp;#8217;])
+      device  =     reading[&amp;#8216;device&amp;#8217;]
+      lat     = str(reading[&amp;#8216;lat&amp;#8217;])
+      lon     = str(reading[&amp;#8216;lon&amp;#8217;])
+      os      =     reading[&amp;#8216;os&amp;#8217;]
+      t       = str(reading[&amp;#8216;t&amp;#8217;])
+      version =     reading[&amp;#8216;version&amp;#8217;]
+      try:
+          query_string = &amp;#8220;&lt;span class="caps"&gt;INSERT&lt;/span&gt; &lt;span class="caps"&gt;INTO&lt;/span&gt; openpaths_justmytwospence (alt, date, device, lat,  lon, os, version, the_geom) &amp;#8221;
+                         &amp;#8220;&lt;span class="caps"&gt;VALUES&lt;/span&gt; ({0}, abstime({1}), &amp;#8216;{2}&amp;#8217;, {3}, {4}, &amp;#8216;{5}&amp;#8217;, &amp;#8216;{6}&amp;#8217;, ST_ SetSRID(ST_Point({4}, {3}), 4326))&amp;#8221;&lt;br /&gt;
+                        .format(alt, t, device, lat, lon, os, version)
+          print cl.sql(query_string)
+      except CartoDBException as e:
+          print (&amp;#8220;some error ocurred&amp;#8221;,&amp;nbsp;e)&lt;/p&gt;
+&lt;p&gt;A few&amp;nbsp;notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It would certainly be faster to insert all of the new data into the
+    database using a single &lt;code&gt;INSERT&lt;/code&gt; statement, but that would require
     some more tedious text parsing and execution speed isn&amp;#8217;t
     particularly important to us. As it stands, it takes about six
-    seconds to post a day&amp;#8217;s worth of data.
--   One posgreSQL &amp;#8220;gotcha&amp;#8221; had me hung up for quite some time: single
-    quotes parse fine but double quotes do not.
--   `ST_SetSRID` is a [PostGIS command][] that converts a lon/lat pair
-    (in that order - another &amp;#8220;gotcha&amp;#8221;) to the necessary geometry object.
-
-[hr]
-
-[dropcap]3[/dropcap]Last but not least, we need this script to run
+    seconds to post a day&amp;#8217;s worth of&amp;nbsp;data.&lt;/li&gt;
+&lt;li&gt;One posgreSQL &amp;#8220;gotcha&amp;#8221; had me hung up for quite some time: single
+    quotes parse fine but double quotes do&amp;nbsp;not.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ST_SetSRID&lt;/code&gt; is a &lt;a href="http://postgis.org/docs/ST_SetSRID.html"&gt;PostGIS command&lt;/a&gt; that converts a lon/lat pair
+    (in that order - another &amp;#8220;gotcha&amp;#8221;) to the necessary geometry&amp;nbsp;object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;
+Last but not least, we need this script to run
 automatically. Because we&amp;#8217;ve written the script to transplant 24 hours
 of data, we&amp;#8217;ll need to run it once a day in order to capture all of the
 data that&amp;#8217;s being generated. I tried to set up my web host,
-[LaughingSquid][], to do this, but unfortunately they don&amp;#8217;t grant shell
+&lt;a href="https://laughingsquid.us/"&gt;LaughingSquid&lt;/a&gt;, to do this, but unfortunately they don&amp;#8217;t grant shell
 access so we can&amp;#8217;t install all those fancy python modules that we&amp;#8217;ve
 already used. Its totally possible to rewrite the script to use only
-modules from the [Python Standard Library][], but this would turn a
+modules from the &lt;a href="http://docs.python.org/2/library/"&gt;Python Standard Library&lt;/a&gt;, but this would turn a
 simple task into a tedious one. Manually implementing OAuth in
 particular would be a total pain in the rear, and classes are just about
 to resume after all, so a different solution is in order. Let&amp;#8217;s spin up
-a [&amp;#8220;micro&amp;#8221; &lt;span class="caps"&gt;EC2&lt;/span&gt; instance][] instead. This gives us free reign to install
+a &lt;a href="http://aws.amazon.com/"&gt;&amp;#8220;micro&amp;#8221; &lt;span class="caps"&gt;EC2&lt;/span&gt; instance&lt;/a&gt; instead. This gives us free reign to install
 whatever we need for the low low cost of ¢.02 per hour. This does start
 to add up, but our Master&amp;#8217;s program gives us some pretty substantial
 Amazon Web Services credit that goes mostly unused, so we aren&amp;#8217;t too
 upset :). &lt;span class="caps"&gt;UPDATE&lt;/span&gt;: A new post provides details about how to schedule
-Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; instances - &lt;http://www.spencerboucher.com/ec2-apis/&gt;.
-
-After `pip install`ing everything we need and `scp`ing our python script
+Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; instances - &lt;a href="http://www.spencerboucher.com/ec2-apis/"&gt;http://www.spencerboucher.com/ec2-apis/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After &lt;code&gt;pip install&lt;/code&gt;ing everything we need and &lt;code&gt;scp&lt;/code&gt;ing our python script
 (let&amp;#8217;s call it update.py) into the home directory of our remote server,
-all we need to do is set up a crontab with the `crontab -e` command and
-add the following line:
-
-
-wzxhzdk:2
-
-
-`@daily` is actually a shortcut for `* * * * *`, where each asterix is a
+all we need to do is set up a crontab with the &lt;code&gt;crontab -e&lt;/code&gt; command and
+add the following&amp;nbsp;line:&lt;/p&gt;
+&lt;p&gt;:::bash
+  @daily /usr/bin/python&amp;nbsp;~/update.py&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;@daily&lt;/code&gt; is actually a shortcut for &lt;code&gt;* * * * *&lt;/code&gt;, where each asterix is a
 placeholder for the (respectively) minute, hour, day of month, month,
 and day of week that the script should executed. This shortcut defaults
-to midnight every day, which is really as good as anything for our
-purposes.
-
-[hr]
-
-Voilà! Now we can step back and relax, knowing that we don&amp;#8217;t have to do
+to midnight every day, which is really as good as anything for our&amp;nbsp;purposes.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Voilà! Now we can step back and relax, knowing that we don&amp;#8217;t have to do
 a single thing and our map will continue to show the most up-to-date
-data available. A few final notes:
-
--   We might reasonably want to lag our script by a week or so, for
-    security/privacy reasons.
--   As far as I can tell, the location readings are recorded in a [&lt;span class="caps"&gt;POSIX&lt;/span&gt;
+data available. A few final&amp;nbsp;notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We might reasonably want to lag our script by a week or so, for
+    security/privacy&amp;nbsp;reasons.&lt;/li&gt;
+&lt;li&gt;As far as I can tell, the location readings are recorded in a [&lt;span class="caps"&gt;POSIX&lt;/span&gt;
     time][] and have not been adjusted by time zone, so they are still
-    in the [&lt;span class="caps"&gt;UTC&lt;/span&gt;][] time zone. This means that they are 8 hours off from
+    in the &lt;a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"&gt;&lt;span class="caps"&gt;UTC&lt;/span&gt;&lt;/a&gt; time zone. This means that they are 8 hours off from
     the actual time in California, where I usually am. This doesn&amp;#8217;t
     bother me too much at the moment because the visualization is still
     relatively low resolution in the time domain anyways. At some point
     I might implement the relevant transformation, but this will raise
-    its own issues because I won&amp;#8217;t *always* be in California, not to
-    mention all that Daylight Savings nonsense.
--   [Click here for an addendum to this post that will take you through
-    how to schedule the &lt;span class="caps"&gt;EC2&lt;/span&gt; instance and avoid having it run 24/7][]
-
-  [AutoGrid]: http://auto-grid.com
-  [Torque]: https://github.com/cartodb/torque
-  [spencerboucher.com/map]: http://www.spencerboucher.com/map
-  [OpenPaths]: http://openpaths.cc
-  [the R&amp;D department at The New York Times]: http://nytlabs.com/
-  [claim]: https://openpaths.cc/&lt;span class="caps"&gt;FAQ&lt;/span&gt;
-  [research programs]: https://openpaths.cc/projects
-  [Quantified Self]: http://quantifiedself.com/about/
-  [the OpenPaths &lt;span class="caps"&gt;API&lt;/span&gt; documentation]: https://openpaths.cc/api
-  [CartoDB&amp;#8217;s &lt;span class="caps"&gt;SQL&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; documentation]: http://developers.cartodb.com/documentation/sql-api.html
-  [python module]: https://github.com/vizzuality/cartodb-python
-  [PostGIS command]: http://postgis.org/docs/ST_SetSRID.html
-  [LaughingSquid]: https://laughingsquid.us/
-  [Python Standard Library]: http://docs.python.org/2/library/
-  [&amp;#8220;micro&amp;#8221; &lt;span class="caps"&gt;EC2&lt;/span&gt; instance]: http://aws.amazon.com/
-  [&lt;span class="caps"&gt;POSIX&lt;/span&gt; time]: http://en.wikipedia.org/wiki/Unix_time
-  [&lt;span class="caps"&gt;UTC&lt;/span&gt;]: http://en.wikipedia.org/wiki/Coordinated_Universal_Time
-  [Click here for an addendum to this post that will take you through
+    its own issues because I won&amp;#8217;t &lt;em&gt;always&lt;/em&gt; be in California, not to
+    mention all that Daylight Savings&amp;nbsp;nonsense.&lt;/li&gt;
+&lt;li&gt;[Click here for an addendum to this post that will take you through
+    how to schedule the &lt;span class="caps"&gt;EC2&lt;/span&gt; instance and avoid having it run&amp;nbsp;24/7][]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[Click here for an addendum to this post that will take you through
   how to schedule the &lt;span class="caps"&gt;EC2&lt;/span&gt; instance and avoid having it run 24/7]: http://www.spencerboucher.com/ec2-apis/
-    &amp;#8220;Scheduling tasks in the cloud with &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;APIs&amp;#8221;</summary><category term="api"></category><category term="aws"></category><category term="cartoDB"></category><category term="cartography"></category><category term="cron"></category><category term="ec2"></category><category term="map"></category><category term="quantifiedSelf"></category></entry><entry><title>Luke attempts a novel analysis in SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-attempts-a-novel-analysis-in-sas.html" rel="alternate"></link><updated>2014-01-06T22:17:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-06:luke-skywalker-attempts-a-novel-analysis-in-sas.html</id><summary type="html"></summary><category term="SAS"></category></entry><entry><title>Stratified sampling in R</title><link href="http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html" rel="alternate"></link><updated>2013-12-12T23:25:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-12:stratified-sampling-in-r.html</id><summary type="html">&lt;p&gt;[dropcap]I[/dropcap] was surprised to find that R doesn’t have a base
+    &amp;#8220;Scheduling tasks in the cloud with &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;APIs&amp;#8221;&lt;/p&gt;</summary><category term="api"></category><category term="aws"></category><category term="cartoDB"></category><category term="cartography"></category><category term="cron"></category><category term="ec2"></category><category term="map"></category><category term="quantifiedSelf"></category></entry><entry><title>Luke attempts a novel analysis in SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-attempts-a-novel-analysis-in-sas.html" rel="alternate"></link><updated>2014-01-06T22:17:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-06:luke-skywalker-attempts-a-novel-analysis-in-sas.html</id><summary type="html"></summary><category term="SAS"></category></entry><entry><title>Stratified sampling in R</title><link href="http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html" rel="alternate"></link><updated>2013-12-12T23:25:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-12:stratified-sampling-in-r.html</id><summary type="html">&lt;p&gt;I was surprised to find that R doesn’t have a base
 function for stratified random sampling. There’s not even a well known
 package I could find that does this in a straight forward way. So heres
 my&amp;nbsp;own.&lt;/p&gt;
@@ -532,7 +530,7 @@ The .by argument is formulated the same way it is for any other ddply
 call.[hr]
 
 &lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;
-&lt;/p&gt;</summary></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;[dropcap]O[/dropcap]ur program hosted its own Kaggle-style competition
+&lt;/p&gt;</summary></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
 this quarter, featuring a “mystery” dataset with a binary target
 variable. I was impressed by the reveal.js javascript library, so I put
 together our final slides using it, both because its pretty, and as a
@@ -543,7 +541,7 @@ Team LoanShark
 here:[hr]&lt;iframe src="http://justmytwospence.github.io/LoanSharks/slides/#/" width="100%" height="500"&gt;&lt;/p&gt;
 &lt;p&gt;Your browser doesn&amp;#8217;t support iframes. Do yourself a favor and go
 download a &lt;em&gt;real&lt;/em&gt;&amp;nbsp;browser&lt;/p&gt;
-&lt;/iframe&gt;</summary><category term="javascript"></category><category term="reveal.js"></category></entry><entry><title>Map-time at Stamen</title><link href="http://justmytwospence.github.com/pelican/map-time-at-stamen.html" rel="alternate"></link><updated>2013-12-01T02:37:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-01:map-time-at-stamen.html</id><summary type="html">&lt;p&gt;[dropcap]L[/dropcap]ast week, a classmate and I took a break from
+&lt;/iframe&gt;</summary><category term="javascript"></category><category term="reveal.js"></category></entry><entry><title>Map-time at Stamen</title><link href="http://justmytwospence.github.com/pelican/map-time-at-stamen.html" rel="alternate"></link><updated>2013-12-01T02:37:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-01:map-time-at-stamen.html</id><summary type="html">&lt;p&gt;Last week, a classmate and I took a break from
 coursework to attend one of the many great Meetup events that San
 Francisco has to offer for data science practitioners. I’ve been pushing
 myself to attend at least one data-centric Meetup every week, because
@@ -601,7 +599,7 @@ intimately familiar with the practical ins and outs of digital&amp;nbsp;cartogra
 &lt;p&gt;Digital mapping is rapidly capturing my interest because of the
 beautifully functional things one can do with it, and it seems like an
 amazing time to be learning it, because the ecosystem is beginning to
-really flourish. Looking forward to more&amp;nbsp;events!&lt;/p&gt;</summary><category term="cartography"></category><category term="maps"></category></entry><entry><title>StepLively update</title><link href="http://justmytwospence.github.com/pelican/steplively-update.html" rel="alternate"></link><updated>2013-11-03T21:59:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-11-03:steplively-update.html</id><summary type="html">&lt;p&gt;This week I got an email from RStudio letting me know that after a week
+really flourish. Looking forward to more&amp;nbsp;events!&lt;/p&gt;</summary><category term="cartography"></category><category term="maps"></category></entry><entry><title>StepLively update</title><link href="http://justmytwospence.github.com/pelican/steplively-update.html" rel="alternate"></link><updated>2013-11-03T21:59:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-11-03:steplively-update.html</id><summary type="html">&lt;p&gt;This week I got an email from RStudio letting me know that after a week
 or two of waiting, I’ve been assigned &lt;span class="caps"&gt;2GB&lt;/span&gt; of space on their servers for
 hosting Shiny apps. So now you can click on the above link to see the
 live version of my stepwise regression app that I posted last week. In
@@ -611,7 +609,7 @@ feature&amp;nbsp;yet.&lt;/p&gt;
 &lt;p&gt;Update: I’ve recently moved to Rstudio’s next-gen hosting platform:
 shinyapps.io. This was necessary because I was having issues installing
 low-level packages like Rcpp onto their Spark server. This new platform
-is much more flexible in this regard. I’ve updated links&amp;nbsp;accordingly.&lt;/p&gt;</summary><category term="R"></category><category term="shiny"></category><category term="stepwise"></category></entry><entry><title>Of protons and men</title><link href="http://justmytwospence.github.com/pelican/of-protons-and-men.html" rel="alternate"></link><updated>2013-10-26T16:18:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-26:of-protons-and-men.html</id><summary type="html"></summary></entry><entry><title>Peeking into a black box</title><link href="http://justmytwospence.github.com/pelican/peeking-into-a-black-box.html" rel="alternate"></link><updated>2013-10-22T23:59:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-22:peeking-into-a-black-box.html</id><summary type="html">&lt;p&gt;[dropcap]I[/dropcap]’ve been meaning to try my hand at Shiny for a while
+is much more flexible in this regard. I’ve updated links&amp;nbsp;accordingly.&lt;/p&gt;</summary><category term="R"></category><category term="Shiny"></category><category term="stepwise"></category></entry><entry><title>Peeking into a black box</title><link href="http://justmytwospence.github.com/pelican/peeking-into-a-black-box.html" rel="alternate"></link><updated>2013-10-22T23:59:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-22:peeking-into-a-black-box.html</id><summary type="html">&lt;p&gt;I’ve been meaning to try my hand at Shiny for a while
 now, and I’ve finally gotten around to it. Shiny is an R package from
 the people who brought you RStudio that allows you to take R code and
 embed it within an interactive &lt;span class="caps"&gt;HTML&lt;/span&gt; &lt;span class="caps"&gt;UI&lt;/span&gt; that uses Bootstrap styling. You
@@ -653,15 +651,11 @@ discovering, can be quite&amp;nbsp;addicting.&lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;EDIT&lt;/span&gt;: The app is now live! See it
 at &lt;a href="http://justmytwospence.shinyapps.io/StepLively/"&gt;http://justmytwospence.shinyapps.io/StepLively/&lt;/a&gt;[&lt;br /&gt;&amp;nbsp;][]&lt;/p&gt;
 &lt;p&gt;[&lt;br /&gt;
- ]:&amp;nbsp;http://steplively.spencerboucher.com&lt;/p&gt;</summary><category term="shiny"></category><category term="stepwise"></category></entry><entry><title>Switching R versions on-the-fly</title><link href="http://justmytwospence.github.com/pelican/switching-r-versions-on-the-fly.html" rel="alternate"></link><updated>2013-10-22T22:01:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-22:switching-r-versions-on-the-fly.html</id><summary type="html">&lt;p&gt;[dropcap]I[/dropcap]f you need to switch back to an older version of R
+ ]:&amp;nbsp;http://steplively.spencerboucher.com&lt;/p&gt;</summary><category term="R"></category><category term="Shiny"></category><category term="stepwise"></category></entry><entry><title>Switching R versions on-the-fly</title><link href="http://justmytwospence.github.com/pelican/switching-r-versions-on-the-fly.html" rel="alternate"></link><updated>2013-10-22T22:01:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-22:switching-r-versions-on-the-fly.html</id><summary type="html">&lt;p&gt;If you need to switch back to an older version of R
 to use a particular package, it doesn’t get easier than downloading the
 &lt;a href="http://r.research.att.com/"&gt;RSwitcher utility from &lt;span class="caps"&gt;AT&lt;/span&gt;&amp;amp;T&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I use homebrew to keep my main installation up-to-date, and then
-switching back to 2.7 when I need a certain package is as easy as one&amp;nbsp;click.&lt;/p&gt;</summary></entry><entry><title>Pretty print CSV files in the terminal</title><link href="http://justmytwospence.github.com/pelican/pretty-print-csv-files-in-the-terminal.html" rel="alternate"></link><updated>2013-08-26T22:01:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-26:pretty-print-csv-files-in-the-terminal.html</id><summary type="html">&lt;p&gt;[dropcap]D[/dropcap]isplay .csv files right in your terminal with nice&amp;nbsp;formatting.&lt;/p&gt;
-&lt;p&gt;[hr]&lt;/p&gt;
-&lt;p&gt;
-&lt;script src="https://gist.github.com/justmytwospence/6331548.js"&gt;&lt;/script&gt;
-&lt;/p&gt;</summary><category term="terminal"></category></entry><entry><title>Holo color palette</title><link href="http://justmytwospence.github.com/pelican/holo-color-palette.html" rel="alternate"></link><updated>2013-08-20T06:19:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-20:holo-color-palette.html</id><summary type="html">&lt;p&gt;[dropcap]D[/dropcap]espite being slightly colorblind, I’m one of those
+switching back to 2.7 when I need a certain package is as easy as one&amp;nbsp;click.&lt;/p&gt;</summary><category term="R"></category></entry><entry><title>Holo color palette</title><link href="http://justmytwospence.github.com/pelican/holo-color-palette.html" rel="alternate"></link><updated>2013-08-20T06:19:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-20:holo-color-palette.html</id><summary type="html">&lt;p&gt;[dropcap]D[/dropcap]espite being slightly colorblind, I’m one of those
 people who is bizarrely anal-retentive when it comes to color-schemes in
 the software that I use. I use custom &lt;span class="caps"&gt;CSS&lt;/span&gt; extensions in Chrome to make
 the color schemes of websites like Wikipedia, Youtube, etc a bit more
@@ -688,7 +682,7 @@ a few&amp;nbsp;minutes.&lt;/p&gt;
 check it out. It is a magical little utility that warms the color of
 your screen automatically after sunset and can &lt;em&gt;really&lt;/em&gt; save your eyes
 and make getting to sleep a little bit easier if you are working in
-front of your screen late at&amp;nbsp;night.&lt;/p&gt;</summary><category term="color"></category><category term="holo"></category><category term="solarized"></category></entry><entry><title>Twitter Reaction to Events Often at Odds with Overall Public Opinion</title><link href="http://justmytwospence.github.com/pelican/twitter-reaction-to-events-often-at-odds-with-overall.html" rel="alternate"></link><updated>2013-08-06T00:09:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-06:twitter-reaction-to-events-often-at-odds-with-overall.html</id><summary type="html">&lt;p&gt;[Twitter Reaction to Events Often at Odds with Overall Public&amp;nbsp;Opinion][]&lt;/p&gt;
+front of your screen late at&amp;nbsp;night.&lt;/p&gt;</summary><category term="color"></category><category term="holo"></category><category term="solarized"></category></entry><entry><title>Twitter Reaction to Events Often at Odds with Overall Public Opinion</title><link href="http://justmytwospence.github.com/pelican/twitter-reaction-to-events-often-at-odds-with-overall.html" rel="alternate"></link><updated>2013-08-06T00:09:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-06:twitter-reaction-to-events-often-at-odds-with-overall.html</id><summary type="html">&lt;p&gt;[Twitter Reaction to Events Often at Odds with Overall Public&amp;nbsp;Opinion][]&lt;/p&gt;
 &lt;div class="link_description"&gt;
 This is a long-standing beef that I have always had with any
 Twitter-sentiment analysis. A huge chunk of people tweeting are just
@@ -701,7 +695,7 @@ a lot of people care a lot more about Twitter sentiment analyses.
 &lt;/div&gt;
 
 &lt;p&gt;[Twitter Reaction to Events Often at Odds with Overall Public
-  Opinion]:&amp;nbsp;http://www.pewresearch.org/2013/03/04/twitter-reaction-to-events-often-at-odds-with-overall-public-opinion/&lt;/p&gt;</summary></entry><entry><title>On being a statistician</title><link href="http://justmytwospence.github.com/pelican/the-best-thing-about-being-a-statistician-is-that.html" rel="alternate"></link><updated>2013-07-20T20:42:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:the-best-thing-about-being-a-statistician-is-that.html</id><summary type="html">&lt;p&gt;More evidence that data scientists are just a modernized version of&amp;nbsp;statisticians.&lt;/p&gt;</summary></entry><entry><title>On being approximate</title><link href="http://justmytwospence.github.com/pelican/on-being-approximate-an-inadvertent-data-poem.html" rel="alternate"></link><updated>2013-07-20T05:39:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:on-being-approximate-an-inadvertent-data-poem.html</id><summary type="html">&lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>YouTube test</title><link href="http://justmytwospence.github.com/pelican/youtube-test-post.html" rel="alternate"></link><updated>2013-03-22T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-22:youtube-test-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog&amp;nbsp;post.&lt;/p&gt;
+  Opinion]:&amp;nbsp;http://www.pewresearch.org/2013/03/04/twitter-reaction-to-events-often-at-odds-with-overall-public-opinion/&lt;/p&gt;</summary></entry><entry><title>On being approximate</title><link href="http://justmytwospence.github.com/pelican/on-being-approximate-an-inadvertent-data-poem.html" rel="alternate"></link><updated>2013-07-20T05:39:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:on-being-approximate-an-inadvertent-data-poem.html</id><summary type="html">&lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>YouTube test</title><link href="http://justmytwospence.github.com/pelican/youtube-test-post.html" rel="alternate"></link><updated>2013-03-22T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-22:youtube-test-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog&amp;nbsp;post.&lt;/p&gt;
 &lt;p&gt;&lt;iframe width='640' height='390' src='http://www.youtube.com/embed/8vw8t4O9JQM' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;p&gt;Testing&amp;#8230;&lt;/p&gt;
 &lt;iframe width="560" height="315" src="//www.youtube.com/embed/8vw8t4O9JQM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
@@ -10086,7 +10080,7 @@ awAAAAAAAACA1yBpDQAAAAAAAADwGiStAQAAAAAAAABe4/8B97OxzC6zAIQAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;It appears that &lt;strong&gt;the optimal commission rate is independent of the employee&amp;#8217;s coefficient of laziness&lt;/strong&gt;, even though the actual profit the firm makes most certainly is &lt;em&gt;not&lt;/em&gt;. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&amp;#8217;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&amp;nbsp;same.&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>On disciplines</title><link href="http://justmytwospence.github.com/pelican/the-world-is-much-more-interesting-than-any-one.html" rel="alternate"></link><updated>2013-03-03T18:56:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-03:the-world-is-much-more-interesting-than-any-one.html</id><summary type="html"></summary></entry><entry><title>On understanding</title><link href="http://justmytwospence.github.com/pelican/you-do-not-really-understand-something-unless-you.html" rel="alternate"></link><updated>2013-02-14T19:05:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-02-14:you-do-not-really-understand-something-unless-you.html</id><summary type="html"></summary></entry><entry><title>On knowing</title><link href="http://justmytwospence.github.com/pelican/somewhere-something-incredible-is-waiting-to-be.html" rel="alternate"></link><updated>2012-12-07T06:50:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2012-12-07:somewhere-something-incredible-is-waiting-to-be.html</id><summary type="html"></summary></entry><entry><title>On truth</title><link href="http://justmytwospence.github.com/pelican/the-pursuit-of-truth-properly-considered.html" rel="alternate"></link><updated>2012-09-25T05:46:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2012-09-25:the-pursuit-of-truth-properly-considered.html</id><summary type="html"></summary></entry><entry><title>An overlooked super-power</title><link href="http://justmytwospence.github.com/pelican/sound.html" rel="alternate"></link><updated>2012-09-06T01:56:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2012-09-06:sound.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://media.tumblr.com/tumblr_m9wn34HSk21r0kwho.jpg" /&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>An overlooked super-power</title><link href="http://justmytwospence.github.com/pelican/sound.html" rel="alternate"></link><updated>2012-09-06T01:56:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2012-09-06:sound.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://media.tumblr.com/tumblr_m9wn34HSk21r0kwho.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Have you ever thought of what a ridiculous superpower the ability to
 speak is? If I want somebody else to know something, I don’t have to
 wait until that idea pops into their head (the likelihood of which
@@ -10184,7 +10178,7 @@ why the adoption of biometrics has been so&amp;nbsp;slow.&lt;/p&gt;
 designed for an ancient world that we no longer live&amp;nbsp;in…&lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;EDIT&lt;/span&gt;: I posted this exact question to Quora, and received a &lt;span class="caps"&gt;TON&lt;/span&gt; of
 profound answers. &lt;a href="http://www.quora.com/What-are-some-systems-we-live-with-today-that-were-designed-for-a-world-of-the-past"&gt;Check it out here!&lt;/a&gt; (33 answers and counting! Plus
-it got&amp;nbsp;“best-sourced”).&lt;/p&gt;</summary><category term="biometrics"></category><category term="passwords"></category><category term="technology"></category></entry><entry><title>The new face of education</title><link href="http://justmytwospence.github.com/pelican/the-new-face-of-education.html" rel="alternate"></link><updated>2011-11-19T21:45:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2011-11-19:the-new-face-of-education.html</id><summary type="html">&lt;p&gt;We are on the brink of one of the most radical paradigm shifts to affect
+it got&amp;nbsp;“best-sourced”).&lt;/p&gt;</summary><category term="biometrics"></category><category term="passwords"></category><category term="technology"></category></entry><entry><title>The new face of education</title><link href="http://justmytwospence.github.com/pelican/the-new-face-of-education.html" rel="alternate"></link><updated>2011-11-19T21:45:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2011-11-19:the-new-face-of-education.html</id><summary type="html">&lt;p&gt;We are on the brink of one of the most radical paradigm shifts to affect
 human society in millennia. &lt;span class="caps"&gt;OK&lt;/span&gt;, maybe that that sounds obvious to a lot
 of people what with the explosion of innovation that the internet and
 other new technologies over the past decade or two. But I’m talking
@@ -10361,7 +10355,7 @@ high?” , “would tranquilizers work on zombies?” , and from a tentative
 girl at the end of class “wait… zombies are&amp;nbsp;real?”&lt;/p&gt;
 &lt;p&gt;Overall it was a great success, we got out a lot of fliers, and lots of
 kids/parents sounded very interested in our research at Stanford. I’m
-hoping to get more involved with &lt;span class="caps"&gt;SPLASH&lt;/span&gt; at Stanford next&amp;nbsp;semester!&lt;/p&gt;</summary><category term="brain"></category><category term="education"></category><category term="neuroscience"></category><category term="splash"></category><category term="zombies"></category></entry><entry><title>Where science meets sci-fi</title><link href="http://justmytwospence.github.com/pelican/where-science-meets-sci-fi.html" rel="alternate"></link><updated>2011-10-18T04:43:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2011-10-18:where-science-meets-sci-fi.html</id><summary type="html">&lt;p&gt;Every now and then something comes along that just makes your jaw drop
+hoping to get more involved with &lt;span class="caps"&gt;SPLASH&lt;/span&gt; at Stanford next&amp;nbsp;semester!&lt;/p&gt;</summary><category term="brain"></category><category term="education"></category><category term="neuroscience"></category><category term="splash"></category><category term="zombies"></category></entry><entry><title>Where science meets sci-fi</title><link href="http://justmytwospence.github.com/pelican/where-science-meets-sci-fi.html" rel="alternate"></link><updated>2011-10-18T04:43:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2011-10-18:where-science-meets-sci-fi.html</id><summary type="html">&lt;p&gt;Every now and then something comes along that just makes your jaw drop
 with its sheer brilliance and monumental implications. When that happens
 in science, it usually feels like you are dropping into a science
 fiction story, and thats exactly the feeling I got when I listened to
@@ -10432,7 +10426,7 @@ definitely something I’d like to look more into- I could see myself
 going into graduate school to work on&amp;nbsp;this.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="http://media.tumblr.com/tumblr_lt8yqpZwVj1r0kwho.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;[nstantly turn the normally timid creatures into much bolder versions
-  of themselves]:&amp;nbsp;http://vimeo.com/12300587&lt;/p&gt;</summary><category term="Deisseroth"></category><category term="neuroscience"></category><category term="optogenetics"></category></entry><entry><title>Science: the art and arborization of knowledge</title><link href="http://justmytwospence.github.com/pelican/science-the-art-and-arborization-of-knowledge.html" rel="alternate"></link><updated>2011-10-06T06:27:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2011-10-06:science-the-art-and-arborization-of-knowledge.html</id><summary type="html">&lt;p&gt;I often find it odd that people tend to think of “science” as being
+  of themselves]:&amp;nbsp;http://vimeo.com/12300587&lt;/p&gt;</summary><category term="neuroscience"></category><category term="optogenetics"></category></entry><entry><title>Science: the art and arborization of knowledge</title><link href="http://justmytwospence.github.com/pelican/science-the-art-and-arborization-of-knowledge.html" rel="alternate"></link><updated>2011-10-06T06:27:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2011-10-06:science-the-art-and-arborization-of-knowledge.html</id><summary type="html">&lt;p&gt;I often find it odd that people tend to think of “science” as being
 somehow classified exclusively from “humanities.” Somehow things like
 literature, history, and philosophy become the study of the human
 condition while science becomes simply technobabble ruled by equations
@@ -10565,7 +10559,7 @@ user of this parallel-distribution crowdsourcing- with the web platform
 as a black box, and 3) a slightly more detailed picture of what would be
 happening with the&amp;nbsp;data.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="http://media.tumblr.com/tumblr_lsgyqmXy9c1r0kwho.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;Xmind can be downloaded for free at &lt;a href="http://xmind.net"&gt;xmind.net&lt;/a&gt;&lt;/p&gt;</summary><category term="brain"></category><category term="cloud computing"></category><category term="crowdsourcing"></category><category term="foldit"></category><category term="Freesurfer"></category><category term="gamification"></category><category term="neuroimaging"></category><category term="neuroscience"></category><category term="science"></category></entry><entry><title>Thielfoundation.org</title><link href="http://justmytwospence.github.com/pelican/thielfoundation-org.html" rel="alternate"></link><updated>2011-09-26T03:58:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2011-09-26:thielfoundation-org.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.thielfoundation.org/index.php?option=com_content&amp;amp;id=14:the-thiel-fellowship-20-under-20&amp;amp;catid=1&amp;amp;Itemid=16"&gt;Thielfoundation.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Xmind can be downloaded for free at &lt;a href="http://xmind.net"&gt;xmind.net&lt;/a&gt;&lt;/p&gt;</summary><category term="brain"></category><category term="cloud computing"></category><category term="crowdsourcing"></category><category term="foldit"></category><category term="Freesurfer"></category><category term="gamification"></category><category term="neuroimaging"></category><category term="neuroscience"></category><category term="science"></category></entry><entry><title>Thielfoundation.org</title><link href="http://justmytwospence.github.com/pelican/thielfoundation-org.html" rel="alternate"></link><updated>2011-09-26T03:58:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2011-09-26:thielfoundation-org.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.thielfoundation.org/index.php?option=com_content&amp;amp;id=14:the-thiel-fellowship-20-under-20&amp;amp;catid=1&amp;amp;Itemid=16"&gt;Thielfoundation.org&lt;/a&gt;&lt;/p&gt;
 &lt;div class="link_description"&gt;
 About a week ago, my house-mate invited me to has to have been one of
 the most interesting social events I’ve ever lucked into attending. The

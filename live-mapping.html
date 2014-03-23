@@ -15,9 +15,9 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Live mapping"/>
             <meta property="og:url" content="http://justmytwospence.github.com/pelican/live-mapping.html"/>
-            <meta property="og:description" content="[dropcap]I[/dropcap]’ve been wanting to do some more mapping stuff since my first encounter with Leaflet a month or two ago while I was working on a project for [AutoGrid][]. I had my eye on CartoDB’s time series library, [Torque][], because I had really wanted to do ..."/>
+            <meta property="og:description" content="I’ve been wanting to do some more mapping stuff since my first encounter with Leaflet a month or two ago while I was working on a project for AutoGrid. I had my eye on CartoDB’s time series library, Torque, because I had really wanted to do some time-series ..."/>
             <meta property="article:published_time" content="2014-01-08" />
-            <meta property="article:section" content="*nix, Design, Python, Web" />
+            <meta property="article:section" content="Web" />
             <meta property="article:tag" content="api" />
             <meta property="article:tag" content="aws" />
             <meta property="article:tag" content="cartoDB" />
@@ -372,12 +372,6 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<!-- R syntax highlighter -->
-<script type="text/javascript">
-var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
-hljs.initHighlightingOnLoad();
-</script>
-
 
 </head>
 <body>
@@ -406,19 +400,7 @@ justmytwospence            </a>
                             <a href="http://justmytwospence.github.com/pelican/category/design.html">Design</a>
                         </li>
                         <li >
-                            <a href="http://justmytwospence.github.com/pelican/category/design-web.html">Design, web</a>
-                        </li>
-                        <li >
                             <a href="http://justmytwospence.github.com/pelican/category/misc.html">Misc</a>
-                        </li>
-                        <li >
-                            <a href="http://justmytwospence.github.com/pelican/category/nix.html">*nix</a>
-                        </li>
-                        <li class="active">
-                            <a href="http://justmytwospence.github.com/pelican/category/nix-design-python-web.html">*nix, design, python, web</a>
-                        </li>
-                        <li >
-                            <a href="http://justmytwospence.github.com/pelican/category/nix-web.html">*nix, web</a>
                         </li>
                         <li >
                             <a href="http://justmytwospence.github.com/pelican/category/quotes.html">Quotes</a>
@@ -429,10 +411,7 @@ justmytwospence            </a>
                         <li >
                             <a href="http://justmytwospence.github.com/pelican/category/test.html">Test</a>
                         </li>
-                        <li >
-                            <a href="http://justmytwospence.github.com/pelican/category/uncategorized.html">Uncategorized</a>
-                        </li>
-                        <li >
+                        <li class="active">
                             <a href="http://justmytwospence.github.com/pelican/category/web.html">Web</a>
                         </li>
             </ul>
@@ -464,7 +443,7 @@ justmytwospence            </a>
     </span>
 
     <span class="label label-default">Category</span>
-    <a href="http://justmytwospence.github.com/pelican/category/nix-design-python-web.html">*nix, Design, Python, Web</a>
+    <a href="http://justmytwospence.github.com/pelican/category/web.html">Web</a>
 
 
 <span class="label label-default">Tags</span>
@@ -486,31 +465,30 @@ justmytwospence            </a>
     
 </footer><!-- /.post-info -->            </header>
             <div class="entry-content">
-                <p>[dropcap]I[/dropcap]&#8217;ve been wanting to do some more mapping stuff since
+                <p>I&#8217;ve been wanting to do some more mapping stuff since
 my first encounter with Leaflet a month or two ago while I was working
-on a project for [AutoGrid][]. I had my eye on CartoDB&#8217;s time series
-library, [Torque][], because I had really wanted to do some time-series
+on a project for <a href="http://auto-grid.com">AutoGrid</a>. I had my eye on CartoDB&#8217;s time series
+library, <a href="https://github.com/cartodb/torque">Torque</a>, because I had really wanted to do some time-series
 visualization, but time constraints and privacy issues with uploading
 data to CartoDB&#8217;s servers prevented me from really exploring. Since I
 had a few days of free time over winter break, I played around with it a
-bit and came up with this: [spencerboucher.com/map][]. How&#8217;d I do&nbsp;it?</p>
+bit and came up with this: <a href="http://www.spencerboucher.com/map">spencerboucher.com/map</a>. How&#8217;d I do&nbsp;it?</p>
 <p>First I needed some geographic data, so I turned to a source of data
-I&#8217;ve been collected for almost a year - my own location. [OpenPaths][]
+I&#8217;ve been collected for almost a year - my own location. <a href="http://openpaths.cc">OpenPaths</a>
 is a mobile app that records your location at regular time intervals. I
 opted for every 30 minutes at first, then upped it to every 15 minutes
 when I discovered that the effect on battery life wasn&#8217;t nearly as bad
-as I expected it to be. OpenPaths is a project of [the R&amp;D department at
-The New York Times][] and they [claim][] that you are the only one with
+as I expected it to be. OpenPaths is a project of <a href="http://nytlabs.com/">the R&amp;D department at
+The New York Times</a> and they <a href="https://openpaths.cc/FAQ">claim</a> that you are the only one with
 access to the collected data. Interestingly, you can grant various
-[research programs][] access to your data at your own discretion. Your
+<a href="https://openpaths.cc/projects">research programs</a> access to your data at your own discretion. Your
 data is conveniently downloadable as a csv, json, or kml file, so I
 easily pulled my dataset of \~3,000 time points since December 2012.
 Unfortunately, I made the switch from iPhone to Android around April
 (well, that part is fortunate), and forgot to re-download the app, so I
 only really have data from the around the first three months and last
 two months of&nbsp;2013.</p>
-<p>
-Turns out, making impressive maps with CartoDB is almost embarrassingly
+<p>Turns out, making impressive maps with CartoDB is almost embarrassingly
 easy. Their <span class="caps">GUI</span> is pretty intuitive and running queries on their
 postgreSQL database is simple. Even time series stuff built on the
 Torque backend is really just point and click. I decided that the best
@@ -518,157 +496,156 @@ way to visualize this data was with an aggregated hexbin heatmap of all
 my past locations, overlaid with a point-by-point replay with a
 time-slider. From there, it was just a one-line <span class="caps">API</span> call to host the map
 on my website (line 30 highlighted below), which is significantly easier
-than the legwork that went into crafting a Leaflet map &#8220;manually.&#8221;
+than the legwork that went into crafting a Leaflet map&nbsp;&#8220;manually.&#8221;</p>
+<div class="highlight"><pre><span class="p">{.</span><span class="n">lang</span><span class="o">:</span><span class="n">xhtml</span> <span class="p">.</span><span class="n">mark</span><span class="o">:</span><span class="mi">30</span> <span class="p">.</span><span class="n">decode</span><span class="o">:</span><span class="nb">true</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;Map source code&quot;</span> <span class="n">data</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="s">&quot;map/index.html&quot;</span><span class="p">}</span>
+</pre></div>
 
-wzxhzdk:0
 
-
-[hr][dropcap]T[/dropcap]his is pretty awesome, but in light of how easy
+<p>This is pretty awesome, but in light of how easy
 it all was, I was almost disappointed. Can we take it one step further?
-Let&#8217;s put on our [Quantified Self][] hats and set about to make this map
-*live*. There&#8217;s three components to making this happen, so we&#8217;ll step
+Let&#8217;s put on our <a href="http://quantifiedself.com/about/">Quantified Self</a> hats and set about to make this map
+<em>live</em>. There&#8217;s three components to making this happen, so we&#8217;ll step
 through them one at a time. First we need to access the most recent data
 from OpenPaths (there&#8217;s an <span class="caps">API</span> for that!), and then we need to insert
 that data into CartoDB&#8217;s database (guess what, there&#8217;s an <span class="caps">API</span> for that
 too). Last but not least, we need to schedule that data transplant to
-occur on a regular basis. The Unix utility `cron` is the canonical tool
+occur on a regular basis. The Unix utility <code>cron</code> is the canonical tool
 for this type of thing, so this seemed like a good time to learn how to
-use it.
-
-Python has a reputation for being a great &#8220;glue&#8221; language, so that&#8217;s
+use&nbsp;it.</p>
+<p>Python has a reputation for being a great &#8220;glue&#8221; language, so that&#8217;s
 what we&#8217;ll use to build this
-script.[hr][dropcap]1[/dropcap]Programmatically accessing your data from
+script.
+<br>
+Programmatically accessing your data from
 OpenPaths is super simple. This piece of our script is pulled more or
-less verbatim from [the OpenPaths <span class="caps">API</span> documentation][]. Line 21
+less verbatim from <a href="https://openpaths.cc/api">the OpenPaths <span class="caps">API</span> documentation</a>. Line 21
 (highlighted below) is key - this is where we specify which data you
 want to pull for injection into the CartoDB database. Here we will grab
 the last 24 hours of data (\~96 readings, if you&#8217;re collecting every 15
 minutes like me), getting the results in a nice <span class="caps">JSON</span>-formatted variable
-named `data`.
-
-~~~~ {.lang:python .mark:21 .decode:true title=&#8221;OpenPaths <span class="caps">API</span>&#8221;}
-import oauth2, time, urllib, urllib2, json
-
-<span class="caps">ACCESS</span> = &#8216;redacted&#8217;
-<span class="caps">SECRET</span> = &#8216;redacted&#8217;
-<span class="caps">URL</span> = &#8216;https://openpaths.cc/api/1&#8217;
-
-def build_auth_header(url, method):
-    params = {                                            
-        &#8216;oauth_version&#8217;: &#8220;1.0&#8221;,
-        &#8216;oauth_nonce&#8217;: oauth2.generate_nonce(),
-        &#8216;oauth_timestamp&#8217;: int(time.time()),
-    }
-    consumer = oauth2.Consumer(key=<span class="caps">ACCESS</span>, secret=<span class="caps">SECRET</span>)
-    params[&#8216;oauth_consumer_key&#8217;] = consumer.key 
-    request = oauth2.Request(method=method, url=url, parameters=params)    
-    signature_method = oauth2.SignatureMethod_HMAC_SHA1()
-    request.sign_request(signature_method, consumer, None)
-    return request.to_header()
-
-now = time.time()
-params = {&#8216;start_time&#8217;: now - 24*60*60, &#8216;end_time&#8217;: now} # get the last 24 hours
-query = &#8220;%s?%s&#8221; % (<span class="caps">URL</span>, urllib.urlencode(params))
-#print(query)
-try:
-    request = urllib2.Request(query)
-    request.headers = build_auth_header(<span class="caps">URL</span>, &#8216;<span class="caps">GET</span>&#8217;)
-    connection = urllib2.urlopen(request)
-    data = json.loads(&#8221;.join(connection.readlines()))
-    print(json.dumps(data, indent=4))
-except urllib2.HTTPError as e:
-    print(e.read())
-
-wzxhzdk:1
-
-
-A few notes:
-
--   It would certainly be faster to insert all of the new data into the
-    database using a single `<span class="caps">INSERT</span>` statement, but that would require
+named <code>data</code>.</p>
+<p>:::python
+  import oauth2, time, urllib, urllib2,&nbsp;json</p>
+<p><span class="caps">ACCESS</span> = &#8216;redacted&#8217;
+  <span class="caps">SECRET</span> = &#8216;redacted&#8217;
+  <span class="caps">URL</span> =&nbsp;&#8216;https://openpaths.cc/api/1&#8217;</p>
+<p>def build_auth_header(url, method):
+      params = {                                          <br />
+          &#8216;oauth_version&#8217;: &#8220;1.0&#8221;,
+          &#8216;oauth_nonce&#8217;: oauth2.generate_nonce(),
+          &#8216;oauth_timestamp&#8217;: int(time.time()),
+      }
+      consumer = oauth2.Consumer(key=<span class="caps">ACCESS</span>, secret=<span class="caps">SECRET</span>)
+      params[&#8216;oauth_consumer_key&#8217;] = consumer.key 
+      request = oauth2.Request(method=method, url=url, parameters=params)  <br />
+      signature_method = oauth2.SignatureMethod_HMAC_SHA1()
+      request.sign_request(signature_method, consumer, None)
+      return&nbsp;request.to_header()</p>
+<p>now = time.time()
+  params = {&#8216;start_time&#8217;: now - 24<em>60</em>60, &#8216;end_time&#8217;: now} # get the last 24 hours
+  query = &#8220;%s?%s&#8221; % (<span class="caps">URL</span>, urllib.urlencode(params))
+  #print(query)
+  try:
+      request = urllib2.Request(query)
+      request.headers = build_auth_header(<span class="caps">URL</span>, &#8216;<span class="caps">GET</span>&#8217;)
+      connection = urllib2.urlopen(request)
+      data = json.loads(&#8221;.join(connection.readlines()))
+      print(json.dumps(data, indent=4))
+  except urllib2.HTTPError as e:
+      print(e.read())
+<br>
+Now we need to get our new <code>data</code> variable into
+CartoDB&#8217;s postgreSQL server. <a href="http://developers.cartodb.com/documentation/sql-api.html">CartoDB&#8217;s <span class="caps">SQL</span> <span class="caps">API</span> documentation</a> makes
+this possible, and there&#8217;s even a <a href="https://github.com/vizzuality/cartodb-python">python module</a> that wraps OAuth2 to
+simplify things. Although its still in the early stages of development,
+this module works fine for our current purposes; all we have to do is
+send it a string that holds the <span class="caps">SQL</span> query we want to run. So now we&#8217;ll
+just write a for-loop that successively builds an <code>INSERT</code> query for
+each element in <code>data</code> (lines 18-20 highlighted&nbsp;below).</p>
+<p>:::python
+  from cartodb import CartoDBException,&nbsp;CartoDBAPIKey</p>
+<p>user =  &#8216;spencer.g.boucher@gmail.com&#8217;
+  password =  &#8216;redacted&#8217;
+  cartodb_domain = &#8216;justmytwospence&#8217;
+  API_KEY =&#8217;redacted&#8217;
+  cl = CartoDBAPIKey(API_KEY,&nbsp;cartodb_domain)</p>
+<p>for reading in data:
+      alt     = str(reading[&#8216;alt&#8217;])
+      device  =     reading[&#8216;device&#8217;]
+      lat     = str(reading[&#8216;lat&#8217;])
+      lon     = str(reading[&#8216;lon&#8217;])
+      os      =     reading[&#8216;os&#8217;]
+      t       = str(reading[&#8216;t&#8217;])
+      version =     reading[&#8216;version&#8217;]
+      try:
+          query_string = &#8220;<span class="caps">INSERT</span> <span class="caps">INTO</span> openpaths_justmytwospence (alt, date, device, lat,  lon, os, version, the_geom) &#8221;
+                         &#8220;<span class="caps">VALUES</span> ({0}, abstime({1}), &#8216;{2}&#8217;, {3}, {4}, &#8216;{5}&#8217;, &#8216;{6}&#8217;, ST_ SetSRID(ST_Point({4}, {3}), 4326))&#8221;<br />
+                        .format(alt, t, device, lat, lon, os, version)
+          print cl.sql(query_string)
+      except CartoDBException as e:
+          print (&#8220;some error ocurred&#8221;,&nbsp;e)</p>
+<p>A few&nbsp;notes:</p>
+<ul>
+<li>It would certainly be faster to insert all of the new data into the
+    database using a single <code>INSERT</code> statement, but that would require
     some more tedious text parsing and execution speed isn&#8217;t
     particularly important to us. As it stands, it takes about six
-    seconds to post a day&#8217;s worth of data.
--   One posgreSQL &#8220;gotcha&#8221; had me hung up for quite some time: single
-    quotes parse fine but double quotes do not.
--   `ST_SetSRID` is a [PostGIS command][] that converts a lon/lat pair
-    (in that order - another &#8220;gotcha&#8221;) to the necessary geometry object.
-
-[hr]
-
-[dropcap]3[/dropcap]Last but not least, we need this script to run
+    seconds to post a day&#8217;s worth of&nbsp;data.</li>
+<li>One posgreSQL &#8220;gotcha&#8221; had me hung up for quite some time: single
+    quotes parse fine but double quotes do&nbsp;not.</li>
+<li><code>ST_SetSRID</code> is a <a href="http://postgis.org/docs/ST_SetSRID.html">PostGIS command</a> that converts a lon/lat pair
+    (in that order - another &#8220;gotcha&#8221;) to the necessary geometry&nbsp;object.</li>
+</ul>
+<p><br>
+Last but not least, we need this script to run
 automatically. Because we&#8217;ve written the script to transplant 24 hours
 of data, we&#8217;ll need to run it once a day in order to capture all of the
 data that&#8217;s being generated. I tried to set up my web host,
-[LaughingSquid][], to do this, but unfortunately they don&#8217;t grant shell
+<a href="https://laughingsquid.us/">LaughingSquid</a>, to do this, but unfortunately they don&#8217;t grant shell
 access so we can&#8217;t install all those fancy python modules that we&#8217;ve
 already used. Its totally possible to rewrite the script to use only
-modules from the [Python Standard Library][], but this would turn a
+modules from the <a href="http://docs.python.org/2/library/">Python Standard Library</a>, but this would turn a
 simple task into a tedious one. Manually implementing OAuth in
 particular would be a total pain in the rear, and classes are just about
 to resume after all, so a different solution is in order. Let&#8217;s spin up
-a [&#8220;micro&#8221; <span class="caps">EC2</span> instance][] instead. This gives us free reign to install
+a <a href="http://aws.amazon.com/">&#8220;micro&#8221; <span class="caps">EC2</span> instance</a> instead. This gives us free reign to install
 whatever we need for the low low cost of ¢.02 per hour. This does start
 to add up, but our Master&#8217;s program gives us some pretty substantial
 Amazon Web Services credit that goes mostly unused, so we aren&#8217;t too
 upset :). <span class="caps">UPDATE</span>: A new post provides details about how to schedule
-Amazon <span class="caps">EC2</span> instances - <http://www.spencerboucher.com/ec2-apis/>.
-
-After `pip install`ing everything we need and `scp`ing our python script
+Amazon <span class="caps">EC2</span> instances - <a href="http://www.spencerboucher.com/ec2-apis/">http://www.spencerboucher.com/ec2-apis/</a>.</p>
+<p>After <code>pip install</code>ing everything we need and <code>scp</code>ing our python script
 (let&#8217;s call it update.py) into the home directory of our remote server,
-all we need to do is set up a crontab with the `crontab -e` command and
-add the following line:
-
-
-wzxhzdk:2
-
-
-`@daily` is actually a shortcut for `* * * * *`, where each asterix is a
+all we need to do is set up a crontab with the <code>crontab -e</code> command and
+add the following&nbsp;line:</p>
+<p>:::bash
+  @daily /usr/bin/python&nbsp;~/update.py</p>
+<p><code>@daily</code> is actually a shortcut for <code>* * * * *</code>, where each asterix is a
 placeholder for the (respectively) minute, hour, day of month, month,
 and day of week that the script should executed. This shortcut defaults
-to midnight every day, which is really as good as anything for our
-purposes.
-
-[hr]
-
-Voilà! Now we can step back and relax, knowing that we don&#8217;t have to do
+to midnight every day, which is really as good as anything for our&nbsp;purposes.</p>
+<p><br></p>
+<p>Voilà! Now we can step back and relax, knowing that we don&#8217;t have to do
 a single thing and our map will continue to show the most up-to-date
-data available. A few final notes:
-
--   We might reasonably want to lag our script by a week or so, for
-    security/privacy reasons.
--   As far as I can tell, the location readings are recorded in a [<span class="caps">POSIX</span>
+data available. A few final&nbsp;notes:</p>
+<ul>
+<li>We might reasonably want to lag our script by a week or so, for
+    security/privacy&nbsp;reasons.</li>
+<li>As far as I can tell, the location readings are recorded in a [<span class="caps">POSIX</span>
     time][] and have not been adjusted by time zone, so they are still
-    in the [<span class="caps">UTC</span>][] time zone. This means that they are 8 hours off from
+    in the <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"><span class="caps">UTC</span></a> time zone. This means that they are 8 hours off from
     the actual time in California, where I usually am. This doesn&#8217;t
     bother me too much at the moment because the visualization is still
     relatively low resolution in the time domain anyways. At some point
     I might implement the relevant transformation, but this will raise
-    its own issues because I won&#8217;t *always* be in California, not to
-    mention all that Daylight Savings nonsense.
--   [Click here for an addendum to this post that will take you through
-    how to schedule the <span class="caps">EC2</span> instance and avoid having it run 24/7][]
-
-  [AutoGrid]: http://auto-grid.com
-  [Torque]: https://github.com/cartodb/torque
-  [spencerboucher.com/map]: http://www.spencerboucher.com/map
-  [OpenPaths]: http://openpaths.cc
-  [the R&D department at The New York Times]: http://nytlabs.com/
-  [claim]: https://openpaths.cc/<span class="caps">FAQ</span>
-  [research programs]: https://openpaths.cc/projects
-  [Quantified Self]: http://quantifiedself.com/about/
-  [the OpenPaths <span class="caps">API</span> documentation]: https://openpaths.cc/api
-  [CartoDB&#8217;s <span class="caps">SQL</span> <span class="caps">API</span> documentation]: http://developers.cartodb.com/documentation/sql-api.html
-  [python module]: https://github.com/vizzuality/cartodb-python
-  [PostGIS command]: http://postgis.org/docs/ST_SetSRID.html
-  [LaughingSquid]: https://laughingsquid.us/
-  [Python Standard Library]: http://docs.python.org/2/library/
-  [&#8220;micro&#8221; <span class="caps">EC2</span> instance]: http://aws.amazon.com/
-  [<span class="caps">POSIX</span> time]: http://en.wikipedia.org/wiki/Unix_time
-  [<span class="caps">UTC</span>]: http://en.wikipedia.org/wiki/Coordinated_Universal_Time
-  [Click here for an addendum to this post that will take you through
+    its own issues because I won&#8217;t <em>always</em> be in California, not to
+    mention all that Daylight Savings&nbsp;nonsense.</li>
+<li>[Click here for an addendum to this post that will take you through
+    how to schedule the <span class="caps">EC2</span> instance and avoid having it run&nbsp;24/7][]</li>
+</ul>
+<p>[Click here for an addendum to this post that will take you through
   how to schedule the <span class="caps">EC2</span> instance and avoid having it run 24/7]: http://www.spencerboucher.com/ec2-apis/
-    &#8220;Scheduling tasks in the cloud with <span class="caps">EC2</span>&nbsp;APIs&#8221;
+    &#8220;Scheduling tasks in the cloud with <span class="caps">EC2</span>&nbsp;APIs&#8221;</p>
             </div>
             <!-- /.entry-content -->
     <hr />
