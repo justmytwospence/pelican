@@ -1052,7 +1052,7 @@ a lot of people care a lot more about Twitter sentiment analyses.
 		.attr('class', 'y axis')
 		.call(yAxis)
 
-		d3.selectAll('div')
+		d3.selectAll('button')
 		.on("click", function() {
 
 			var id = d3.select(this).attr('id');
