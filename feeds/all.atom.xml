@@ -4,17 +4,17 @@
 	&lt;p&gt;Some&amp;nbsp;configuration&lt;/p&gt;
 
 	&lt;pre&gt;&lt;code class="r"&gt;library(knitr)
-		tidy.opts = list(width.cutoff = 80)
-		opts_chunk$set(fig.width = 10, fig.align = &amp;quot;center&amp;quot;, tidy = FALSE, warning = TRUE)
-		theme_set(theme_gray(base_size = 18))
+tidy.opts = list(width.cutoff = 80)
+opts_chunk$set(fig.width = 10, fig.align = &amp;quot;center&amp;quot;, tidy = FALSE, warning = TRUE)
+theme_set(theme_gray(base_size = 18))
 	&lt;/code&gt;&lt;/pre&gt;
 
 	&lt;p&gt;Load&amp;nbsp;packages/data&lt;/p&gt;
 
 	&lt;pre&gt;&lt;code class="r"&gt;library(ggplot2) 
-		library(rCharts)
-		data(movies) 
-		data(EuStockMarkets)
+library(rCharts)
+data(movies) 
+data(EuStockMarkets)
 	&lt;/code&gt;&lt;/pre&gt;
 
 	&lt;p&gt;Munge a&amp;nbsp;bit&lt;/p&gt;
