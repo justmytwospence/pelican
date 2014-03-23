@@ -274,6 +274,8 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
 		Remove
 	&lt;/button&gt;
 
+	&lt;div id="svg"&gt;&lt;/div&gt;
+
 	&lt;script type="text/javascript"&gt;
 
 		var dataset = [ 
