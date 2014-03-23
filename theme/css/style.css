@@ -2,11 +2,6 @@ body {
     padding-top: 70px;
 }
 
-/* for list-groups nested within a list-group-item, reset the bottom margin */
-.list-group-item > .list-group {
-    margin-bottom: 0px;
-}
-
 /* for list-group-items nested within a list-group-item, reset the bottom
    padding of the last item, b/c the containing item has paddimg already */
 .list-group-item .list-group-item:last-child {
@@ -186,8 +181,4 @@ div.cell.border-box-sizing.code_cell.vbox {
 
 div#tags.list-group.list-inline.tagcloud {
     padding: 10px;
-}
-
-#sidebar .list-group, #sidebar .list-group-item {
-    background-color: auto !important;
 }
