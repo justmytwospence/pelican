@@ -406,34 +406,6 @@ justmytwospence            </a>
         <div class="col-lg-12">
 
             <article>
-                <h2><a href="http://justmytwospence.github.com/pelican/knitr-markdown.html">Knitr test markdown&nbsp;only</a></h2>
-                <div class="summary"><p>Some&nbsp;configuration</p>
-<div class="highlight"><pre>library<span class="p">(</span>knitr<span class="p">)</span>
-tidy.opts <span class="o">=</span> list<span class="p">(</span>width.cutoff <span class="o">=</span> <span class="m">80</span><span class="p">)</span>
-opts_chunk<span class="o">$</span>set<span class="p">(</span>fig.width <span class="o">=</span> <span class="m">10</span><span class="p">,</span> fig.align <span class="o">=</span> <span class="s">&quot;center&quot;</span><span class="p">,</span> tidy <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> warning <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-theme_set<span class="p">(</span>theme_gray<span class="p">(</span>base_size <span class="o">=</span> <span class="m">18</span><span class="p">))</span>
-</pre></div>
-
-
-<div class="highlight"><pre><span class="c">## Error: could not find function &quot;theme_set&quot;</span>
-</pre></div>
-
-
-<p>Load&nbsp;packages/data</p>
-<div class="highlight"><pre>library<span class="p">(</span>ggplot2<span class="p">)</span> 
-library<span class="p">(</span>rCharts<span class="p">)</span>
-data<span class="p">(</span>movies<span class="p">)</span> 
-data<span class="p">(</span>EuStockMarkets<span class="p">)</span>
-</pre></div>
-
-
-<p>Munge a&nbsp;bit</p>
-<div class="highlight"><pre>movies <span class="o">&lt;-</span> subset<span class="p">(</span>movies<span class="p">,</span> budget ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/knitr-markdown.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
                 <h2><a href="http://justmytwospence.github.com/pelican/location-spencer.html">Location |&nbsp;Spencer</a></h2>
                 <div class="summary">
   <div id="map"></div>
@@ -494,39 +466,8 @@ data<span class="p">(</span>EuStockMarkets<span class="p">)</span>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">Interactive Rcharts&nbsp;test</a></h2>
+                <h2><a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">Interactive Rcharts test</a></h2>
                 <div class="summary">
-<h1>Homework 1: Basic&nbsp;Charts</h1>
-
-<p>Load&nbsp;packages/data</p>
-
-<pre><code class="r">library(rCharts)
-library(knitr)
-hair_eye_male = subset(as.data.frame(HairEyeColor), Sex == &quot;Male&quot;)
-n1 &lt;- nPlot(Freq ~ Hair, group = &#39;Eye&#39;, 
-  data = hair_eye_male, type = &#39;multiBarChart&#39;
-)
-n1$set(width = 600)
-n1$show(&#39;inline&#39;, include_assets = TRUE, cdn = TRUE)
-</code></pre>
-
-<p><link rel="stylesheet" href="http://nvd3.org/assets/css/nv.d3.css"></p>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-
-<script type="text/javascript" src="http://timelyportfolio.github.io/rCharts_nvd3_tests/libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
-
-<script type="text/javascript" src="http://nvd3.org/assets/lib/fisheye.js"></script> 
-
-<p><style>
-  .rChart {
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
-    width: 600px;
-    height ...</style></p>
                     <a class="btn btn-default btn-xs" href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html">more ...</a>
                 </div>
             </article>

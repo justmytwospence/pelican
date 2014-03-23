@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Interactive Rcharts test - justmytwospence</title>
+    <title>Interactive Rcharts test - justmytwospence</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13,9 +13,9 @@
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Interactive Rcharts test"/>
+            <meta property="og:title" content="Interactive Rcharts test"/>
             <meta property="og:url" content="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html"/>
-            <meta property="og:description" content="Homework 1: Basic Charts Load packages/data library(rCharts) library(knitr) hair_eye_male = subset(as.data.frame(HairEyeColor), Sex == &#34;Male&#34;) n1 &lt;- nPlot(Freq ~ Hair, group = &#39;Eye&#39;, data = hair_eye_male, type = &#39;multiBarChart&#39; ) n1$set(width = 600) n1$show(&#39;inline&#39;, include_assets = TRUE, cdn = TRUE) .rChart { display: block; margin-left: auto; margin-right: auto; width: 600px; height ..."/>
+            <meta property="og:description" content=""/>
             <meta property="article:published_time" content="2013-03-21" />
             <meta property="article:section" content="misc" />
 
@@ -413,8 +413,8 @@ justmytwospence            </a>
                 <h1>
                     <a href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html"
                        rel="bookmark"
-                       title="Permalink to Interactive Rcharts test">
-                        Interactive Rcharts&nbsp;test
+                       title="Permalink to Interactive Rcharts test">
+                        Interactive Rcharts test
                     </a>
                 </h1>
 <footer class="post-info">
@@ -430,200 +430,6 @@ justmytwospence            </a>
 </footer><!-- /.post-info -->            </header>
             <div class="entry-content">
                 
-<h1>Homework 1: Basic&nbsp;Charts</h1>
-
-<p>Load&nbsp;packages/data</p>
-
-<pre><code class="r">library(rCharts)
-library(knitr)
-hair_eye_male = subset(as.data.frame(HairEyeColor), Sex == &quot;Male&quot;)
-n1 &lt;- nPlot(Freq ~ Hair, group = &#39;Eye&#39;, 
-  data = hair_eye_male, type = &#39;multiBarChart&#39;
-)
-n1$set(width = 600)
-n1$show(&#39;inline&#39;, include_assets = TRUE, cdn = TRUE)
-</code></pre>
-
-<p><link rel="stylesheet" href="http://nvd3.org/assets/css/nv.d3.css"></p>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-
-<script type="text/javascript" src="http://timelyportfolio.github.io/rCharts_nvd3_tests/libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
-
-<script type="text/javascript" src="http://nvd3.org/assets/lib/fisheye.js"></script> 
-
-<p><style>
-  .rChart {
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
-    width: 600px;
-    height: 400px;
-  }<br/>
-  </style></p>
-
-<div id="charta4b609e6729" class="rChart nvd3"></div>
-
-<script type="text/javascript">
- $(document).ready(function(){
-      drawcharta4b609e6729()
-    });
-    function drawcharta4b609e6729(){  
-      var opts = {
- "dom": "charta4b609e6729",
-"width":    600,
-"height":    400,
-"x": "Hair",
-"y": "Freq",
-"group": "Eye",
-"type": "multiBarChart",
-"id": "charta4b609e6729" 
-},
-        data = [
- {
- "Hair": "Black",
-"Eye": "Brown",
-"Sex": "Male",
-"Freq":             32 
-},
-{
- "Hair": "Brown",
-"Eye": "Brown",
-"Sex": "Male",
-"Freq":             53 
-},
-{
- "Hair": "Red",
-"Eye": "Brown",
-"Sex": "Male",
-"Freq":             10 
-},
-{
- "Hair": "Blond",
-"Eye": "Brown",
-"Sex": "Male",
-"Freq":              3 
-},
-{
- "Hair": "Black",
-"Eye": "Blue",
-"Sex": "Male",
-"Freq":             11 
-},
-{
- "Hair": "Brown",
-"Eye": "Blue",
-"Sex": "Male",
-"Freq":             50 
-},
-{
- "Hair": "Red",
-"Eye": "Blue",
-"Sex": "Male",
-"Freq":             10 
-},
-{
- "Hair": "Blond",
-"Eye": "Blue",
-"Sex": "Male",
-"Freq":             30 
-},
-{
- "Hair": "Black",
-"Eye": "Hazel",
-"Sex": "Male",
-"Freq":             10 
-},
-{
- "Hair": "Brown",
-"Eye": "Hazel",
-"Sex": "Male",
-"Freq":             25 
-},
-{
- "Hair": "Red",
-"Eye": "Hazel",
-"Sex": "Male",
-"Freq":              7 
-},
-{
- "Hair": "Blond",
-"Eye": "Hazel",
-"Sex": "Male",
-"Freq":              5 
-},
-{
- "Hair": "Black",
-"Eye": "Green",
-"Sex": "Male",
-"Freq":              3 
-},
-{
- "Hair": "Brown",
-"Eye": "Green",
-"Sex": "Male",
-"Freq":             15 
-},
-{
- "Hair": "Red",
-"Eye": "Green",
-"Sex": "Male",
-"Freq":              7 
-},
-{
- "Hair": "Blond",
-"Eye": "Green",
-"Sex": "Male",
-"Freq":              8 
-} 
-]
-  
-      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus")) {
-        var data = d3.nest()
-          .key(function(d){
-            //return opts.group === undefined ? 'main' : d[opts.group]
-            //instead of main would think a better default is opts.x
-            return opts.group === undefined ? opts.y : d[opts.group];
-          })
-          .entries(data);
-      }
-      
-      if (opts.disabled != undefined){
-        data.map(function(d, i){
-          d.disabled = opts.disabled[i]
-        })
-      }
-      
-      nv.addGraph(function() {
-        var chart = nv.models[opts.type]()
-          .x(function(d) { return d[opts.x] })
-          .y(function(d) { return d[opts.y] })
-          .width(opts.width)
-          .height(opts.height)
-         
-        
-          
-        
-
-        
-        
-        
-      
-       d3.select("#" + opts.id)
-        .append('svg')
-        .datum(data)
-        .transition().duration(500)
-        .call(chart);
-
-       nv.utils.windowResize(chart.update);
-       return chart;
-      });
-    };
-</script>
-
-
             </div>
             <!-- /.entry-content -->
     <hr />
