@@ -27,3 +27,8 @@ div.input_area.box-flex1 {
 article a.btn {
 	margin-top: 10px;
 }
+
+div.cell.border-box-sizing.code_cell.vbox {
+	margin: 0px;
+	padding: 0px;
+}
