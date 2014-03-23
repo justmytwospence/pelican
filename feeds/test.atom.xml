@@ -266,6 +266,22 @@ ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&g
     geom_point&lt;span class="p"&gt;(&lt;/span&gt;aes&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="o"&gt;=&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; y&lt;span class="o"&gt;=&lt;/span&gt;y&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
 	&lt;script src="http://d3js.org/d3.v3.min.js" charset="utf-8"&gt;&lt;/script&gt;
+	&lt;style&gt;
+		rect:active {
+			fill: 'orange';
+		}
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke: black;
+			shape-rendering: crispEdges;
+			stroke-width: 1;
+		}
+		.axis text {
+			font-family: sans-serif;
+			font-size: 11px;
+		}
+	&lt;/style&gt;
 
 	&lt;button id="add" class="btn btn-info"&gt;
 		Add
