@@ -571,28 +571,29 @@ huge study. I ...</div>
                 <div class="summary">
                     
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<style>
-		rect:active {
-			fill: 'orange';
-		}
-		.axis path,
-		.axis line {
-			fill: none;
-			stroke: black;
-			shape-rendering: crispEdges;
-			stroke-width: 1;
-		}
-		.axis text {
-			font-family: sans-serif;
-			font-size: 11px;
-		}
-		.button {
-			display: inline-block;
-			border: 1px solid #005D92;
-			background: #<span class="caps">3395CD</span>;
-			background: -webkit-gradient(linear, left top, left bottom, from(#<span class="caps">85C1E8</span>), to(#<span class="caps">3395CD</span>));
-			background: -webkit-linear-gradient(top, #<span class="caps">85C1E8</span>, #<span class="caps">3395CD</span>);
-			background: -moz-linear-gradient(top ...</style>
+
+	<button id="add" class="btn btn-info">
+		Add
+	</button>
+	<button id="remove" class="btn btn-info">
+		Remove
+	</button>
+
+	<script type="text/javascript">
+
+		var dataset = [ 
+		{ key: 0, value: 5 },
+		{ key: 1, value: 10 },
+		{ key: 2, value: 13 },
+		{ key: 3, value: 19 },
+		{ key: 4, value: 21 },
+		{ key: 5, value: 25 },
+		{ key: 6, value: 22 },
+		{ key: 7, value: 18 },
+		{ key: 8, value: 15 },
+		{ key: 9, value: 13 },
+		{ key: 10, value: 11 },
+		{ key: 11 ...</script>
                     <a class="btn btn-default btn-xs" href=SITEURL }}/d3-page-template.html">more ...</a>
                 </div>
             </article>
@@ -699,19 +700,19 @@ huge study. I ...</div>
                             ec2
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
-                            economics
-                        </a>
-                    </li>
                     <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/humanities.html">
-                            humanities
+                        <a href="http://justmytwospence.github.com/pelican/tag/entrepeneurship.html">
+                            entrepeneurship
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -720,8 +721,8 @@ huge study. I ...</div>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/maslow.html">
-                            Maslow
+                        <a href="http://justmytwospence.github.com/pelican/tag/neuroimaging.html">
+                            neuroimaging
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -734,9 +735,19 @@ huge study. I ...</div>
                             prediction
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/quantifiedself.html">
+                            quantifiedSelf
+                        </a>
+                    </li>
                     <li class="list-group-item tag-1">
                         <a href="http://justmytwospence.github.com/pelican/tag/r.html">
                             R
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
+                            reveal.js
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -754,19 +765,9 @@ huge study. I ...</div>
                             Shiny
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/solarized.html">
-                            solarized
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/tex.html">
-                            tex
                         </a>
                     </li>
             </div>
