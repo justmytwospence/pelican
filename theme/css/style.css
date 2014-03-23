@@ -8,6 +8,10 @@ body {
     padding-bottom: 0px;
 }
 
+li.list-group-item {
+    border: 0px;
+}
+
 .tag-0 {
     font-size: 16pt;
 }
