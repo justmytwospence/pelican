@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/web.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2013-12-07T06:38:00+01:00</updated><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;[dropcap]O[/dropcap]ur program hosted its own Kaggle-style competition
+this quarter, featuring a “mystery” dataset with a binary target
+variable. I was impressed by the reveal.js javascript library, so I put
+together our final slides using it, both because its pretty, and as a
+way to get some more practice with &lt;span class="caps"&gt;HTML&lt;/span&gt;, &lt;span class="caps"&gt;CSS&lt;/span&gt;, and javascript. On top of
+that, I had to expand my knowledge of Git in order to publish it on
+their GitHub Pages platform, so wins all around. Check out the work of
+Team LoanShark
+here:[hr]&lt;iframe src="http://justmytwospence.github.io/LoanSharks/slides/#/" width="100%" height="500"&gt;&lt;/p&gt;
+&lt;p&gt;Your browser doesn&amp;#8217;t support iframes. Do yourself a favor and go
+download a &lt;em&gt;real&lt;/em&gt;&amp;nbsp;browser&lt;/p&gt;
+&lt;/iframe&gt;</summary><category term="javascript"></category><category term="reveal.js"></category></entry></feed>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/nix.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2013-08-26T22:01:00+02:00</updated><entry><title>Pretty print CSV files in the terminal</title><link href="http://justmytwospence.github.com/pelican/pretty-print-csv-files-in-the-terminal.html" rel="alternate"></link><updated>2013-08-26T22:01:00+02:00</updated><author><name>justmytwospence</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-26:pretty-print-csv-files-in-the-terminal.html</id><summary type="html">&lt;p&gt;[dropcap]D[/dropcap]isplay .csv files right in your terminal with nice&amp;nbsp;formatting.&lt;/p&gt;
+&lt;p&gt;[hr]&lt;/p&gt;
+&lt;p&gt;
+&lt;script src="https://gist.github.com/justmytwospence/6331548.js"&gt;&lt;/script&gt;
+&lt;/p&gt;</summary><category term="terminal"></category></entry></feed>
