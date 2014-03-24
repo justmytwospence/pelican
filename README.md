@@ -14,7 +14,8 @@ None of this is particularly novel, I'm simply attempting build an out-of-the-bo
 
 TO DO
 =====
-
+- Move social icons/links to the navbar.
+- Set current category as active in the sidebar.
 - Switch from Knitr's syntax highlighting to Pygments. This might require custom hooks in Knitr?
 - Use list-items component for the articles on the index page.
 - Improve typography.
