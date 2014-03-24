@@ -19,8 +19,6 @@
             <meta property="og:title" content="Map!"/>
             <meta property="og:url" content="http://justmytwospence.github.com/pelican/pages/map.html"/>
 
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://justmytwospence.github.com/pelican/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="http://justmytwospence.github.com/pelican/theme/css/font-awesome.min.css" rel="stylesheet">
@@ -42,13 +40,11 @@
         }
         #map {
             padding-top: 50px;
+            box-sizing: content-box !important;
+            -webkit-box-sizing: content-box !important;
         }
         #cartodb-gmaps-attribution {
             visibility: hidden;
-        }
-        * {
-            box-sizing: content-box !important;
-            -webkit-box-sizing: content-box !important;
         }
         .cartodb-timeslider {
             bottom: 50px !important;
@@ -57,7 +53,7 @@
             bottom: 80px !important;
         }
     </style>
-
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
     <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
     <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
     <script>
