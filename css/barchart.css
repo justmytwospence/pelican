@@ -1,0 +1,14 @@
+rect:active {
+	fill: 'orange';
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+	stroke-width: 1;
+}
+.axis text {
+	font-family: sans-serif;
+	font-size: 11px;
+}
