@@ -21,4 +21,3 @@ TO DO
 - Add the sidebar modifications to templates other than index, article, and page.
 - Figure out where a few ugly CSS styles are coming from (mainly the dashed underlines for links).
 - Remove border from code snippets that aren't part of an IPython notebook.
-- 
