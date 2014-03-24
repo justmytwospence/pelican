@@ -308,10 +308,12 @@ this, we will want three &lt;span class="caps"&gt;CLI&lt;/span&gt; tools: &lt;a 
 Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; Tools&lt;/a&gt;,and &lt;a href="http://aws.amazon.com/developertools/2535"&gt;the Auto Scaling Command Line Tool&lt;/a&gt;. If
 you&amp;#8217;re on a Mac, it&amp;#8217;s way easier to get these with &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt; than by
 downloading from Amazon&amp;#8217;s&amp;nbsp;website: &lt;/p&gt;
-&lt;p&gt;:::sh
-  brew install ec2-ami-tools # For creating an &lt;span class="caps"&gt;AMI&lt;/span&gt; from an existing machine
-  brew install ec2-api-tools # For registering and launching instances
-  brew install aws-as        # For creating auto scaling groups / defining&amp;nbsp;schedules&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;brew install ec2-ami-tools &lt;span class="c"&gt;# For creating an AMI from an existing machine&lt;/span&gt;
+brew install ec2-api-tools &lt;span class="c"&gt;# For registering and launching instances&lt;/span&gt;
+brew install aws-as        &lt;span class="c"&gt;# For creating auto scaling groups / defining schedules&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;As an extra Homebrew bonus, running &lt;code&gt;brew info ec2-ami-tools&lt;/code&gt;,
 &lt;code&gt;brew info ec2-api-tools&lt;/code&gt;, and &lt;code&gt;brew info aws-as&lt;/code&gt; will now tell us
 exactly what we need to do to get our authentication and environment
@@ -320,16 +322,18 @@ files from &lt;a href="http://aws-portal.amazon.com/gp/aws/developer/account/ind
 directory of our home directory &lt;code&gt;.ec2&lt;/code&gt;. Then we tell our command line
 where everything lives now by inserting the following lines into our
 &lt;code&gt;.bashrc&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;:::sh
-  export EC2_PRIVATE_KEY=&amp;#8221;$(/bin/ls &amp;#8220;$&lt;span class="caps"&gt;HOME&lt;/span&gt;&amp;#8221;/.ec2/pk-&lt;em&gt;.pem | /usr/bin/head -1)&amp;#8221;
-  export EC2_CERT=&amp;#8221;$(/bin/ls &amp;#8220;$&lt;span class="caps"&gt;HOME&lt;/span&gt;&amp;#8221;/.ec2/cert-&lt;/em&gt;.pem | /usr/bin/head -1)&amp;#8221;
-  export EC2_HOME=&amp;#8221;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&amp;#8221;
-  export AWS_AUTO_SCALING_HOME=&amp;#8221;/usr/local/Cellar/auto-scaling/1.0.61.4/libexec&amp;#8221;
-  export EC2_AMITOOL_HOME=&amp;#8221;/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec&amp;#8221;
-  export EC2_REGION=&amp;#8221;us-west-2&amp;#8221;
-  export EC2_ZONE=${EC2_REGION}a
-  export EC2_URL=https://$EC2_REGION.ec2.amazonaws.com
-  export&amp;nbsp;AWS_AUTO_SCALING_URL=https://autoscaling.$EC2_REGION.amazonaws.com&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_PRIVATE_KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$(/bin/ls &amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/.ec2/pk-*.pem | /usr/bin/head -1)&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_CERT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$(/bin/ls &amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/.ec2/cert-*.pem | /usr/bin/head -1)&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;AWS_AUTO_SCALING_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/usr/local/Cellar/auto-scaling/1.0.61.4/libexec&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_AMITOOL_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_REGION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;us-west-2&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_ZONE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;EC2_REGION&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;a
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EC2_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;https://&lt;span class="nv"&gt;$EC2_REGION&lt;/span&gt;.ec2.amazonaws.com
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;AWS_AUTO_SCALING_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;https://autoscaling.&lt;span class="nv"&gt;$EC2_REGION&lt;/span&gt;.amazonaws.com
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Its pretty simple, but if you have any trouble with this part, refer to
 the official &lt;a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html"&gt;Amazon documentation for setting up the command line&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Because these environment variables are recognized out of the box by
@@ -357,8 +361,10 @@ problem that I originally had with my web host: the Python modules that
 we need won&amp;#8217;t be installed. We &lt;em&gt;could&lt;/em&gt; write a script that would install
 &lt;code&gt;pip&lt;/code&gt; plus all of the requisite Python modules and run it first thing
 after we launch the instance, but there&amp;#8217;s a better&amp;nbsp;way:&lt;/p&gt;
-&lt;p&gt;:::sh
-  ec2-create-image i-8918e1be -n &amp;#8220;Map Update&amp;nbsp;Image&amp;#8221;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ec2-create-image i-8918e1be -n &lt;span class="s2"&gt;&amp;quot;Map Update Image&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This command from &lt;code&gt;ec2-ami-tools&lt;/code&gt; creates an &amp;#8220;Amazon Machine Image&amp;#8221; of
 the instance that we previously had running and names it &amp;#8220;Map Update
 Image&amp;#8221;. A new image &lt;span class="caps"&gt;ID&lt;/span&gt; will now print to your console, &lt;code&gt;ami-fcdfb9cc&lt;/code&gt; in
@@ -378,47 +384,57 @@ its business and then promptly commit seppuku and stop charging us
 money. Eric Hammond has created a great template on &lt;a href="http://alestic.com/2011/11/ec2-schedule-instance"&gt;his blog&lt;/a&gt;, which
 I&amp;#8217;ve modified below. Note the execution of our &lt;a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping"&gt;familiar&lt;/a&gt; &amp;#8220;update.py&amp;#8221; script highlighted on line 4, and the apoptosis
 command on line&amp;nbsp;46:&lt;/p&gt;
-&lt;p&gt;:::sh
-  #!/bin/bash -x
-  exec &amp;gt; &amp;gt;(tee /var/log/user-data.log|logger -t user-data -s 2&amp;gt;/dev/console)&amp;nbsp;2&amp;gt;&amp;amp;1&lt;/p&gt;
-&lt;p&gt;/usr/bin/python /home/ubuntu/update.py # Run the&amp;nbsp;script&lt;/p&gt;
-&lt;p&gt;&lt;span class="caps"&gt;EMAIL&lt;/span&gt;=spencer.g.boucher@gmail.com&lt;/p&gt;
-&lt;p&gt;# Upgrade and install Postfix so we can send a sample email
-  export DEBIAN_FRONTEND=noninteractive
-  apt-get update &amp;amp;&amp;amp; apt-get upgrade -y &amp;amp;&amp;amp; apt-get install -y&amp;nbsp;postfix&lt;/p&gt;
-&lt;p&gt;# Get some information about the running instance
-  instance_id=$(wget -qO- instance-data/latest/meta-data/instance-id)
-  public_ip=$(wget -qO- instance-data/latest/meta-data/public-ipv4)
-  zone=$(wget -qO- instance-data/latest/meta-data/placement/availability-zone)
-  region=$(expr match $zone &amp;#8216;(.*).&amp;#8217;)&amp;nbsp;uptime=$(uptime)&lt;/p&gt;
-&lt;p&gt;# Send status email
-  /usr/sbin/sendmail -oi -t -f $&lt;span class="caps"&gt;EMAIL&lt;/span&gt; &amp;lt;&amp;lt;&lt;span class="caps"&gt;EOM&lt;/span&gt;
-  From: $&lt;span class="caps"&gt;EMAIL&lt;/span&gt;
-  To: $&lt;span class="caps"&gt;EMAIL&lt;/span&gt;
-  Subject: Results of &lt;span class="caps"&gt;EC2&lt;/span&gt; scheduled&amp;nbsp;script&lt;/p&gt;
-&lt;p&gt;This email message was generated on the following &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;instance_id&lt;/span&gt;
-&lt;span class="nl"&gt;region:&lt;/span&gt;      &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;region&lt;/span&gt;
-&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;   &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;public_ip&lt;/span&gt;
-&lt;span class="nl"&gt;uptime:&lt;/span&gt;      &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;uptime&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash -x&lt;/span&gt;
+&lt;span class="nb"&gt;exec&lt;/span&gt; &amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;tee /var/log/user-data.log|logger -t user-data -s 2&amp;gt;/dev/console&lt;span class="o"&gt;)&lt;/span&gt; 2&amp;gt;&amp;amp;1
+
+/usr/bin/python /home/ubuntu/update.py &lt;span class="c"&gt;# Run the script&lt;/span&gt;
+
+&lt;span class="nv"&gt;EMAIL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;spencer.g.boucher@gmail.com
+
+&lt;span class="c"&gt;# Upgrade and install Postfix so we can send a sample email&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;DEBIAN_FRONTEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;noninteractive
+apt-get update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get upgrade -y &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get install -y postfix
+
+&lt;span class="c"&gt;# Get some information about the running instance&lt;/span&gt;
+&lt;span class="nv"&gt;instance_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;wget -qO- instance-data/latest/meta-data/instance-id&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;public_ip&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;wget -qO- instance-data/latest/meta-data/public-ipv4&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;zone&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;wget -qO- instance-data/latest/meta-data/placement/availability-zone&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;region&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;expr match &lt;span class="nv"&gt;$zone&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;\(.*\).&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;uptime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;uptime&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Send status email&lt;/span&gt;
+/usr/sbin/sendmail -oi -t -f &lt;span class="nv"&gt;$EMAIL&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;&amp;lt;EOM&lt;/span&gt;
+&lt;span class="s"&gt;From: $EMAIL&lt;/span&gt;
+&lt;span class="s"&gt;To: $EMAIL&lt;/span&gt;
+&lt;span class="s"&gt;Subject: Results of EC2 scheduled script&lt;/span&gt;
+
+&lt;span class="s"&gt;This email message was generated on the following EC2 instance:&lt;/span&gt;
+
+&lt;span class="s"&gt;  instance id: $instance_id&lt;/span&gt;
+&lt;span class="s"&gt;  region:      $region&lt;/span&gt;
+&lt;span class="s"&gt;  public ip:   $public_ip&lt;/span&gt;
+&lt;span class="s"&gt;  uptime:      $uptime&lt;/span&gt;
+
+&lt;span class="s"&gt;If the instance is still running, you can monitor the output of this&lt;/span&gt;
+&lt;span class="s"&gt;job using a command like:&lt;/span&gt;
+
+&lt;span class="s"&gt;  ssh ubuntu@$public_ip tail -1000f /var/log/user-data.log&lt;/span&gt;
+
+&lt;span class="s"&gt;  ec2-describe-instances --region $region $instance_id&lt;/span&gt;
+
+&lt;span class="s"&gt;EOM&lt;/span&gt;
+
+&lt;span class="c"&gt;# Give the script and email some time to do their thing&lt;/span&gt;
+sleep 600 &lt;span class="c"&gt;# 10 minutes&lt;/span&gt;
+
+&lt;span class="c"&gt;# This will stop the EBS boot instance, stopping the hourly charges.&lt;/span&gt;
+&lt;span class="c"&gt;# Have Auto Scaling terminate it, stopping the storage charges.&lt;/span&gt;
+shutdown -h now
+
+&lt;span class="nb"&gt;exit &lt;/span&gt;0
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;If the instance is still running, you can monitor the output of this
-  job using a command&amp;nbsp;like:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="err"&gt;@$&lt;/span&gt;&lt;span class="n"&gt;public_ip&lt;/span&gt; &lt;span class="n"&gt;tail&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1000f&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
-
-&lt;span class="n"&gt;ec2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;describe&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;instances&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;region&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;region&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;instance_id&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;span class="caps"&gt;EOM&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;# Give the script and email some time to do their thing
-  sleep 600 # 10&amp;nbsp;minutes&lt;/p&gt;
-&lt;p&gt;# This will stop the &lt;span class="caps"&gt;EBS&lt;/span&gt; boot instance, stopping the hourly charges.
-  # Have Auto Scaling terminate it, stopping the storage charges.
-  shutdown -h&amp;nbsp;now&lt;/p&gt;
-&lt;p&gt;exit&amp;nbsp;0&lt;/p&gt;
 &lt;p&gt;Note that the user data script that we pass to the launch configuration
 executes with &lt;em&gt;root&lt;/em&gt; permissions, not as the user &amp;#8220;ubuntu&amp;#8221;
 that you would typically log in as via &lt;code&gt;ssh&lt;/code&gt;. Its probably best to be as
@@ -438,13 +454,15 @@ at the &lt;span class="caps"&gt;AWS&lt;/span&gt; console &lt;span class="caps"&g
     included our Python&amp;nbsp;modules.&lt;/li&gt;
 &lt;li&gt;The name of the launch config; let&amp;#8217;s call it&amp;nbsp;&amp;#8220;map-update-launch-config&amp;#8221;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::sh
-  as-create-launch-config
-     &amp;#8212;instance-type t1.micro
-     &amp;#8212;user-data-file ~/Desktop/update.sh
-     &amp;#8212;image-id ami-fcdfb9cc
-     &amp;#8212;launch-config &amp;#8220;map-update-launch-config&amp;#8221;
-  as-describe-launch-configs&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;as-create-launch-config
+   --instance-type t1.micro
+   --user-data-file ~/Desktop/update.sh
+   --image-id ami-fcdfb9cc
+   --launch-config &lt;span class="s2"&gt;&amp;quot;map-update-launch-config&amp;quot;&lt;/span&gt;
+as-describe-launch-configs --headers
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Note that the second line provides a list of all the launch
 configurations that have been&amp;nbsp;created.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -462,16 +480,18 @@ tell&amp;nbsp;it:&lt;/p&gt;
 &lt;li&gt;A minimum and maximum number of instances in the group. We&amp;#8217;ll
     initialize these to&amp;nbsp;zero.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::sh
-  title=&amp;#8221;Create auto scaling group with launch configuration&amp;#8221;}
-  as-create-auto-scaling-group
-     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
-     &amp;#8212;launch-configuration &amp;#8220;map-update-launch-config&amp;#8221;
-     &amp;#8212;availability-zones &amp;#8220;$EC2_ZONE&amp;#8221;
-     &amp;#8212;min-size 0 &amp;#8212;max-size 0
-  as-suspend-processes &amp;#8220;map-update-scale-group&amp;#8221;
-     &amp;#8212;processes ReplaceUnhealthy
-  as-describe-auto-scaling-groups&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Create auto scaling group with launch configuration&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+as-create-auto-scaling-group
+   --auto-scaling-group &lt;span class="s2"&gt;&amp;quot;map-update-scale-group&amp;quot;&lt;/span&gt;
+   --launch-configuration &lt;span class="s2"&gt;&amp;quot;map-update-launch-config&amp;quot;&lt;/span&gt;
+   --availability-zones &lt;span class="s2"&gt;&amp;quot;$EC2_ZONE&amp;quot;&lt;/span&gt;
+   --min-size 0 --max-size 0
+as-suspend-processes &lt;span class="s2"&gt;&amp;quot;map-update-scale-group&amp;quot;&lt;/span&gt;
+   --processes ReplaceUnhealthy
+as-describe-auto-scaling-groups --headers
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;In the second line, we are using &lt;code&gt;as-suspend-processes&lt;/code&gt; to prevent the
 instance&amp;#8217;s default behavior which is to attempt to restart after it is
 shut down. The third line provides a list of all the auto scaling groups
@@ -496,18 +516,20 @@ information about it. Each schedule&amp;nbsp;requires:&lt;/p&gt;
     that our script already stops the instance 10 minutes after
     execution, so 15 minutes is playing it&amp;nbsp;safe.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::sh
-  as-put-scheduled-update-group-action
-     &amp;#8212;name &amp;#8220;map-update-start&amp;#8221;
-     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
-     &amp;#8212;min-size 1 &amp;#8212;max-size 1
-     &amp;#8212;recurrence &amp;#8220;0 0 * &lt;em&gt; &lt;/em&gt;&amp;#8221;
-  as-put-scheduled-update-group-action
-     &amp;#8212;name &amp;#8220;map-update-stop&amp;#8221;
-     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
-     &amp;#8212;min-size 0 &amp;#8212;max-size 0
-     &amp;#8212;recurrence &amp;#8220;15 0 * &lt;em&gt; &lt;/em&gt;&amp;#8221;
-  as-describe-scheduled-actions&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;as-put-scheduled-update-group-action
+   --name &lt;span class="s2"&gt;&amp;quot;map-update-start&amp;quot;&lt;/span&gt;
+   --auto-scaling-group &lt;span class="s2"&gt;&amp;quot;map-update-scale-group&amp;quot;&lt;/span&gt;
+   --min-size 1 --max-size 1
+   --recurrence &lt;span class="s2"&gt;&amp;quot;0 0 * * *&amp;quot;&lt;/span&gt;
+as-put-scheduled-update-group-action
+   --name &lt;span class="s2"&gt;&amp;quot;map-update-stop&amp;quot;&lt;/span&gt;
+   --auto-scaling-group &lt;span class="s2"&gt;&amp;quot;map-update-scale-group&amp;quot;&lt;/span&gt;
+   --min-size 0 --max-size 0
+   --recurrence &lt;span class="s2"&gt;&amp;quot;15 0 * * *&amp;quot;&lt;/span&gt;
+as-describe-scheduled-actions --headers
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;As before, the third line provides a list of the actions that have been&amp;nbsp;scheduled.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;And thats it! We are now only paying for 10 or 15 minutes of cloud per

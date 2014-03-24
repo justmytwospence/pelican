@@ -502,10 +502,12 @@ this, we will want three <span class="caps">CLI</span> tools: <a href="http://aw
 Amazon <span class="caps">EC2</span> <span class="caps">API</span> Tools</a>,and <a href="http://aws.amazon.com/developertools/2535">the Auto Scaling Command Line Tool</a>. If
 you&#8217;re on a Mac, it&#8217;s way easier to get these with <a href="http://brew.sh/">Homebrew</a> than by
 downloading from Amazon&#8217;s&nbsp;website: </p>
-<p>:::sh
-  brew install ec2-ami-tools # For creating an <span class="caps">AMI</span> from an existing machine
-  brew install ec2-api-tools # For registering and launching instances
-  brew install aws-as        # For creating auto scaling groups / defining&nbsp;schedules</p>
+<div class="highlight"><pre>brew install ec2-ami-tools <span class="c"># For creating an AMI from an existing machine</span>
+brew install ec2-api-tools <span class="c"># For registering and launching instances</span>
+brew install aws-as        <span class="c"># For creating auto scaling groups / defining schedules</span>
+</pre></div>
+
+
 <p>As an extra Homebrew bonus, running <code>brew info ec2-ami-tools</code>,
 <code>brew info ec2-api-tools</code>, and <code>brew info aws-as</code> will now tell us
 exactly what we need to do to get our authentication and environment
@@ -514,16 +516,18 @@ files from <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.
 directory of our home directory <code>.ec2</code>. Then we tell our command line
 where everything lives now by inserting the following lines into our
 <code>.bashrc</code>:</p>
-<p>:::sh
-  export EC2_PRIVATE_KEY=&#8221;$(/bin/ls &#8220;$<span class="caps">HOME</span>&#8221;/.ec2/pk-<em>.pem | /usr/bin/head -1)&#8221;
-  export EC2_CERT=&#8221;$(/bin/ls &#8220;$<span class="caps">HOME</span>&#8221;/.ec2/cert-</em>.pem | /usr/bin/head -1)&#8221;
-  export EC2_HOME=&#8221;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&#8221;
-  export AWS_AUTO_SCALING_HOME=&#8221;/usr/local/Cellar/auto-scaling/1.0.61.4/libexec&#8221;
-  export EC2_AMITOOL_HOME=&#8221;/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec&#8221;
-  export EC2_REGION=&#8221;us-west-2&#8221;
-  export EC2_ZONE=${EC2_REGION}a
-  export EC2_URL=https://$EC2_REGION.ec2.amazonaws.com
-  export&nbsp;AWS_AUTO_SCALING_URL=https://autoscaling.$EC2_REGION.amazonaws.com</p>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">EC2_PRIVATE_KEY</span><span class="o">=</span><span class="s2">&quot;$(/bin/ls &quot;</span><span class="nv">$HOME</span><span class="s2">&quot;/.ec2/pk-*.pem | /usr/bin/head -1)&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_CERT</span><span class="o">=</span><span class="s2">&quot;$(/bin/ls &quot;</span><span class="nv">$HOME</span><span class="s2">&quot;/.ec2/cert-*.pem | /usr/bin/head -1)&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&quot;</span>
+<span class="nb">export </span><span class="nv">AWS_AUTO_SCALING_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/auto-scaling/1.0.61.4/libexec&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_AMITOOL_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_REGION</span><span class="o">=</span><span class="s2">&quot;us-west-2&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_ZONE</span><span class="o">=</span><span class="k">${</span><span class="nv">EC2_REGION</span><span class="k">}</span>a
+<span class="nb">export </span><span class="nv">EC2_URL</span><span class="o">=</span>https://<span class="nv">$EC2_REGION</span>.ec2.amazonaws.com
+<span class="nb">export </span><span class="nv">AWS_AUTO_SCALING_URL</span><span class="o">=</span>https://autoscaling.<span class="nv">$EC2_REGION</span>.amazonaws.com
+</pre></div>
+
+
 <p>Its pretty simple, but if you have any trouble with this part, refer to
 the official <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html">Amazon documentation for setting up the command line</a>.</p>
 <p>Because these environment variables are recognized out of the box by
@@ -551,8 +555,10 @@ problem that I originally had with my web host: the Python modules that
 we need won&#8217;t be installed. We <em>could</em> write a script that would install
 <code>pip</code> plus all of the requisite Python modules and run it first thing
 after we launch the instance, but there&#8217;s a better&nbsp;way:</p>
-<p>:::sh
-  ec2-create-image i-8918e1be -n &#8220;Map Update&nbsp;Image&#8221;</p>
+<div class="highlight"><pre>ec2-create-image i-8918e1be -n <span class="s2">&quot;Map Update Image&quot;</span>
+</pre></div>
+
+
 <p>This command from <code>ec2-ami-tools</code> creates an &#8220;Amazon Machine Image&#8221; of
 the instance that we previously had running and names it &#8220;Map Update
 Image&#8221;. A new image <span class="caps">ID</span> will now print to your console, <code>ami-fcdfb9cc</code> in
@@ -572,47 +578,57 @@ its business and then promptly commit seppuku and stop charging us
 money. Eric Hammond has created a great template on <a href="http://alestic.com/2011/11/ec2-schedule-instance">his blog</a>, which
 I&#8217;ve modified below. Note the execution of our <a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping">familiar</a> &#8220;update.py&#8221; script highlighted on line 4, and the apoptosis
 command on line&nbsp;46:</p>
-<p>:::sh
-  #!/bin/bash -x
-  exec &gt; &gt;(tee /var/log/user-data.log|logger -t user-data -s 2&gt;/dev/console)&nbsp;2&gt;&amp;1</p>
-<p>/usr/bin/python /home/ubuntu/update.py # Run the&nbsp;script</p>
-<p><span class="caps">EMAIL</span>=spencer.g.boucher@gmail.com</p>
-<p># Upgrade and install Postfix so we can send a sample email
-  export DEBIAN_FRONTEND=noninteractive
-  apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get install -y&nbsp;postfix</p>
-<p># Get some information about the running instance
-  instance_id=$(wget -qO- instance-data/latest/meta-data/instance-id)
-  public_ip=$(wget -qO- instance-data/latest/meta-data/public-ipv4)
-  zone=$(wget -qO- instance-data/latest/meta-data/placement/availability-zone)
-  region=$(expr match $zone &#8216;(.*).&#8217;)&nbsp;uptime=$(uptime)</p>
-<p># Send status email
-  /usr/sbin/sendmail -oi -t -f $<span class="caps">EMAIL</span> &lt;&lt;<span class="caps">EOM</span>
-  From: $<span class="caps">EMAIL</span>
-  To: $<span class="caps">EMAIL</span>
-  Subject: Results of <span class="caps">EC2</span> scheduled&nbsp;script</p>
-<p>This email message was generated on the following <span class="caps">EC2</span>&nbsp;instance:</p>
-<div class="highlight"><pre><span class="n">instance</span> <span class="n">id</span><span class="o">:</span> <span class="err">$</span><span class="n">instance_id</span>
-<span class="nl">region:</span>      <span class="err">$</span><span class="n">region</span>
-<span class="n">public</span> <span class="n">ip</span><span class="o">:</span>   <span class="err">$</span><span class="n">public_ip</span>
-<span class="nl">uptime:</span>      <span class="err">$</span><span class="n">uptime</span>
+<div class="highlight"><pre><span class="c">#!/bin/bash -x</span>
+<span class="nb">exec</span> &gt; &gt;<span class="o">(</span>tee /var/log/user-data.log|logger -t user-data -s 2&gt;/dev/console<span class="o">)</span> 2&gt;&amp;1
+
+/usr/bin/python /home/ubuntu/update.py <span class="c"># Run the script</span>
+
+<span class="nv">EMAIL</span><span class="o">=</span>spencer.g.boucher@gmail.com
+
+<span class="c"># Upgrade and install Postfix so we can send a sample email</span>
+<span class="nb">export </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
+apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade -y <span class="o">&amp;&amp;</span> apt-get install -y postfix
+
+<span class="c"># Get some information about the running instance</span>
+<span class="nv">instance_id</span><span class="o">=</span><span class="k">$(</span>wget -qO- instance-data/latest/meta-data/instance-id<span class="k">)</span>
+<span class="nv">public_ip</span><span class="o">=</span><span class="k">$(</span>wget -qO- instance-data/latest/meta-data/public-ipv4<span class="k">)</span>
+<span class="nv">zone</span><span class="o">=</span><span class="k">$(</span>wget -qO- instance-data/latest/meta-data/placement/availability-zone<span class="k">)</span>
+<span class="nv">region</span><span class="o">=</span><span class="k">$(</span>expr match <span class="nv">$zone</span> <span class="s1">&#39;\(.*\).&#39;</span><span class="k">)</span>
+<span class="nv">uptime</span><span class="o">=</span><span class="k">$(</span>uptime<span class="k">)</span>
+
+<span class="c"># Send status email</span>
+/usr/sbin/sendmail -oi -t -f <span class="nv">$EMAIL</span> <span class="s">&lt;&lt;EOM</span>
+<span class="s">From: $EMAIL</span>
+<span class="s">To: $EMAIL</span>
+<span class="s">Subject: Results of EC2 scheduled script</span>
+
+<span class="s">This email message was generated on the following EC2 instance:</span>
+
+<span class="s">  instance id: $instance_id</span>
+<span class="s">  region:      $region</span>
+<span class="s">  public ip:   $public_ip</span>
+<span class="s">  uptime:      $uptime</span>
+
+<span class="s">If the instance is still running, you can monitor the output of this</span>
+<span class="s">job using a command like:</span>
+
+<span class="s">  ssh ubuntu@$public_ip tail -1000f /var/log/user-data.log</span>
+
+<span class="s">  ec2-describe-instances --region $region $instance_id</span>
+
+<span class="s">EOM</span>
+
+<span class="c"># Give the script and email some time to do their thing</span>
+sleep 600 <span class="c"># 10 minutes</span>
+
+<span class="c"># This will stop the EBS boot instance, stopping the hourly charges.</span>
+<span class="c"># Have Auto Scaling terminate it, stopping the storage charges.</span>
+shutdown -h now
+
+<span class="nb">exit </span>0
 </pre></div>
 
 
-<p>If the instance is still running, you can monitor the output of this
-  job using a command&nbsp;like:</p>
-<div class="highlight"><pre><span class="n">ssh</span> <span class="n">ubuntu</span><span class="err">@$</span><span class="n">public_ip</span> <span class="n">tail</span> <span class="o">-</span><span class="mf">1000f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">user</span><span class="o">-</span><span class="n">data</span><span class="p">.</span><span class="n">log</span>
-
-<span class="n">ec2</span><span class="o">-</span><span class="n">describe</span><span class="o">-</span><span class="n">instances</span> <span class="o">--</span><span class="n">region</span> <span class="err">$</span><span class="n">region</span> <span class="err">$</span><span class="n">instance_id</span>
-</pre></div>
-
-
-<p><span class="caps">EOM</span></p>
-<p># Give the script and email some time to do their thing
-  sleep 600 # 10&nbsp;minutes</p>
-<p># This will stop the <span class="caps">EBS</span> boot instance, stopping the hourly charges.
-  # Have Auto Scaling terminate it, stopping the storage charges.
-  shutdown -h&nbsp;now</p>
-<p>exit&nbsp;0</p>
 <p>Note that the user data script that we pass to the launch configuration
 executes with <em>root</em> permissions, not as the user &#8220;ubuntu&#8221;
 that you would typically log in as via <code>ssh</code>. Its probably best to be as
@@ -632,13 +648,15 @@ at the <span class="caps">AWS</span> console <span class="caps">GUI</span>. Here
     included our Python&nbsp;modules.</li>
 <li>The name of the launch config; let&#8217;s call it&nbsp;&#8220;map-update-launch-config&#8221;.</li>
 </ul>
-<p>:::sh
-  as-create-launch-config
-     &#8212;instance-type t1.micro
-     &#8212;user-data-file ~/Desktop/update.sh
-     &#8212;image-id ami-fcdfb9cc
-     &#8212;launch-config &#8220;map-update-launch-config&#8221;
-  as-describe-launch-configs&nbsp;&#8212;headers</p>
+<div class="highlight"><pre>as-create-launch-config
+   --instance-type t1.micro
+   --user-data-file ~/Desktop/update.sh
+   --image-id ami-fcdfb9cc
+   --launch-config <span class="s2">&quot;map-update-launch-config&quot;</span>
+as-describe-launch-configs --headers
+</pre></div>
+
+
 <p>Note that the second line provides a list of all the launch
 configurations that have been&nbsp;created.</p>
 <p><br></p>
@@ -656,16 +674,18 @@ tell&nbsp;it:</p>
 <li>A minimum and maximum number of instances in the group. We&#8217;ll
     initialize these to&nbsp;zero.</li>
 </ul>
-<p>:::sh
-  title=&#8221;Create auto scaling group with launch configuration&#8221;}
-  as-create-auto-scaling-group
-     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
-     &#8212;launch-configuration &#8220;map-update-launch-config&#8221;
-     &#8212;availability-zones &#8220;$EC2_ZONE&#8221;
-     &#8212;min-size 0 &#8212;max-size 0
-  as-suspend-processes &#8220;map-update-scale-group&#8221;
-     &#8212;processes ReplaceUnhealthy
-  as-describe-auto-scaling-groups&nbsp;&#8212;headers</p>
+<div class="highlight"><pre><span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Create auto scaling group with launch configuration&quot;</span><span class="o">}</span>
+as-create-auto-scaling-group
+   --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
+   --launch-configuration <span class="s2">&quot;map-update-launch-config&quot;</span>
+   --availability-zones <span class="s2">&quot;$EC2_ZONE&quot;</span>
+   --min-size 0 --max-size 0
+as-suspend-processes <span class="s2">&quot;map-update-scale-group&quot;</span>
+   --processes ReplaceUnhealthy
+as-describe-auto-scaling-groups --headers
+</pre></div>
+
+
 <p>In the second line, we are using <code>as-suspend-processes</code> to prevent the
 instance&#8217;s default behavior which is to attempt to restart after it is
 shut down. The third line provides a list of all the auto scaling groups
@@ -690,18 +710,20 @@ information about it. Each schedule&nbsp;requires:</p>
     that our script already stops the instance 10 minutes after
     execution, so 15 minutes is playing it&nbsp;safe.</li>
 </ul>
-<p>:::sh
-  as-put-scheduled-update-group-action
-     &#8212;name &#8220;map-update-start&#8221;
-     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
-     &#8212;min-size 1 &#8212;max-size 1
-     &#8212;recurrence &#8220;0 0 * <em> </em>&#8221;
-  as-put-scheduled-update-group-action
-     &#8212;name &#8220;map-update-stop&#8221;
-     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
-     &#8212;min-size 0 &#8212;max-size 0
-     &#8212;recurrence &#8220;15 0 * <em> </em>&#8221;
-  as-describe-scheduled-actions&nbsp;&#8212;headers</p>
+<div class="highlight"><pre>as-put-scheduled-update-group-action
+   --name <span class="s2">&quot;map-update-start&quot;</span>
+   --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
+   --min-size 1 --max-size 1
+   --recurrence <span class="s2">&quot;0 0 * * *&quot;</span>
+as-put-scheduled-update-group-action
+   --name <span class="s2">&quot;map-update-stop&quot;</span>
+   --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
+   --min-size 0 --max-size 0
+   --recurrence <span class="s2">&quot;15 0 * * *&quot;</span>
+as-describe-scheduled-actions --headers
+</pre></div>
+
+
 <p>As before, the third line provides a list of the actions that have been&nbsp;scheduled.</p>
 <p><br></p>
 <p>And thats it! We are now only paying for 10 or 15 minutes of cloud per
@@ -802,11 +824,6 @@ completely terminates the&nbsp;instance.</p>
                 </a>
             </div>
             <div class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/andrew-ng.html">
-                            andrew ng
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/api.html">
                             api
@@ -827,11 +844,6 @@ completely terminates the&nbsp;instance.</p>
                             cartography
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/coursera.html">
-                            Coursera
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
                             cron
@@ -842,14 +854,19 @@ completely terminates the&nbsp;instance.</p>
                             ec2
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
+                            economics
+                        </a>
+                    </li>
                     <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/ideas-worth-spreading.html">
-                            ideas worth spreading
+                        <a href="http://justmytwospence.github.com/pelican/tag/freesurfer.html">
+                            Freesurfer
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -867,14 +884,19 @@ completely terminates the&nbsp;instance.</p>
                             neuroscience
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="http://justmytwospence.github.com/pelican/tag/r.html">
-                            R
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/philosophy.html">
+                            philosophy
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
-                            reveal.js
+                        <a href="http://justmytwospence.github.com/pelican/tag/quantifiedself.html">
+                            quantifiedSelf
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://justmytwospence.github.com/pelican/tag/r.html">
+                            R
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -893,8 +915,8 @@ completely terminates the&nbsp;instance.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
-                            silicon valley
+                        <a href="http://justmytwospence.github.com/pelican/tag/stanford.html">
+                            stanford
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
