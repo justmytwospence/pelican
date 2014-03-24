@@ -302,7 +302,7 @@ only once a day, execute our script, then shut back down. To accomplish
 this, we will want three &lt;span class="caps"&gt;CLI&lt;/span&gt; tools: &lt;a href="http://aws.amazon.com/developertools/368"&gt;the Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; &lt;span class="caps"&gt;AMI&lt;/span&gt; Tools&lt;/a&gt;, &lt;a href="http://aws.amazon.com/developertools/351"&gt;the
 Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; Tools&lt;/a&gt;,and &lt;a href="http://aws.amazon.com/developertools/2535"&gt;the Auto Scaling Command Line Tool&lt;/a&gt;. If
 you&amp;#8217;re on a Mac, it&amp;#8217;s way easier to get these with &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt; than by
-downloading from Amazon&amp;#8217;s&amp;nbsp;website:&lt;/p&gt;
+downloading from Amazon&amp;#8217;s&amp;nbsp;website: &lt;/p&gt;
 &lt;p&gt;:::bash
   brew install ec2-ami-tools # For creating an &lt;span class="caps"&gt;AMI&lt;/span&gt; from an existing machine
   brew install ec2-api-tools # For registering and launching instances
@@ -312,8 +312,9 @@ downloading from Amazon&amp;#8217;s&amp;nbsp;website:&lt;/p&gt;
 exactly what we need to do to get our authentication and environment
 variables all set up. First we are told to download the necessary .pem
 files from &lt;a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key"&gt;this Amazon page&lt;/a&gt; and place them into a new hidden
-directory of our home directory &amp;#8220;\~/.ec2&amp;#8221;. Then we tell our command line
-where everything lives now by inserting the following lines into our&amp;nbsp;\~/.bashrc:&lt;/p&gt;
+directory of our home directory &lt;code&gt;.ec2&lt;/code&gt;. Then we tell our command line
+where everything lives now by inserting the following lines into our
+&lt;code&gt;.bashrc&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;:::bash
   export EC2_PRIVATE_KEY=&amp;#8221;$(/bin/ls &amp;#8220;$&lt;span class="caps"&gt;HOME&lt;/span&gt;&amp;#8221;/.ec2/pk-&lt;em&gt;.pem | /usr/bin/head -1)&amp;#8221;
   export EC2_CERT=&amp;#8221;$(/bin/ls &amp;#8220;$&lt;span class="caps"&gt;HOME&lt;/span&gt;&amp;#8221;/.ec2/cert-&lt;/em&gt;.pem | /usr/bin/head -1)&amp;#8221;
@@ -333,7 +334,7 @@ will be much more succinct. Note that every &lt;span class="caps"&gt;EC2&lt;/spa
 located at one of several regions; we are using us-west-2 because it
 happens to be where I spun up the existing instance that currently holds
 our &amp;#8220;update.py&amp;#8221; script, but any of them would probably work just fine
-for the simple job at&amp;nbsp;hand.  &lt;/p&gt;
+for the simple job at&amp;nbsp;hand.&lt;/p&gt;
 &lt;p&gt;Code&amp;nbsp;Region&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;ap-northeast-1   Asia Pacific (Tokyo) Region
@@ -360,7 +361,7 @@ my case. This is tantamount to cloning the instance, because we can now
 reference the new image &lt;span class="caps"&gt;ID&lt;/span&gt; when we spin up new instances and all of our
 modules, scripts, etc. will be there waiting for us. Note that I removed
 the instance&amp;#8217;s &lt;code&gt;cron&lt;/code&gt; job &lt;em&gt;before&lt;/em&gt; creating the &lt;span class="caps"&gt;AMI&lt;/span&gt;, because we&amp;#8217;ll now
-be handling the task scheduling from &lt;emph&gt;outside&lt;/emph&gt; the instance,
+be handling the task scheduling from &lt;em&gt;outside&lt;/em&gt; the instance,
 via &lt;strong&gt;autoscaling&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Next let&amp;#8217;s write a shell script that will execute
@@ -414,7 +415,7 @@ command on line&amp;nbsp;46:&lt;/p&gt;
   shutdown -h&amp;nbsp;now&lt;/p&gt;
 &lt;p&gt;exit&amp;nbsp;0&lt;/p&gt;
 &lt;p&gt;Note that the user data script that we pass to the launch configuration
-executes with &lt;emph&gt;root&lt;/emph&gt; permissions, not as the user &amp;#8220;ubuntu&amp;#8221;
+executes with &lt;em&gt;root&lt;/em&gt; permissions, not as the user &amp;#8220;ubuntu&amp;#8221;
 that you would typically log in as via &lt;code&gt;ssh&lt;/code&gt;. Its probably best to be as
 explicit as possible when specifying path names in the cloud, the tilde
 operator might turn around and bite&amp;nbsp;you.&lt;/p&gt;
@@ -433,10 +434,10 @@ at the &lt;span class="caps"&gt;AWS&lt;/span&gt; console &lt;span class="caps"&g
 &lt;li&gt;The name of the launch config; let&amp;#8217;s call it&amp;nbsp;&amp;#8220;map-update-launch-config&amp;#8221;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;:::bash
-  as-create-launch-config &lt;br /&gt;
-     &amp;#8212;instance-type t1.micro &lt;br /&gt;
-     &amp;#8212;user-data-file ~/Desktop/update.sh &lt;br /&gt;
-     &amp;#8212;image-id ami-fcdfb9cc &lt;br /&gt;
+  as-create-launch-config
+     &amp;#8212;instance-type t1.micro
+     &amp;#8212;user-data-file ~/Desktop/update.sh
+     &amp;#8212;image-id ami-fcdfb9cc
      &amp;#8212;launch-config &amp;#8220;map-update-launch-config&amp;#8221;
   as-describe-launch-configs&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
 &lt;p&gt;Note that the second line provides a list of all the launch
@@ -458,14 +459,14 @@ tell&amp;nbsp;it:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;:::bash
   title=&amp;#8221;Create auto scaling group with launch configuration&amp;#8221;}
-  as-create-auto-scaling-group &lt;br /&gt;
-     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221; &lt;br /&gt;
-     &amp;#8212;launch-configuration &amp;#8220;map-update-launch-config&amp;#8221; &lt;br /&gt;
-     &amp;#8212;availability-zones &amp;#8220;$EC2_ZONE&amp;#8221; &lt;br /&gt;
+  as-create-auto-scaling-group
+     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
+     &amp;#8212;launch-configuration &amp;#8220;map-update-launch-config&amp;#8221;
+     &amp;#8212;availability-zones &amp;#8220;$EC2_ZONE&amp;#8221;
      &amp;#8212;min-size 0 &amp;#8212;max-size 0
-  as-suspend-processes &amp;#8220;map-update-scale-group&amp;#8221; &lt;br /&gt;
+  as-suspend-processes &amp;#8220;map-update-scale-group&amp;#8221;
      &amp;#8212;processes ReplaceUnhealthy
-as-describe-auto-scaling-groups&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
+  as-describe-auto-scaling-groups&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
 &lt;p&gt;In the second line, we are using &lt;code&gt;as-suspend-processes&lt;/code&gt; to prevent the
 instance&amp;#8217;s default behavior which is to attempt to restart after it is
 shut down. The third line provides a list of all the auto scaling groups
@@ -474,9 +475,9 @@ that have been&amp;nbsp;created.&lt;/p&gt;
 &lt;p&gt;Last but not least, we are ready to assign a
 schedule to our auto scaling group. Here we create two: one to start the
 instance and one to terminate the instance. Astute readers will recall
-that &amp;#8220;update.sh&amp;#8221; already &lt;emph&gt;stops&lt;/emph&gt; the instance so that we
+that &amp;#8220;update.sh&amp;#8221; already &lt;em&gt;stops&lt;/em&gt; the instance so that we
 aren&amp;#8217;t paying to have it running, but we also need to completely
-&lt;emph&gt;terminate&lt;/emph&gt; the instance so that we aren&amp;#8217;t paying to store
+&lt;em&gt;terminate&lt;/em&gt; the instance so that we aren&amp;#8217;t paying to store
 information about it. Each schedule&amp;nbsp;requires:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A name (&amp;#8220;map-update-start&amp;#8221; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt;&amp;nbsp;&amp;#8220;map-update-stop&amp;#8221;).&lt;/li&gt;
@@ -491,15 +492,15 @@ information about it. Each schedule&amp;nbsp;requires:&lt;/p&gt;
     execution, so 15 minutes is playing it&amp;nbsp;safe.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;:bash
-  as-put-scheduled-update-group-action &lt;br /&gt;
-     &amp;#8212;name &amp;#8220;map-update-start&amp;#8221; &lt;br /&gt;
-     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221; &lt;br /&gt;
-     &amp;#8212;min-size 1 &amp;#8212;max-size 1 &lt;br /&gt;
+  as-put-scheduled-update-group-action
+     &amp;#8212;name &amp;#8220;map-update-start&amp;#8221;
+     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
+     &amp;#8212;min-size 1 &amp;#8212;max-size 1
      &amp;#8212;recurrence &amp;#8220;0 0 * &lt;em&gt; &lt;/em&gt;&amp;#8221;
-  as-put-scheduled-update-group-action &lt;br /&gt;
-     &amp;#8212;name &amp;#8220;map-update-stop&amp;#8221; &lt;br /&gt;
-     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221; &lt;br /&gt;
-     &amp;#8212;min-size 0 &amp;#8212;max-size 0 &lt;br /&gt;
+  as-put-scheduled-update-group-action
+     &amp;#8212;name &amp;#8220;map-update-stop&amp;#8221;
+     &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
+     &amp;#8212;min-size 0 &amp;#8212;max-size 0
      &amp;#8212;recurrence &amp;#8220;15 0 * &lt;em&gt; &lt;/em&gt;&amp;#8221;
   as-describe-scheduled-actions&amp;nbsp;&amp;#8212;headers&lt;/p&gt;
 &lt;p&gt;As before, the third line provides a list of the actions that have been&amp;nbsp;scheduled.&lt;/p&gt;
@@ -510,7 +511,7 @@ in this example: our auto scaling group boots up an instance up at
 midnight &lt;span class="caps"&gt;UTC&lt;/span&gt; that immediately executes &amp;#8220;update.sh&amp;#8221;. This automatically
 executes &amp;#8220;update.py&amp;#8221; and shoots us a diagnostic email. It then waits 10
 minutes to make sure everything has time to run, before stopping the
-instance. 5 minutes after &lt;emph&gt;that&lt;/emph&gt; the auto scaling group then
+instance. 5 minutes after &lt;em&gt;that&lt;/em&gt; the auto scaling group then
 completely terminates the&amp;nbsp;instance.&lt;/p&gt;
 &lt;p&gt;Other great&amp;nbsp;resources:&lt;/p&gt;
 &lt;ul&gt;
@@ -713,7 +714,7 @@ and then combines them. If the size argument is less than 1, it will be
 interpreted as the percentage of each stratification subset that should
 be sampled. If the size argument is greater than 1, it will be
 interpreted as the number of observations to sample from each
-stratification subset.&lt;br /&gt;
+stratification subset.
 Note that in the first case, a different number of observations will be
 taken from each subset depending on their total number of observations.
 In the second case however, an equal number of observations will be
@@ -824,8 +825,8 @@ lying around from a previous&amp;nbsp;assignment.&lt;/p&gt;
 &lt;p&gt;Without further ado, here’s a preview in .gif format:[hr]&lt;img alt="" src="http://media.tumblr.com/66066fffc66745aa8b9047b5e49032d3/tumblr_inline_mv3h49xMTG1r0kwho.gif" /&gt;[hr]You
 can run the actual app for yourself in your R console with only three
 lines of code (two if you already have shiny&amp;nbsp;installed!)&lt;/p&gt;
-&lt;p&gt;​1. install.packages(‘shiny’)&lt;br /&gt;
-2. library(shiny)&lt;br /&gt;
+&lt;p&gt;​1. install.packages(‘shiny’)
+2. library(shiny)
 3. runGitHub(‘shiny_stepwise’,&amp;nbsp;‘justmytwospence’)&lt;/p&gt;
 &lt;p&gt;The ability to run anyone’s shiny app straight from their GitHub profile
 is super cool. You can see the source code on my GitHub as well. Once I
@@ -842,9 +843,7 @@ definitely be making more Shiny apps in the future as I become more
 familiar with its advanced features. Building dashboards, as I am
 discovering, can be quite&amp;nbsp;addicting.&lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;EDIT&lt;/span&gt;: The app is now live! See it
-at &lt;a href="http://justmytwospence.shinyapps.io/StepLively/"&gt;http://justmytwospence.shinyapps.io/StepLively/&lt;/a&gt;[&lt;br /&gt;&amp;nbsp;][]&lt;/p&gt;
-&lt;p&gt;[&lt;br /&gt;
- ]:&amp;nbsp;http://steplively.spencerboucher.com&lt;/p&gt;</summary><category term="R"></category><category term="Shiny"></category><category term="stepwise"></category></entry><entry><title>Switching R versions on-the-fly</title><link href="http://justmytwospence.github.com/pelican/switching-r-versions-on-the-fly.html" rel="alternate"></link><updated>2013-10-22T22:01:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-22:switching-r-versions-on-the-fly.html</id><summary type="html">&lt;p&gt;If you need to switch back to an older version of R
+at &lt;a href="http://steplively.spencerboucher.com"&gt;http://justmytwospence.shinyapps.io/StepLively/&lt;/a&gt;&lt;/p&gt;</summary><category term="R"></category><category term="Shiny"></category><category term="stepwise"></category></entry><entry><title>Switching R versions on-the-fly</title><link href="http://justmytwospence.github.com/pelican/switching-r-versions-on-the-fly.html" rel="alternate"></link><updated>2013-10-22T22:01:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-10-22:switching-r-versions-on-the-fly.html</id><summary type="html">&lt;p&gt;If you need to switch back to an older version of R
 to use a particular package, it doesn’t get easier than downloading the
 &lt;a href="http://r.research.att.com/"&gt;RSwitcher utility from &lt;span class="caps"&gt;AT&lt;/span&gt;&amp;amp;T&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I use homebrew to keep my main installation up-to-date, and then

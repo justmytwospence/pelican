@@ -502,7 +502,7 @@ only once a day, execute our script, then shut back down. To accomplish
 this, we will want three <span class="caps">CLI</span> tools: <a href="http://aws.amazon.com/developertools/368">the Amazon <span class="caps">EC2</span> <span class="caps">AMI</span> Tools</a>, <a href="http://aws.amazon.com/developertools/351">the
 Amazon <span class="caps">EC2</span> <span class="caps">API</span> Tools</a>,and <a href="http://aws.amazon.com/developertools/2535">the Auto Scaling Command Line Tool</a>. If
 you&#8217;re on a Mac, it&#8217;s way easier to get these with <a href="http://brew.sh/">Homebrew</a> than by
-downloading from Amazon&#8217;s&nbsp;website:</p>
+downloading from Amazon&#8217;s&nbsp;website: </p>
 <p>:::bash
   brew install ec2-ami-tools # For creating an <span class="caps">AMI</span> from an existing machine
   brew install ec2-api-tools # For registering and launching instances
@@ -512,8 +512,9 @@ downloading from Amazon&#8217;s&nbsp;website:</p>
 exactly what we need to do to get our authentication and environment
 variables all set up. First we are told to download the necessary .pem
 files from <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key">this Amazon page</a> and place them into a new hidden
-directory of our home directory &#8220;\~/.ec2&#8221;. Then we tell our command line
-where everything lives now by inserting the following lines into our&nbsp;\~/.bashrc:</p>
+directory of our home directory <code>.ec2</code>. Then we tell our command line
+where everything lives now by inserting the following lines into our
+<code>.bashrc</code>:</p>
 <p>:::bash
   export EC2_PRIVATE_KEY=&#8221;$(/bin/ls &#8220;$<span class="caps">HOME</span>&#8221;/.ec2/pk-<em>.pem | /usr/bin/head -1)&#8221;
   export EC2_CERT=&#8221;$(/bin/ls &#8220;$<span class="caps">HOME</span>&#8221;/.ec2/cert-</em>.pem | /usr/bin/head -1)&#8221;
@@ -533,7 +534,7 @@ will be much more succinct. Note that every <span class="caps">EC2</span> instan
 located at one of several regions; we are using us-west-2 because it
 happens to be where I spun up the existing instance that currently holds
 our &#8220;update.py&#8221; script, but any of them would probably work just fine
-for the simple job at&nbsp;hand.  </p>
+for the simple job at&nbsp;hand.</p>
 <p>Code&nbsp;Region</p>
 <hr />
 <p>ap-northeast-1   Asia Pacific (Tokyo) Region
@@ -560,7 +561,7 @@ my case. This is tantamount to cloning the instance, because we can now
 reference the new image <span class="caps">ID</span> when we spin up new instances and all of our
 modules, scripts, etc. will be there waiting for us. Note that I removed
 the instance&#8217;s <code>cron</code> job <em>before</em> creating the <span class="caps">AMI</span>, because we&#8217;ll now
-be handling the task scheduling from <emph>outside</emph> the instance,
+be handling the task scheduling from <em>outside</em> the instance,
 via <strong>autoscaling</strong>.</p>
 <p><br></p>
 <p>Next let&#8217;s write a shell script that will execute
@@ -614,7 +615,7 @@ command on line&nbsp;46:</p>
   shutdown -h&nbsp;now</p>
 <p>exit&nbsp;0</p>
 <p>Note that the user data script that we pass to the launch configuration
-executes with <emph>root</emph> permissions, not as the user &#8220;ubuntu&#8221;
+executes with <em>root</em> permissions, not as the user &#8220;ubuntu&#8221;
 that you would typically log in as via <code>ssh</code>. Its probably best to be as
 explicit as possible when specifying path names in the cloud, the tilde
 operator might turn around and bite&nbsp;you.</p>
@@ -633,10 +634,10 @@ at the <span class="caps">AWS</span> console <span class="caps">GUI</span>. Here
 <li>The name of the launch config; let&#8217;s call it&nbsp;&#8220;map-update-launch-config&#8221;.</li>
 </ul>
 <p>:::bash
-  as-create-launch-config <br />
-     &#8212;instance-type t1.micro <br />
-     &#8212;user-data-file ~/Desktop/update.sh <br />
-     &#8212;image-id ami-fcdfb9cc <br />
+  as-create-launch-config
+     &#8212;instance-type t1.micro
+     &#8212;user-data-file ~/Desktop/update.sh
+     &#8212;image-id ami-fcdfb9cc
      &#8212;launch-config &#8220;map-update-launch-config&#8221;
   as-describe-launch-configs&nbsp;&#8212;headers</p>
 <p>Note that the second line provides a list of all the launch
@@ -658,14 +659,14 @@ tell&nbsp;it:</p>
 </ul>
 <p>:::bash
   title=&#8221;Create auto scaling group with launch configuration&#8221;}
-  as-create-auto-scaling-group <br />
-     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221; <br />
-     &#8212;launch-configuration &#8220;map-update-launch-config&#8221; <br />
-     &#8212;availability-zones &#8220;$EC2_ZONE&#8221; <br />
+  as-create-auto-scaling-group
+     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
+     &#8212;launch-configuration &#8220;map-update-launch-config&#8221;
+     &#8212;availability-zones &#8220;$EC2_ZONE&#8221;
      &#8212;min-size 0 &#8212;max-size 0
-  as-suspend-processes &#8220;map-update-scale-group&#8221; <br />
+  as-suspend-processes &#8220;map-update-scale-group&#8221;
      &#8212;processes ReplaceUnhealthy
-as-describe-auto-scaling-groups&nbsp;&#8212;headers</p>
+  as-describe-auto-scaling-groups&nbsp;&#8212;headers</p>
 <p>In the second line, we are using <code>as-suspend-processes</code> to prevent the
 instance&#8217;s default behavior which is to attempt to restart after it is
 shut down. The third line provides a list of all the auto scaling groups
@@ -674,9 +675,9 @@ that have been&nbsp;created.</p>
 <p>Last but not least, we are ready to assign a
 schedule to our auto scaling group. Here we create two: one to start the
 instance and one to terminate the instance. Astute readers will recall
-that &#8220;update.sh&#8221; already <emph>stops</emph> the instance so that we
+that &#8220;update.sh&#8221; already <em>stops</em> the instance so that we
 aren&#8217;t paying to have it running, but we also need to completely
-<emph>terminate</emph> the instance so that we aren&#8217;t paying to store
+<em>terminate</em> the instance so that we aren&#8217;t paying to store
 information about it. Each schedule&nbsp;requires:</p>
 <ul>
 <li>A name (&#8220;map-update-start&#8221; <span class="amp">&amp;</span>&nbsp;&#8220;map-update-stop&#8221;).</li>
@@ -691,15 +692,15 @@ information about it. Each schedule&nbsp;requires:</p>
     execution, so 15 minutes is playing it&nbsp;safe.</li>
 </ul>
 <p>:bash
-  as-put-scheduled-update-group-action <br />
-     &#8212;name &#8220;map-update-start&#8221; <br />
-     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221; <br />
-     &#8212;min-size 1 &#8212;max-size 1 <br />
+  as-put-scheduled-update-group-action
+     &#8212;name &#8220;map-update-start&#8221;
+     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
+     &#8212;min-size 1 &#8212;max-size 1
      &#8212;recurrence &#8220;0 0 * <em> </em>&#8221;
-  as-put-scheduled-update-group-action <br />
-     &#8212;name &#8220;map-update-stop&#8221; <br />
-     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221; <br />
-     &#8212;min-size 0 &#8212;max-size 0 <br />
+  as-put-scheduled-update-group-action
+     &#8212;name &#8220;map-update-stop&#8221;
+     &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
+     &#8212;min-size 0 &#8212;max-size 0
      &#8212;recurrence &#8220;15 0 * <em> </em>&#8221;
   as-describe-scheduled-actions&nbsp;&#8212;headers</p>
 <p>As before, the third line provides a list of the actions that have been&nbsp;scheduled.</p>
@@ -710,7 +711,7 @@ in this example: our auto scaling group boots up an instance up at
 midnight <span class="caps">UTC</span> that immediately executes &#8220;update.sh&#8221;. This automatically
 executes &#8220;update.py&#8221; and shoots us a diagnostic email. It then waits 10
 minutes to make sure everything has time to run, before stopping the
-instance. 5 minutes after <emph>that</emph> the auto scaling group then
+instance. 5 minutes after <em>that</em> the auto scaling group then
 completely terminates the&nbsp;instance.</p>
 <p>Other great&nbsp;resources:</p>
 <ul>
@@ -832,34 +833,24 @@ completely terminates the&nbsp;instance.</p>
                             ec2
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
-                            economics
-                        </a>
-                    </li>
                     <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/foldit.html">
-                            foldit
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/hierarchy-of-needs.html">
-                            Hierarchy of needs
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/javascript.html">
-                            javascript
+                        <a href="http://justmytwospence.github.com/pelican/tag/kaggle.html">
+                            kaggle
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/maps.html">
+                            maps
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -870,6 +861,16 @@ completely terminates the&nbsp;instance.</p>
                     <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/optogenetics.html">
                             optogenetics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/passwords.html">
+                            passwords
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/power.html">
+                            power
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
@@ -892,14 +893,14 @@ completely terminates the&nbsp;instance.</p>
                             Shiny
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/stanford.html">
+                            stanford
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/zombies.html">
-                            zombies
                         </a>
                     </li>
             </div>
