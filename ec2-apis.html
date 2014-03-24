@@ -502,7 +502,7 @@ this, we will want three <span class="caps">CLI</span> tools: <a href="http://aw
 Amazon <span class="caps">EC2</span> <span class="caps">API</span> Tools</a>,and <a href="http://aws.amazon.com/developertools/2535">the Auto Scaling Command Line Tool</a>. If
 you&#8217;re on a Mac, it&#8217;s way easier to get these with <a href="http://brew.sh/">Homebrew</a> than by
 downloading from Amazon&#8217;s&nbsp;website: </p>
-<p>:::bash
+<p>:::sh
   brew install ec2-ami-tools # For creating an <span class="caps">AMI</span> from an existing machine
   brew install ec2-api-tools # For registering and launching instances
   brew install aws-as        # For creating auto scaling groups / defining&nbsp;schedules</p>
@@ -514,7 +514,7 @@ files from <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.
 directory of our home directory <code>.ec2</code>. Then we tell our command line
 where everything lives now by inserting the following lines into our
 <code>.bashrc</code>:</p>
-<p>:::bash
+<p>:::sh
   export EC2_PRIVATE_KEY=&#8221;$(/bin/ls &#8220;$<span class="caps">HOME</span>&#8221;/.ec2/pk-<em>.pem | /usr/bin/head -1)&#8221;
   export EC2_CERT=&#8221;$(/bin/ls &#8220;$<span class="caps">HOME</span>&#8221;/.ec2/cert-</em>.pem | /usr/bin/head -1)&#8221;
   export EC2_HOME=&#8221;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&#8221;
@@ -551,7 +551,7 @@ problem that I originally had with my web host: the Python modules that
 we need won&#8217;t be installed. We <em>could</em> write a script that would install
 <code>pip</code> plus all of the requisite Python modules and run it first thing
 after we launch the instance, but there&#8217;s a better&nbsp;way:</p>
-<p>:::bash
+<p>:::sh
   ec2-create-image i-8918e1be -n &#8220;Map Update&nbsp;Image&#8221;</p>
 <p>This command from <code>ec2-ami-tools</code> creates an &#8220;Amazon Machine Image&#8221; of
 the instance that we previously had running and names it &#8220;Map Update
@@ -572,7 +572,7 @@ its business and then promptly commit seppuku and stop charging us
 money. Eric Hammond has created a great template on <a href="http://alestic.com/2011/11/ec2-schedule-instance">his blog</a>, which
 I&#8217;ve modified below. Note the execution of our <a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping">familiar</a> &#8220;update.py&#8221; script highlighted on line 4, and the apoptosis
 command on line&nbsp;46:</p>
-<p>:::bash
+<p>:::sh
   #!/bin/bash -x
   exec &gt; &gt;(tee /var/log/user-data.log|logger -t user-data -s 2&gt;/dev/console)&nbsp;2&gt;&amp;1</p>
 <p>/usr/bin/python /home/ubuntu/update.py # Run the&nbsp;script</p>
@@ -632,7 +632,7 @@ at the <span class="caps">AWS</span> console <span class="caps">GUI</span>. Here
     included our Python&nbsp;modules.</li>
 <li>The name of the launch config; let&#8217;s call it&nbsp;&#8220;map-update-launch-config&#8221;.</li>
 </ul>
-<p>:::bash
+<p>:::sh
   as-create-launch-config
      &#8212;instance-type t1.micro
      &#8212;user-data-file ~/Desktop/update.sh
@@ -656,7 +656,7 @@ tell&nbsp;it:</p>
 <li>A minimum and maximum number of instances in the group. We&#8217;ll
     initialize these to&nbsp;zero.</li>
 </ul>
-<p>:::bash
+<p>:::sh
   title=&#8221;Create auto scaling group with launch configuration&#8221;}
   as-create-auto-scaling-group
      &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
@@ -690,7 +690,7 @@ information about it. Each schedule&nbsp;requires:</p>
     that our script already stops the instance 10 minutes after
     execution, so 15 minutes is playing it&nbsp;safe.</li>
 </ul>
-<p>:bash
+<p>:::sh
   as-put-scheduled-update-group-action
      &#8212;name &#8220;map-update-start&#8221;
      &#8212;auto-scaling-group &#8220;map-update-scale-group&#8221;
@@ -807,11 +807,6 @@ completely terminates the&nbsp;instance.</p>
                             api
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/auto-scaling.html">
-                            auto scaling
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
                             aws
@@ -825,11 +820,6 @@ completely terminates the&nbsp;instance.</p>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/cartography.html">
                             cartography
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
-                            cloud
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -848,6 +838,16 @@ completely terminates the&nbsp;instance.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/hierarchy-of-needs.html">
+                            Hierarchy of needs
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/holo.html">
                             holo
                         </a>
@@ -857,19 +857,14 @@ completely terminates the&nbsp;instance.</p>
                             machine learning
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/maps.html">
-                            maps
-                        </a>
-                    </li>
                     <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/neuroscience.html">
                             neuroscience
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
-                            paradigm
+                        <a href="http://justmytwospence.github.com/pelican/tag/passwords.html">
+                            passwords
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
@@ -892,14 +887,19 @@ completely terminates the&nbsp;instance.</p>
                             Shiny
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/solarized.html">
-                            solarized
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/super.html">
+                            super
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
+                            superpower
                         </a>
                     </li>
             </div>

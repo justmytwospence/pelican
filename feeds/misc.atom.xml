@@ -38,7 +38,7 @@ this, we will want three &lt;span class="caps"&gt;CLI&lt;/span&gt; tools: &lt;a 
 Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; Tools&lt;/a&gt;,and &lt;a href="http://aws.amazon.com/developertools/2535"&gt;the Auto Scaling Command Line Tool&lt;/a&gt;. If
 you&amp;#8217;re on a Mac, it&amp;#8217;s way easier to get these with &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt; than by
 downloading from Amazon&amp;#8217;s&amp;nbsp;website: &lt;/p&gt;
-&lt;p&gt;:::bash
+&lt;p&gt;:::sh
   brew install ec2-ami-tools # For creating an &lt;span class="caps"&gt;AMI&lt;/span&gt; from an existing machine
   brew install ec2-api-tools # For registering and launching instances
   brew install aws-as        # For creating auto scaling groups / defining&amp;nbsp;schedules&lt;/p&gt;
@@ -50,7 +50,7 @@ files from &lt;a href="http://aws-portal.amazon.com/gp/aws/developer/account/ind
 directory of our home directory &lt;code&gt;.ec2&lt;/code&gt;. Then we tell our command line
 where everything lives now by inserting the following lines into our
 &lt;code&gt;.bashrc&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;:::bash
+&lt;p&gt;:::sh
   export EC2_PRIVATE_KEY=&amp;#8221;$(/bin/ls &amp;#8220;$&lt;span class="caps"&gt;HOME&lt;/span&gt;&amp;#8221;/.ec2/pk-&lt;em&gt;.pem | /usr/bin/head -1)&amp;#8221;
   export EC2_CERT=&amp;#8221;$(/bin/ls &amp;#8220;$&lt;span class="caps"&gt;HOME&lt;/span&gt;&amp;#8221;/.ec2/cert-&lt;/em&gt;.pem | /usr/bin/head -1)&amp;#8221;
   export EC2_HOME=&amp;#8221;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&amp;#8221;
@@ -87,7 +87,7 @@ problem that I originally had with my web host: the Python modules that
 we need won&amp;#8217;t be installed. We &lt;em&gt;could&lt;/em&gt; write a script that would install
 &lt;code&gt;pip&lt;/code&gt; plus all of the requisite Python modules and run it first thing
 after we launch the instance, but there&amp;#8217;s a better&amp;nbsp;way:&lt;/p&gt;
-&lt;p&gt;:::bash
+&lt;p&gt;:::sh
   ec2-create-image i-8918e1be -n &amp;#8220;Map Update&amp;nbsp;Image&amp;#8221;&lt;/p&gt;
 &lt;p&gt;This command from &lt;code&gt;ec2-ami-tools&lt;/code&gt; creates an &amp;#8220;Amazon Machine Image&amp;#8221; of
 the instance that we previously had running and names it &amp;#8220;Map Update
@@ -108,7 +108,7 @@ its business and then promptly commit seppuku and stop charging us
 money. Eric Hammond has created a great template on &lt;a href="http://alestic.com/2011/11/ec2-schedule-instance"&gt;his blog&lt;/a&gt;, which
 I&amp;#8217;ve modified below. Note the execution of our &lt;a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping"&gt;familiar&lt;/a&gt; &amp;#8220;update.py&amp;#8221; script highlighted on line 4, and the apoptosis
 command on line&amp;nbsp;46:&lt;/p&gt;
-&lt;p&gt;:::bash
+&lt;p&gt;:::sh
   #!/bin/bash -x
   exec &amp;gt; &amp;gt;(tee /var/log/user-data.log|logger -t user-data -s 2&amp;gt;/dev/console)&amp;nbsp;2&amp;gt;&amp;amp;1&lt;/p&gt;
 &lt;p&gt;/usr/bin/python /home/ubuntu/update.py # Run the&amp;nbsp;script&lt;/p&gt;
@@ -168,7 +168,7 @@ at the &lt;span class="caps"&gt;AWS&lt;/span&gt; console &lt;span class="caps"&g
     included our Python&amp;nbsp;modules.&lt;/li&gt;
 &lt;li&gt;The name of the launch config; let&amp;#8217;s call it&amp;nbsp;&amp;#8220;map-update-launch-config&amp;#8221;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::bash
+&lt;p&gt;:::sh
   as-create-launch-config
      &amp;#8212;instance-type t1.micro
      &amp;#8212;user-data-file ~/Desktop/update.sh
@@ -192,7 +192,7 @@ tell&amp;nbsp;it:&lt;/p&gt;
 &lt;li&gt;A minimum and maximum number of instances in the group. We&amp;#8217;ll
     initialize these to&amp;nbsp;zero.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::bash
+&lt;p&gt;:::sh
   title=&amp;#8221;Create auto scaling group with launch configuration&amp;#8221;}
   as-create-auto-scaling-group
      &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
@@ -226,7 +226,7 @@ information about it. Each schedule&amp;nbsp;requires:&lt;/p&gt;
     that our script already stops the instance 10 minutes after
     execution, so 15 minutes is playing it&amp;nbsp;safe.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:bash
+&lt;p&gt;:::sh
   as-put-scheduled-update-group-action
      &amp;#8212;name &amp;#8220;map-update-start&amp;#8221;
      &amp;#8212;auto-scaling-group &amp;#8220;map-update-scale-group&amp;#8221;
