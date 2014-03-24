@@ -314,7 +314,7 @@ my past locations, overlaid with a point-by-point replay with a
 time-slider. From there, it was just a one-line &lt;span class="caps"&gt;API&lt;/span&gt; call to host the map
 on my website (line 30 highlighted below), which is significantly easier
 than the legwork that went into crafting a Leaflet map&amp;nbsp;&amp;#8220;manually.&amp;#8221;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;xhtml&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mark&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Map source code&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;map/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;.lang:xhtml .mark:30 .decode:true &lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Map source code&amp;quot;&lt;/span&gt; data-url&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;map/index.html&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -330,48 +330,45 @@ occur on a regular basis. The Unix utility &lt;code&gt;cron&lt;/code&gt; is the 
 for this type of thing, so this seemed like a good time to learn how to
 use&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;Python has a reputation for being a great &amp;#8220;glue&amp;#8221; language, so that&amp;#8217;s
-what we&amp;#8217;ll use to build this
-script.
-&lt;br&gt;
-Programmatically accessing your data from
-OpenPaths is super simple. This piece of our script is pulled more or
-less verbatim from &lt;a href="https://openpaths.cc/api"&gt;the OpenPaths &lt;span class="caps"&gt;API&lt;/span&gt; documentation&lt;/a&gt;. Line 21
-(highlighted below) is key - this is where we specify which data you
-want to pull for injection into the CartoDB database. Here we will grab
-the last 24 hours of data (\~96 readings, if you&amp;#8217;re collecting every 15
-minutes like me), getting the results in a nice &lt;span class="caps"&gt;JSON&lt;/span&gt;-formatted variable
-named &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;:::python
-  import oauth2, time, urllib, urllib2,&amp;nbsp;json&lt;/p&gt;
-&lt;p&gt;&lt;span class="caps"&gt;ACCESS&lt;/span&gt; = &amp;#8216;redacted&amp;#8217;
-  &lt;span class="caps"&gt;SECRET&lt;/span&gt; = &amp;#8216;redacted&amp;#8217;
-  &lt;span class="caps"&gt;URL&lt;/span&gt; =&amp;nbsp;&amp;#8216;https://openpaths.cc/api/1&amp;#8217;&lt;/p&gt;
-&lt;p&gt;def build_auth_header(url, method):
-      params = {                                          &lt;br /&gt;
-          &amp;#8216;oauth_version&amp;#8217;: &amp;#8220;1.0&amp;#8221;,
-          &amp;#8216;oauth_nonce&amp;#8217;: oauth2.generate_nonce(),
-          &amp;#8216;oauth_timestamp&amp;#8217;: int(time.time()),
-      }
-      consumer = oauth2.Consumer(key=&lt;span class="caps"&gt;ACCESS&lt;/span&gt;, secret=&lt;span class="caps"&gt;SECRET&lt;/span&gt;)
-      params[&amp;#8216;oauth_consumer_key&amp;#8217;] = consumer.key 
-      request = oauth2.Request(method=method, url=url, parameters=params)  &lt;br /&gt;
-      signature_method = oauth2.SignatureMethod_HMAC_SHA1()
-      request.sign_request(signature_method, consumer, None)
-      return&amp;nbsp;request.to_header()&lt;/p&gt;
-&lt;p&gt;now = time.time()
-  params = {&amp;#8216;start_time&amp;#8217;: now - 24&lt;em&gt;60&lt;/em&gt;60, &amp;#8216;end_time&amp;#8217;: now} # get the last 24 hours
-  query = &amp;#8220;%s?%s&amp;#8221; % (&lt;span class="caps"&gt;URL&lt;/span&gt;, urllib.urlencode(params))
-  #print(query)
-  try:
-      request = urllib2.Request(query)
-      request.headers = build_auth_header(&lt;span class="caps"&gt;URL&lt;/span&gt;, &amp;#8216;&lt;span class="caps"&gt;GET&lt;/span&gt;&amp;#8217;)
-      connection = urllib2.urlopen(request)
-      data = json.loads(&amp;#8221;.join(connection.readlines()))
-      print(json.dumps(data, indent=4))
-  except urllib2.HTTPError as e:
-      print(e.read())
-&lt;br&gt;
-Now we need to get our new &lt;code&gt;data&lt;/code&gt; variable into
+what we&amp;#8217;ll use to build this&amp;nbsp;script.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Programmatically accessing your data from OpenPaths is super simple. This piece of our script is pulled more or less verbatim from &lt;a href="https://openpaths.cc/api"&gt;the OpenPaths &lt;span class="caps"&gt;API&lt;/span&gt; documentation&lt;/a&gt;. Line 21 (highlighted below) is key - this is where we specify which data you want to pull for injection into the CartoDB database. Here we will grab the last 24 hours of data (\~96 readings, if you&amp;#8217;re collecting every 15 minutes like me), getting the results in a nice  &lt;span class="caps"&gt;JSON&lt;/span&gt;-formatted variable named &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;oauth2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;urllib2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+
+&lt;span class="n"&gt;ACCESS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;redacted&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SECRET&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;redacted&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;https://openpaths.cc/api/1&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;build_auth_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;oauth_version&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;1.0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;oauth_nonce&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;oauth2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generate_nonce&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;oauth_timestamp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()),&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;consumer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oauth2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Consumer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ACCESS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;secret&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;oauth_consumer_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;consumer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; 
+    &lt;span class="n"&gt;request&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oauth2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;signature_method&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oauth2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SignatureMethod_HMAC_SHA1&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sign_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;signature_method&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;consumer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_header&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;start_time&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;end_time&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="c"&gt;# get the last 24 hours&lt;/span&gt;
+&lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;?&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlencode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="c"&gt;#print(query)&lt;/span&gt;
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;request&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;build_auth_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;connection&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loads&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readlines&lt;/span&gt;&lt;span class="p"&gt;()))&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;urllib2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPError&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Now we need to get our new &lt;code&gt;data&lt;/code&gt; variable into
 CartoDB&amp;#8217;s postgreSQL server. &lt;a href="http://developers.cartodb.com/documentation/sql-api.html"&gt;CartoDB&amp;#8217;s &lt;span class="caps"&gt;SQL&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; documentation&lt;/a&gt; makes
 this possible, and there&amp;#8217;s even a &lt;a href="https://github.com/vizzuality/cartodb-python"&gt;python module&lt;/a&gt; that wraps OAuth2 to
 simplify things. Although its still in the early stages of development,
@@ -379,28 +376,32 @@ this module works fine for our current purposes; all we have to do is
 send it a string that holds the &lt;span class="caps"&gt;SQL&lt;/span&gt; query we want to run. So now we&amp;#8217;ll
 just write a for-loop that successively builds an &lt;code&gt;INSERT&lt;/code&gt; query for
 each element in &lt;code&gt;data&lt;/code&gt; (lines 18-20 highlighted&amp;nbsp;below).&lt;/p&gt;
-&lt;p&gt;:::python
-  from cartodb import CartoDBException,&amp;nbsp;CartoDBAPIKey&lt;/p&gt;
-&lt;p&gt;user =  &amp;#8216;spencer.g.boucher@gmail.com&amp;#8217;
-  password =  &amp;#8216;redacted&amp;#8217;
-  cartodb_domain = &amp;#8216;justmytwospence&amp;#8217;
-  API_KEY =&amp;#8217;redacted&amp;#8217;
-  cl = CartoDBAPIKey(API_KEY,&amp;nbsp;cartodb_domain)&lt;/p&gt;
-&lt;p&gt;for reading in data:
-      alt     = str(reading[&amp;#8216;alt&amp;#8217;])
-      device  =     reading[&amp;#8216;device&amp;#8217;]
-      lat     = str(reading[&amp;#8216;lat&amp;#8217;])
-      lon     = str(reading[&amp;#8216;lon&amp;#8217;])
-      os      =     reading[&amp;#8216;os&amp;#8217;]
-      t       = str(reading[&amp;#8216;t&amp;#8217;])
-      version =     reading[&amp;#8216;version&amp;#8217;]
-      try:
-          query_string = &amp;#8220;&lt;span class="caps"&gt;INSERT&lt;/span&gt; &lt;span class="caps"&gt;INTO&lt;/span&gt; openpaths_justmytwospence (alt, date, device, lat,  lon, os, version, the_geom) &amp;#8221;
-                         &amp;#8220;&lt;span class="caps"&gt;VALUES&lt;/span&gt; ({0}, abstime({1}), &amp;#8216;{2}&amp;#8217;, {3}, {4}, &amp;#8216;{5}&amp;#8217;, &amp;#8216;{6}&amp;#8217;, ST_ SetSRID(ST_Point({4}, {3}), 4326))&amp;#8221;&lt;br /&gt;
-                        .format(alt, t, device, lat, lon, os, version)
-          print cl.sql(query_string)
-      except CartoDBException as e:
-          print (&amp;#8220;some error ocurred&amp;#8221;,&amp;nbsp;e)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;cartodb&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;CartoDBException&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CartoDBAPIKey&lt;/span&gt;
+
+&lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;  &lt;span class="s"&gt;&amp;#39;spencer.g.boucher@gmail.com&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;  &lt;span class="s"&gt;&amp;#39;redacted&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;cartodb_domain&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;justmytwospence&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;API_KEY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;redacted&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;cl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CartoDBAPIKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;API_KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cartodb_domain&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;reading&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;alt&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;device&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt;     &lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;device&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;lat&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;lat&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;lon&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;lon&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;os&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt;     &lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;os&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;t&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;t&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;     &lt;span class="n"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;version&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;query_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;INSERT INTO openpaths_justmytwospence (alt, date, device, lat,  lon, os, version, the_geom) &amp;quot;&lt;/span&gt;
+                       &lt;span class="s"&gt;&amp;quot;VALUES ({0}, abstime({1}), &amp;#39;{2}&amp;#39;, {3}, {4}, &amp;#39;{5}&amp;#39;, &amp;#39;{6}&amp;#39;, ST_ SetSRID(ST_Point({4}, {3}), 4326))&amp;quot;&lt;/span&gt;  
+                      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lat&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lon&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;cl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;query_string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;CartoDBException&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;some error ocurred&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;A few&amp;nbsp;notes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;It would certainly be faster to insert all of the new data into the
@@ -413,8 +414,8 @@ each element in &lt;code&gt;data&lt;/code&gt; (lines 18-20 highlighted&amp;nbsp;
 &lt;li&gt;&lt;code&gt;ST_SetSRID&lt;/code&gt; is a &lt;a href="http://postgis.org/docs/ST_SetSRID.html"&gt;PostGIS command&lt;/a&gt; that converts a lon/lat pair
     (in that order - another &amp;#8220;gotcha&amp;#8221;) to the necessary geometry&amp;nbsp;object.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;br&gt;
-Last but not least, we need this script to run
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Last but not least, we need this script to run
 automatically. Because we&amp;#8217;ve written the script to transplant 24 hours
 of data, we&amp;#8217;ll need to run it once a day in order to capture all of the
 data that&amp;#8217;s being generated. I tried to set up my web host,
@@ -435,8 +436,10 @@ Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt; instances - &lt;a href="http://
 (let&amp;#8217;s call it update.py) into the home directory of our remote server,
 all we need to do is set up a crontab with the &lt;code&gt;crontab -e&lt;/code&gt; command and
 add the following&amp;nbsp;line:&lt;/p&gt;
-&lt;p&gt;:::bash
-  @daily /usr/bin/python&amp;nbsp;~/update.py&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;@daily /usr/bin/python ~/update.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;&lt;code&gt;@daily&lt;/code&gt; is actually a shortcut for &lt;code&gt;* * * * *&lt;/code&gt;, where each asterix is a
 placeholder for the (respectively) minute, hour, day of month, month,
 and day of week that the script should executed. This shortcut defaults
@@ -471,19 +474,35 @@ and then combines them. If the size argument is less than 1, it will be
 interpreted as the percentage of each stratification subset that should
 be sampled. If the size argument is greater than 1, it will be
 interpreted as the number of observations to sample from each
-stratification subset.
-Note that in the first case, a different number of observations will be
+stratification&amp;nbsp;subset.&lt;/p&gt;
+&lt;p&gt;Note that in the first case, a different number of observations will be
 taken from each subset depending on their total number of observations.
 In the second case however, an equal number of observations will be
 sampled from each subset, regardless of their total number of&amp;nbsp;observations.&lt;/p&gt;
-&lt;p&gt;
-The .by argument is formulated the same way it is for any other ddply
-call.
-
-&lt;br&gt;
-
-&lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;
-&lt;/p&gt;</summary></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
+&lt;p&gt;The .by argument is formulated the same way it is for any other ddply&amp;nbsp;call.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div class="gist"&gt;
+    &lt;script src='https://gist.github.com/7937389.js'&gt;&lt;/script&gt;
+    &lt;noscript&gt;
+        &lt;pre&gt;&lt;code&gt;stratified_sample &lt;- function(df, size = .5, .by, seed = 37L) {
+  require(plyr)
+  set.seed(seed)
+  df.sample &lt;- ddply(df,
+                     .by,
+                     function(x) {
+                       if (size &lt; 1) {
+                         size &lt;- size * nrow(x)
+                       }
+                       return(x[sample(nrow(x),
+                                       size = size),])
+                     },
+                     .progress = 'text')
+  return(df.sample)
+}&lt;/code&gt;&lt;/pre&gt;
+    &lt;/noscript&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;</summary></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
 this quarter, featuring a “mystery” dataset with a binary target
 variable. I was impressed by the reveal.js javascript library, so I put
 together our final slides using it, both because its pretty, and as a

@@ -26,7 +26,6 @@
     <link href="http://justmytwospence.github.com/pelican/theme/css/pygments/native.css" rel="stylesheet">
         <link href="http://justmytwospence.github.com/pelican/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://justmytwospence.github.com/pelican/theme/css/style.css" type="text/css"/>
-        <link href="http://justmytwospence.github.com/pelican/static/custom.css" rel="stylesheet">
 
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
@@ -478,19 +477,35 @@ and then combines them. If the size argument is less than 1, it will be
 interpreted as the percentage of each stratification subset that should
 be sampled. If the size argument is greater than 1, it will be
 interpreted as the number of observations to sample from each
-stratification subset.
-Note that in the first case, a different number of observations will be
+stratification&nbsp;subset.</p>
+<p>Note that in the first case, a different number of observations will be
 taken from each subset depending on their total number of observations.
 In the second case however, an equal number of observations will be
 sampled from each subset, regardless of their total number of&nbsp;observations.</p>
-<p>
-The .by argument is formulated the same way it is for any other ddply
-call.
-
-<br>
-
+<p>The .by argument is formulated the same way it is for any other ddply&nbsp;call.</p>
+<p><br></p>
+<div class="gist">
+    <script src='https://gist.github.com/7937389.js'></script>
+    <noscript>
+        <pre><code>stratified_sample <- function(df, size = .5, .by, seed = 37L) {
+  require(plyr)
+  set.seed(seed)
+  df.sample <- ddply(df,
+                     .by,
+                     function(x) {
+                       if (size < 1) {
+                         size <- size * nrow(x)
+                       }
+                       return(x[sample(nrow(x),
+                                       size = size),])
+                     },
+                     .progress = 'text')
+  return(df.sample)
+}</code></pre>
+    </noscript>
+</div>
+<p><br></p>
 <script src="https://gist.github.com/justmytwospence/7937389.js"></script>
-</p>
                 </div>
                 <!-- /.entry-content -->
     <hr />
@@ -594,19 +609,24 @@ call.
                             cartography
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
+                            cloud
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
                             cron
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/crowdsourcing.html">
+                            crowdsourcing
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/ec2.html">
                             ec2
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
-                            economics
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -615,8 +635,18 @@ call.
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/freesurfer.html">
-                            Freesurfer
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/higher-education.html">
+                            higher education
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/latex.html">
+                            latex
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
@@ -625,23 +655,13 @@ call.
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/neuroimaging.html">
-                            neuroimaging
+                        <a href="http://justmytwospence.github.com/pelican/tag/maps.html">
+                            maps
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/neuroscience.html">
                             neuroscience
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/philosophy.html">
-                            philosophy
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/quantifiedself.html">
-                            quantifiedSelf
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
@@ -662,11 +682,6 @@ call.
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/shiny.html">
                             Shiny
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/stanford.html">
-                            stanford
                         </a>
                     </li>
                     <li class="list-group-item tag-6">
