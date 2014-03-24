@@ -19,15 +19,27 @@
 
     <!-- Map -->
     <style type="text/css">
-        body, #map {
+        html, body, #map {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             background: black;
         }
         #cartodb-gmaps-attribution {
           visibility: hidden;
+        }
+        #wrapper {
+            padding-top: 50px; 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0;
+        }
+        #map {
+            min-height: 100%; 
+            background-color: black;
         }
     </style>
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
@@ -78,7 +90,9 @@ justmytwospence            </a>
     </div>
 </div> <!-- /.navbar -->
 
-<div id="map"></div>
+<div id="wrapper">
+    <div id="map"></div>
+</div>
 
 </body>
 
