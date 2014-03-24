@@ -1,5 +1,3 @@
-<script type="text/javascript">
-
 	var dataset = [ 
 	{ key: 0, value: 5 },
 	{ key: 1, value: 10 },
@@ -245,4 +243,3 @@
 		.duration(duration)
 		.call(yAxis)
 	});
-</script>
