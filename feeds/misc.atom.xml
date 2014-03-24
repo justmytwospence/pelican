@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/misc.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-03-14T14:13:00+01:00</updated><entry><title>What’s a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/misc.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-03-22T18:38:32+01:00</updated><entry><title>Stratified sampling in R</title><link href="http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html" rel="alternate"></link><updated>2014-03-22T18:38:32+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-22:stratified-sampling-in-r.html</id><summary type="html">&lt;p&gt;I was surprised to find that R doesn’t have a base
+function for stratified random sampling. There’s not even a well known
+package I could find that does this in a straight forward way. So heres
+my&amp;nbsp;own.&lt;/p&gt;
+&lt;p&gt;It is essentially a wrapper for a ddply call that samples each subset
+and then combines them. If the size argument is less than 1, it will be
+interpreted as the percentage of each stratification subset that should
+be sampled. If the size argument is greater than 1, it will be
+interpreted as the number of observations to sample from each
+stratification&amp;nbsp;subset.&lt;/p&gt;
+&lt;p&gt;Note that in the first case, a different number of observations will be
+taken from each subset depending on their total number of observations.
+In the second case however, an equal number of observations will be
+sampled from each subset, regardless of their total number of&amp;nbsp;observations.&lt;/p&gt;
+&lt;p&gt;The .by argument is formulated the same way it is for any other ddply&amp;nbsp;call.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div class="gist"&gt;
+    &lt;script src='https://gist.github.com/7937389.js'&gt;&lt;/script&gt;
+    &lt;noscript&gt;
+        &lt;pre&gt;&lt;code&gt;stratified_sample &lt;- function(df, size = .5, .by, seed = 37L) {
+  require(plyr)
+  set.seed(seed)
+  df.sample &lt;- ddply(df,
+                     .by,
+                     function(x) {
+                       if (size &lt; 1) {
+                         size &lt;- size * nrow(x)
+                       }
+                       return(x[sample(nrow(x),
+                                       size = size),])
+                     },
+                     .progress = 'text')
+  return(df.sample)
+}&lt;/code&gt;&lt;/pre&gt;
+    &lt;/noscript&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;</summary></entry><entry><title>What’s a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very
 similar to the one facing Coursera and&amp;nbsp;friends&amp;#8230;&lt;/p&gt;
 &lt;p&gt;&lt;iframe width='640' height='390' src='http://www.youtube.com/embed/8vw8t4O9JQM' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;p&gt;From the 1973 movie &lt;a href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the
@@ -465,44 +502,7 @@ data available. A few final&amp;nbsp;notes:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;[Click here for an addendum to this post that will take you through
   how to schedule the &lt;span class="caps"&gt;EC2&lt;/span&gt; instance and avoid having it run 24/7]: http://www.spencerboucher.com/ec2-apis/
-    &amp;#8220;Scheduling tasks in the cloud with &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;APIs&amp;#8221;&lt;/p&gt;</summary><category term="api"></category><category term="aws"></category><category term="cartoDB"></category><category term="cartography"></category><category term="cron"></category><category term="ec2"></category><category term="map"></category><category term="quantifiedSelf"></category></entry><entry><title>Luke attempts a novel analysis in SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-attempts-a-novel-analysis-in-sas.html" rel="alternate"></link><updated>2014-01-06T22:17:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-06:luke-skywalker-attempts-a-novel-analysis-in-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Stratified sampling in R</title><link href="http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html" rel="alternate"></link><updated>2013-12-12T23:25:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-12:stratified-sampling-in-r.html</id><summary type="html">&lt;p&gt;I was surprised to find that R doesn’t have a base
-function for stratified random sampling. There’s not even a well known
-package I could find that does this in a straight forward way. So heres
-my&amp;nbsp;own.&lt;/p&gt;
-&lt;p&gt;It is essentially a wrapper for a ddply call that samples each subset
-and then combines them. If the size argument is less than 1, it will be
-interpreted as the percentage of each stratification subset that should
-be sampled. If the size argument is greater than 1, it will be
-interpreted as the number of observations to sample from each
-stratification&amp;nbsp;subset.&lt;/p&gt;
-&lt;p&gt;Note that in the first case, a different number of observations will be
-taken from each subset depending on their total number of observations.
-In the second case however, an equal number of observations will be
-sampled from each subset, regardless of their total number of&amp;nbsp;observations.&lt;/p&gt;
-&lt;p&gt;The .by argument is formulated the same way it is for any other ddply&amp;nbsp;call.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;div class="gist"&gt;
-    &lt;script src='https://gist.github.com/7937389.js'&gt;&lt;/script&gt;
-    &lt;noscript&gt;
-        &lt;pre&gt;&lt;code&gt;stratified_sample &lt;- function(df, size = .5, .by, seed = 37L) {
-  require(plyr)
-  set.seed(seed)
-  df.sample &lt;- ddply(df,
-                     .by,
-                     function(x) {
-                       if (size &lt; 1) {
-                         size &lt;- size * nrow(x)
-                       }
-                       return(x[sample(nrow(x),
-                                       size = size),])
-                     },
-                     .progress = 'text')
-  return(df.sample)
-}&lt;/code&gt;&lt;/pre&gt;
-    &lt;/noscript&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;</summary></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
+    &amp;#8220;Scheduling tasks in the cloud with &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;APIs&amp;#8221;&lt;/p&gt;</summary><category term="api"></category><category term="aws"></category><category term="cartoDB"></category><category term="cartography"></category><category term="cron"></category><category term="ec2"></category><category term="map"></category><category term="quantifiedSelf"></category></entry><entry><title>Luke attempts a novel analysis in SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-attempts-a-novel-analysis-in-sas.html" rel="alternate"></link><updated>2014-01-06T22:17:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-06:luke-skywalker-attempts-a-novel-analysis-in-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
 this quarter, featuring a “mystery” dataset with a binary target
 variable. I was impressed by the reveal.js javascript library, so I put
 together our final slides using it, both because its pretty, and as a
