@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-03-22T22:47:17+01:00</updated><entry><title>Interactive Rcharts test</title><link href="http://justmytwospence.github.com/pelican/interactive-rcharts-test.html" rel="alternate"></link><updated>2014-03-22T22:47:17+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-22:interactive-rcharts-test.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-03-22T22:47:17+01:00</updated><entry><title>Interactive Rcharts test</title><link href="http://justmytwospence.github.com/pelican/viz.html" rel="alternate"></link><updated>2014-03-22T22:47:17+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-22:viz.html</id><summary type="html">
 
 	&lt;p&gt;Some&amp;nbsp;configuration&lt;/p&gt;
 
@@ -935,7 +935,7 @@ a lot of people care a lot more about Twitter sentiment analyses.
 &lt;/div&gt;
 
 &lt;p&gt;[Twitter Reaction to Events Often at Odds with Overall Public
-  Opinion]:&amp;nbsp;http://www.pewresearch.org/2013/03/04/twitter-reaction-to-events-often-at-odds-with-overall-public-opinion/&lt;/p&gt;</summary></entry><entry><title>On being approximate</title><link href="http://justmytwospence.github.com/pelican/on-being-approximate-an-inadvertent-data-poem.html" rel="alternate"></link><updated>2013-07-20T05:39:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:on-being-approximate-an-inadvertent-data-poem.html</id><summary type="html">&lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-page-template.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-page-template.html</id><summary type="html">
+  Opinion]:&amp;nbsp;http://www.pewresearch.org/2013/03/04/twitter-reaction-to-events-often-at-odds-with-overall-public-opinion/&lt;/p&gt;</summary></entry><entry><title>On being approximate</title><link href="http://justmytwospence.github.com/pelican/on-being-approximate-an-inadvertent-data-poem.html" rel="alternate"></link><updated>2013-07-20T05:39:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:on-being-approximate-an-inadvertent-data-poem.html</id><summary type="html">&lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>D3 Page Template</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">
 	&lt;script src="http://d3js.org/d3.v3.min.js" charset="utf-8"&gt;&lt;/script&gt;
 	&lt;style&gt;
 		rect:active {
@@ -1211,7 +1211,7 @@ a lot of people care a lot more about Twitter sentiment analyses.
 			.call(yAxis)
 		});
 	&lt;/script&gt;
-</summary></entry><entry><title>Knitr Test</title><link href="http://justmytwospence.github.com/pelican/knitr-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:knitr-test.html</id><summary type="html">
+</summary></entry><entry><title>Knitr Test</title><link href="http://justmytwospence.github.com/pelican/submission.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:submission.html</id><summary type="html">
 	&lt;h1&gt;Product differentiation&amp;nbsp;model&lt;/h1&gt;
 
 	&lt;p&gt;&lt;strong&gt;&lt;span class="caps"&gt;MSAN603&lt;/span&gt; Business Strategies for Big&amp;nbsp;Data&lt;/strong&gt;&lt;/p&gt;
@@ -1741,7 +1741,7 @@ return(best_price)
 	Location can be seen as a proxy for product differentiation too. While the model was seemingly limited to geographic constraints, it is easy to see that some prospective clients my see a luxury brand in the same way that someone could see proximity for substitutable goods.
 	This simulation has shown that if a company can engage certain emotions in a customer, such as desirability, durability, or even design aesthetics, they can overcome some of the rigid limitations of competitive business and increase their company&amp;#39;s&amp;nbsp;viability.&lt;/p&gt;
 
-</summary></entry><entry><title>Test of liquid_tags</title><link href="http://justmytwospence.github.com/pelican/test-of-liquid_tags.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-20:test-of-liquid_tags.html</id><summary type="html">&lt;p&gt;
+</summary></entry><entry><title>Test of liquid_tags</title><link href="http://justmytwospence.github.com/pelican/contract-optimization.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-20:contract-optimization.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
 &lt;div class="prompt input_prompt"&gt;
