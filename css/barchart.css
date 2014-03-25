@@ -11,4 +11,5 @@ rect:active {
 .axis text {
 	font-family: sans-serif;
 	font-size: 11px;
+	fill: white;
 }
