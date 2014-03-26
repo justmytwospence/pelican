@@ -1,7 +1,6 @@
 Title: Live mapping
 Date: 2014-01-08 08:50
 Tags: api, aws, cartoDB, cartography, cron, ec2, map, quantifiedSelf
-Slug: live-mapping
 
 I've been wanting to do some more mapping stuff since
 my first encounter with Leaflet a month or two ago while I was working
@@ -38,9 +37,9 @@ time-slider. From there, it was just a one-line API call to host the map
 on my website (line 30 highlighted below), which is significantly easier
 than the legwork that went into crafting a Leaflet map "manually."
 
-~~~~
+```bash
 {.lang:xhtml .mark:30 .decode:true title="Map source code" data-url="map/index.html"}
-~~~~
+```
 
 This is pretty awesome, but in light of how easy
 it all was, I was almost disappointed. Can we take it one step further?
@@ -57,49 +56,47 @@ use it.
 Python has a reputation for being a great "glue" language, so that's
 what we'll use to build this
 script.
-<br>
-Programmatically accessing your data from
-OpenPaths is super simple. This piece of our script is pulled more or
-less verbatim from [the OpenPaths API documentation][]. Line 21
-(highlighted below) is key - this is where we specify which data you
-want to pull for injection into the CartoDB database. Here we will grab
-the last 24 hours of data (\~96 readings, if you're collecting every 15
-minutes like me), getting the results in a nice JSON-formatted variable
-named `data`.
 
-  :::python
-  import oauth2, time, urllib, urllib2, json
-
-  ACCESS = 'redacted'
-  SECRET = 'redacted'
-  URL = 'https://openpaths.cc/api/1'
-  
-  def build_auth_header(url, method):
-      params = {                                            
-          'oauth_version': "1.0",
-          'oauth_nonce': oauth2.generate_nonce(),
-          'oauth_timestamp': int(time.time()),
-      }
-      consumer = oauth2.Consumer(key=ACCESS, secret=SECRET)
-      params['oauth_consumer_key'] = consumer.key 
-      request = oauth2.Request(method=method, url=url, parameters=params)    
-      signature_method = oauth2.SignatureMethod_HMAC_SHA1()
-      request.sign_request(signature_method, consumer, None)
-      return request.to_header()
-  
-  now = time.time()
-  params = {'start_time': now - 24*60*60, 'end_time': now} # get the last 24 hours
-  query = "%s?%s" % (URL, urllib.urlencode(params))
-  #print(query)
-  try:
-      request = urllib2.Request(query)
-      request.headers = build_auth_header(URL, 'GET')
-      connection = urllib2.urlopen(request)
-      data = json.loads(''.join(connection.readlines()))
-      print(json.dumps(data, indent=4))
-  except urllib2.HTTPError as e:
-      print(e.read())
 <br>
+
+Programmatically accessing your data from OpenPaths is super simple. This piece of our script is pulled more or less verbatim from [the OpenPaths API documentation][]. Line 21 (highlighted below) is key - this is where we specify which data you want to pull for injection into the CartoDB database. Here we will grab the last 24 hours of data (\~96 readings, if you're collecting every 15 minutes like me), getting the results in a nice  JSON-formatted variable named `data`.
+
+```python
+import oauth2, time, urllib, urllib2, json
+
+ACCESS = 'redacted'
+SECRET = 'redacted'
+URL = 'https://openpaths.cc/api/1'
+
+def build_auth_header(url, method):
+    params = {
+        'oauth_version': "1.0",
+        'oauth_nonce': oauth2.generate_nonce(),
+        'oauth_timestamp': int(time.time()),
+    }
+    consumer = oauth2.Consumer(key=ACCESS, secret=SECRET)
+    params['oauth_consumer_key'] = consumer.key 
+    request = oauth2.Request(method=method, url=url, parameters=params)
+    signature_method = oauth2.SignatureMethod_HMAC_SHA1()
+    request.sign_request(signature_method, consumer, None)
+    return request.to_header()
+
+now = time.time()
+params = {'start_time': now - 24*60*60, 'end_time': now} # get the last 24 hours
+query = "%s?%s" % (URL, urllib.urlencode(params))
+#print(query)
+try:
+    request = urllib2.Request(query)
+    request.headers = build_auth_header(URL, 'GET')
+    connection = urllib2.urlopen(request)
+    data = json.loads(''.join(connection.readlines()))
+    print(json.dumps(data, indent=4))
+except urllib2.HTTPError as e:
+    print(e.read())
+```
+
+<br>
+
 Now we need to get our new `data` variable into
 CartoDB's postgreSQL server. [CartoDB's SQL API documentation][] makes
 this possible, and there's even a [python module][] that wraps OAuth2 to
@@ -109,30 +106,31 @@ send it a string that holds the SQL query we want to run. So now we'll
 just write a for-loop that successively builds an `INSERT` query for
 each element in `data` (lines 18-20 highlighted below).
 
-  :::python
-  from cartodb import CartoDBException, CartoDBAPIKey
+```python
+from cartodb import CartoDBException, CartoDBAPIKey
 
-  user =  'spencer.g.boucher@gmail.com'
-  password =  'redacted'
-  cartodb_domain = 'justmytwospence'
-  API_KEY ='redacted'
-  cl = CartoDBAPIKey(API_KEY, cartodb_domain)
-  
-  for reading in data:
-      alt     = str(reading['alt'])
-      device  =     reading['device']
-      lat     = str(reading['lat'])
-      lon     = str(reading['lon'])
-      os      =     reading['os']
-      t       = str(reading['t'])
-      version =     reading['version']
-      try:
-          query_string = "INSERT INTO openpaths_justmytwospence (alt, date, device, lat,  lon, os, version, the_geom) "
-                         "VALUES ({0}, abstime({1}), '{2}', {3}, {4}, '{5}', '{6}', ST_ SetSRID(ST_Point({4}, {3}), 4326))"  
-                        .format(alt, t, device, lat, lon, os, version)
-          print cl.sql(query_string)
-      except CartoDBException as e:
-          print ("some error ocurred", e)
+user =  'spencer.g.boucher@gmail.com'
+password =  'redacted'
+cartodb_domain = 'justmytwospence'
+API_KEY ='redacted'
+cl = CartoDBAPIKey(API_KEY, cartodb_domain)
+
+for reading in data:
+    alt     = str(reading['alt'])
+    device  =     reading['device']
+    lat     = str(reading['lat'])
+    lon     = str(reading['lon'])
+    os      =     reading['os']
+    t       = str(reading['t'])
+    version =     reading['version']
+    try:
+        query_string = "INSERT INTO openpaths_justmytwospence (alt, date, device, lat,  lon, os, version, the_geom) "
+                       "VALUES ({0}, abstime({1}), '{2}', {3}, {4}, '{5}', '{6}', ST_ SetSRID(ST_Point({4}, {3}), 4326))"  
+                      .format(alt, t, device, lat, lon, os, version)
+        print cl.sql(query_string)
+    except CartoDBException as e:
+        print ("some error ocurred", e)
+```
 
 A few notes:
 
@@ -147,6 +145,7 @@ A few notes:
     (in that order - another "gotcha") to the necessary geometry object.
 
 <br>
+
 Last but not least, we need this script to run
 automatically. Because we've written the script to transplant 24 hours
 of data, we'll need to run it once a day in order to capture all of the
@@ -170,8 +169,9 @@ After `pip install`ing everything we need and `scp`ing our python script
 all we need to do is set up a crontab with the `crontab -e` command and
 add the following line:
 
-  :::bash
-  @daily /usr/bin/python ~/update.py
+```bash
+@daily /usr/bin/python ~/update.py
+```
 
 `@daily` is actually a shortcut for `* * * * *`, where each asterix is a
 placeholder for the (respectively) minute, hour, day of month, month,

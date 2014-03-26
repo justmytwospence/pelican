@@ -29,9 +29,9 @@ Without further ado, here’s a preview in .gif format:[hr]![][][hr]You
 can run the actual app for yourself in your R console with only three
 lines of code (two if you already have shiny installed!)
 
-​1. install.packages(‘shiny’)  
-2. library(shiny)  
-3. runGitHub(‘shiny\_stepwise’, ‘justmytwospence’)
+​1. install.packages(‘shiny’)
+2. library(shiny)
+3. runGitHub(‘shiny_stepwise’, ‘justmytwospence’)
 
 The ability to run anyone’s shiny app straight from their GitHub profile
 is super cool. You can see the source code on my GitHub as well. Once I
@@ -50,10 +50,8 @@ familiar with its advanced features. Building dashboards, as I am
 discovering, can be quite addicting.
 
 EDIT: The app is now live! See it
-at <http://justmytwospence.shinyapps.io/StepLively/>[  
-][]
+at [http://justmytwospence.shinyapps.io/StepLively/][]
 
   [Check out the Shiny showcase if you don’t believe me.]: http://www.rstudio.com/shiny/showcase/
   []: http://media.tumblr.com/66066fffc66745aa8b9047b5e49032d3/tumblr_inline_mv3h49xMTG1r0kwho.gif
-  [  
- ]: http://steplively.spencerboucher.com
+  [http://justmytwospence.shinyapps.io/StepLively/]: http://steplively.spencerboucher.com

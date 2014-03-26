@@ -11,51 +11,43 @@ DEFAULT_DATE = 'fs'
 
 # Theme
 THEME = 'bootstrap3'
-#BOOTSTRAP_THEME = 'lumen'
 BOOTSTRAP_NAVBAR_INVERSE = True
+#BOOTSTRAP_THEME = 'darkly'
+TYPOGRIFY = True
 
 # Sidebar
-HIDE_SIDEBAR = False
-#ABOUT_ME = ''
-#AVATAR = 'images/avatar.png'
+#HIDE_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
-#GITHUB_USER = 'justmytwospence'
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
 TAG_CLOUD_STEPS = 10
-TAG_CLOUD_MAX_ITEMS = 20
+TAG_CLOUD_MAX_ITEMS = 30
+SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
+          ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
+          ('RSS', SITEURL + 'feeds/all.atom.xml'))
+#GITHUB_USER = 'justmytwospence'
+#ABOUT_ME = ''
+#AVATAR = 'images/avatar.png'
 
 # Menus and navigation
-USE_FOLDER_AS_CATEGORY = False
 DISPLAY_ARTICLE_INFO = True
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
 DISPLAY_PAGES_ON_MENU = True
-DISPLAY_CATEGORIES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
+DEFAULT_PAGINATION = 5
 
-# Custom resources
-CUSTOM_CSS = 'static/custom.css'
-STATIC_PATHS = ['images', 'pdfs', 'raw_html', 'extra/custom.css']
-EXTRA_PATH_METADATA = {
-	'extra/custom.css': {'path': 'static/custom.css'}
-}
+# Set paths to resources
+STATIC_PATHS = ['images', 'pdfs']
 PLUGIN_PATH = 'pelican-plugins'
-PLUGINS = ['liquid_tags.notebook', 'liquid_tags.youtube']
+PLUGINS = ['liquid_tags.notebook',
+		   'pelican-dynamic']
 EXTRA_HEADER = open('_nb_header_custom.html').read()
-TYPOGRIFY = True
+FILENAME_METADATA = '(?P<slug>.*)'
+USE_FOLDER_AS_CATEGORY = True
 
-PYGMENTS_RST_OPTIONS = {'linenos': 'inline'}
-
-# Feed generation is usually not desired when developing
+# Development settings
+RELATIVE_URLS = True
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
-
-# Social widget
-SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
-          ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),)
-
-DEFAULT_PAGINATION = 5
-
-# Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True

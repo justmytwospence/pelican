@@ -17,17 +17,19 @@ of data science, as well as my personal projects. Don't hesitate to
 reach out for any reason! Questions, ideas, and collaborations are
 always welcome.
 
-<div class="btn-group btn-group-lg">
-	<button type="button" class="btn btn-info">
+<div style="text-align: center; margin-top: 20px">
+<div class="btn-group btn-group-lg text-center">
+	<button type="button" class="btn btn-primary">
 		<a href='http://spencerboucher.com/spencerboucher.pdf'>
 			View Web Resume
 		</a>
 	</button>
-	<button type="button" class="btn btn-info">
+	<button type="button" class="btn btn-primary">
 		<a href='http://spencerboucher.com/spencerboucher-print.php'>
 			Download Print Résumé
 		</a>
 	</button>
+</div>
 </div>
 
   [Analytics program at the University of San Francisco]: http://analytics.usfca.edu

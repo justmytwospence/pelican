@@ -22,3 +22,8 @@ Testing R code:
 	d <- read.csv('file.csv')
 	ggplot(data=d) +
 		geom_point(aes(x=x, y=y))
+
+Testing shell code:
+
+    :::bash
+    export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"

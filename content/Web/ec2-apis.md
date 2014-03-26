@@ -18,32 +18,34 @@ only once a day, execute our script, then shut back down. To accomplish
 this, we will want three CLI tools: [the Amazon EC2 AMI Tools][], [the
 Amazon EC2 API Tools][],and [the Auto Scaling Command Line Tool][]. If
 you're on a Mac, it's way easier to get these with [Homebrew][] than by
-downloading from Amazon's website:
+downloading from Amazon's website: 
 
-  :::bash
-  brew install ec2-ami-tools # For creating an AMI from an existing machine
-  brew install ec2-api-tools # For registering and launching instances
-  brew install aws-as        # For creating auto scaling groups / defining schedules
+```bash
+brew install ec2-ami-tools # For creating an AMI from an existing machine
+brew install ec2-api-tools # For registering and launching instances
+brew install aws-as        # For creating auto scaling groups / defining schedules
+```
 
 As an extra Homebrew bonus, running `brew info ec2-ami-tools`,
 `brew info ec2-api-tools`, and `brew info aws-as` will now tell us
 exactly what we need to do to get our authentication and environment
 variables all set up. First we are told to download the necessary .pem
 files from [this Amazon page][] and place them into a new hidden
-directory of our home directory "\~/.ec2". Then we tell our command line
+directory of our home directory `.ec2`. Then we tell our command line
 where everything lives now by inserting the following lines into our
-\~/.bashrc:
+`.bashrc`:
 
-  :::bash
-  export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-  export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-  export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
-  export AWS_AUTO_SCALING_HOME="/usr/local/Cellar/auto-scaling/1.0.61.4/libexec"
-  export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"
-  export EC2_REGION="us-west-2"
-  export EC2_ZONE=${EC2_REGION}a
-  export EC2_URL=https://$EC2_REGION.ec2.amazonaws.com
-  export AWS_AUTO_SCALING_URL=https://autoscaling.$EC2_REGION.amazonaws.com
+```bash
+export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
+export AWS_AUTO_SCALING_HOME="/usr/local/Cellar/auto-scaling/1.0.61.4/libexec"
+export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"
+export EC2_REGION="us-west-2"
+export EC2_ZONE=${EC2_REGION}a
+export EC2_URL=https://$EC2_REGION.ec2.amazonaws.com
+export AWS_AUTO_SCALING_URL=https://autoscaling.$EC2_REGION.amazonaws.com
+```
 
 Its pretty simple, but if you have any trouble with this part, refer to
 the official [Amazon documentation for setting up the command line][].
@@ -55,7 +57,7 @@ will be much more succinct. Note that every EC2 instance is physically
 located at one of several regions; we are using us-west-2 because it
 happens to be where I spun up the existing instance that currently holds
 our "update.py" script, but any of them would probably work just fine
-for the simple job at hand.  
+for the simple job at hand.
 
   Code             Region
   ---------------- --------------------------------------
@@ -77,8 +79,9 @@ we need won't be installed. We *could* write a script that would install
 `pip` plus all of the requisite Python modules and run it first thing
 after we launch the instance, but there's a better way:
 
-  :::bash
-  ec2-create-image i-8918e1be -n "Map Update Image"
+```bash
+ec2-create-image i-8918e1be -n "Map Update Image"
+```
 
 This command from `ec2-ami-tools` creates an "Amazon Machine Image" of
 the instance that we previously had running and names it "Map Update
@@ -87,7 +90,7 @@ my case. This is tantamount to cloning the instance, because we can now
 reference the new image ID when we spin up new instances and all of our
 modules, scripts, etc. will be there waiting for us. Note that I removed
 the instance's `cron` job *before* creating the AMI, because we'll now
-be handling the task scheduling from <emph>outside</emph> the instance,
+be handling the task scheduling from *outside* the instance,
 via **autoscaling**.
 
 <br>
@@ -103,58 +106,59 @@ I've modified below. Note the execution of our [familiar][live-mapping
 project] "update.py" script highlighted on line 4, and the apoptosis
 command on line 46:
 
-  :::bash
-  #!/bin/bash -x
-  exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
-  
-  /usr/bin/python /home/ubuntu/update.py # Run the script
-  
-  EMAIL=spencer.g.boucher@gmail.com
-  
-  # Upgrade and install Postfix so we can send a sample email
-  export DEBIAN_FRONTEND=noninteractive
-  apt-get update && apt-get upgrade -y && apt-get install -y postfix
-  
-  # Get some information about the running instance
-  instance_id=$(wget -qO- instance-data/latest/meta-data/instance-id)
-  public_ip=$(wget -qO- instance-data/latest/meta-data/public-ipv4)
-  zone=$(wget -qO- instance-data/latest/meta-data/placement/availability-zone)
-  region=$(expr match $zone '\(.*\).')
-  uptime=$(uptime)
-  
-  # Send status email
-  /usr/sbin/sendmail -oi -t -f $EMAIL <<EOM
-  From: $EMAIL
-  To: $EMAIL
-  Subject: Results of EC2 scheduled script
-  
-  This email message was generated on the following EC2 instance:
-  
-    instance id: $instance_id
-    region:      $region
-    public ip:   $public_ip
-    uptime:      $uptime
-  
-  If the instance is still running, you can monitor the output of this
-  job using a command like:
-  
-    ssh ubuntu@$public_ip tail -1000f /var/log/user-data.log
-  
-    ec2-describe-instances --region $region $instance_id
-  
-  EOM
-  
-  # Give the script and email some time to do their thing
-  sleep 600 # 10 minutes
-  
-  # This will stop the EBS boot instance, stopping the hourly charges.
-  # Have Auto Scaling terminate it, stopping the storage charges.
-  shutdown -h now
-  
-  exit 0
+```bash
+#!/bin/bash -x
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+
+/usr/bin/python /home/ubuntu/update.py # Run the script
+
+EMAIL=spencer.g.boucher@gmail.com
+
+# Upgrade and install Postfix so we can send a sample email
+export DEBIAN_FRONTEND=noninteractive
+apt-get update && apt-get upgrade -y && apt-get install -y postfix
+
+# Get some information about the running instance
+instance_id=$(wget -qO- instance-data/latest/meta-data/instance-id)
+public_ip=$(wget -qO- instance-data/latest/meta-data/public-ipv4)
+zone=$(wget -qO- instance-data/latest/meta-data/placement/availability-zone)
+region=$(expr match $zone '\(.*\).')
+uptime=$(uptime)
+
+# Send status email
+/usr/sbin/sendmail -oi -t -f $EMAIL <<EOM
+From: $EMAIL
+To: $EMAIL
+Subject: Results of EC2 scheduled script
+
+This email message was generated on the following EC2 instance:
+
+  instance id: $instance_id
+  region:      $region
+  public ip:   $public_ip
+  uptime:      $uptime
+
+If the instance is still running, you can monitor the output of this
+job using a command like:
+
+  ssh ubuntu@$public_ip tail -1000f /var/log/user-data.log
+
+  ec2-describe-instances --region $region $instance_id
+
+EOM
+
+# Give the script and email some time to do their thing
+sleep 600 # 10 minutes
+
+# This will stop the EBS boot instance, stopping the hourly charges.
+# Have Auto Scaling terminate it, stopping the storage charges.
+shutdown -h now
+
+exit 0
+```
 
 Note that the user data script that we pass to the launch configuration
-executes with <emph>root</emph> permissions, not as the user "ubuntu"
+executes with *root* permissions, not as the user "ubuntu"
 that you would typically log in as via `ssh`. Its probably best to be as
 explicit as possible when specifying path names in the cloud, the tilde
 operator might turn around and bite you.
@@ -176,13 +180,14 @@ at the AWS console GUI. Here we specify:
 -   The name of the launch config; let's call it
     "map-update-launch-config".
 
-  :::bash
-  as-create-launch-config   
-     --instance-type t1.micro   
-     --user-data-file ~/Desktop/update.sh   
-     --image-id ami-fcdfb9cc   
-     --launch-config "map-update-launch-config"
-  as-describe-launch-configs --headers
+```bash
+as-create-launch-config
+   --instance-type t1.micro
+   --user-data-file ~/Desktop/update.sh
+   --image-id ami-fcdfb9cc
+   --launch-config "map-update-launch-config"
+as-describe-launch-configs --headers
+```
 
 Note that the second line provides a list of all the launch
 configurations that have been created.
@@ -205,16 +210,17 @@ tell it:
 -   A minimum and maximum number of instances in the group. We'll
     initialize these to zero.
 
-  :::bash
-  title="Create auto scaling group with launch configuration"}
-  as-create-auto-scaling-group   
-     --auto-scaling-group "map-update-scale-group"   
-     --launch-configuration "map-update-launch-config"   
-     --availability-zones "$EC2_ZONE"   
-     --min-size 0 --max-size 0
-  as-suspend-processes "map-update-scale-group"   
-     --processes ReplaceUnhealthy
+```bash
+title="Create auto scaling group with launch configuration"}
+as-create-auto-scaling-group
+   --auto-scaling-group "map-update-scale-group"
+   --launch-configuration "map-update-launch-config"
+   --availability-zones "$EC2_ZONE"
+   --min-size 0 --max-size 0
+as-suspend-processes "map-update-scale-group"
+   --processes ReplaceUnhealthy
 as-describe-auto-scaling-groups --headers
+```
 
 In the second line, we are using `as-suspend-processes` to prevent the
 instance's default behavior which is to attempt to restart after it is
@@ -226,9 +232,9 @@ that have been created.
 Last but not least, we are ready to assign a
 schedule to our auto scaling group. Here we create two: one to start the
 instance and one to terminate the instance. Astute readers will recall
-that "update.sh" already <emph>stops</emph> the instance so that we
+that "update.sh" already *stops* the instance so that we
 aren't paying to have it running, but we also need to completely
-<emph>terminate</emph> the instance so that we aren't paying to store
+*terminate* the instance so that we aren't paying to store
 information about it. Each schedule requires:
 
 -   A name ("map-update-start" & "map-update-stop").
@@ -243,18 +249,19 @@ information about it. Each schedule requires:
     that our script already stops the instance 10 minutes after
     execution, so 15 minutes is playing it safe.
 
-  :bash
-  as-put-scheduled-update-group-action   
-     --name "map-update-start"   
-     --auto-scaling-group "map-update-scale-group"   
-     --min-size 1 --max-size 1   
-     --recurrence "0 0 * * *"
-  as-put-scheduled-update-group-action   
-     --name "map-update-stop"   
-     --auto-scaling-group "map-update-scale-group"   
-     --min-size 0 --max-size 0   
-     --recurrence "15 0 * * *"
-  as-describe-scheduled-actions --headers
+```bash
+as-put-scheduled-update-group-action
+   --name "map-update-start"
+   --auto-scaling-group "map-update-scale-group"
+   --min-size 1 --max-size 1
+   --recurrence "0 0 * * *"
+as-put-scheduled-update-group-action
+   --name "map-update-stop"
+   --auto-scaling-group "map-update-scale-group"
+   --min-size 0 --max-size 0
+   --recurrence "15 0 * * *"
+as-describe-scheduled-actions --headers
+```
 
 As before, the third line provides a list of the actions that have been
 scheduled.
@@ -267,7 +274,7 @@ in this example: our auto scaling group boots up an instance up at
 midnight UTC that immediately executes "update.sh". This automatically
 executes "update.py" and shoots us a diagnostic email. It then waits 10
 minutes to make sure everything has time to run, before stopping the
-instance. 5 minutes after <emph>that</emph> the auto scaling group then
+instance. 5 minutes after *that* the auto scaling group then
 completely terminates the instance.
 
 Other great resources:
