@@ -60,17 +60,6 @@ article h2 {
     margin-left: 5px;
 }
 
-a, a:hover {
-    color: inherit;
-}
-
-.entry-content a {
-    text-decoration: none;
-}
-.entry-content a:hover {
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
 .entry-content img {
     max-width: 100%;
     height: auto;
