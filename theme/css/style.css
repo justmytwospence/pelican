@@ -13,6 +13,10 @@ p, div {
     font-family: 'Bitter', serif;
 }
 
+article h2 {
+    margin-top: 0px;
+}
+
 .tagcloud li {
     border: 0px;
 }
@@ -52,7 +56,7 @@ p, div {
     margin-right: 15px;
 }
 
-#sidebar #social i {
+#social i {
     margin-right: 5px;
 }
 
