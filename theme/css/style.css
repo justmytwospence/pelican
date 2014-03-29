@@ -6,7 +6,7 @@ body {
     padding-bottom: 0px;
 }
 
-h1, h2, h3, h4, h5, h6, a.navbar-brand {
+h1, h2, h3, h4, h5, h6, .navbar {
     font-family: 'Patua One', cursive;
 }
 p, div {
@@ -49,9 +49,11 @@ article h2 {
     -ms-hyphens: auto;
     hyphens: auto;
 }
-
 #sidebar a {
     color: inherit;
+}
+.categories .a {
+    padding:0px;
 }
 
 .icon-label {
@@ -65,17 +67,14 @@ a, a:hover {
 .entry-content a {
     text-decoration: none;
 }
-
 .entry-content a:hover {
     text-decoration: none;
     border-bottom: 1px solid;
 }
-
 .entry-content img {
     max-width: 100%;
     height: auto;
 }
-
 .entry-content figcaption, .caption {
     font-size: small;
     margin-bottom: 2px;
@@ -111,16 +110,13 @@ figure.floatcenter, .align-center {
     /* Removes bootstrap default margin-bottom */
     margin-bottom: 0px;
 }
-
 .highlighttable {
     /* Adds them margin-bottom to highlightable instead of <pre> */
     margin-bottom: 11px;
 }
-
 .highlighttable {
     width: 100%;
 }
-
 #categories ul, #tags ul {
     list-style: none;
     padding: 0;
