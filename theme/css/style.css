@@ -6,7 +6,7 @@ body {
     padding-bottom: 0px;
 }
 
-h1, h2, h3, h4, h5, h6, .navbar {
+h1, h2, h3, h4, h5, h6, .navbar a {
     font-family: 'Patua One', cursive;
 }
 p, div {
