@@ -16,6 +16,10 @@ article h2 {
     margin-top: 0px;
 }
 
+.post-info span {
+    margin-right: 15px;
+}
+
 .tagcloud li {
     border: 0px;
 }
