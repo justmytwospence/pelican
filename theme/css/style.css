@@ -45,7 +45,8 @@ article h2 {
 }
 
 .icon-label {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 15px;
 }
 
 #sidebar #social i {
@@ -179,8 +180,4 @@ div.cell.border-box-sizing.code_cell.vbox {
 
 div#tags.list-group.list-inline.tagcloud {
     padding: 10px;
-}
-
-.icon-label {
-    margin-right: 15px;
 }
