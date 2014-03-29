@@ -55,6 +55,9 @@ article h2 {
 #categories .list-group-item {
     padding: .1px;
 }
+.list-group-item .active {
+    color: white;
+}
 
 .icon-label {
     margin-left: 5px;
@@ -157,10 +160,6 @@ div.highlight {
 
 div.input_area.box-flex1 {
     padding: 10px;
-}
-
-article a.btn {
-    margin-top: 10px;
 }
 
 div.cell.border-box-sizing.code_cell.vbox {
