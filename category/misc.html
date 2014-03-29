@@ -29,6 +29,28 @@
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
 
+<script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+    
         <style type="text/css">
 	.border-box-sizing{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
 	.corner-all{border-radius:4px;}
@@ -400,9 +422,6 @@ justmytwospence            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://justmytwospence.github.com/pelican/pages/about.html">
-                             About
-                          </a></li>
                          <li><a href="http://justmytwospence.github.com/pelican/pages/map.html">
                              Map!
                           </a></li>
@@ -428,68 +447,6 @@ justmytwospence            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article class="panel panel-default">
-                <div class="panel-heading panel-default">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-14T14:13:00"> Fri 14 March 2014</time>
-    </span>
-
-    <i class="fa fa-folder-open"></i>
-    <a href="http://justmytwospence.github.com/pelican/category/misc.html">misc</a>
-
-
-	<i class="fa fa-tag"></i>
-		<a href="http://justmytwospence.github.com/pelican/tag/coursera.html">Coursera</a>
-	        /
-		<a href="http://justmytwospence.github.com/pelican/tag/education.html">education</a>
-	        /
-		<a href="http://justmytwospence.github.com/pelican/tag/mooc.html">MOOC</a>
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" class="list-group-item">
-                        <h2>What&#8217;s a&nbsp;Mooc?</h2>
-                        <div class="summary">
-                            <p>What do Robert de Niro and Coursera have in common?</p>
-                        </div>
-                    </a>
-                </div>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading panel-default">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-25T18:42:00"> Sat 25 January 2014</time>
-    </span>
-
-    <i class="fa fa-folder-open"></i>
-    <a href="http://justmytwospence.github.com/pelican/category/misc.html">misc</a>
-
-
-	<i class="fa fa-tag"></i>
-		<a href="http://justmytwospence.github.com/pelican/tag/latex.html">latex</a>
-	        /
-		<a href="http://justmytwospence.github.com/pelican/tag/tex.html">tex</a>
-	        /
-		<a href="http://justmytwospence.github.com/pelican/tag/typesetting.html">typesetting</a>
-	        /
-		<a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">writelatex</a>
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://justmytwospence.github.com/pelican/writelatex.html" class="list-group-item">
-                        <h2>writeLaTeX</h2>
-                        <div class="summary">
-                            <p>If you use \(\LaTeX\) and haven&#8217;t yet heard of
-\(write\LaTeX\), do yourself a favor and check it out. On one level
-its a really great version of Google Docs for documents that are
-properly typeset, which is incredibly useful because a huge swathe of
-the documents created with ...</p>
-                        </div>
-                    </a>
-                </div>
-            </article>
             <article class="panel panel-default">
                 <div class="panel-heading panel-default">
 <footer class="post-info">
@@ -542,50 +499,7 @@ the documents created with ...</p>
                     </a>
                 </div>
             </article>
-            <article class="panel panel-default">
-                <div class="panel-heading panel-default">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-12-07T06:38:00"> Sat 07 December 2013</time>
-    </span>
-
-    <i class="fa fa-folder-open"></i>
-    <a href="http://justmytwospence.github.com/pelican/category/misc.html">misc</a>
-
-
-	<i class="fa fa-tag"></i>
-		<a href="http://justmytwospence.github.com/pelican/tag/javascript.html">javascript</a>
-	        /
-		<a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">reveal.js</a>
     
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://justmytwospence.github.com/pelican/kaggle-esque.html" class="list-group-item">
-                        <h2>Kaggle(esque)</h2>
-                        <div class="summary">
-                            <p>Our program hosted its own Kaggle-style competition
-this quarter, featuring a “mystery” dataset with a binary target
-variable. I was impressed by the reveal.js javascript library, so I put
-together our final slides using it, both because its pretty, and as a
-way to get some more practice with ...</p>
-                        </div>
-                    </a>
-                </div>
-            </article>
-    
-    <ul class="pagination">
-            <li class="prev disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a
-                        href="http://justmytwospence.github.com/pelican/category/misc.html">1</a></li>
-                <li class=""><a
-                        href="http://justmytwospence.github.com/pelican/category/misc2.html">2</a></li>
-                <li class=""><a
-                        href="http://justmytwospence.github.com/pelican/category/misc3.html">3</a></li>
-                <li class=""><a
-                        href="http://justmytwospence.github.com/pelican/category/misc4.html">4</a></li>
-            <li class="next"><a
-                    href="http://justmytwospence.github.com/pelican/category/misc2.html">&raquo;</a></li>
-    </ul>
     </div>
 
 
@@ -595,28 +509,13 @@ way to get some more practice with ...</p>
         <section class = "panel panel-default text-center">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <i class="fa fa-home fa-lg"></i>
+                    <i class="fa fa-folder-open fa-lg"></i>
                     <span class="icon-label">Categories</span>
                 </h4>
             </div>
             <div class="list-group" id="categories">
-                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/design.html">
-                        <h5><i class="fa fa-folder-open fa-lg"></i> Design</h5>
-                    </a>
                     <a class="list-group-item  active" href="http://justmytwospence.github.com/pelican/category/misc.html">
-                        <h5><i class="fa fa-folder-open fa-lg"></i> misc</h5>
-                    </a>
-                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/python.html">
-                        <h5><i class="fa fa-folder-open fa-lg"></i> Python</h5>
-                    </a>
-                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/r.html">
-                        <h5><i class="fa fa-folder-open fa-lg"></i> R</h5>
-                    </a>
-                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/test.html">
-                        <h5><i class="fa fa-folder-open fa-lg"></i> Test</h5>
-                    </a>
-                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/web.html">
-                        <h5><i class="fa fa-folder-open fa-lg"></i> Web</h5>
+                        <h5>misc</h5>
                     </a>
             </div>
         </section>
@@ -631,154 +530,14 @@ way to get some more practice with ...</p>
                 </a>
             </div>
             <div class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/api.html">
-                            api
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
-                            aws
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/biometrics.html">
-                            biometrics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://justmytwospence.github.com/pelican/tag/brain.html">
-                            brain
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cartography.html">
-                            cartography
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
-                            cron
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/ec2.html">
-                            ec2
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
-                            economics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://justmytwospence.github.com/pelican/tag/education.html">
-                            education
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/freakonomics.html">
-                            freakonomics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/holo.html">
-                            holo
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/ideas-worth-spreading.html">
-                            ideas worth spreading
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/latex.html">
-                            latex
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
-                            machine learning
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/maslow.html">
-                            Maslow
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://justmytwospence.github.com/pelican/tag/neuroscience.html">
-                            neuroscience
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/optogenetics.html">
-                            optogenetics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
-                            paradigm
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/power.html">
-                            power
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/predictions.html">
-                            predictions
-                        </a>
-                    </li>
                     <li class="list-group-item tag-1">
                         <a href="http://justmytwospence.github.com/pelican/tag/r.html">
                             R
                         </a>
                     </li>
-                    <li class="list-group-item tag-6">
+                    <li class="list-group-item tag-1">
                         <a href="http://justmytwospence.github.com/pelican/tag/sas.html">
                             SAS
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://justmytwospence.github.com/pelican/tag/science.html">
-                            science
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/shiny.html">
-                            Shiny
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
-                            silicon valley
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/sound.html">
-                            sound
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
-                            stepwise
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/ted.html">
-                            TED
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/tex.html">
-                            tex
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/zombies.html">
-                            zombies
                         </a>
                     </li>
             </div>
