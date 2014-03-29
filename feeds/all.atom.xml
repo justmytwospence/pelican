@@ -5,18 +5,7 @@
 &lt;p&gt;The .by argument is formulated the same way it is for any other ddply call.&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</summary></entry><entry><title>What's a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very  similar to the one facing Coursera and friends…&lt;/p&gt;
-&lt;div align="left" class="youtube"&gt;&lt;iframe frameborder="0" height="315" src="https://www.youtube.com/embed/8vw8t4O9JQM" width="420"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: &lt;span class="caps"&gt;WARNING&lt;/span&gt;/2 (&lt;tt class="docutils"&gt;/Users/SpencerBoucher/pelican/content/whats-a-mooc.rst&lt;/tt&gt;, line 12)&lt;/p&gt;
-Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
-&lt;table class="docutils field-list" frame="void" rules="none"&gt;
-&lt;col class="field-name"&gt;&lt;/col&gt;
-&lt;col class="field-body"&gt;&lt;/col&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr class="field"&gt;&lt;th class="field-name"&gt;align:&lt;/th&gt;&lt;td class="field-body"&gt;center&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;.. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to overcome.&lt;/p&gt;
+&lt;div align="center" class="youtube"&gt;&lt;iframe frameborder="0" height="315" src="https://www.youtube.com/embed/8vw8t4O9JQM" width="420"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;.. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to overcome.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;If you use \(\LaTeX\) and haven’t yet heard of
 \(write\LaTeX\), do yourself a favor and check it out. On one level
 its a really great version of Google Docs for documents that are
