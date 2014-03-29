@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/design.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2013-08-20T06:19:00+02:00</updated><entry><title>Holo color palette</title><link href="http://justmytwospence.github.com/pelican/holo-color-palette.html" rel="alternate"></link><updated>2013-08-20T06:19:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-20:holo-color-palette.html</id><summary type="html">&lt;p&gt;Despite being slightly colorblind, I’m one of those
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/design.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-01-25T18:42:00+01:00</updated><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;If you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
+\(write\LaTeX\), do yourself a favor and check it out. On one level
+its a really great version of Google Docs for documents that are
+properly typeset, which is incredibly useful because a huge swathe of
+the documents created with \(\LaTeX\) are inherently collaborative in
+nature. Its other fantastic feature is that your \(\LaTeX\) markup is
+automatically rendered in real-time (or close to it, at least, there&amp;#8217;s a
+few seconds of lag depending on the length of the document). This made
+writing my first \(\LaTeX\) intensive document a great experience,
+because I could experiment liberally with equations and figure
+placement. There&amp;#8217;s literally zero barrier to entry because its
+completely web based; you don&amp;#8217;t need to install a thing and templates
+are available to get you jump-started. Right now other engines like
+XeLaTeX aren&amp;#8217;t supported, but I believe they are in the&amp;nbsp;works.&lt;/p&gt;
+&lt;p&gt;So every excuse you ever had to not learn \(\LaTeX\) has been
+obliterated. Give [\(write\LaTeX\)][] a try, or be passive aggressive
+and send it to that collaborator that always sends you everything in a
+poorly formatted Word document. I myself will be experimenting with
+using \(\LaTeX\) to take math-heavy notes in real-time, which sounds
+crazy but the live rendering makes the attempt&amp;nbsp;feasible.&lt;/p&gt;</summary><category term="latex"></category><category term="tex"></category><category term="typesetting"></category><category term="writelatex"></category></entry><entry><title>Holo color palette</title><link href="http://justmytwospence.github.com/pelican/holo-color-palette.html" rel="alternate"></link><updated>2013-08-20T06:19:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-20:holo-color-palette.html</id><summary type="html">&lt;p&gt;Despite being slightly colorblind, I’m one of those
 people who is bizarrely anal-retentive when it comes to color-schemes in
 the software that I use. I use custom &lt;span class="caps"&gt;CSS&lt;/span&gt; extensions in Chrome to make
 the color schemes of websites like Wikipedia, Youtube, etc a bit more

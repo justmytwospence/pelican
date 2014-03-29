@@ -4,26 +4,7 @@ similar to the one facing Coursera and&amp;nbsp;friends&amp;#8230;&lt;/p&gt;
 &lt;p&gt;{% youtube 8vw8t4O9JQM&amp;nbsp;%}&lt;/p&gt;
 &lt;p&gt;From the 1973 movie &lt;a href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the
 education revolution wayy ahead of his time and had a pretty good grasp
-on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;</summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;If you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
-\(write\LaTeX\), do yourself a favor and check it out. On one level
-its a really great version of Google Docs for documents that are
-properly typeset, which is incredibly useful because a huge swathe of
-the documents created with \(\LaTeX\) are inherently collaborative in
-nature. Its other fantastic feature is that your \(\LaTeX\) markup is
-automatically rendered in real-time (or close to it, at least, there&amp;#8217;s a
-few seconds of lag depending on the length of the document). This made
-writing my first \(\LaTeX\) intensive document a great experience,
-because I could experiment liberally with equations and figure
-placement. There&amp;#8217;s literally zero barrier to entry because its
-completely web based; you don&amp;#8217;t need to install a thing and templates
-are available to get you jump-started. Right now other engines like
-XeLaTeX aren&amp;#8217;t supported, but I believe they are in the&amp;nbsp;works.&lt;/p&gt;
-&lt;p&gt;So every excuse you ever had to not learn \(\LaTeX\) has been
-obliterated. Give [\(write\LaTeX\)][] a try, or be passive aggressive
-and send it to that collaborator that always sends you everything in a
-poorly formatted Word document. I myself will be experimenting with
-using \(\LaTeX\) to take math-heavy notes in real-time, which sounds
-crazy but the live rendering makes the attempt&amp;nbsp;feasible.&lt;/p&gt;</summary><category term="latex"></category><category term="tex"></category><category term="typesetting"></category><category term="writelatex"></category></entry><entry><title>Luke attempts a novel analysis in SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-attempts-a-novel-analysis-in-sas.html" rel="alternate"></link><updated>2014-01-06T22:17:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-06:luke-skywalker-attempts-a-novel-analysis-in-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Luke Skywalker on SAS</title><link href="http://justmytwospence.github.com/pelican/luke-skywalker-on-sas.html" rel="alternate"></link><updated>2013-12-09T00:24:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-09:luke-skywalker-on-sas.html</id><summary type="html"></summary><category term="SAS"></category><category term="R"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
+on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;</summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>Kaggle(esque)</title><link href="http://justmytwospence.github.com/pelican/kaggle-esque.html" rel="alternate"></link><updated>2013-12-07T06:38:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-12-07:kaggle-esque.html</id><summary type="html">&lt;p&gt;Our program hosted its own Kaggle-style competition
 this quarter, featuring a “mystery” dataset with a binary target
 variable. I was impressed by the reveal.js javascript library, so I put
 together our final slides using it, both because its pretty, and as a

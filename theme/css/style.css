@@ -53,7 +53,7 @@ article h2 {
     color: inherit;
 }
 #categories .list-group-item {
-    padding: 0px;
+    padding: .1px;
 }
 
 .icon-label {
