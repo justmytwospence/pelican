@@ -181,6 +181,6 @@ div#tags.list-group.list-inline.tagcloud {
     padding: 10px;
 }
 
-.post-info a, .post-info span {
+.icon-label {
     margin-right: 15px;
 }
