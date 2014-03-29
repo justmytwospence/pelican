@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/design.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-01-25T18:42:00+01:00</updated><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;If you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/design.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-01-25T18:42:00+01:00</updated><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;If you use \(\LaTeX\) and haven’t yet heard of
 \(write\LaTeX\), do yourself a favor and check it out. On one level
 its a really great version of Google Docs for documents that are
 properly typeset, which is incredibly useful because a huge swathe of
 the documents created with \(\LaTeX\) are inherently collaborative in
 nature. Its other fantastic feature is that your \(\LaTeX\) markup is
-automatically rendered in real-time (or close to it, at least, there&amp;#8217;s a
+automatically rendered in real-time (or close to it, at least, there’s a
 few seconds of lag depending on the length of the document). This made
 writing my first \(\LaTeX\) intensive document a great experience,
 because I could experiment liberally with equations and figure
-placement. There&amp;#8217;s literally zero barrier to entry because its
-completely web based; you don&amp;#8217;t need to install a thing and templates
+placement. There’s literally zero barrier to entry because its
+completely web based; you don’t need to install a thing and templates
 are available to get you jump-started. Right now other engines like
-XeLaTeX aren&amp;#8217;t supported, but I believe they are in the&amp;nbsp;works.&lt;/p&gt;
+XeLaTeX aren’t supported, but I believe they are in the works.&lt;/p&gt;
 &lt;p&gt;So every excuse you ever had to not learn \(\LaTeX\) has been
 obliterated. Give [\(write\LaTeX\)][] a try, or be passive aggressive
 and send it to that collaborator that always sends you everything in a
 poorly formatted Word document. I myself will be experimenting with
 using \(\LaTeX\) to take math-heavy notes in real-time, which sounds
-crazy but the live rendering makes the attempt&amp;nbsp;feasible.&lt;/p&gt;</summary><category term="latex"></category><category term="tex"></category><category term="typesetting"></category><category term="writelatex"></category></entry><entry><title>Holo color palette</title><link href="http://justmytwospence.github.com/pelican/holo-color-palette.html" rel="alternate"></link><updated>2013-08-20T06:19:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-20:holo-color-palette.html</id><summary type="html">&lt;p&gt;Despite being slightly colorblind, I’m one of those
+crazy but the live rendering makes the attempt feasible.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="latex"></category><category term="tex"></category><category term="typesetting"></category><category term="writelatex"></category></entry><entry><title>Holo color palette</title><link href="http://justmytwospence.github.com/pelican/holo-color-palette.html" rel="alternate"></link><updated>2013-08-20T06:19:00+02:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-08-20:holo-color-palette.html</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;Despite being slightly colorblind, I’m one of those
 people who is bizarrely anal-retentive when it comes to color-schemes in
 the software that I use. I use custom &lt;span class="caps"&gt;CSS&lt;/span&gt; extensions in Chrome to make
 the color schemes of websites like Wikipedia, Youtube, etc a bit more
@@ -28,7 +28,7 @@ sepia tone which makes reading PDFs online a much less straining
 endeavor (incidentally - Google Play Books &lt;em&gt;only&lt;/em&gt; has a white background
 which is why I greatly prefer the Amazon Kindle web app). I’ve spent
 wayy too long (as I think many geeks do), customizing my terminal and
-custom android &lt;span class="caps"&gt;ROM&lt;/span&gt; themes. I think you get the&amp;nbsp;picture.&lt;/p&gt;
+custom android &lt;span class="caps"&gt;ROM&lt;/span&gt; themes. I think you get the picture.&lt;/p&gt;
 &lt;p&gt;Anyways, I had been using the Solarized palette for a lot of things
 because it seems like its choices are a bit less arbitrary and has some
 science behind it (although I haven’t done any research into how
@@ -40,9 +40,9 @@ one. First I had to download the &lt;span class="caps"&gt;HEX&lt;/span&gt; plugi
 which for some strange reason is not a functionality that Apple thought
 worthwhile to put into a color picker (???). &lt;a href="http://db.tt/xU7lyIBh"&gt;You can download my .clr
 palette right here&lt;/a&gt;. Maybe I can save the next anal-retentive googler
-a few&amp;nbsp;minutes.&lt;/p&gt;
+a few minutes.&lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;PS&lt;/span&gt;. While I am talking about color - if you haven’t heard of &lt;a href="http://justgetflux.com/"&gt;fl.ux&lt;/a&gt;,
 check it out. It is a magical little utility that warms the color of
 your screen automatically after sunset and can &lt;em&gt;really&lt;/em&gt; save your eyes
 and make getting to sleep a little bit easier if you are working in
-front of your screen late at&amp;nbsp;night.&lt;/p&gt;</summary><category term="color"></category><category term="holo"></category><category term="solarized"></category></entry></feed>
+front of your screen late at night.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="color"></category><category term="holo"></category><category term="solarized"></category></entry></feed>
