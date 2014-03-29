@@ -12,7 +12,6 @@ h1, h2, h3, h4, h5, h6, a.navbar-brand {
 p, div {
     font-family: 'Bitter', serif;
 }
-
 article h2 {
     margin-top: 0px;
 }
@@ -34,6 +33,10 @@ article h2 {
 }
 .tag-4 {
     font-size: 6pt;
+}
+
+.navbar-right i {
+    margin-right: 5px;
 }
 
 #sidebar {
