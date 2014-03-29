@@ -8887,16 +8887,45 @@ located at one of several regions; we are using us-west-2 because it
 happens to be where I spun up the existing instance that currently holds
 our &amp;#8220;update.py&amp;#8221; script, but any of them would probably work just fine
 for the simple job at&amp;nbsp;hand.&lt;/p&gt;
-&lt;p&gt;Code&amp;nbsp;Region&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;ap-northeast-1   Asia Pacific (Tokyo) Region
-  ap-southeast-1   Asia Pacific (Singapore) Region
-  ap-southeast-2   Asia Pacific (Sydney) Region
-  eu-west-1        &lt;span class="caps"&gt;EU&lt;/span&gt; (Ireland) Region
-  sa-east-1        South America (Sao Paulo) Region
-  us-east-1        &lt;span class="caps"&gt;US&lt;/span&gt; East (Northern Virginia) Region
-  us-west-1        &lt;span class="caps"&gt;US&lt;/span&gt; West (Northern California) Region
-  us-west-2        &lt;span class="caps"&gt;US&lt;/span&gt; West (Oregon)&amp;nbsp;Region&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Code&lt;/th&gt;
+    &lt;th&gt;Region&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;ap-northeast-1&lt;/td&gt;
+    &lt;td&gt; Asia Pacific (Tokyo) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;ap-southeast-1&lt;/td&gt;
+    &lt;td&gt;Asia Pacific (Singapore) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;ap-southeast-2&lt;/td&gt;
+    &lt;td&gt;Asia Pacific (Sydney) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;eu-west-1&lt;/td&gt;
+    &lt;td&gt;&lt;span class="caps"&gt;EU&lt;/span&gt; (Ireland) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;sa-east-1&lt;/td&gt;
+    &lt;td&gt;South America (Sao Paulo) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;us-east-1&lt;/td&gt;
+    &lt;td&gt;&lt;span class="caps"&gt;US&lt;/span&gt; East (Northern Virginia) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;us-west-1&lt;/td&gt;
+    &lt;td&gt;&lt;span class="caps"&gt;US&lt;/span&gt; West (Northern California) Region&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;us-west-2&lt;/td&gt;
+    &lt;td&gt;&lt;span class="caps"&gt;US&lt;/span&gt; West (Oregon) Region&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;So, first things first. We can&amp;#8217;t just spin up an
 off-the-rack &lt;span class="caps"&gt;EC2&lt;/span&gt; instance every day, because we&amp;#8217;ll run into the same
