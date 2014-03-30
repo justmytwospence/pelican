@@ -1,7 +1,5 @@
-Title: About
-Date: 2013-12-20 05:40
-Author: justmytwospence
-Slug: about
+title: About
+date: 2013-12-20 05:40
 
 I'm a data scientist in training - currently an MS candidate in the
 [Analytics program at the University of San Francisco][]. Previously, I
@@ -19,16 +17,8 @@ always welcome.
 
 <div style="text-align: center; margin-top: 20px">
 <div class="btn-group btn-group-lg text-center">
-	<button type="button" class="btn btn-primary">
-		<a href='http://spencerboucher.com/spencerboucher.pdf'>
-			View Web Resume
-		</a>
-	</button>
-	<button type="button" class="btn btn-primary">
-		<a href='http://spencerboucher.com/spencerboucher-print.php'>
-			Download Print Résumé
-		</a>
-	</button>
+	<a type="button" class="btn btn-primary" href='http://spencerboucher.com/spencerboucher.pdf'>View Web Resume</a>
+	<a type="button" class="btn btn-primary" type="button" class="btn btn-primary">Download Print Résumé</a>
 </div>
 </div>
 

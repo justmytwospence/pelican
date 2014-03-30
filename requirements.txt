@@ -11,6 +11,7 @@ ghp-import==0.4.1
 ipython==1.2.1
 lxml==3.3.3
 pelican==3.3
+pelican-youtube==0.1.0
 pytz==2014.1
 requests==2.2.1
 six==1.6.1

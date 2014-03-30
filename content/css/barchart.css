@@ -6,6 +6,7 @@ rect:active {
 	fill: none;
 	shape-rendering: crispEdges;
 	stroke-width: 1;
+	stroke: black;
 }
 .axis text {
 	font-family: sans-serif;

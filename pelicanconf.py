@@ -4,47 +4,50 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Spencer Boucher'
 SITENAME = 'justmytwospence'
-SITEURL = ''
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = 'fs'
+SITEURL = ''
 
 # Theme
 THEME = 'bootstrap3'
 BOOTSTRAP_NAVBAR_INVERSE = True
 #BOOTSTRAP_THEME = 'darkly'
 TYPOGRIFY = True
+PYGMENTS_STYLE = 'github'
 
 # Sidebar
-#HIDE_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
 TAG_CLOUD_STEPS = 10
-TAG_CLOUD_MAX_ITEMS = 30
-SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
-          ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
-          ('RSS', SITEURL + 'feeds/all.atom.xml'))
-#GITHUB_USER = 'justmytwospence'
+TAG_CLOUD_MAX_ITEMS = 50
 #ABOUT_ME = ''
 #AVATAR = 'images/avatar.png'
 
-# Menus and navigation
+# Top Menu
+DISPLAY_ARCHIVES = False
+SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
+          ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
+          ('RSS', SITEURL + 'feeds/all.atom.xml'))
 DISPLAY_ARTICLE_INFO = True
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
-DEFAULT_PAGINATION = 5
 
 # Set paths to resources
+DEFAULT_PAGINATION = 5
+DEFAULT_CATEGORY = 'Misc'
+FILENAME_METADATA = '(?P<slug>.*)' # Filename = slug
+USE_FOLDER_AS_CATEGORY = True
+
+# Plugins
 STATIC_PATHS = ['images', 'pdfs']
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['liquid_tags.notebook',
-		   'pelican-dynamic']
-EXTRA_HEADER = open('_nb_header_custom.html').read()
-FILENAME_METADATA = '(?P<slug>.*)'
-USE_FOLDER_AS_CATEGORY = True
+		   'pelican-dynamic',
+		   'pelican_youtube']
 
 # Development settings
 RELATIVE_URLS = True

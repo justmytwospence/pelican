@@ -1,2 +1,2 @@
-Title: Map!
-Template: map
+title: Map!
+template: map

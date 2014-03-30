@@ -14,11 +14,5 @@ None of this is particularly novel, I'm simply attempting build an out-of-the-bo
 
 TO DO
 =====
-- Move social icons/links to the navbar.
-- Set current category as active in the sidebar.
 - Switch from Knitr's syntax highlighting to Pygments. This might require custom hooks in Knitr?
-- Use list-items component for the articles on the index page.
-- Improve typography.
-- Add the sidebar modifications to templates other than index, article, and page.
-- Figure out where a few ugly CSS styles are coming from (mainly the dashed underlines for links).
-- Remove border from code snippets that aren't part of an IPython notebook.
+- Revamp the URL scheme
