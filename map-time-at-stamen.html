@@ -7,7 +7,7 @@
     <!-- Google fonts! -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
 
-    <title>Map-time at Stamen - justmytwospence</title>
+    <title>Map-time at Stamen - justmytwospence</title>
     
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Map-time at Stamen"/>
+            <meta property="og:title" content="Map-time at Stamen"/>
             <meta property="og:url" content="http://justmytwospence.github.com/pelican/map-time-at-stamen.html"/>
             <meta property="og:description" content="Last week, a classmate and I took a break from coursework to attend one of the many great Meetup events that San Francisco has to offer for data science practitioners. I’ve been pushing myself to attend at least one data-centric Meetup every week, because these events are one of ..."/>
             <meta property="article:published_time" content="2013-12-01" />
@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="http://justmytwospence.github.com/pelican/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="http://justmytwospence.github.com/pelican/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://justmytwospence.github.com/pelican/theme/css/pygments/github.css" rel="stylesheet">
+        <link href="http://justmytwospence.github.com/pelican/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://justmytwospence.github.com/pelican/theme/css/style.css" type="text/css"/>
 
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -439,7 +440,7 @@ justmytwospence            </a>
         <section id="content">
             <article>
                 <header class="page-header">
-                    <h1>Map-time at Stamen</h1>
+                    <h1>Map-time at&nbsp;Stamen</h1>
 <footer class="post-info">
     <span class="published">
         <i class="fa fa-calendar"></i><time class="icon-label" datetime="2013-12-01T02:37:00"> Sun 01 December 2013</time>
@@ -460,16 +461,16 @@ justmytwospence            </a>
     
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <p>Last week, a classmate and I took a break from coursework to attend one of the many great Meetup events that San Francisco has to offer for data science practitioners. I’ve been pushing myself to attend at least one data-centric Meetup every week, because these events are one of the most amazing parts about going to school in the same place where so many of the biggest names work. To be honest, I believe that becoming a presence in the data science scene and meeting the movers and shakers is equally if not more important than&nbsp;coursework.</p>
-<p>I actually attended 3 meetups last week, one about D3.js at Trulia <span class="caps">HQ</span>, one about <span class="caps">GIS</span> technologies and the Code for America <span class="caps">HQ</span>, and one about mapping at Stamen <span class="caps">HQ</span>. I picked all three because they are relevant to a geospatial data visualization that I am working on for my practicum at AutoGrid, but the last one is what I’m going to talk a bit about, because it was the most&nbsp;hands-on.</p>
-<p>The workshop took place at Stamen Design’s headquarters in the Mission and was led by Eric Theise; you can see his beautiful/informative slides (created using <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>) here:   <a href="http://erictheise.com/maptime_platform_slides/#/"></a><a href="http://erictheise.com/maptime_platform_slides/#/">http://erictheise.com/maptime_platform_slides/#/</a>   </a>   Some useful Q&amp;A happened on the Meetup event page as well:   <a href="http://www.meetup.com/Maptime-SF/events/147110652/"></a><a href="http://www.meetup.com/Maptime-SF/events/147110652/">http://www.meetup.com/Maptime-<span class="caps">SF</span>/events/147110652/</a>   </a></p>
-<p>This was actually a two-part workshop, but it was relatively painless to follow the instructions and get up to speed for the part <span class="caps">II</span>, so you should really give it a shot even now if it looks&nbsp;interesting.</p>
-<p>First we got postgres up and running on our machines. I have local installations of MySQL, MongoDB, Hadoop and Hive up and running thanks to our course in Distributed Databases, but our class didn’t have time to get to postgres within a single credit hour. This, despite the fact that our professor admits to postgres being the best database to use if you have anything to say about&nbsp;it.</p>
-<p>Next, we populated our database with some data from OpenStreetMap. Mike Migurski extracts data from <span class="caps">OSM</span> for major metropolitan areas on a semi-regular basis, so we used the San Francisco data <a href="http://metro.teczno.com/#san-francisco">available on his web site</a> via <a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql">osm2pgsql</a>, a command-line utility that loads OpenStreetMap data into PostgreSQL&nbsp;databases.</p>
-<p>Then we used <a href="https://www.mapbox.com/tilemill/">TileMill</a>, MapBox’s desktop application, to visualize our newborn database. We discovered how remarkably easy it can be to create vector layers for data contained in such a postGIS database using the same old <span class="caps">SQL</span> and <span class="caps">CSS</span> syntax you already know and love. Eric introduced us to some sensible pre-baked <a href="https://github.com/gravitystorm/openstreetmap-carto">CartoCSS boilerplate</a> courtesy of Andy&nbsp;Allen.</p>
-<p>Lastly, we used a nifty feature of TileMill to actually bake our own map tiles and serve them up for use in our own maps. Note that if you want to do this, you’ll need the <a href="https://github.com/mapbox/mbutil">mbutil command-line utility</a>, not currently mentioned in the slide&nbsp;deck.</p>
-<p>Not too shabby for 2 hours on a Wednesday night. Many thanks to the guys at Stamen for hosting, especially Eric for all his work on the slides. Not to mention the many other brilliant people who have made the tools and resources that allow something this involved and grandiose to be done on a laptop by someone who is still learning the ropes. Hands-on workshops like this are one of the best ways to learn these technologies. Case in point, I may not have ever stumbled across Mike or Andy’s resources had I not been learning directly from people who are intimately familiar with the practical ins and outs of digital&nbsp;cartography.</p>
-<p>Digital mapping is rapidly capturing my interest because of the beautifully functional things one can do with it, and it seems like an amazing time to be learning it, because the ecosystem is beginning to really flourish. Looking forward to more&nbsp;events!</p>
+                    <html><body><p>Last week, a classmate and I took a break from coursework to attend one of the many great Meetup events that San Francisco has to offer for data science practitioners. I’ve been pushing myself to attend at least one data-centric Meetup every week, because these events are one of the most amazing parts about going to school in the same place where so many of the biggest names work. To be honest, I believe that becoming a presence in the data science scene and meeting the movers and shakers is equally if not more important than coursework.</p>
+<p>I actually attended 3 meetups last week, one about D3.js at Trulia <span class="caps">HQ</span>, one about <span class="caps">GIS</span> technologies and the Code for America <span class="caps">HQ</span>, and one about mapping at Stamen <span class="caps">HQ</span>. I picked all three because they are relevant to a geospatial data visualization that I am working on for my practicum at AutoGrid, but the last one is what I’m going to talk a bit about, because it was the most hands-on.</p>
+<p>The workshop took place at Stamen Design’s headquarters in the Mission and was led by Eric Theise; you can see his beautiful/informative slides (created using <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>) here:   <a href="http://erictheise.com/maptime_platform_slides/#/"></a><a href="http://erictheise.com/maptime_platform_slides/#/">http://erictheise.com/maptime_platform_slides/#/</a>      Some useful Q&amp;A happened on the Meetup event page as well:   <a href="http://www.meetup.com/Maptime-SF/events/147110652/"></a><a href="http://www.meetup.com/Maptime-SF/events/147110652/">http://www.meetup.com/Maptime-<span class="caps">SF</span>/events/147110652/</a> </p>
+<p>This was actually a two-part workshop, but it was relatively painless to follow the instructions and get up to speed for the part <span class="caps">II</span>, so you should really give it a shot even now if it looks interesting.</p>
+<p>First we got postgres up and running on our machines. I have local installations of MySQL, MongoDB, Hadoop and Hive up and running thanks to our course in Distributed Databases, but our class didn’t have time to get to postgres within a single credit hour. This, despite the fact that our professor admits to postgres being the best database to use if you have anything to say about it.</p>
+<p>Next, we populated our database with some data from OpenStreetMap. Mike Migurski extracts data from <span class="caps">OSM</span> for major metropolitan areas on a semi-regular basis, so we used the San Francisco data <a href="http://metro.teczno.com/#san-francisco">available on his web site</a> via <a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql">osm2pgsql</a>, a command-line utility that loads OpenStreetMap data into PostgreSQL databases.</p>
+<p>Then we used <a href="https://www.mapbox.com/tilemill/">TileMill</a>, MapBox’s desktop application, to visualize our newborn database. We discovered how remarkably easy it can be to create vector layers for data contained in such a postGIS database using the same old <span class="caps">SQL</span> and <span class="caps">CSS</span> syntax you already know and love. Eric introduced us to some sensible pre-baked <a href="https://github.com/gravitystorm/openstreetmap-carto">CartoCSS boilerplate</a> courtesy of Andy Allen.</p>
+<p>Lastly, we used a nifty feature of TileMill to actually bake our own map tiles and serve them up for use in our own maps. Note that if you want to do this, you’ll need the <a href="https://github.com/mapbox/mbutil">mbutil command-line utility</a>, not currently mentioned in the slide deck.</p>
+<p>Not too shabby for 2 hours on a Wednesday night. Many thanks to the guys at Stamen for hosting, especially Eric for all his work on the slides. Not to mention the many other brilliant people who have made the tools and resources that allow something this involved and grandiose to be done on a laptop by someone who is still learning the ropes. Hands-on workshops like this are one of the best ways to learn these technologies. Case in point, I may not have ever stumbled across Mike or Andy’s resources had I not been learning directly from people who are intimately familiar with the practical ins and outs of digital cartography.</p>
+<p>Digital mapping is rapidly capturing my interest because of the beautifully functional things one can do with it, and it seems like an amazing time to be learning it, because the ecosystem is beginning to really flourish. Looking forward to more events!</p></body></html>
                 </div>
                 <!-- /.entry-content -->
     <hr />
@@ -545,9 +546,9 @@ justmytwospence            </a>
                 </a>
             </div>
             <div class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/andrew-ng.html">
-                            andrew ng
+                    <li class="list-group-item tag-6">
+                        <a href="http://justmytwospence.github.com/pelican/tag/api.html">
+                            api
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -556,13 +557,13 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
-                            aws
+                        <a href="http://justmytwospence.github.com/pelican/tag/auto-scaling.html">
+                            auto scaling
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://justmytwospence.github.com/pelican/tag/brain.html">
-                            brain
+                    <li class="list-group-item tag-6">
+                        <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
+                            aws
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -576,13 +577,8 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cloud-computing.html">
-                            cloud computing
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/college.html">
-                            college
+                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
+                            cloud
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -595,22 +591,17 @@ justmytwospence            </a>
                             Coursera
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
                             cron
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/ec2.html">
                             ec2
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
-                            economics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
@@ -621,23 +612,8 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/foldit.html">
-                            foldit
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/freakonomics.html">
-                            freakonomics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/freesurfer.html">
-                            Freesurfer
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
-                            gamification
+                        <a href="http://justmytwospence.github.com/pelican/tag/hierarchy-of-needs.html">
+                            Hierarchy of needs
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -651,8 +627,18 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/ideas-worth-spreading.html">
+                            ideas worth spreading
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/javascript.html">
                             javascript
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/kaggle.html">
+                            kaggle
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -660,7 +646,7 @@ justmytwospence            </a>
                             latex
                         </a>
                     </li>
-                    <li class="list-group-item tag-6">
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
                         </a>
@@ -686,33 +672,13 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/neuroimaging.html">
-                            neuroimaging
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://justmytwospence.github.com/pelican/tag/neuroscience.html">
-                            neuroscience
+                        <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
+                            paradigm
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/optogenetics.html">
-                            optogenetics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/passwords.html">
-                            passwords
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/power.html">
-                            power
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/predictions.html">
-                            predictions
+                        <a href="http://justmytwospence.github.com/pelican/tag/philosophy.html">
+                            philosophy
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -725,19 +691,29 @@ justmytwospence            </a>
                             R
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
+                            reveal.js
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/sas.html">
                             SAS
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/science.html">
                             science
                         </a>
                     </li>
-                    <li class="list-group-item tag-6">
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/shiny.html">
                             Shiny
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
+                            silicon valley
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -746,33 +722,8 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/sound.html">
-                            sound
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/splash.html">
-                            splash
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/stanford.html">
-                            stanford
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
-                            superpower
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/technology.html">
-                            technology
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -791,8 +742,8 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/zombies.html">
-                            zombies
+                        <a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">
+                            writelatex
                         </a>
                     </li>
             </div>
