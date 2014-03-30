@@ -55,7 +55,7 @@ article h2 {
 #categories .list-group-item {
     padding: .1px;
 }
-.list-group-item .active {
+.list-group-item.active {
     color: white;
 }
 
