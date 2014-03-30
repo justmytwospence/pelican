@@ -170,6 +170,7 @@ div.cell.border-box-sizing.code_cell.vbox {
 div#tags.list-group.list-inline.tagcloud {
     padding: 10px;
 }
+
 img {
     display: block;
     margin-left: auto;
@@ -180,4 +181,7 @@ img {
     -moz-border-radius: 10px;
     -khtml-border-radius: 10px;
     -webkit-border-radius: 10px;
+}
+#map img {
+    border-radius: auto;
 }
