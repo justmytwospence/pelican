@@ -20,7 +20,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Stratified sampling in R"/>
             <meta property="og:url" content="http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html"/>
-            <meta property="og:description" content="I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my own. It is essentially a wrapper for a ddply call that ..."/>
+            <meta property="og:description" content="I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my own. It is essentially a wrapper for a ddply call that ..."/>
             <meta property="article:published_time" content="2014-03-22" />
             <meta property="article:section" content="R" />
 
@@ -472,12 +472,12 @@ justmytwospence            </a>
     
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <html><body><p>I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my own.</p>
-<p>It is essentially a wrapper for a ddply call that samples each subset and then combines them. If the size argument is less than 1, it will be interpreted as the percentage of each stratification subset that should be sampled. If the size argument is greater than 1, it will be interpreted as the number of observations to sample from each stratification subset. </p>
-<p>Note that in the first case, a different number of observations will be taken from each subset depending on their total number of observations. In the second case however, an equal number of observations will be sampled from each subset, regardless of their total number of observations.</p>
-<p>The .by argument is formulated the same way it is for any other ddply call.</p>
+                    <p>I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my&nbsp;own.</p>
+<p>It is essentially a wrapper for a ddply call that samples each subset and then combines them. If the size argument is less than 1, it will be interpreted as the percentage of each stratification subset that should be sampled. If the size argument is greater than 1, it will be interpreted as the number of observations to sample from each stratification&nbsp;subset. </p>
+<p>Note that in the first case, a different number of observations will be taken from each subset depending on their total number of observations. In the second case however, an equal number of observations will be sampled from each subset, regardless of their total number of&nbsp;observations.</p>
+<p>The .by argument is formulated the same way it is for any other ddply&nbsp;call.</p>
 <p><br/></p>
-<script src="https://gist.github.com/justmytwospence/7937389.js"></script></body></html>
+<script src="https://gist.github.com/justmytwospence/7937389.js"></script>
                 </div>
                 <!-- /.entry-content -->
     <hr />
@@ -531,6 +531,9 @@ justmytwospence            </a>
                     <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/misc.html">
                         <h4>misc</h4>
                     </a>
+                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/python.html">
+                        <h4>Python</h4>
+                    </a>
                     <a class="list-group-item  active" href="http://justmytwospence.github.com/pelican/category/r.html">
                         <h4>R</h4>
                     </a>
@@ -553,6 +556,11 @@ justmytwospence            </a>
                 </a>
             </div>
             <div class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/andrew-ng.html">
+                            andrew ng
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/api.html">
                             api
@@ -574,6 +582,16 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/biometrics.html">
+                            biometrics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://justmytwospence.github.com/pelican/tag/brain.html">
+                            brain
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/cartodb.html">
                             cartoDB
                         </a>
@@ -584,8 +602,13 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
-                            cloud
+                        <a href="http://justmytwospence.github.com/pelican/tag/cloud-computing.html">
+                            cloud computing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/college.html">
+                            college
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -603,24 +626,39 @@ justmytwospence            </a>
                             cron
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/crowdsourcing.html">
+                            crowdsourcing
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/ec2.html">
                             ec2
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
+                            economics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/entrepeneurship.html">
-                            entrepeneurship
+                        <a href="http://justmytwospence.github.com/pelican/tag/freesurfer.html">
+                            Freesurfer
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/hierarchy-of-needs.html">
-                            Hierarchy of needs
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/higher-education.html">
+                            higher education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -644,28 +682,13 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/kaggle.html">
-                            kaggle
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/latex.html">
                             latex
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/map.html">
-                            map
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/maps.html">
-                            maps
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -679,6 +702,16 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/neuroimaging.html">
+                            neuroimaging
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://justmytwospence.github.com/pelican/tag/neuroscience.html">
+                            neuroscience
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
                             paradigm
                         </a>
@@ -686,6 +719,21 @@ justmytwospence            </a>
                     <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/philosophy.html">
                             philosophy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/politics.html">
+                            politics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/power.html">
+                            power
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/prediction.html">
+                            prediction
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -698,29 +746,19 @@ justmytwospence            </a>
                             R
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
-                            reveal.js
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/sas.html">
                             SAS
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/science.html">
                             science
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/shiny.html">
                             Shiny
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
-                            silicon valley
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -729,18 +767,23 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/sound.html">
+                            sound
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/splash.html">
+                            splash
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/ted.html">
-                            TED
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/tex.html">
-                            tex
+                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
+                            superpower
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -749,8 +792,18 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/university.html">
+                            university
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">
                             writelatex
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/zombies.html">
+                            zombies
                         </a>
                     </li>
             </div>

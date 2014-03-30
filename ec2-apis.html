@@ -492,73 +492,79 @@ justmytwospence            </a>
     
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <html><body><p>This post is sort of an addendum to our <a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping">live-mapping project</a>, but it should also be of use to anyone looking to run an arbitrary script on a recurring schedule. Originally, we set up a 24/7 instance on <a href="http://aws.amazon.com/ec2/">Amazon’s Elastic Compute Cloud</a> that ran a daily <code>cron</code> job. This works, but its a bit wasteful because we’re paying for 24 hours of cloud even though we’re only actually using it for maybe 5 minutes a day.
+                    <p>This post is sort of an addendum to our <a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping">live-mapping project</a>, but it should also be of use to anyone looking to run an arbitrary script on a recurring schedule. Originally, we set up a 24/7 instance on <a href="http://aws.amazon.com/ec2/">Amazon&#8217;s Elastic Compute Cloud</a> that ran a daily <code>cron</code> job. This works, but its a bit wasteful because we&#8217;re paying for 24 hours of cloud even though we&#8217;re only actually using it for maybe 5 minutes a day.
 <br/>
-Fortunately, Amazon provides a <a href="http://aws.amazon.com/developertools/">schmorgesborg</a> of command line interface (<span class="caps">CLI</span>) tools that allow us to manage our cloud instances more efficiently. Specifically, we want to schedule an instance to spin up only once a day, execute our script, then shut back down. To accomplish this, we will want three <span class="caps">CLI</span> tools: <a href="http://aws.amazon.com/developertools/368">the Amazon <span class="caps">EC2</span> <span class="caps">AMI</span> Tools</a>, <a href="http://aws.amazon.com/developertools/351">the Amazon <span class="caps">EC2</span> <span class="caps">API</span> Tools</a>,and <a href="http://aws.amazon.com/developertools/2535">the Auto Scaling Command Line Tool</a>. If you’re on a Mac, it’s way easier to get these with <a href="http://brew.sh/">Homebrew</a> than by downloading from Amazon’s website: </p>
+Fortunately, Amazon provides a <a href="http://aws.amazon.com/developertools/">schmorgesborg</a> of command line interface (<span class="caps">CLI</span>) tools that allow us to manage our cloud instances more efficiently. Specifically, we want to schedule an instance to spin up only once a day, execute our script, then shut back down. To accomplish this, we will want three <span class="caps">CLI</span> tools: <a href="http://aws.amazon.com/developertools/368">the Amazon <span class="caps">EC2</span> <span class="caps">AMI</span> Tools</a>, <a href="http://aws.amazon.com/developertools/351">the Amazon <span class="caps">EC2</span> <span class="caps">API</span> Tools</a>,and <a href="http://aws.amazon.com/developertools/2535">the Auto Scaling Command Line Tool</a>. If you&#8217;re on a Mac, it&#8217;s way easier to get these with <a href="http://brew.sh/">Homebrew</a> than by downloading from Amazon&#8217;s&nbsp;website: </p>
 <div class="highlight"><pre>brew install ec2-ami-tools <span class="c"># For creating an AMI from an existing machine</span>
 brew install ec2-api-tools <span class="c"># For registering and launching instances</span>
 brew install aws-as        <span class="c"># For creating auto scaling groups / defining schedules</span>
 </pre></div>
+
+
 <p>As an extra Homebrew bonus, running <code>brew info ec2-ami-tools</code>, <code>brew info ec2-api-tools</code>, and <code>brew info aws-as</code> will now tell us exactly what we need to do to get our authentication and environment variables all set up. First we are told to download the necessary .pem files from <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key">this Amazon page</a> and place them into a new hidden directory of our home directory <code>.ec2</code>. Then we tell our command line where everything lives now by inserting the following lines into our <code>.bashrc</code>:</p>
-<div class="highlight"><pre><span class="nb">export </span><span class="nv">EC2_PRIVATE_KEY</span><span class="o">=</span><span class="s2">"$(/bin/ls "</span><span class="nv">$HOME</span><span class="s2">"/.ec2/pk-*.pem | /usr/bin/head -1)"</span>
-<span class="nb">export </span><span class="nv">EC2_CERT</span><span class="o">=</span><span class="s2">"$(/bin/ls "</span><span class="nv">$HOME</span><span class="s2">"/.ec2/cert-*.pem | /usr/bin/head -1)"</span>
-<span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span><span class="s2">"/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"</span>
-<span class="nb">export </span><span class="nv">AWS_AUTO_SCALING_HOME</span><span class="o">=</span><span class="s2">"/usr/local/Cellar/auto-scaling/1.0.61.4/libexec"</span>
-<span class="nb">export </span><span class="nv">EC2_AMITOOL_HOME</span><span class="o">=</span><span class="s2">"/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec"</span>
-<span class="nb">export </span><span class="nv">EC2_REGION</span><span class="o">=</span><span class="s2">"us-west-2"</span>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">EC2_PRIVATE_KEY</span><span class="o">=</span><span class="s2">&quot;$(/bin/ls &quot;</span><span class="nv">$HOME</span><span class="s2">&quot;/.ec2/pk-*.pem | /usr/bin/head -1)&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_CERT</span><span class="o">=</span><span class="s2">&quot;$(/bin/ls &quot;</span><span class="nv">$HOME</span><span class="s2">&quot;/.ec2/cert-*.pem | /usr/bin/head -1)&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec&quot;</span>
+<span class="nb">export </span><span class="nv">AWS_AUTO_SCALING_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/auto-scaling/1.0.61.4/libexec&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_AMITOOL_HOME</span><span class="o">=</span><span class="s2">&quot;/usr/local/Cellar/ec2-ami-tools/1.4.0.9/libexec&quot;</span>
+<span class="nb">export </span><span class="nv">EC2_REGION</span><span class="o">=</span><span class="s2">&quot;us-west-2&quot;</span>
 <span class="nb">export </span><span class="nv">EC2_ZONE</span><span class="o">=</span><span class="k">${</span><span class="nv">EC2_REGION</span><span class="k">}</span>a
 <span class="nb">export </span><span class="nv">EC2_URL</span><span class="o">=</span>https://<span class="nv">$EC2_REGION</span>.ec2.amazonaws.com
 <span class="nb">export </span><span class="nv">AWS_AUTO_SCALING_URL</span><span class="o">=</span>https://autoscaling.<span class="nv">$EC2_REGION</span>.amazonaws.com
 </pre></div>
+
+
 <p>Its pretty simple, but if you have any trouble with this part, refer to the official <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html">Amazon documentation for setting up the command line</a>.
 <br/>
-Because these environment variables are recognized out of the box by the <span class="caps">CLI</span> tools, we won’t need to point to our authentication keys or specify a region every time we make an <span class="caps">API</span> call and our next commands will be much more succinct. Note that every <span class="caps">EC2</span> instance is physically located at one of several regions; we are using us-west-2 because it happens to be where I spun up the existing instance that currently holds our “update.py” script, but any of them would probably work just fine for the simple job at hand.
+Because these environment variables are recognized out of the box by the <span class="caps">CLI</span> tools, we won&#8217;t need to point to our authentication keys or specify a region every time we make an <span class="caps">API</span> call and our next commands will be much more succinct. Note that every <span class="caps">EC2</span> instance is physically located at one of several regions; we are using us-west-2 because it happens to be where I spun up the existing instance that currently holds our &#8220;update.py&#8221; script, but any of them would probably work just fine for the simple job at hand.
 <br/>
-</p><table>
-<tr>
-<th>Code</th>
-<th>Region</th>
-</tr>
-<tr>
-<td>ap-northeast-1</td>
-<td> Asia Pacific (Tokyo) Region</td>
-</tr>
-<tr>
-<td>ap-southeast-1</td>
-<td>Asia Pacific (Singapore) Region</td>
-</tr>
-<tr>
-<td>ap-southeast-2</td>
-<td>Asia Pacific (Sydney) Region</td>
-</tr>
-<tr>
-<td>eu-west-1</td>
-<td><span class="caps">EU</span> (Ireland) Region</td>
-</tr>
-<tr>
-<td>sa-east-1</td>
-<td>South America (Sao Paulo) Region</td>
-</tr>
-<tr>
-<td>us-east-1</td>
-<td><span class="caps">US</span> East (Northern Virginia) Region</td>
-</tr>
-<tr>
-<td>us-west-1</td>
-<td><span class="caps">US</span> West (Northern California) Region</td>
-</tr>
-<tr>
-<td>us-west-2</td>
-<td><span class="caps">US</span> West (Oregon) Region</td>
-</tr>
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Region</th>
+  </tr>
+  <tr>
+    <td>ap-northeast-1</td>
+    <td> Asia Pacific (Tokyo) Region</td>
+  </tr>
+  <tr>
+    <td>ap-southeast-1</td>
+    <td>Asia Pacific (Singapore) Region</td>
+  </tr>
+  <tr>
+    <td>ap-southeast-2</td>
+    <td>Asia Pacific (Sydney) Region</td>
+  </tr>
+  <tr>
+    <td>eu-west-1</td>
+    <td><span class="caps">EU</span> (Ireland) Region</td>
+  </tr>
+  <tr>
+    <td>sa-east-1</td>
+    <td>South America (Sao Paulo) Region</td>
+  </tr>
+  <tr>
+    <td>us-east-1</td>
+    <td><span class="caps">US</span> East (Northern Virginia) Region</td>
+  </tr>
+  <tr>
+    <td>us-west-1</td>
+    <td><span class="caps">US</span> West (Northern California) Region</td>
+  </tr>
+  <tr>
+    <td>us-west-2</td>
+    <td><span class="caps">US</span> West (Oregon) Region</td>
+  </tr>
 </table>
 <br/>
-So, first things first. We can’t just spin up an off-the-rack <span class="caps">EC2</span> instance every day, because we’ll run into the same problem that I originally had with my web host: the Python modules that we need won’t be installed. We <em>could</em> write a script that would install <code>pip</code> plus all of the requisite Python modules and run it first thing after we launch the instance, but there’s a better way:
-<div class="highlight"><pre>ec2-create-image i-8918e1be -n <span class="s2">"Map Update Image"</span>
+So, first things first. We can&#8217;t just spin up an off-the-rack <span class="caps">EC2</span> instance every day, because we&#8217;ll run into the same problem that I originally had with my web host: the Python modules that we need won&#8217;t be installed. We <em>could</em> write a script that would install <code>pip</code> plus all of the requisite Python modules and run it first thing after we launch the instance, but there&#8217;s a better&nbsp;way:</p>
+<div class="highlight"><pre>ec2-create-image i-8918e1be -n <span class="s2">&quot;Map Update Image&quot;</span>
 </pre></div>
-<p>This command from <code>ec2-ami-tools</code> creates an “Amazon Machine Image” of the instance that we previously had running and names it “Map Update Image”. A new image <span class="caps">ID</span> will now print to your console, <code>ami-fcdfb9cc</code> in my case. This is tantamount to cloning the instance, because we can now reference the new image <span class="caps">ID</span> when we spin up new instances and all of our modules, scripts, etc. will be there waiting for us. Note that I removed the instance’s <code>cron</code> job <em>before</em> creating the <span class="caps">AMI</span>, because we’ll now be handling the task scheduling from <em>outside</em> the instance, via <strong>autoscaling</strong>.
+
+
+<p>This command from <code>ec2-ami-tools</code> creates an &#8220;Amazon Machine Image&#8221; of the instance that we previously had running and names it &#8220;Map Update Image&#8221;. A new image <span class="caps">ID</span> will now print to your console, <code>ami-fcdfb9cc</code> in my case. This is tantamount to cloning the instance, because we can now reference the new image <span class="caps">ID</span> when we spin up new instances and all of our modules, scripts, etc. will be there waiting for us. Note that I removed the instance&#8217;s <code>cron</code> job <em>before</em> creating the <span class="caps">AMI</span>, because we&#8217;ll now be handling the task scheduling from <em>outside</em> the instance, via <strong>autoscaling</strong>.
 <br/>
-Next let’s write a shell script that will execute our Python map-updating script, shoot us a diagnostic email, then shut down the instance that its running on. The idea here is that once a day we’re going to spin up an instance using our shiny new <span class="caps">AMI</span> and immediately run this new script (let’s call it “update.sh”) that will do its business and then promptly commit seppuku and stop charging us money. Eric Hammond has created a great template on <a href="http://alestic.com/2011/11/ec2-schedule-instance">his blog</a>, which I’ve modified below. Note the execution of our <a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping">familiar</a> “update.py” script highlighted on line 4, and the apoptosis command on line 46:</p>
+Next let&#8217;s write a shell script that will execute our Python map-updating script, shoot us a diagnostic email, then shut down the instance that its running on. The idea here is that once a day we&#8217;re going to spin up an instance using our shiny new <span class="caps">AMI</span> and immediately run this new script (let&#8217;s call it &#8220;update.sh&#8221;) that will do its business and then promptly commit seppuku and stop charging us money. Eric Hammond has created a great template on <a href="http://alestic.com/2011/11/ec2-schedule-instance">his blog</a>, which I&#8217;ve modified below. Note the execution of our <a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping">familiar</a> &#8220;update.py&#8221; script highlighted on line 4, and the apoptosis command on line&nbsp;46:</p>
 <div class="highlight"><pre><span class="c">#!/bin/bash -x</span>
 <span class="nb">exec</span> &gt; &gt;<span class="o">(</span>tee /var/log/user-data.log|logger -t user-data -s 2&gt;/dev/console<span class="o">)</span> 2&gt;&amp;1
 
@@ -574,7 +580,7 @@ apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade -y <span class=
 <span class="nv">instance_id</span><span class="o">=</span><span class="k">$(</span>wget -qO- instance-data/latest/meta-data/instance-id<span class="k">)</span>
 <span class="nv">public_ip</span><span class="o">=</span><span class="k">$(</span>wget -qO- instance-data/latest/meta-data/public-ipv4<span class="k">)</span>
 <span class="nv">zone</span><span class="o">=</span><span class="k">$(</span>wget -qO- instance-data/latest/meta-data/placement/availability-zone<span class="k">)</span>
-<span class="nv">region</span><span class="o">=</span><span class="k">$(</span>expr match <span class="nv">$zone</span> <span class="s1">'\(.*\).'</span><span class="k">)</span>
+<span class="nv">region</span><span class="o">=</span><span class="k">$(</span>expr match <span class="nv">$zone</span> <span class="s1">&#39;\(.*\).&#39;</span><span class="k">)</span>
 <span class="nv">uptime</span><span class="o">=</span><span class="k">$(</span>uptime<span class="k">)</span>
 
 <span class="c"># Send status email</span>
@@ -608,75 +614,83 @@ shutdown -h now
 
 <span class="nb">exit </span>0
 </pre></div>
-<p>Note that the user data script that we pass to the launch configuration executes with <em>root</em> permissions, not as the user “ubuntu” that you would typically log in as via <code>ssh</code>. Its probably best to be as explicit as possible when specifying path names in the cloud, the tilde operator might turn around and bite you.
+
+
+<p>Note that the user data script that we pass to the launch configuration executes with <em>root</em> permissions, not as the user &#8220;ubuntu&#8221; that you would typically log in as via <code>ssh</code>. Its probably best to be as explicit as possible when specifying path names in the cloud, the tilde operator might turn around and bite you.
 <br/>
 Now we need to create <strong>launch configuration</strong> that will basically do all the button-pushing that we would normally be doing at the <span class="caps">AWS</span> console <span class="caps">GUI</span>. 
 <br/>
-Here we specify:</p>
+Here we&nbsp;specify:</p>
 <ul>
-<li><span class="dquo">“</span>Micro” as our instance type.</li>
-<li>Our shell script “update.sh” from step 2 as the “user-data-file”. User data files are passed into the instance and executed immediately when supplied in the launch configuration. They must be less than 16kb as I suppose they are stored on some ancillary server somewhere.</li>
-<li>The <span class="caps">AMI</span> image that we cloned in step 1 from the instance that included our Python modules.</li>
-<li>The name of the launch config; let’s call it “map-update-launch-config”.</li>
+<li><span class="dquo">&#8220;</span>Micro&#8221; as our instance&nbsp;type.</li>
+<li>Our shell script &#8220;update.sh&#8221; from step 2 as the &#8220;user-data-file&#8221;. User data files are passed into the instance and executed immediately when supplied in the launch configuration. They must be less than 16kb as I suppose they are stored on some ancillary server&nbsp;somewhere.</li>
+<li>The <span class="caps">AMI</span> image that we cloned in step 1 from the instance that included our Python&nbsp;modules.</li>
+<li>The name of the launch config; let&#8217;s call it&nbsp;&#8220;map-update-launch-config&#8221;.</li>
 </ul>
 <div class="highlight"><pre>as-create-launch-config
    --instance-type t1.micro
    --user-data-file ~/Desktop/update.sh
    --image-id ami-fcdfb9cc
-   --launch-config <span class="s2">"map-update-launch-config"</span>
+   --launch-config <span class="s2">&quot;map-update-launch-config&quot;</span>
 as-describe-launch-configs --headers
 </pre></div>
+
+
 <p>Note that the second line provides a list of all the launch configurations that have been created.
 <br/>
-We must also create an <strong>auto scaling group</strong>. These are typically used as a sort of container to which we can add/remove instances on a schedule or in response to heavy traffic, but we can also use it to schedule a single instance to flick on and off. We need to tell it:</p>
+We must also create an <strong>auto scaling group</strong>. These are typically used as a sort of container to which we can add/remove instances on a schedule or in response to heavy traffic, but we can also use it to schedule a single instance to flick on and off. We need to tell&nbsp;it:</p>
 <ul>
-<li>A name to assign the scaling group (“map-update-scale-group”).</li>
-<li>The name of the launch configuration we created in step 3 (“map-update-launch-config”).</li>
-<li>Which availability zone we want to use (basically irrelevant; we set our environment variable <code>EC2_ZONE</code> to “a” earlier). <code>ec2-describe-available-zones</code> provides a list of the available zones</li>
-<li>A minimum and maximum number of instances in the group. We’ll initialize these to zero.</li>
+<li>A name to assign the scaling group&nbsp;(&#8220;map-update-scale-group&#8221;).</li>
+<li>The name of the launch configuration we created in step 3&nbsp;(&#8220;map-update-launch-config&#8221;).</li>
+<li>Which availability zone we want to use (basically irrelevant; we set our environment variable <code>EC2_ZONE</code> to &#8220;a&#8221; earlier). <code>ec2-describe-available-zones</code> provides a list of the available&nbsp;zones</li>
+<li>A minimum and maximum number of instances in the group. We&#8217;ll initialize these to&nbsp;zero.</li>
 </ul>
-<div class="highlight"><pre><span class="nv">title</span><span class="o">=</span><span class="s2">"Create auto scaling group with launch configuration"</span><span class="o">}</span>
+<div class="highlight"><pre><span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Create auto scaling group with launch configuration&quot;</span><span class="o">}</span>
 as-create-auto-scaling-group
-   --auto-scaling-group <span class="s2">"map-update-scale-group"</span>
-   --launch-configuration <span class="s2">"map-update-launch-config"</span>
-   --availability-zones <span class="s2">"$EC2_ZONE"</span>
+   --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
+   --launch-configuration <span class="s2">&quot;map-update-launch-config&quot;</span>
+   --availability-zones <span class="s2">&quot;$EC2_ZONE&quot;</span>
    --min-size 0 --max-size 0
-as-suspend-processes <span class="s2">"map-update-scale-group"</span>
+as-suspend-processes <span class="s2">&quot;map-update-scale-group&quot;</span>
    --processes ReplaceUnhealthy
 as-describe-auto-scaling-groups --headers
 </pre></div>
-<p>In the second line, we are using <code>as-suspend-processes</code> to prevent the instance’s default behavior which is to attempt to restart after it is shut down. The third line provides a list of all the auto scaling groups that have been created.
+
+
+<p>In the second line, we are using <code>as-suspend-processes</code> to prevent the instance&#8217;s default behavior which is to attempt to restart after it is shut down. The third line provides a list of all the auto scaling groups that have been created.
 <br/>
-Last but not least, we are ready to assign a schedule to our auto scaling group. Here we create two: one to start the instance and one to terminate the instance. Astute readers will recall that “update.sh” already <em>stops</em> the instance so that we aren’t paying to have it running, but we also need to completely <em>terminate</em> the instance so that we aren’t paying to store information about it. Each schedule requires:</p>
+Last but not least, we are ready to assign a schedule to our auto scaling group. Here we create two: one to start the instance and one to terminate the instance. Astute readers will recall that &#8220;update.sh&#8221; already <em>stops</em> the instance so that we aren&#8217;t paying to have it running, but we also need to completely <em>terminate</em> the instance so that we aren&#8217;t paying to store information about it. Each schedule&nbsp;requires:</p>
 <ul>
-<li>A name (“map-update-start” <span class="amp">&amp;</span> “map-update-stop”).</li>
-<li>The name of the auto scaling group we created in step 4 (“map-update-scale-group”).</li>
-<li>How we want to scale. By setting both <code>min-size</code> and <code>max-size</code> to 1, we are effectively turning on one instance. We later effectively turn that instance back off by setting both to 0.</li>
-<li>A “recurrence,” ie when to occur. This flag uses the same syntax that <code>cron</code> does. Here we set the instance to launch at midnight <span class="caps">UTC</span> (<code>0 0 * * *</code>), and terminate 15 minutes later (<code>15 0 * * *</code>). Recall that our script already stops the instance 10 minutes after execution, so 15 minutes is playing it safe.</li>
+<li>A name (&#8220;map-update-start&#8221; <span class="amp">&amp;</span>&nbsp;&#8220;map-update-stop&#8221;).</li>
+<li>The name of the auto scaling group we created in step 4&nbsp;(&#8220;map-update-scale-group&#8221;).</li>
+<li>How we want to scale. By setting both <code>min-size</code> and <code>max-size</code> to 1, we are effectively turning on one instance. We later effectively turn that instance back off by setting both to&nbsp;0.</li>
+<li>A &#8220;recurrence,&#8221; ie when to occur. This flag uses the same syntax that <code>cron</code> does. Here we set the instance to launch at midnight <span class="caps">UTC</span> (<code>0 0 * * *</code>), and terminate 15 minutes later (<code>15 0 * * *</code>). Recall that our script already stops the instance 10 minutes after execution, so 15 minutes is playing it&nbsp;safe.</li>
 </ul>
 <div class="highlight"><pre>as-put-scheduled-update-group-action
-   --name <span class="s2">"map-update-start"</span>
-   --auto-scaling-group <span class="s2">"map-update-scale-group"</span>
+   --name <span class="s2">&quot;map-update-start&quot;</span>
+   --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
    --min-size 1 --max-size 1
-   --recurrence <span class="s2">"0 0 * * *"</span>
+   --recurrence <span class="s2">&quot;0 0 * * *&quot;</span>
 as-put-scheduled-update-group-action
-   --name <span class="s2">"map-update-stop"</span>
-   --auto-scaling-group <span class="s2">"map-update-scale-group"</span>
+   --name <span class="s2">&quot;map-update-stop&quot;</span>
+   --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
    --min-size 0 --max-size 0
-   --recurrence <span class="s2">"15 0 * * *"</span>
+   --recurrence <span class="s2">&quot;15 0 * * *&quot;</span>
 as-describe-scheduled-actions --headers
 </pre></div>
+
+
 <p>As before, the third line provides a list of the actions that have been scheduled.
 <br/>
-And thats it! We are now only paying for 10 or 15 minutes of cloud per day, as opposed to 1,440 of them. To review the timeline we have created in this example: our auto scaling group boots up an instance up at midnight <span class="caps">UTC</span> that immediately executes “update.sh”. This automatically executes “update.py” and shoots us a diagnostic email. It then waits 10 minutes to make sure everything has time to run, before stopping the instance. 5 minutes after <em>that</em> the auto scaling group then completely terminates the instance.
+And thats it! We are now only paying for 10 or 15 minutes of cloud per day, as opposed to 1,440 of them. To review the timeline we have created in this example: our auto scaling group boots up an instance up at midnight <span class="caps">UTC</span> that immediately executes &#8220;update.sh&#8221;. This automatically executes &#8220;update.py&#8221; and shoots us a diagnostic email. It then waits 10 minutes to make sure everything has time to run, before stopping the instance. 5 minutes after <em>that</em> the auto scaling group then completely terminates the instance.
 <br/>
-Other great resources:</p>
+Other great&nbsp;resources:</p>
 <ul>
-<li><a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Official Amazon documentation for scheduling auto scaling groups</a></li>
-<li><a href="http://alestic.com/2011/11/ec2-schedule-instance">Running <span class="caps">EC2</span> Instances on a Recurring Schedule with Auto Scaling</a></li>
-<li><a href="http://www.robertsindall.co.uk/blog/how-to-use-amazons-auto-scaling-groups/">Summary of <span class="caps">API</span> commands</a></li>
-<li><a href="http://www.cardinalpath.com/autoscaling-your-website-with-amazon-web-services-part-2/">Auto Scaling Your Website with Amazon Web Services</a></li>
-</ul></body></html>
+<li><a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Official Amazon documentation for scheduling auto scaling&nbsp;groups</a></li>
+<li><a href="http://alestic.com/2011/11/ec2-schedule-instance">Running <span class="caps">EC2</span> Instances on a Recurring Schedule with Auto&nbsp;Scaling</a></li>
+<li><a href="http://www.robertsindall.co.uk/blog/how-to-use-amazons-auto-scaling-groups/">Summary of <span class="caps">API</span>&nbsp;commands</a></li>
+<li><a href="http://www.cardinalpath.com/autoscaling-your-website-with-amazon-web-services-part-2/">Auto Scaling Your Website with Amazon Web&nbsp;Services</a></li>
+</ul>
                 </div>
                 <!-- /.entry-content -->
     <hr />
@@ -730,6 +744,9 @@ Other great resources:</p>
                     <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/misc.html">
                         <h4>misc</h4>
                     </a>
+                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/python.html">
+                        <h4>Python</h4>
+                    </a>
                     <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/r.html">
                         <h4>R</h4>
                     </a>
@@ -752,6 +769,11 @@ Other great resources:</p>
                 </a>
             </div>
             <div class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/andrew-ng.html">
+                            andrew ng
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/api.html">
                             api
@@ -773,6 +795,16 @@ Other great resources:</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/biometrics.html">
+                            biometrics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://justmytwospence.github.com/pelican/tag/brain.html">
+                            brain
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/cartodb.html">
                             cartoDB
                         </a>
@@ -783,8 +815,13 @@ Other great resources:</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/cloud.html">
-                            cloud
+                        <a href="http://justmytwospence.github.com/pelican/tag/cloud-computing.html">
+                            cloud computing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/college.html">
+                            college
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -802,24 +839,39 @@ Other great resources:</p>
                             cron
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/crowdsourcing.html">
+                            crowdsourcing
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/ec2.html">
                             ec2
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
+                            economics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/entrepeneurship.html">
-                            entrepeneurship
+                        <a href="http://justmytwospence.github.com/pelican/tag/freesurfer.html">
+                            Freesurfer
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/hierarchy-of-needs.html">
-                            Hierarchy of needs
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/higher-education.html">
+                            higher education
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -843,28 +895,13 @@ Other great resources:</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/kaggle.html">
-                            kaggle
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/latex.html">
                             latex
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/map.html">
-                            map
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/maps.html">
-                            maps
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -878,6 +915,16 @@ Other great resources:</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/neuroimaging.html">
+                            neuroimaging
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://justmytwospence.github.com/pelican/tag/neuroscience.html">
+                            neuroscience
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
                             paradigm
                         </a>
@@ -885,6 +932,21 @@ Other great resources:</p>
                     <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/philosophy.html">
                             philosophy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/politics.html">
+                            politics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/power.html">
+                            power
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/prediction.html">
+                            prediction
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -897,29 +959,19 @@ Other great resources:</p>
                             R
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/revealjs.html">
-                            reveal.js
-                        </a>
-                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/sas.html">
                             SAS
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-4">
                         <a href="http://justmytwospence.github.com/pelican/tag/science.html">
                             science
                         </a>
                     </li>
-                    <li class="list-group-item tag-10">
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/shiny.html">
                             Shiny
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
-                            silicon valley
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -928,18 +980,23 @@ Other great resources:</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/sound.html">
+                            sound
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/splash.html">
+                            splash
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/ted.html">
-                            TED
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/tex.html">
-                            tex
+                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
+                            superpower
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -948,8 +1005,18 @@ Other great resources:</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/university.html">
+                            university
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">
                             writelatex
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/zombies.html">
+                            zombies
                         </a>
                     </li>
             </div>
