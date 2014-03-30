@@ -5,7 +5,16 @@
 &lt;p&gt;The .by argument is formulated the same way it is for any other ddply&amp;nbsp;call.&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;</summary></entry><entry><title>What's a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very  similar to the one facing Coursera and&amp;nbsp;friends&amp;#8230;&lt;/p&gt;
-&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/8vw8t4O9JQM" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: &lt;span class="caps"&gt;ERROR&lt;/span&gt;/3 (&lt;tt class="docutils"&gt;/Users/SpencerBoucher/pelican/content/whats-a-mooc.rst&lt;/tt&gt;, line&amp;nbsp;11)&lt;/p&gt;
+&lt;p&gt;Unknown directive type&amp;nbsp;&amp;quot;youtube&amp;quot;.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. youtube:: 8vw8t4O9JQM
+        :align: center
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;
 </summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;If you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
 \(write\LaTeX\), do yourself a favor and check it out. On one level
 its a really great version of Google Docs for documents that are
