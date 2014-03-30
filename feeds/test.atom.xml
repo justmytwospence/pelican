@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/test.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2013-03-21T00:00:00+01:00</updated><entry><title>D3 Test</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">
-
-	&lt;button id="add" class="btn btn-info"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/test.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2013-03-21T00:00:00+01:00</updated><entry><title>D3 Test</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;button class="btn btn-info" id="add"&gt;
 		Add
 	&lt;/button&gt;
-	&lt;button id="remove" class="btn btn-info"&gt;
+&lt;button class="btn btn-info" id="remove"&gt;
 		Remove
 	&lt;/button&gt;
-
-	&lt;div id="svg"&gt;&lt;/div&gt;
-
-</summary></entry></feed>
+&lt;div id="svg"&gt;&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;</summary></entry></feed>
