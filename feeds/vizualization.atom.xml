@@ -355,14 +355,16 @@ A few final notes:
 &lt;p&gt;Not too shabby for 2 hours on a Wednesday night. Many thanks to the guys at Stamen for hosting, especially Eric for all his work on the slides. Not to mention the many other brilliant people who have made the tools and resources that allow something this involved and grandiose to be done on a laptop by someone who is still learning the ropes. Hands-on workshops like this are one of the best ways to learn these technologies. Case in point, I may not have ever stumbled across Mike or Andy’s resources had I not been learning directly from people who are intimately familiar with the practical ins and outs of digital&amp;nbsp;cartography.&lt;/p&gt;
 &lt;p&gt;Digital mapping is rapidly capturing my interest because of the beautifully functional things one can do with it, and it seems like an amazing time to be learning it, because the ecosystem is beginning to really flourish. Looking forward to more&amp;nbsp;events!&lt;/p&gt;</summary><category term="cartography"></category><category term="maps"></category></entry><entry><title>D3 Test</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">
 
-	&lt;button id="add" class="btn btn-info"&gt;
-		Add
-	&lt;/button&gt;
-	&lt;button id="remove" class="btn btn-info"&gt;
-		Remove
-	&lt;/button&gt;
-
 	&lt;p&gt;To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book &lt;a href="http://chimera.labs.oreilly.com/books/1230000000345" target="_blank"&gt;Interactive Data Visualization for the Web&lt;/a&gt;. I highly recommend it for all skill&amp;nbsp;levels!&lt;/p&gt;
+
+	&lt;div style="text-align:center;"&gt;
+		&lt;button id="add" class="btn btn-info"&gt;
+			Add
+		&lt;/button&gt;
+		&lt;button id="remove" class="btn btn-info"&gt;
+			Remove
+		&lt;/button&gt;
+	&lt;/div&gt;
 
 	&lt;div id="svg"&gt;&lt;/div&gt;
 
