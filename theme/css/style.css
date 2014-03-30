@@ -146,27 +146,3 @@ footer.post-info {
 header.page-header {
     margin-top: 0px;
 }
-
-pre {
-    padding: 0px;
-    margin-top: 10px;
-}
-div.highlight {
-    margin-top: 10px;
-}
-.highlight pre {
-    padding: 10px;
-}
-
-div.input_area.box-flex1 {
-    padding: 10px;
-}
-
-div.cell.border-box-sizing.code_cell.vbox {
-    margin: 0px;
-    padding: 0px;
-}
-
-div#tags.list-group.list-inline.tagcloud {
-    padding: 10px;
-}
