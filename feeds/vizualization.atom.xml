@@ -353,4 +353,25 @@ A few final notes:
 &lt;p&gt;Then we used &lt;a href="https://www.mapbox.com/tilemill/"&gt;TileMill&lt;/a&gt;, MapBox’s desktop application, to visualize our newborn database. We discovered how remarkably easy it can be to create vector layers for data contained in such a postGIS database using the same old &lt;span class="caps"&gt;SQL&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; syntax you already know and love. Eric introduced us to some sensible pre-baked &lt;a href="https://github.com/gravitystorm/openstreetmap-carto"&gt;CartoCSS boilerplate&lt;/a&gt; courtesy of Andy&amp;nbsp;Allen.&lt;/p&gt;
 &lt;p&gt;Lastly, we used a nifty feature of TileMill to actually bake our own map tiles and serve them up for use in our own maps. Note that if you want to do this, you’ll need the &lt;a href="https://github.com/mapbox/mbutil"&gt;mbutil command-line utility&lt;/a&gt;, not currently mentioned in the slide&amp;nbsp;deck.&lt;/p&gt;
 &lt;p&gt;Not too shabby for 2 hours on a Wednesday night. Many thanks to the guys at Stamen for hosting, especially Eric for all his work on the slides. Not to mention the many other brilliant people who have made the tools and resources that allow something this involved and grandiose to be done on a laptop by someone who is still learning the ropes. Hands-on workshops like this are one of the best ways to learn these technologies. Case in point, I may not have ever stumbled across Mike or Andy’s resources had I not been learning directly from people who are intimately familiar with the practical ins and outs of digital&amp;nbsp;cartography.&lt;/p&gt;
-&lt;p&gt;Digital mapping is rapidly capturing my interest because of the beautifully functional things one can do with it, and it seems like an amazing time to be learning it, because the ecosystem is beginning to really flourish. Looking forward to more&amp;nbsp;events!&lt;/p&gt;</summary><category term="cartography"></category><category term="maps"></category></entry></feed>
+&lt;p&gt;Digital mapping is rapidly capturing my interest because of the beautifully functional things one can do with it, and it seems like an amazing time to be learning it, because the ecosystem is beginning to really flourish. Looking forward to more&amp;nbsp;events!&lt;/p&gt;</summary><category term="cartography"></category><category term="maps"></category></entry><entry><title>D3 Test</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">D3 Test
+	
+	
+	 
+	
+	
+	
+
+
+
+	
+		Add
+	
+	
+		Remove
+	
+
+	To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book Interactive Data Visualization for the Web. I highly recommend it for all skill&amp;nbsp;levels!
+
+	
+
+</summary></entry></feed>

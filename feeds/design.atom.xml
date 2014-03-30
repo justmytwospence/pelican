@@ -12,9 +12,10 @@ because I could experiment liberally with equations and figure
 placement. There&amp;#8217;s literally zero barrier to entry because its
 completely web based; you don&amp;#8217;t need to install a thing and templates
 are available to get you jump-started. Right now other engines like
-XeLaTeX aren&amp;#8217;t supported, but I believe they are in the&amp;nbsp;works.&lt;/p&gt;
-&lt;p&gt;So every excuse you ever had to not learn \(\LaTeX\) has been
-obliterated. Give [\(write\LaTeX\)][] a try, or be passive aggressive
+XeLaTeX aren&amp;#8217;t supported, but I believe they are in the works.
+&lt;br/&gt;
+So every excuse you ever had to not learn \(\LaTeX\) has been
+obliterated. &lt;a href="http://writelatex.com"&gt;Give it a try&lt;/a&gt;, or just be passive aggressive
 and send it to that collaborator that always sends you everything in a
 poorly formatted Word document. I myself will be experimenting with
 using \(\LaTeX\) to take math-heavy notes in real-time, which sounds
