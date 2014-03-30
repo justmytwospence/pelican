@@ -8676,31 +8676,10 @@ awAAAAAAAACA1yBpDQAAAAAAAADwGiStAQAAAAAAAABe4/8B97OxzC6zAIQAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;It appears that &lt;strong&gt;the optimal commission rate is independent of the employee&amp;#8217;s coefficient of laziness&lt;/strong&gt;, even though the actual profit the firm makes most certainly is &lt;em&gt;not&lt;/em&gt;. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&amp;#8217;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&amp;nbsp;same.&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>What’s a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very  similar to the one facing Coursera and friends&amp;#8230;
-&amp;lt;hr/&amp;gt;
-.. youtube::&amp;nbsp;8vw8t4O9JQM&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: &lt;span class="caps"&gt;ERROR&lt;/span&gt;/3 (&lt;tt class="docutils"&gt;/Users/SpencerBoucher/pelican/content/Misc/whats-a-mooc.rst&lt;/tt&gt;, line&amp;nbsp;11)&lt;/p&gt;
-Unexpected indentation.&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;table class="docutils field-list" frame="void" rules="none"&gt;
-&lt;col class="field-name" /&gt;
-&lt;col class="field-body" /&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr class="field"&gt;&lt;th class="field-name"&gt;width:&lt;/th&gt;&lt;td class="field-body"&gt;800&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class="field"&gt;&lt;th class="field-name"&gt;height:&lt;/th&gt;&lt;td class="field-body"&gt;500&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class="field"&gt;&lt;th class="field-name"&gt;align:&lt;/th&gt;&lt;td class="field-body"&gt;center&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/blockquote&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: &lt;span class="caps"&gt;WARNING&lt;/span&gt;/2 (&lt;tt class="docutils"&gt;/Users/SpencerBoucher/pelican/content/Misc/whats-a-mooc.rst&lt;/tt&gt;, line&amp;nbsp;14)&lt;/p&gt;
-Block quote ends without a blank line; unexpected unindent.&lt;/div&gt;
-&lt;p&gt;&amp;lt;hr/&amp;gt;
-From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>What’s a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very  similar to the one facing Coursera and&amp;nbsp;friends&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&amp;lt;hr/&amp;gt;&lt;/p&gt;
+&lt;div class="youtube" align="center"&gt;&lt;iframe width="800" height="500" src="https://www.youtube.com/embed/8vw8t4O9JQM" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&amp;lt;hr/&amp;gt;&lt;/p&gt;
+&lt;p&gt;From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;
 </summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>writeLaTeX</title><link href="http://justmytwospence.github.com/pelican/writelatex.html" rel="alternate"></link><updated>2014-01-25T18:42:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-01-25:writelatex.html</id><summary type="html">&lt;p&gt;If you use \(\LaTeX\) and haven&amp;#8217;t yet heard of
 \(write\LaTeX\), do yourself a favor and check it out. On one level
 its a really great version of Google Docs for documents that are
