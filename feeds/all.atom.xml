@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-03-27T23:52:02+01:00</updated><entry><title>Basic Charts</title><link href="http://justmytwospence.github.com/pelican/ggplot-goodness.html" rel="alternate"></link><updated>2014-03-27T23:52:02+01:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-27:ggplot-goodness.html</id><summary type="html">
-&lt;h1&gt;Homework 1: Basic&amp;nbsp;Charts&lt;/h1&gt;
 
 &lt;p&gt;Some general configuration. By default, ggplot places axis titles a little closer to the axis that I would like, so I move them away a bit. Increasing the overall plot margin is required to prevent the newly shifted titles from being cut off. I save these theme parameters to &lt;code&gt;custom&lt;/code&gt; for use in all subsequent&amp;nbsp;plots.&lt;/p&gt;
 
