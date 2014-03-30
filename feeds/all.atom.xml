@@ -148,7 +148,8 @@ Note that in the first case, a different number of observations will be taken fr
 &lt;br/&gt;
 The .by argument is formulated the same way it is for any other ddply call.
 &lt;br/&gt;
-&lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;&lt;/p&gt;</summary></entry><entry><title>Test of liquid_tags</title><link href="http://justmytwospence.github.com/pelican/contract-optimization.html" rel="alternate"></link><updated>2014-03-20T21:04:50-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-20:contract-optimization.html</id><summary type="html">&lt;p&gt;
+&lt;script src="https://gist.github.com/justmytwospence/7937389.js"&gt;&lt;/script&gt;&lt;/p&gt;</summary></entry><entry><title>Contract Optimization</title><link href="http://justmytwospence.github.com/pelican/contract-optimization.html" rel="alternate"></link><updated>2014-03-20T21:04:50-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-20:contract-optimization.html</id><summary type="html">&lt;p&gt;A recent homework&amp;nbsp;assignment.&lt;/p&gt;
+&lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
 &lt;div class="prompt input_prompt"&gt;
