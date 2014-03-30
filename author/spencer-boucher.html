@@ -26,7 +26,6 @@
         <link rel="stylesheet" href="http://justmytwospence.github.com/pelican/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="http://justmytwospence.github.com/pelican/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://justmytwospence.github.com/pelican/theme/css/pygments/github.css" rel="stylesheet">
-        <link href="http://justmytwospence.github.com/pelican/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://justmytwospence.github.com/pelican/theme/css/style.css" type="text/css"/>
 
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -436,50 +435,6 @@ justmytwospence            </a>
                 <div class="panel-heading panel-default">
 <footer class="post-info">
     <span class="published">
-        <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-03-22T22:47:17"> Sat 22 March 2014</time>
-    </span>
-
-    <span>
-        <i class="fa fa-folder-open"></i>
-        <a class="icon-label" href="http://justmytwospence.github.com/pelican/category/test.html">Test</a>
-    </span>
-
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://justmytwospence.github.com/pelican/viz.html" class="list-group-item">
-                        <h2>Interactive Rcharts&nbsp;test</h2>
-                        <div class="summary">
-                            
-
-	<p>Some&nbsp;configuration</p>
-
-	<pre><code class="r">library(knitr)
-tidy.opts = list(width.cutoff = 80)
-opts_chunk$set(fig.width = 10, fig.align = &quot;center&quot;, tidy = FALSE, warning = TRUE)
-theme_set(theme_gray(base_size = 18))</code></pre>
-
-	<p>Load&nbsp;packages/data</p>
-
-	<pre><code class="r">library(ggplot2) 
-library(rCharts)
-data(movies) 
-data(EuStockMarkets)</code></pre>
-
-	<p>Munge a&nbsp;bit</p>
-
-	<pre><code class="r">movies &lt;- subset(movies, budget &gt; 0)
-
-genre &lt;- rep(NA, nrow(movies ...</code></pre>
-                        </div>
-                    </a>
-                </div>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading panel-default">
-<footer class="post-info">
-    <span class="published">
         <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-03-22T18:38:32"> Sat 22 March 2014</time>
     </span>
 
@@ -493,77 +448,10 @@ genre &lt;- rep(NA, nrow(movies ...</code></pre>
 </footer><!-- /.post-info -->                </div>
                 <div class="list-group">
                     <a href="http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html" class="list-group-item">
-                        <h2>Stratified sampling in&nbsp;R</h2>
+                        <h2>Stratified sampling in R</h2>
                         <div class="summary">
                             <p>I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my&nbsp;own.</p>
 <p>It is essentially a wrapper for a ddply call that ...</p>
-                        </div>
-                    </a>
-                </div>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading panel-default">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-03-21T10:20:00"> Fri 21 March 2014</time>
-    </span>
-
-    <span>
-        <i class="fa fa-folder-open"></i>
-        <a class="icon-label" href="http://justmytwospence.github.com/pelican/category/test.html">Test</a>
-    </span>
-
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://justmytwospence.github.com/pelican/test-of-code-blocks.html" class="list-group-item">
-                        <h2>Test of code&nbsp;blocks</h2>
-                        <div class="summary">
-                            <p>Test to see where summary shows up.</p>
-                        </div>
-                    </a>
-                </div>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading panel-default">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-03-20T21:04:50"> Thu 20 March 2014</time>
-    </span>
-
-    <span>
-        <i class="fa fa-folder-open"></i>
-        <a class="icon-label" href="http://justmytwospence.github.com/pelican/category/python.html">Python</a>
-    </span>
-
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://justmytwospence.github.com/pelican/contract-optimization.html" class="list-group-item">
-                        <h2>Test of&nbsp;liquid_tags</h2>
-                        <div class="summary">
-                            <p>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question&nbsp;1</strong></p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The way our firm pays its employees can be modelled thusly: <span class="math">\[\pi=a+\epsilon\]</span> <span class="math">\[U(w,a)=-e^{-(w-c\cdot a^{2})}\]</span> <span class="math">\[w=t+s\cdot \pi\]</span> Where <span class="math">\(t\)</span> is the employee&#8217;s base pay, <span class="math">\(U\)</span> is ...</p></div></p>
                         </div>
                     </a>
                 </div>
@@ -593,10 +481,122 @@ In&nbsp;[1]:
 </footer><!-- /.post-info -->                </div>
                 <div class="list-group">
                     <a href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" class="list-group-item">
-                        <h2>What&#8217;s a&nbsp;Mooc?</h2>
+                        <h2>What's a Mooc?</h2>
                         <div class="summary">
                             <p class="first last">What do Robert de Niro and Coursera have in common?</p>
 
+                        </div>
+                    </a>
+                </div>
+            </article>
+            <article class="panel panel-default">
+                <div class="panel-heading panel-default">
+<footer class="post-info">
+    <span class="published">
+        <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-01-25T18:42:00"> Sat 25 January 2014</time>
+    </span>
+
+    <span>
+        <i class="fa fa-folder-open"></i>
+        <a class="icon-label" href="http://justmytwospence.github.com/pelican/category/design.html">Design</a>
+    </span>
+
+
+	<span>
+	<i class="fa fa-tag"></i>
+		<a href="http://justmytwospence.github.com/pelican/tag/latex.html">latex</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/tex.html">tex</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/typesetting.html">typesetting</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/writelatex.html">writelatex</a>
+	</span>
+    
+</footer><!-- /.post-info -->                </div>
+                <div class="list-group">
+                    <a href="http://justmytwospence.github.com/pelican/writelatex.html" class="list-group-item">
+                        <h2>writeLaTeX</h2>
+                        <div class="summary">
+                            <p>If you use \(\LaTeX\) and haven&#8217;t yet heard of
+\(write\LaTeX\), do yourself a favor and check it out. On one level
+its a really great version of Google Docs for documents that are
+properly typeset, which is incredibly useful because a huge swathe of
+the documents created with ...</p>
+                        </div>
+                    </a>
+                </div>
+            </article>
+            <article class="panel panel-default">
+                <div class="panel-heading panel-default">
+<footer class="post-info">
+    <span class="published">
+        <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-01-11T22:05:00"> Sat 11 January 2014</time>
+    </span>
+
+    <span>
+        <i class="fa fa-folder-open"></i>
+        <a class="icon-label" href="http://justmytwospence.github.com/pelican/category/r.html">R</a>
+    </span>
+
+
+	<span>
+	<i class="fa fa-tag"></i>
+		<a href="http://justmytwospence.github.com/pelican/tag/kaggle.html">kaggle</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">machine learning</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/r.html">R</a>
+	</span>
+    
+</footer><!-- /.post-info -->                </div>
+                <div class="list-group">
+                    <a href="http://justmytwospence.github.com/pelican/titanic-getting-started-with-r.html" class="list-group-item">
+                        <h2>Titanic: Getting Started With R</h2>
+                        <div class="summary">
+                            <p>Get a jump start on the Kaggle Titanic competition.</p>
+                        </div>
+                    </a>
+                </div>
+            </article>
+            <article class="panel panel-default">
+                <div class="panel-heading panel-default">
+<footer class="post-info">
+    <span class="published">
+        <i class="fa fa-calendar"></i><time class="icon-label" datetime="2014-01-08T08:50:00"> Wed 08 January 2014</time>
+    </span>
+
+    <span>
+        <i class="fa fa-folder-open"></i>
+        <a class="icon-label" href="http://justmytwospence.github.com/pelican/category/web.html">Web</a>
+    </span>
+
+
+	<span>
+	<i class="fa fa-tag"></i>
+		<a href="http://justmytwospence.github.com/pelican/tag/api.html">api</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/aws.html">aws</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/cartodb.html">cartoDB</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/cartography.html">cartography</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/cron.html">cron</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/ec2.html">ec2</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/map.html">map</a>
+	        /
+		<a href="http://justmytwospence.github.com/pelican/tag/quantifiedself.html">quantifiedSelf</a>
+	</span>
+    
+</footer><!-- /.post-info -->                </div>
+                <div class="list-group">
+                    <a href="http://justmytwospence.github.com/pelican/live-mapping.html" class="list-group-item">
+                        <h2>Live mapping</h2>
+                        <div class="summary">
+                            <p>Let's put on our quantified-self hats and find out where we spend our time!</p>
                         </div>
                     </a>
                 </div>
@@ -616,8 +616,6 @@ In&nbsp;[1]:
                         href="http://justmytwospence.github.com/pelican/author/spencer-boucher5.html">5</a></li>
                 <li class=""><a
                         href="http://justmytwospence.github.com/pelican/author/spencer-boucher6.html">6</a></li>
-                <li class=""><a
-                        href="http://justmytwospence.github.com/pelican/author/spencer-boucher7.html">7</a></li>
             <li class="next"><a
                     href="http://justmytwospence.github.com/pelican/author/spencer-boucher2.html">&raquo;</a></li>
     </ul>
@@ -642,9 +640,6 @@ In&nbsp;[1]:
                     </a>
                     <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/misc.html">
                         <h4>misc</h4>
-                    </a>
-                    <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/python.html">
-                        <h4>Python</h4>
                     </a>
                     <a class="list-group-item " href="http://justmytwospence.github.com/pelican/category/r.html">
                         <h4>R</h4>
@@ -673,22 +668,12 @@ In&nbsp;[1]:
                             andrew ng
                         </a>
                     </li>
-                    <li class="list-group-item tag-6">
-                        <a href="http://justmytwospence.github.com/pelican/tag/api.html">
-                            api
-                        </a>
-                    </li>
                     <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/approximation.html">
                             approximation
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/auto-scaling.html">
-                            auto scaling
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/aws.html">
                             aws
                         </a>
@@ -714,6 +699,11 @@ In&nbsp;[1]:
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/college.html">
+                            college
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/color.html">
                             color
                         </a>
@@ -723,19 +713,19 @@ In&nbsp;[1]:
                             Coursera
                         </a>
                     </li>
-                    <li class="list-group-item tag-6">
+                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/cron.html">
                             cron
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/crowdsourcing.html">
-                            crowdsourcing
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/ec2.html">
                             ec2
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/economics.html">
+                            economics
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -749,13 +739,23 @@ In&nbsp;[1]:
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
-                            gamification
+                        <a href="http://justmytwospence.github.com/pelican/tag/foldit.html">
+                            foldit
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/higher-education.html">
-                            higher education
+                        <a href="http://justmytwospence.github.com/pelican/tag/freakonomics.html">
+                            freakonomics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/freesurfer.html">
+                            Freesurfer
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/gamification.html">
+                            gamification
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -774,11 +774,6 @@ In&nbsp;[1]:
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/kaggle.html">
-                            kaggle
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/latex.html">
                             latex
                         </a>
@@ -786,6 +781,11 @@ In&nbsp;[1]:
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/machine-learning.html">
                             machine learning
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/map.html">
+                            map
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -819,13 +819,13 @@ In&nbsp;[1]:
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
-                            paradigm
+                        <a href="http://justmytwospence.github.com/pelican/tag/passwords.html">
+                            passwords
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/politics.html">
-                            politics
+                        <a href="http://justmytwospence.github.com/pelican/tag/power.html">
+                            power
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -859,11 +859,6 @@ In&nbsp;[1]:
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
-                            silicon valley
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/solarized.html">
                             solarized
                         </a>
@@ -878,14 +873,19 @@ In&nbsp;[1]:
                             splash
                         </a>
                     </li>
+                    <li class="list-group-item tag-10">
+                        <a href="http://justmytwospence.github.com/pelican/tag/stanford.html">
+                            stanford
+                        </a>
+                    </li>
                     <li class="list-group-item tag-6">
                         <a href="http://justmytwospence.github.com/pelican/tag/stepwise.html">
                             stepwise
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/super.html">
-                            super
+                        <a href="http://justmytwospence.github.com/pelican/tag/superpower.html">
+                            superpower
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
@@ -906,11 +906,6 @@ In&nbsp;[1]:
                     <li class="list-group-item tag-10">
                         <a href="http://justmytwospence.github.com/pelican/tag/typesetting.html">
                             typesetting
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-10">
-                        <a href="http://justmytwospence.github.com/pelican/tag/university.html">
-                            university
                         </a>
                     </li>
                     <li class="list-group-item tag-10">
