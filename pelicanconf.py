@@ -21,7 +21,7 @@ DISPLAY_TAGS_INLINE = True
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
-TAG_CLOUD_STEPS = 10
+TAG_CLOUD_STEPS = 5
 TAG_CLOUD_MAX_ITEMS = 50
 #ABOUT_ME = ''
 #AVATAR = 'images/avatar.png'
@@ -31,8 +31,6 @@ DISPLAY_ARCHIVES = False
 SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
           ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
           ('RSS', SITEURL + 'feeds/all.atom.xml'))
-DISPLAY_ARTICLE_INFO = True
-DISPLAY_ARTICLE_INFO_ON_INDEX = True
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
