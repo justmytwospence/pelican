@@ -9094,26 +9094,20 @@ check it out. It is a magical little utility that warms the color of
 your screen automatically after sunset and can &lt;em&gt;really&lt;/em&gt; save your eyes
 and make getting to sleep a little bit easier if you are working in
 front of your screen late at&amp;nbsp;night.&lt;/p&gt;</summary><category term="color"></category><category term="holo"></category><category term="solarized"></category></entry><entry><title>On being approximate</title><link href="http://justmytwospence.github.com/pelican/on-being-approximate-an-inadvertent-data-poem.html" rel="alternate"></link><updated>2013-07-20T05:39:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:on-being-approximate-an-inadvertent-data-poem.html</id><summary type="html">&lt;p&gt;&lt;img alt="An inadvertent data poem" src="http://justmytwospence.github.com/pelican/images/on-being-approximate.png" /&gt;&lt;/p&gt;
-&lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>D3 Test</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">D3 Test
-	
-	
-	 
-	
-	
-	
+&lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>D3 Test</title><link href="http://justmytwospence.github.com/pelican/d3-test.html" rel="alternate"></link><updated>2013-03-21T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:d3-test.html</id><summary type="html">
 
+	&lt;p&gt;To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book &lt;a href="http://chimera.labs.oreilly.com/books/1230000000345" target="_blank"&gt;Interactive Data Visualization for the Web&lt;/a&gt;. I highly recommend it for all skill&amp;nbsp;levels!&lt;/p&gt;
 
+	&lt;div style="text-align: center;"&gt;
+		&lt;button id="add" class="btn btn-info"&gt;
+			Add
+		&lt;/button&gt;
+		&lt;button id="remove" class="btn btn-info"&gt;
+			Remove
+		&lt;/button&gt;
+	&lt;/div&gt;
 
-	
-		Add
-	
-	
-		Remove
-	
-
-	To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book Interactive Data Visualization for the Web. I highly recommend it for all skill&amp;nbsp;levels!
-
-	
+	&lt;div id="svg"&gt;&lt;/div&gt;
 
 </summary></entry><entry><title>Product differentiation model</title><link href="http://justmytwospence.github.com/pelican/product-differentiation-model.html" rel="alternate"></link><updated>2013-03-21T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-03-21:product-differentiation-model.html</id><summary type="html">
 	&lt;p&gt;&lt;strong&gt;&lt;span class="caps"&gt;MSAN603&lt;/span&gt; Business Strategies for Big&amp;nbsp;Data&lt;/strong&gt;&lt;/p&gt;

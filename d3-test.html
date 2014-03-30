@@ -43,9 +43,9 @@
                     inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                     displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
                 },
-                displayAlign: 'center'
+                displayAlign: 'center',
                 "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 0, "color": black   }}
+                    styles: {'.MathJax_Display': {"margin": 0, "color": black}}
                 }
             });
             MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
@@ -138,41 +138,22 @@ justmytwospence            </a>
             <article>
                 <header class="page-header">
                     <h1>D3&nbsp;Test</h1>
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-03-21T00:00:00"> Thu 21 March 2013</time>
-    </span>
-
-
-    <span>
-        <i class="fa fa-folder-open"></i>
-        <a href="http://justmytwospence.github.com/pelican/category/vizualization.html">Vizualization</a>
-    </span>
-
-
-    
-</footer><!-- /.post-info -->                </header>
+                </header>
                 <div class="entry-content">
-                    D3 Test
-	
-	
-	 
-	
-	
-	
+                    
 
+	<p>To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book <a href="http://chimera.labs.oreilly.com/books/1230000000345" target="_blank">Interactive Data Visualization for the Web</a>. I highly recommend it for all skill&nbsp;levels!</p>
 
+	<div style="text-align: center;">
+		<button id="add" class="btn btn-info">
+			Add
+		</button>
+		<button id="remove" class="btn btn-info">
+			Remove
+		</button>
+	</div>
 
-	
-		Add
-	
-	
-		Remove
-	
-
-	To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book Interactive Data Visualization for the Web. I highly recommend it for all skill&nbsp;levels!
-
-	
+	<div id="svg"></div>
 
 
                 </div>
