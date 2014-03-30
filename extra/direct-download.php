@@ -1,5 +1,5 @@
 <?php
-    $actual_file_name = "http://justmytwospence.github.io/pelican/pdfs/spencerboucher-print.pdf";
+    $actual_file_name = "../pdfs/spencerboucher-print.pdf";
     $saved_file_name = "spencerboucher.pdf"
 
     header("Content-Type: application/pdf");
