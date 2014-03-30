@@ -183,5 +183,8 @@ img {
     -webkit-border-radius: 10px;
 }
 #map img {
-    border-radius: auto;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -webkit-border-radius: 0px;
 }
