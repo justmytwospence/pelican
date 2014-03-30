@@ -191,9 +191,6 @@ h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anch
 .pretooltiparrow{left:0px;margin:0px;top:-16px;width:40px;height:16px;overflow:hidden;position:absolute;}
 .pretooltiparrow:before{background-color:#f7f7f7;border:1px #ababab solid;z-index:11;content:"";position:absolute;left:15px;top:10px;width:25px;height:25px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);}
 
-yle>
-
-le type="text/css">
 .highlight-ipynb .hll { background-color: #ffffcc }
 .highlight-ipynb  { background: #f8f8f8; }
 .highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
@@ -257,7 +254,6 @@ le type="text/css">
 .highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
 
-/* Overrides of notebook CSS for static HTML export */
 div.entry-content {
 	overflow: visible;
 	padding: 8px;
