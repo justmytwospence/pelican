@@ -32,24 +32,26 @@
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
 
+<!-- MathJax script -->
+<script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
     init_mathjax = function() {
         if (window.MathJax) {
-            // MathJax loaded
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-                },
-                displayAlign: 'center',
-                "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 0, "color": black}}
-                }
-            });
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-        }
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'center', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
-    init_mathjax();
+}
+init_mathjax();
 </script>
 <!-- Styles for R syntax highlighter -->
 <style type="text/css">
@@ -136,7 +138,7 @@ justmytwospence            </a>
                 <div class="panel-heading">
 <footer class="post-info">
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-29T22:01:05"> Sat 29 March 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-03-30T01:23:48"> Sun 30 March 2014</time>
     </span>
 
 
@@ -162,7 +164,7 @@ justmytwospence            </a>
                 <div class="panel-heading">
 <footer class="post-info">
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-29T22:01:05"> Sat 29 March 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-03-30T01:23:48"> Sun 30 March 2014</time>
     </span>
 
 
@@ -322,14 +324,14 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
     </section>
 
         <section class = "panel panel-default text-center">
-                <div class="panel-heading">
-                    <a href="http://justmytwospence.github.com/pelican/tags">
-                        <h4 class="panel-title">
-                            <i class="fa fa-tags fa-lg"></i>
-                            <span class="icon-label">Tags</span>
-                        </h4>
-                    </a>
-                </div>
+            <div class="panel-heading">
+                <a href="http://justmytwospence.github.com/pelican/tags">
+                    <h4 class="panel-title">
+                        <i class="fa fa-tags fa-lg"></i>
+                        <span class="icon-label">Tags</span>
+                    </h4>
+                </a>
+            </div>
             <div class="list-group list-inline tagcloud" id="tags">
                     <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/andrew-ng.html">
@@ -342,18 +344,13 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/approximation.html">
-                            approximation
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/auto-scaling.html">
+                            auto scaling
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a class="tag-3" href="http://justmytwospence.github.com/pelican/tag/aws.html">
                             aws
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/biometrics.html">
-                            biometrics
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -372,8 +369,8 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/cloud.html">
-                            cloud
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/cloud-computing.html">
+                            cloud computing
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -384,6 +381,11 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                     <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/color.html">
                             color
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/coursera.html">
+                            Coursera
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -402,6 +404,11 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/economics.html">
+                            economics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-1" href="http://justmytwospence.github.com/pelican/tag/education.html">
                             education
                         </a>
@@ -409,11 +416,6 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                     <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/entrepeneurship.html">
                             entrepeneurship
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/freakonomics.html">
-                            freakonomics
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -427,23 +429,23 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/hierarchy-of-needs.html">
-                            Hierarchy of needs
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/higher-education.html">
                             higher education
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/holo.html">
-                            holo
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/ideas-worth-spreading.html">
+                            ideas worth spreading
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/humanities.html">
-                            humanities
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/kaggle.html">
+                            kaggle
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/latex.html">
+                            latex
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -457,18 +459,8 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/maps.html">
-                            maps
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/maslow.html">
                             Maslow
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/mooc.html">
-                            MOOC
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -482,6 +474,16 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/optogenetics.html">
+                            optogenetics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/paradigm.html">
+                            paradigm
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/passwords.html">
                             passwords
                         </a>
@@ -489,21 +491,6 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                     <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/philosophy.html">
                             philosophy
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/politics.html">
-                            politics
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/power.html">
-                            power
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/prediction.html">
-                            prediction
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -532,13 +519,28 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/silicon-valley.html">
+                            silicon valley
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/solarized.html">
                             solarized
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/sound.html">
+                            sound
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/splash.html">
                             splash
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/stanford.html">
+                            stanford
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -557,16 +559,6 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/technology.html">
-                            technology
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/ted.html">
-                            TED
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/tex.html">
                             tex
                         </a>
@@ -577,8 +569,18 @@ It is essentially a wrapper for a ddply call that ...</br/></p>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/university.html">
+                            university
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/writelatex.html">
                             writelatex
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://justmytwospence.github.com/pelican/tag/zombies.html">
+                            zombies
                         </a>
                     </li>
             </div>

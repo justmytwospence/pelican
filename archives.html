@@ -32,24 +32,26 @@
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
 
+<!-- MathJax script -->
+<script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
     init_mathjax = function() {
         if (window.MathJax) {
-            // MathJax loaded
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-                },
-                displayAlign: 'center',
-                "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 0, "color": black}}
-                }
-            });
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-        }
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'center', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
-    init_mathjax();
+}
+init_mathjax();
 </script>
 <!-- Styles for R syntax highlighter -->
 <style type="text/css">
@@ -134,11 +136,11 @@ justmytwospence            </a>
         <h1>Archives for justmytwospence</h1>
 
         <dl>
-                <dt>Sat 29 March 2014</dt>
+                <dt>Sun 30 March 2014</dt>
                 <dd><a href='http://justmytwospence.github.com/pelican/contract-optimization.html'>Contract&nbsp;Optimization</a></dd>
-                <dt>Sat 29 March 2014</dt>
+                <dt>Sun 30 March 2014</dt>
                 <dd><a href='http://justmytwospence.github.com/pelican/ggplot-goodness.html'>Basic&nbsp;Charts</a></dd>
-                <dt>Sat 29 March 2014</dt>
+                <dt>Sun 30 March 2014</dt>
                 <dd><a href='http://justmytwospence.github.com/pelican/stratified-sampling-in-r.html'>Stratified sampling in&nbsp;R</a></dd>
                 <dt>Fri 14 March 2014</dt>
                 <dd><a href='http://justmytwospence.github.com/pelican/whats-a-mooc.html'>What&#8217;s a&nbsp;Mooc?</a></dd>

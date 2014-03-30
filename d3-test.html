@@ -34,24 +34,26 @@
         <link href="http://justmytwospence.github.com/pelican/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="justmytwospence ATOM Feed"/>
 
+<!-- MathJax script -->
+<script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 <script type="text/javascript">
     init_mathjax = function() {
         if (window.MathJax) {
-            // MathJax loaded
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-                },
-                displayAlign: 'center',
-                "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 0, "color": black}}
-                }
-            });
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-        }
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'center', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
-    init_mathjax();
+}
+init_mathjax();
 </script>
 <!-- Styles for R syntax highlighter -->
 <style type="text/css">
@@ -140,20 +142,26 @@ justmytwospence            </a>
                     <h1>D3&nbsp;Test</h1>
                 </header>
                 <div class="entry-content">
-                    
+                    D3 Test
+	
+	
+	 
+	
+	
+	
 
-	<p>To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book <a href="http://chimera.labs.oreilly.com/books/1230000000345" target="_blank">Interactive Data Visualization for the Web</a>. I highly recommend it for all skill&nbsp;levels!</p>
 
-	<div style="text-align: center;">
-		<button id="add" class="btn btn-info">
-			Add
-		</button>
-		<button id="remove" class="btn btn-info">
-			Remove
-		</button>
-	</div>
 
-	<div id="svg"></div>
+	
+		Add
+	
+	
+		Remove
+	
+
+	To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book Interactive Data Visualization for the Web. I highly recommend it for all skill&nbsp;levels!
+
+	
 
 
                 </div>

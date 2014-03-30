@@ -188,3 +188,7 @@ img {
     -khtml-border-radius: 0px;
     -webkit-border-radius: 0px;
 }
+
+i {
+    margin-right: 5px;
+}
