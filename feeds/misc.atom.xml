@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://justmytwospence.github.com/pelican/" rel="alternate"></link><link href="http://justmytwospence.github.com/pelican/feeds/misc.atom.xml" rel="self"></link><id>http://justmytwospence.github.com/pelican/</id><updated>2014-03-14T14:13:00-07:00</updated><entry><title>What’s a Mooc?</title><link href="http://justmytwospence.github.com/pelican/whats-a-mooc.html" rel="alternate"></link><updated>2014-03-14T14:13:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2014-03-14:whats-a-mooc.html</id><summary type="html">&lt;p&gt;Turns out that Robert de Niro and friends are facing a problem very  similar to the one facing Coursera and&amp;nbsp;friends&amp;#8230;&lt;/p&gt;
 &lt;p&gt;&amp;lt;hr/&amp;gt;&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: &lt;span class="caps"&gt;ERROR&lt;/span&gt;/3 (&lt;tt class="docutils"&gt;/Users/SpencerBoucher/pelican/content/Misc/whats-a-mooc.rst&lt;/tt&gt;, line&amp;nbsp;12)&lt;/p&gt;
-&lt;p&gt;Unknown directive type&amp;nbsp;&amp;quot;youtube&amp;quot;.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-.. youtube:: 8vw8t4O9JQM
-        :width: 800
-        :height: 500
-        :align: center
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&amp;lt;hr/&amp;gt;&lt;/p&gt;
+&lt;div class="youtube" align="center"&gt;&lt;iframe width="800" height="500" src="https://www.youtube.com/embed/8vw8t4O9JQM" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&amp;lt;hr/&amp;gt;&lt;/p&gt;
 &lt;p&gt;From the 1973 movie &lt;a class="reference external" href="http://www.imdb.com/title/tt0070379/?ref_=fn_al_tt_1"&gt;Mean Streets&lt;/a&gt;. Apparently Scorsese predicted the education revolution wayy ahead of his time and had a pretty good grasp on the biggest challenges that MOOCs would need to&amp;nbsp;overcome.&lt;/p&gt;
 </summary><category term="Coursera"></category><category term="education"></category><category term="MOOC"></category></entry><entry><title>On being approximate</title><link href="http://justmytwospence.github.com/pelican/on-being-approximate-an-inadvertent-data-poem.html" rel="alternate"></link><updated>2013-07-20T05:39:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2013-07-20:on-being-approximate-an-inadvertent-data-poem.html</id><summary type="html">&lt;p&gt;&lt;img alt="An inadvertent data poem" src="http://justmytwospence.github.com/pelican/images/on-being-approximate.png" /&gt;&lt;/p&gt;
 &lt;p&gt;An inadvertent data poem by &lt;a href="http://www.usfca.edu/facultydetails.aspx?id=6442485442"&gt;Dr. Cindi&amp;nbsp;Thompson&lt;/a&gt;&lt;/p&gt;</summary><category term="approximation"></category></entry><entry><title>An overlooked super-power</title><link href="http://justmytwospence.github.com/pelican/sound.html" rel="alternate"></link><updated>2012-09-06T01:56:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:justmytwospence.github.com/pelican,2012-09-06:sound.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://media.tumblr.com/tumblr_m9wn34HSk21r0kwho.jpg" /&gt;&lt;/p&gt;
