@@ -17,8 +17,8 @@ always welcome.
 
 <div style="text-align: center; margin-top: 20px">
 <div class="btn-group btn-group-lg text-center">
-	<a type="button" class="btn btn-primary" href='http://spencerboucher.com/spencerboucher.pdf'>View Web Resume</a>
-	<a type="button" class="btn btn-primary" type="button" class="btn btn-primary">Download Print Résumé</a>
+	<a type="button" class="btn btn-primary" href='{filename}/pdfs/spencerboucher.pdf'>View Web Resume</a>
+	<a type="button" class="btn btn-primary" href="{filename}/extra/direct-download.php">Download Print Résumé</a>
 </div>
 </div>
 

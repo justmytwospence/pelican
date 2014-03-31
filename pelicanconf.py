@@ -15,24 +15,26 @@ BOOTSTRAP_NAVBAR_INVERSE = True
 #BOOTSTRAP_THEME = 'darkly'
 TYPOGRIFY = True
 PYGMENTS_STYLE = 'github'
+FAVICON = 'images/favicon.png'
 
-# Sidebar
+# Display Switches
+DISPLAY_ARCHIVES = False
+DISPLAY_ARTICLE_INFO = True
 DISPLAY_TAGS_INLINE = True
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
+
+# Variables
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
 TAG_CLOUD_STEPS = 5
 TAG_CLOUD_MAX_ITEMS = 50
-#ABOUT_ME = ''
-#AVATAR = 'images/avatar.png'
-
-# Top Menu
-DISPLAY_ARCHIVES = False
 SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
           ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
           ('RSS', SITEURL + 'feeds/all.atom.xml'))
-DISPLAY_PAGES_ON_MENU = True
-DISPLAY_CATEGORIES_ON_MENU = False
+#ABOUT_ME = ''
+#AVATAR = 'images/avatar.png'
 
 # Set paths to resources
 DEFAULT_PAGINATION = 5
@@ -41,7 +43,7 @@ FILENAME_METADATA = '(?P<slug>.*)' # Filename = slug
 USE_FOLDER_AS_CATEGORY = True
 
 # Plugins
-STATIC_PATHS = ['images', 'pdfs']
+STATIC_PATHS = ['images', 'pdfs', 'extra']
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['liquid_tags.notebook',
 		   'pelican-dynamic',
