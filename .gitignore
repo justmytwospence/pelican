@@ -1,3 +1,3 @@
 /output
-venv
-__pycache__
+_nb_header.html
+*.pyc
