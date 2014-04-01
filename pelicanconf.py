@@ -15,7 +15,7 @@ BOOTSTRAP_NAVBAR_INVERSE = True
 #BOOTSTRAP_THEME = 'darkly'
 TYPOGRIFY = True
 PYGMENTS_STYLE = 'github'
-FAVICON = 'images/favicon.png'
+FAVICON = 'favicon.png'
 
 # Display Switches
 DISPLAY_ARCHIVES = False
@@ -46,6 +46,7 @@ USE_FOLDER_AS_CATEGORY = True
 STATIC_PATHS = ['images', 'pdfs', 'extra']
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
+    'extra/favicon.png': {'path': 'favicon.png'}
 }
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['liquid_tags.notebook',
