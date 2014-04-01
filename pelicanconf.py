@@ -44,6 +44,9 @@ USE_FOLDER_AS_CATEGORY = True
 
 # Plugins
 STATIC_PATHS = ['images', 'pdfs', 'extra']
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {'path': 'CNAME'},
+}
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['liquid_tags.notebook',
 		   'pelican-dynamic',
