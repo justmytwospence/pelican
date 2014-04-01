@@ -124,7 +124,6 @@ pre.dialog{background-color:#f7f7f7;border:1px solid #ddd;border-radius:4px;padd
 p.dialog{padding:0.2em;}
 pre,code,kbd,samp{white-space:pre-wrap;}
 #fonttest{font-family:monospace;}
-p{margin-bottom:0;}
 .end_space{height:200px;}
 #notification_area{z-index:10;}
 .notification_widget{color:#777777;padding:1px 12px;margin:2px 4px;z-index:10;border:1px solid #ccc;border-radius:4px;background:rgba(240, 240, 240, 0.5);}
