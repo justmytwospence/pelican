@@ -16,11 +16,7 @@ because I could experiment liberally with equations and figure
 placement. There's literally zero barrier to entry because its
 completely web based; you don't need to install a thing and templates
 are available to get you jump-started. Right now other engines like
-XeLaTeX aren't supported, but I believe they are in the works.
-
-
-<br/>
-
+XeLaTeX aren't supported, but I believe they are in the works.  
 
 So every excuse you ever had to not learn \\(\\LaTeX\\) has been
 obliterated. [Give it a try][], or just be passive aggressive

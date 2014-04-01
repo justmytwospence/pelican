@@ -3,9 +3,9 @@ date: 2014-01-12 17:53
 tags: api, auto scaling, aws, cloud, cron, ec2
 summary: Learning how to take full control of the cloud.
 
-This post is sort of an addendum to our [live-mapping project][], but it should also be of use to anyone looking to run an arbitrary script on a recurring schedule. Originally, we set up a 24/7 instance on [Amazon's Elastic Compute Cloud][] that ran a daily `cron` job. This works, but its a bit wasteful because we're paying for 24 hours of cloud even though we're only actually using it for maybe 5 minutes a day.
-<br/>
-Fortunately, Amazon provides a [schmorgesborg][] of command line interface (CLI) tools that allow us to manage our cloud instances more efficiently. Specifically, we want to schedule an instance to spin up only once a day, execute our script, then shut back down. To accomplish this, we will want three CLI tools: [the Amazon EC2 AMI Tools][], [the Amazon EC2 API Tools][],and [the Auto Scaling Command Line Tool][]. If you're on a Mac, it's way easier to get these with [Homebrew][] than by downloading from Amazon's website: 
+This post is sort of an addendum to our [live-mapping project][], but it should also be of use to anyone looking to run an arbitrary script on a recurring schedule. Originally, we set up a 24/7 instance on [Amazon's Elastic Compute Cloud][] that ran a daily `cron` job. This works, but its a bit wasteful because we're paying for 24 hours of cloud even though we're only actually using it for maybe 5 minutes a day.  
+
+Fortunately, Amazon provides a [schmorgesborg][] of command line interface (CLI) tools that allow us to manage our cloud instances more efficiently. Specifically, we want to schedule an instance to spin up only once a day, execute our script, then shut back down. To accomplish this, we will want three CLI tools: [the Amazon EC2 AMI Tools][], [the Amazon EC2 API Tools][],and [the Auto Scaling Command Line Tool][]. If you're on a Mac, it's way easier to get these with [Homebrew][] than by downloading from Amazon's website:
 
 ```bash
 brew install ec2-ami-tools # For creating an AMI from an existing machine
@@ -27,10 +27,10 @@ export EC2_URL=https://$EC2_REGION.ec2.amazonaws.com
 export AWS_AUTO_SCALING_URL=https://autoscaling.$EC2_REGION.amazonaws.com
 ```
 
-Its pretty simple, but if you have any trouble with this part, refer to the official [Amazon documentation for setting up the command line][].
-<br/>
-Because these environment variables are recognized out of the box by the CLI tools, we won't need to point to our authentication keys or specify a region every time we make an API call and our next commands will be much more succinct. Note that every EC2 instance is physically located at one of several regions; we are using us-west-2 because it happens to be where I spun up the existing instance that currently holds our "update.py" script, but any of them would probably work just fine for the simple job at hand.
-<br/>
+Its pretty simple, but if you have any trouble with this part, refer to the official [Amazon documentation for setting up the command line][].  
+
+Because these environment variables are recognized out of the box by the CLI tools, we won't need to point to our authentication keys or specify a region every time we make an API call and our next commands will be much more succinct. Note that every EC2 instance is physically located at one of several regions; we are using us-west-2 because it happens to be where I spun up the existing instance that currently holds our "update.py" script, but any of them would probably work just fine for the simple job at hand.  
+
 <table>
   <tr>
     <th>Code</th>
@@ -69,15 +69,15 @@ Because these environment variables are recognized out of the box by the CLI too
     <td>US West (Oregon) Region</td>
   </tr>
 </table>
-<br/>
+
 So, first things first. We can't just spin up an off-the-rack EC2 instance every day, because we'll run into the same problem that I originally had with my web host: the Python modules that we need won't be installed. We *could* write a script that would install `pip` plus all of the requisite Python modules and run it first thing after we launch the instance, but there's a better way:
 
 ```bash
 ec2-create-image i-8918e1be -n "Map Update Image"
 ```
 
-This command from `ec2-ami-tools` creates an "Amazon Machine Image" of the instance that we previously had running and names it "Map Update Image". A new image ID will now print to your console, `ami-fcdfb9cc` in my case. This is tantamount to cloning the instance, because we can now reference the new image ID when we spin up new instances and all of our modules, scripts, etc. will be there waiting for us. Note that I removed the instance's `cron` job *before* creating the AMI, because we'll now be handling the task scheduling from *outside* the instance, via **autoscaling**.
-<br/>
+This command from `ec2-ami-tools` creates an "Amazon Machine Image" of the instance that we previously had running and names it "Map Update Image". A new image ID will now print to your console, `ami-fcdfb9cc` in my case. This is tantamount to cloning the instance, because we can now reference the new image ID when we spin up new instances and all of our modules, scripts, etc. will be there waiting for us. Note that I removed the instance's `cron` job *before* creating the AMI, because we'll now be handling the task scheduling from *outside* the instance, via **autoscaling**.  
+
 Next let's write a shell script that will execute our Python map-updating script, shoot us a diagnostic email, then shut down the instance that its running on. The idea here is that once a day we're going to spin up an instance using our shiny new AMI and immediately run this new script (let's call it "update.sh") that will do its business and then promptly commit seppuku and stop charging us money. Eric Hammond has created a great template on [his blog][], which I've modified below. Note the execution of our [familiar][live-mapping project] "update.py" script highlighted on line 4, and the apoptosis command on line 46:
 
 ```bash
@@ -131,10 +131,10 @@ shutdown -h now
 exit 0
 ```
 
-Note that the user data script that we pass to the launch configuration executes with *root* permissions, not as the user "ubuntu" that you would typically log in as via `ssh`. Its probably best to be as explicit as possible when specifying path names in the cloud, the tilde operator might turn around and bite you.
-<br/>
-Now we need to create **launch configuration** that will basically do all the button-pushing that we would normally be doing at the AWS console GUI. 
-<br/>
+Note that the user data script that we pass to the launch configuration executes with *root* permissions, not as the user "ubuntu" that you would typically log in as via `ssh`. Its probably best to be as explicit as possible when specifying path names in the cloud, the tilde operator might turn around and bite you.  
+
+Now we need to create **launch configuration** that will basically do all the button-pushing that we would normally be doing at the AWS console GUI.  
+
 Here we specify:
 
 -   "Micro" as our instance type.
@@ -151,8 +151,8 @@ as-create-launch-config
 as-describe-launch-configs --headers
 ```
 
-Note that the second line provides a list of all the launch configurations that have been created.
-<br/>
+Note that the second line provides a list of all the launch configurations that have been created.  
+
 We must also create an **auto scaling group**. These are typically used as a sort of container to which we can add/remove instances on a schedule or in response to heavy traffic, but we can also use it to schedule a single instance to flick on and off. We need to tell it:
 
 -   A name to assign the scaling group ("map-update-scale-group").
@@ -172,8 +172,8 @@ as-suspend-processes "map-update-scale-group"
 as-describe-auto-scaling-groups --headers
 ```
 
-In the second line, we are using `as-suspend-processes` to prevent the instance's default behavior which is to attempt to restart after it is shut down. The third line provides a list of all the auto scaling groups that have been created.
-<br/>
+In the second line, we are using `as-suspend-processes` to prevent the instance's default behavior which is to attempt to restart after it is shut down. The third line provides a list of all the auto scaling groups that have been created.  
+
 Last but not least, we are ready to assign a schedule to our auto scaling group. Here we create two: one to start the instance and one to terminate the instance. Astute readers will recall that "update.sh" already *stops* the instance so that we aren't paying to have it running, but we also need to completely *terminate* the instance so that we aren't paying to store information about it. Each schedule requires:
 
 -   A name ("map-update-start" & "map-update-stop").
@@ -195,10 +195,10 @@ as-put-scheduled-update-group-action
 as-describe-scheduled-actions --headers
 ```
 
-As before, the third line provides a list of the actions that have been scheduled.
-<br/>
-And thats it! We are now only paying for 10 or 15 minutes of cloud per day, as opposed to 1,440 of them. To review the timeline we have created in this example: our auto scaling group boots up an instance up at midnight UTC that immediately executes "update.sh". This automatically executes "update.py" and shoots us a diagnostic email. It then waits 10 minutes to make sure everything has time to run, before stopping the instance. 5 minutes after *that* the auto scaling group then completely terminates the instance.
-<br/>
+As before, the third line provides a list of the actions that have been scheduled.  
+
+And thats it! We are now only paying for 10 or 15 minutes of cloud per day, as opposed to 1,440 of them. To review the timeline we have created in this example: our auto scaling group boots up an instance up at midnight UTC that immediately executes "update.sh". This automatically executes "update.py" and shoots us a diagnostic email. It then waits 10 minutes to make sure everything has time to run, before stopping the instance. 5 minutes after *that* the auto scaling group then completely terminates the instance.  
+
 Other great resources:
 
 -   [Official Amazon documentation for scheduling auto scaling groups][]

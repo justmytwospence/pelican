@@ -13,7 +13,7 @@ sepia tone which makes reading PDFs online a much less straining
 endeavor (incidentally - Google Play Books *only* has a white background
 which is why I greatly prefer the Amazon Kindle web app). I’ve spent
 wayy too long (as I think many geeks do), customizing my terminal and
-custom android ROM themes. I think you get the picture.
+custom android ROM themes. I think you get the picture.  
 
 Anyways, I had been using the Solarized palette for a lot of things
 because it seems like its choices are a bit less arbitrary and has some
@@ -26,7 +26,7 @@ one. First I had to download the HEX plugin from [wafflesoftware.net][]
 which for some strange reason is not a functionality that Apple thought
 worthwhile to put into a color picker (???). [You can download my .clr
 palette right here][]. Maybe I can save the next anal-retentive googler
-a few minutes.
+a few minutes.  
 
 PS. While I am talking about color - if you haven’t heard of [fl.ux][],
 check it out. It is a magical little utility that warms the color of
