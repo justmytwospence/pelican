@@ -1,5 +1,6 @@
 /output
 /venv
+/content
 _nb_header.html
 *.pyc
 *.pid
