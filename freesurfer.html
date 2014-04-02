@@ -157,12 +157,12 @@ justmytwospence            </a>
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
                     <p>Today, two of my housemates and I were sitting around at the living room table when the topic of Foldit came up. <a href="http://fold.it">Foldit</a>, if you aren’t aware is a platform that has been developed at the University of Washington jointly between the departments of Computer Science and Biochemistry. It is remarkable in that it solves a major research problem in a completely novel and intriguing&nbsp;way.  </p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lsf1x8N2pZ1r0kwho.jpg" /></p>
+<p><img alt="FoldIt" src="http://spencerboucher.com/images/foldit.jpg" /></p>
 <p>Protein folding is massively complex. Sure, we can work out the genetic code for a particular protein lickity-split, but the factors that go into determining how that chain of amino acids actually <em>folds</em> upon itself and forms secondary / tertiary structures are so numerous that its a problem computers can’t solve. Brute force just won’t cut it. What we need is the ability to recognize <em>patterns,</em>and that is something humans are still <em>much</em> better at than a computer. (Computers, in their present form, may not <em>ever</em> be able to match us in this regard- at least in their present form. More on this in a future blog post potentially.) So the solution? Draft huge numbers of humans to do the job, and do it by turning the puzzle problem into a game. The effort has already been hugely successful. You can see the game <span class="caps">GUI</span> in the picture&nbsp;above.  </p>
 <p>I must have mentioned something about how I wished I could crowd source time-consuming aspects of the processing pipeline in our neuroimaging resource, because Harvey’s (I’ve decided to use first names) response was: “why not?” Harvey is a hard-core entrepreneur, in a way that I never have been but is nonetheless infectious. He will be a multimillionaire one day- there is no doubt in my mind. Before I knew it, he had index cards strewn over the table and was outlining a process chart for how such a system would work for structural analysis of brain <span class="caps">MRI</span> data using Freesurfer. So we now have a workflow-comparison of the present pre-processing pipeline, side by side with an idea of how it could theoretically be&nbsp;better.  </p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lsf0tbTpbE1r0kwho.jpg" /></p>
+<p><img alt="Pre-Freesurfer" src="http://spencerboucher.com/images/coronal.jpg" /></p>
 <p>Freesurfer takes <span class="caps">MRI</span> images that are composed of many brain “slices” (see above) and turns them into surface/volume models that look like&nbsp;this:  </p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lsf0vmh6rn1r0kwho.jpg" /></p>
+<p><img alt="Post-Freesurfer" src="http://spencerboucher.com/images/freesurfer.jpg" /></p>
 <p>From there, you can analyze changes in volume and whatnot from individual to individual or from time A to time B. I won’t get into it here, but its really neat&nbsp;stuff.  </p>
 <p>Freesurfer is computation-heavy. Multiple steps in the pipeline take 12 or more hours to run. I have 16 servers on my computer in the lab, and when I recruit other processors from around the lab I can get up to 50 or even 100 of these processes running in parallel. After the computer’s algorithms have their crack at the raw data, human quality-checking is necessary because many manual edits typically need to be performed. This can be very time intensive- as I have discovered since beginning work here- with very large data sets. You  need to edit the computer’s output, and then re-run another time-intensive process to actually apply those edits. This is an iterative process until the output is deemed acceptable upon visual&nbsp;inspection.  </p>
 <p>Apparently, online platforms for splitting up work that only a human can do already exists online. Check out the Mechanical Turk at mturk.com. What if a system could be designed to crowd-source such steps in the pre-processing pipeline. The necessary cloud-computing infrastructure seems to already exist as well- in the form of Amazon’s elastic compute cloud. It seems- from a scan of the Freesurfer listserv- that Freesurfer has already been run successfully on these servers by other researchers. So the theory is that a cloud-computing web platform could parcel out units of work via mturk (or something similar) and rapidly accomplish steps that otherwise can’t be performed in parallel by one&nbsp;researcher.  </p>
@@ -172,7 +172,7 @@ justmytwospence            </a>
 <p>If you are a scientist reading this post, I’d love to hear your ideas for other tasks found in your research pipeline that could be game-ified and crowdsourced! Leave a&nbsp;comment!  </p>
 <p><span class="caps">UPDATE</span>:</p>
 <p>Some playing around in Xmind (a free, open source mind-mapping software package), here is a side-by-side comparison of 1) the freesurfer workflow as it stands, 2) the workflow as it would be experienced by a user of this parallel-distribution crowdsourcing- with the web platform as a black box, and 3) a slightly more detailed picture of what would be happening with the&nbsp;data.  </p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lsgyqmXy9c1r0kwho.jpg" /></p>
+<p><img alt="" src="http://spencerboucher.com/images/flowchart.jpg" /></p>
 <p>Xmind can be downloaded for free at <a href="http://xmind.net">xmind.net</a></p>
                 </div>
                 <!-- /.entry-content -->
@@ -260,6 +260,11 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/approximation.html">
+                            approximation
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/auto-scaling.html">
                             auto scaling
                         </a>
@@ -270,12 +275,7 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/biometrics.html">
-                            biometrics
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-1" href="http://spencerboucher.com/tag/brain.html">
+                        <a class="tag-3" href="http://spencerboucher.com/tag/brain.html">
                             brain
                         </a>
                     </li>
@@ -300,6 +300,11 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/color.html">
+                            color
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/coursera.html">
                             Coursera
                         </a>
@@ -320,6 +325,11 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/economics.html">
+                            economics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a class="tag-1" href="http://spencerboucher.com/tag/education.html">
                             education
                         </a>
@@ -327,6 +337,11 @@ justmytwospence            </a>
                     <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/entrepeneurship.html">
                             entrepeneurship
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/freakonomics.html">
+                            freakonomics
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -355,11 +370,6 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/humanities.html">
-                            humanities
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/ideas-worth-spreading.html">
                             ideas worth spreading
                         </a>
@@ -367,6 +377,11 @@ justmytwospence            </a>
                     <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/kaggle.html">
                             kaggle
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/latex.html">
+                            latex
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -405,23 +420,8 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/passwords.html">
-                            passwords
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/philosophy.html">
-                            philosophy
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/politics.html">
                             politics
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/power.html">
-                            power
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -445,13 +445,23 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-1" href="http://spencerboucher.com/tag/science.html">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/science.html">
                             science
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a class="tag-3" href="http://spencerboucher.com/tag/shiny.html">
                             Shiny
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/silicon-valley.html">
+                            silicon valley
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/solarized.html">
+                            solarized
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -470,23 +480,13 @@ justmytwospence            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/super.html">
-                            super
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/superpower.html">
-                            superpower
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="tag-5" href="http://spencerboucher.com/tag/technology.html">
-                            technology
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a class="tag-5" href="http://spencerboucher.com/tag/ted.html">
                             TED
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tag/tex.html">
+                            tex
                         </a>
                     </li>
                     <li class="list-group-item">
