@@ -293,8 +293,7 @@ as-describe-launch-configs --headers
 <li>Which availability zone we want to use (basically irrelevant; we set our environment variable <code>EC2_ZONE</code> to &#8220;a&#8221; earlier). <code>ec2-describe-available-zones</code> provides a list of the available&nbsp;zones</li>
 <li>A minimum and maximum number of instances in the group. We&#8217;ll initialize these to&nbsp;zero.</li>
 </ul>
-<div class="highlight"><pre><span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Create auto scaling group with launch configuration&quot;</span><span class="o">}</span>
-as-create-auto-scaling-group
+<div class="highlight"><pre>as-create-auto-scaling-group
    --auto-scaling-group <span class="s2">&quot;map-update-scale-group&quot;</span>
    --launch-configuration <span class="s2">&quot;map-update-launch-config&quot;</span>
    --availability-zones <span class="s2">&quot;$EC2_ZONE&quot;</span>
