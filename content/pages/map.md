@@ -1,2 +1,0 @@
-title: Map!
-template: map
