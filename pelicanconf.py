@@ -11,8 +11,8 @@ SITEURL = ''
 
 # Theme
 THEME = 'bootstrap3'
-BOOTSTRAP_NAVBAR_INVERSE = True
-#BOOTSTRAP_THEME = 'darkly'
+BOOTSTRAP_NAVBAR_INVERSE = False
+BOOTSTRAP_THEME = 'lumen'
 TYPOGRIFY = True
 PYGMENTS_STYLE = 'github'
 FAVICON = '/favicon.ico'
