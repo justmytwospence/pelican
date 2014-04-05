@@ -29,7 +29,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
 TAG_CLOUD_STEPS = 5
-TAG_CLOUD_MAX_ITEMS = 50
+TAG_CLOUD_MAX_ITEMS = 30
 SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
           ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
           ('RSS', SITEURL + 'feeds/all.atom.xml'))
