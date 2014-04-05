@@ -1,5 +1,6 @@
 body {
     padding-top: 70px;
+    background: url('../img/noise.png');
 }
 
 .list-group-item .list-group-item:last-child {
