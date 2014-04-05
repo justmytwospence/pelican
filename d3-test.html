@@ -26,7 +26,7 @@
             <meta property="article:section" content="Vizualization" />
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.lumen.min.css" type="text/css"/>
     <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://spencerboucher.com/theme/css/pygments/github.css" rel="stylesheet">
         <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
@@ -67,7 +67,7 @@ init_mathjax();
 
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -129,14 +129,13 @@ justmytwospence            </a>
                 <div class="entry-content">
                     
 
-	<button id="add" class="btn btn-info">
-		Add
-	</button>
-	<button id="remove" class="btn btn-info">
-		Remove
-	</button>
-
 	<p>To test my ability to embed D3.js visualizations into my blog, I present to you basically my first D3 graph. Its basically the one that Scott Murray walks you through in his book <a href="http://chimera.labs.oreilly.com/books/1230000000345" target="_blank">Interactive Data Visualization for the Web</a>. I highly recommend it for all skill&nbsp;levels!</p>
+
+	<div style="text-align: center; margin-top: 20px">
+		<div class="btn-group btn-group-lg text-center">
+			<button id="add" class="btn btn-primary">Add</button>
+			<button id="remove" class="btn btn-primary">Remove</button>
+	</div>
 
 	<div id="svg"></div>
 

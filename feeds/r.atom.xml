@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://spencerboucher.com/" rel="alternate"></link><link href="http://spencerboucher.com/feeds/r.atom.xml" rel="self"></link><id>http://spencerboucher.com/</id><updated>2014-03-30T01:23:48-07:00</updated><entry><title>Basic Charts</title><link href="http://spencerboucher.com/ggplot-goodness.html" rel="alternate"></link><updated>2014-03-30T01:23:48-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-03-30:ggplot-goodness.html</id><summary type="html">
 
+&lt;p&gt;This was a recent homework assignment. I&amp;#8217;m including it here merely as my first test of embedding Knitr documents into the blog, but maybe you&amp;#8217;ll find something about ggplot2 in it that you find&amp;nbsp;useful!&lt;/p&gt;
+
 &lt;p&gt;Some general configuration. By default, ggplot places axis titles a little closer to the axis that I would like, so I move them away a bit. Increasing the overall plot margin is required to prevent the newly shifted titles from being cut off. I save these theme parameters to &lt;code&gt;custom&lt;/code&gt; for use in all subsequent&amp;nbsp;plots.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class="r"&gt;library(knitr)
