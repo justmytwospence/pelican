@@ -85,7 +85,7 @@ justmytwospence            </a>
                              About
                           </a></li>
                          <li><a href="http://spencerboucher.com/pages/map.html">
-                             Map!
+                             <i class="fa fa-location-arrow fa-lg"></i>
                           </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -183,11 +183,13 @@ justmytwospence            </a>
       <div class="row">
          <div class="col-xs-10">&copy; 2014 Spencer Boucher
             &middot; Powered by <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>, <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>, <a href="http://pages.github.com/" target="_blank">GitHub Pages</a>, and Viewers Like You         </div>
-         <div class="col-xs-2"><p class="pull-right"><a href="#"><i class="fa fa-arrow-up"></i> Top</p></a></div>
+         <div class="col-xs-2"><a href="#" class="pull-right"><i class="fa fa-arrow-circle-up fa-lg"></i></a></div>
       </div>
    </div>
 </footer>
 <script src="http://code.jquery.com/jquery.js"></script>
+
+<script src="http://spencerboucher.com/theme/js/dynamic.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://spencerboucher.com/theme/js/bootstrap.min.js"></script>
@@ -207,6 +209,22 @@ justmytwospence            </a>
             s.src = '//' + disqus_shortname + '.disqus.com/count.js';
             (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
         }());
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-45101202-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
     </script>
 
             <script src="http://d3js.org/d3.v3.min.js"></script>
