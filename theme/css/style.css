@@ -1,6 +1,6 @@
 body {
     padding-top: 70px;
-    background: url('../img/noise.png');
+    /*background: #eee8d5 url('../img/noise.png');*/
 }
 
 .list-group-item .list-group-item:last-child {
@@ -56,6 +56,10 @@ article h2 {
 #categories .list-group-item {
     padding: .1px;
 }
+#tags, .stream {
+    background-color: #eee8d5;
+}
+
 .list-group-item.active h4 {
     color: white;
 }
@@ -167,11 +171,11 @@ div.cell.border-box-sizing.code_cell.vbox {
     margin: 0px;
     padding: 0px;
 }
-
 div#tags.list-group.list-inline.tagcloud {
     padding: 10px;
 }
 
+/* Global image style */
 img {
     display: block;
     margin-left: auto;
@@ -183,6 +187,8 @@ img {
     -khtml-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
+
+/* Map tiles */
 #map img {
     border-radius: 0px;
     -moz-border-radius: 0px;
