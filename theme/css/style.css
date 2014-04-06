@@ -3,6 +3,10 @@ body {
     /*background: #eee8d5 url('../img/noise.png');*/
 }
 
+code {
+    background: #eee8d5;
+}
+
 .list-group-item .list-group-item:last-child {
     padding-bottom: 0px;
 }
@@ -150,6 +154,7 @@ footer.post-info {
 
 header.page-header {
     margin-top: 0px;
+    border-bottom: 1px solid #002b36;
 }
 
 pre {
