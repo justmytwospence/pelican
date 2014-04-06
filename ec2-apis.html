@@ -170,44 +170,46 @@ brew install aws-as        <span class="c"># For creating auto scaling groups / 
 
 <p>Its pretty simple, but if you have any trouble with this part, refer to the official <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html">Amazon documentation for setting up the command line</a>.  </p>
 <p>Because these environment variables are recognized out of the box by the <span class="caps">CLI</span> tools, we won&#8217;t need to point to our authentication keys or specify a region every time we make an <span class="caps">API</span> call and our next commands will be much more succinct. Note that every <span class="caps">EC2</span> instance is physically located at one of several regions; we are using us-west-2 because it happens to be where I spun up the existing instance that currently holds our &#8220;update.py&#8221; script, but any of them would probably work just fine for the simple job at&nbsp;hand.  </p>
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Region</th>
-  </tr>
-  <tr>
-    <td>ap-northeast-1</td>
-    <td> Asia Pacific (Tokyo) Region</td>
-  </tr>
-  <tr>
-    <td>ap-southeast-1</td>
-    <td>Asia Pacific (Singapore) Region</td>
-  </tr>
-  <tr>
-    <td>ap-southeast-2</td>
-    <td>Asia Pacific (Sydney) Region</td>
-  </tr>
-  <tr>
-    <td>eu-west-1</td>
-    <td><span class="caps">EU</span> (Ireland) Region</td>
-  </tr>
-  <tr>
-    <td>sa-east-1</td>
-    <td>South America (Sao Paulo) Region</td>
-  </tr>
-  <tr>
-    <td>us-east-1</td>
-    <td><span class="caps">US</span> East (Northern Virginia) Region</td>
-  </tr>
-  <tr>
-    <td>us-west-1</td>
-    <td><span class="caps">US</span> West (Northern California) Region</td>
-  </tr>
-  <tr>
-    <td>us-west-2</td>
-    <td><span class="caps">US</span> West (Oregon) Region</td>
-  </tr>
-</table>
+<div class="table-responsive">
+  <table class="table table-striped table-condensed ">
+    <tr>
+      <th>Code</th>
+      <th>Region</th>
+    </tr>
+    <tr>
+      <td>ap-northeast-1</td>
+      <td> Asia Pacific (Tokyo) Region</td>
+    </tr>
+    <tr>
+      <td>ap-southeast-1</td>
+      <td>Asia Pacific (Singapore) Region</td>
+    </tr>
+    <tr>
+      <td>ap-southeast-2</td>
+      <td>Asia Pacific (Sydney) Region</td>
+    </tr>
+    <tr>
+      <td>eu-west-1</td>
+      <td><span class="caps">EU</span> (Ireland) Region</td>
+    </tr>
+    <tr>
+      <td>sa-east-1</td>
+      <td>South America (Sao Paulo) Region</td>
+    </tr>
+    <tr>
+      <td>us-east-1</td>
+      <td><span class="caps">US</span> East (Northern Virginia) Region</td>
+    </tr>
+    <tr>
+      <td>us-west-1</td>
+      <td><span class="caps">US</span> West (Northern California) Region</td>
+    </tr>
+    <tr>
+      <td>us-west-2</td>
+      <td><span class="caps">US</span> West (Oregon) Region</td>
+    </tr>
+  </table>
+</div>
 
 <p>So, first things first. We can&#8217;t just spin up an off-the-rack <span class="caps">EC2</span> instance every day, because we&#8217;ll run into the same problem that I originally had with my web host: the Python modules that we need won&#8217;t be installed. We <em>could</em> write a script that would install <code>pip</code> plus all of the requisite Python modules and run it first thing after we launch the instance, but there&#8217;s a better&nbsp;way:</p>
 <div class="highlight"><pre>ec2-create-image i-8918e1be -n <span class="s2">&quot;Map Update Image&quot;</span>
