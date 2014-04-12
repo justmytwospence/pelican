@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+    <!-- Google fonts! -->
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
+
+    <title>A blogging framework a data scientist could love - justmytwospence</title>
+    
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="http://spencerboucher.com//favicon.ico" rel="icon">
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="justmytwospence" />
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="A blogging framework a data scientist could love"/>
+            <meta property="og:url" content="http://spencerboucher.com/moving-to-pelican/"/>
+            <meta property="og:description" content="It has taken a few weeks of sporadic work, but I’ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are “baked,” meaning they don’t have any databases or server-side PHP going on behind the scenes, building the website on-the-fly every ..."/>
+            <meta property="article:published_time" content="2014-04-05" />
+            <meta property="article:section" content="Python" />
+            <meta property="article:tag" content="blogging" />
+            <meta property="article:tag" content="pelican" />
+            <meta property="article:tag" content="bootstrap" />
+            <meta property="article:tag" content="design" />
+            <meta property="article:tag" content="knitr" />
+            <meta property="article:tag" content="ipython" />
+            <meta property="article:tag" content="ipython notebook" />
+            <meta property="article:tag" content="mathjax" />
+            <meta property="article:tag" content="d3.js" />
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
+    <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://spencerboucher.com/theme/css/pygments/solarizeddark.css" rel="stylesheet">
+        <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://spencerboucher.com/theme/css/style.css" type="text/css"/>
+
+        <link href="http://spencerboucher.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="justmytwospence ATOM Feed"/>
+
+<!-- MathJax script -->
+<script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'center', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+    <link rel="stylesheet" href="/theme/css/knitr.css" type="text/css"/>
+    <script src="http://spencerboucher.com/theme/js/knitr.js" type="text/javascript"></script> 
+
+    <link rel="stylesheet" href="http://spencerboucher.com/theme/css/ipythonnb.css" type="test/css"/>
+
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://spencerboucher.com/" class="navbar-brand">
+justmytwospence            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://spencerboucher.com/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="http://spencerboucher.com/pages/map.html">
+                             <i class="fa fa-location-arrow fa-lg"></i>
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://github.com/justmytwospence">
+                        <i class="fa fa-github-square fa-lg"></i><span class="icon-label">GitHub</span>
+                    </a></li>
+                    <li><a href="http://linkedin.com/in/spencerboucher">
+                        <i class="fa fa-linkedin-square fa-lg"></i><span class="icon-label">LinkedIn</span>
+                    </a></li>
+                    <li><a href="feeds/all.atom.xml">
+                        <i class="fa fa-rss-square fa-lg"></i><span class="icon-label">RSS</span>
+                    </a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    
+
+        <section id="content">
+            <article>
+                <header class="page-header">
+                    <h1>A blogging framework a data scientist could&nbsp;love</h1>
+<footer class="post-info">
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-04-05T00:00:00"> Sat 05 April 2014</time>
+    </span>
+
+
+    <span>
+        <i class="fa fa-folder-open"></i>
+        <a href="http://spencerboucher.com/python">Python</a>
+    </span>
+
+
+	<span>
+	<i class="fa fa-tag"></i>
+		<a href="http://spencerboucher.com/tags/blogging/">blogging</a>
+	        /
+		<a href="http://spencerboucher.com/tags/pelican/">pelican</a>
+	        /
+		<a href="http://spencerboucher.com/tags/bootstrap/">bootstrap</a>
+	        /
+		<a href="http://spencerboucher.com/tags/design/">design</a>
+	        /
+		<a href="http://spencerboucher.com/tags/knitr/">knitr</a>
+	        /
+		<a href="http://spencerboucher.com/tags/ipython/">ipython</a>
+	        /
+		<a href="http://spencerboucher.com/tags/ipython-notebook/">ipython notebook</a>
+	        /
+		<a href="http://spencerboucher.com/tags/mathjax/">mathjax</a>
+	        /
+		<a href="http://spencerboucher.com/tags/d3js/">d3.js</a>
+
+    
+</footer><!-- /.post-info -->                </header>
+                <div class="entry-content">
+                    <p>It has taken a few weeks of sporadic work, but I&#8217;ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are &#8220;<em>baked</em>,&#8221; meaning they don&#8217;t have any databases or server-side <span class="caps">PHP</span> going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every <code>div</code>, every script, every <em>anything</em> on the site. This gives me the ability to write posts in <a href="https://daringfireball.net/projects/markdown/">markdown</a> plus tons of flexibility to incorporate hackery things like <a href="http://yihui.name/knitr/">Knitr</a> documents, <a href="http://ipython.org/notebook.html">IPython notenooks</a>, and even <a href="d3js.org">D3.js</a> visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on <a href="https://pages.github.com/">GitHub Pages</a>, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via <code>git push</code> rather than clicking a button in&nbsp;WordPress.  </p>
+<p>Anyways, as far as I can tell, its an unwritten rule that your first blog post after switching to a static blogging framework is <em>required</em> to be about how you did it. I think this may be of interest to some people because its actually rather involved to set up support for all the types of things that data sciencey people like to do, and I&#8217;m doing my best to create a framework that can be used out of the box for all&nbsp;this.  </p>
+<p>The primo static blog generator out there seems to be <a href="jekyllrb.com/">Jekyll</a> (its even the one that GitHub Pages seems to recommend). Jekyll seems really nice, but its written in Ruby and I&#8217;m more of a Python kinda guy. I actually built a quick and dirty version of the blog in <a href="http://octopress.org/">Jekyll/Octopress</a> to see what it was all about, which was a great exercise in learning the basics of Ruby and rbenv, etc., but in the end I opted for the pre-eminent <em>Python</em> solution: <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> (an anagram of calepin, meaning &#8220;notebook&#8221; in French, in case you were wondering). Pelican blogs are highly themeable/customizable, and I knew that I wanted a theme based on <a href="getbootstrap.com">Twitter Bootstrap</a>, because I&#8217;m familiar with it from building a few <a href="http://shiny.rstudio.com/">Shiny applications</a>, and its very ${powerful, simple, systematic, well-documented}. There&#8217;s a few Bootstrap based Pelican themes out there, but <a href="https://github.com/DandyDev/pelican-bootstrap3">pelican-bootstrap3</a> by <a href="http://dandydev.net/">DandyDev</a> is my favorite and is based on the most recent Bootstrap&nbsp;release.  </p>
+<p>I&#8217;ve made many aesthetic tweaks, including a full-page width article layout, custom typography via <a href="https://www.google.com/fonts‎">Google Fonts</a> and changes to the sidebar/article index/navbar. I&#8217;ve added a few javascript and <span class="caps">CSS</span> files grant built-in support for MathJax, <a href="http://spencerboucher.com/ggplot-goodness/">Knitr documents</a>, GitHub themed Pygments code blocks, and interactive Bootstrap elements (like the tooltips on the Category section of the sidebar to the right). I&#8217;m using the <a href="https://github.com/wrobstory/pelican_dynamic‎">pelican_dynamic</a> plugin to make <a href="http://spencerboucher.com/d3-test/">D3</a> and any other arbitrary scripts includeable within individual posts. A modified version of the <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid_tags</a> plugin makes it possible to include <a href="http://spencerboucher.com/contract-optimization/">IPython notebooks</a> or even select pieces of a&nbsp;notebook.  </p>
+<p>It&#8217;s all very much still a work in progress. As I have time, I will continue to update and document the framework. The hope is that eventually any data scientist with limited front-end knowledge (ie <em>me!</em>) can start publishing their work in one place within 20 minutes.  If anyone has thoughts or comments please comment! Pull requests would be very welcome but heads up because I&#8217;m still new to the world of collaborative&nbsp;open-source.</p>
+<div class="text-center">
+    <a type="button" class="btn btn-primary btn-lg" target="_blank" href="http://github.com/justmytwospence/pelican">
+        Check out the framework on GitHub
+    </a>
+</div>
+                </div>
+                <!-- /.entry-content -->
+    <hr />
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'justmytwospence'; // required: replace example with your forum shortname
+            var disqus_identifier = 'moving-to-pelican';
+            var disqus_url = 'http://spencerboucher.com/moving-to-pelican/';
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+            </article>
+        </section>
+    </div>
+
+
+<div class="col-sm-3" id="sidebar">
+
+
+    <section class="panel panel-default text-center">
+        <div class="panel-heading">
+            <a href="http://spencerboucher.com/categories">
+                <h4 class="panel-title">
+                    <i class="fa fa-folder-open fa-lg"></i>
+                    <span class="icon-label">Categories</span>
+                </h4>
+            </a>
+        </div>
+        <div class="list-group" id="categories">
+                <a class="Design list-group-item " href="http://spencerboucher.com/design">
+                    <h4>Design</h4>
+                </a>
+                <a class="Misc list-group-item " href="http://spencerboucher.com/misc">
+                    <h4>Misc</h4>
+                </a>
+                <a class="Python list-group-item active" href="http://spencerboucher.com/python">
+                    <h4>Python</h4>
+                </a>
+                <a class="R list-group-item " href="http://spencerboucher.com/r">
+                    <h4>R</h4>
+                </a>
+                <a class="Vizualization list-group-item " href="http://spencerboucher.com/vizualization">
+                    <h4>Vizualization</h4>
+                </a>
+        </div>
+    </section>
+
+        <section class = "panel panel-default text-center">
+            <div class="panel-heading">
+                <a href="http://spencerboucher.com/tags">
+                    <h4 class=  "panel-title">
+                        <i class="fa fa-tags fa-lg"></i>
+                        <span class="icon-label">Tags</span>
+                    </h4>
+                </a>
+            </div>
+            <div class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/api/">
+                            api
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/aws/">
+                            aws
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/brain/">
+                            brain
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/cartodb/">
+                            cartoDB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/cartography/">
+                            cartography
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/coursera/">
+                            Coursera
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/cron/">
+                            cron
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/crowdsourcing/">
+                            crowdsourcing
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/design/">
+                            design
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/ec2/">
+                            ec2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/economics/">
+                            economics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-1" href="http://spencerboucher.com/tags/education/">
+                            education
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/freakonomics/">
+                            freakonomics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/freesurfer/">
+                            Freesurfer
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/ggplot2/">
+                            ggplot2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/hierarchy-of-needs/">
+                            Hierarchy of needs
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/higher-education/">
+                            higher education
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/ideas-worth-spreading/">
+                            ideas worth spreading
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/machine-learning/">
+                            machine learning
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/mooc/">
+                            MOOC
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-1" href="http://spencerboucher.com/tags/neuroscience/">
+                            neuroscience
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/pelican/">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/politics/">
+                            politics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/prediction/">
+                            prediction
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/predictions/">
+                            predictions
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-1" href="http://spencerboucher.com/tags/r/">
+                            R
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-1" href="http://spencerboucher.com/tags/shiny/">
+                            shiny
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-3" href="http://spencerboucher.com/tags/stepwise/">
+                            stepwise
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/ted/">
+                            TED
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="tag-5" href="http://spencerboucher.com/tags/tex/">
+                            tex
+                        </a>
+                    </li>
+            </div>
+        </section>  
+
+
+	<!-- no header
+    <li class="list-group-item"><h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4></li>
+    -->
+
+    <div id="twitter_timeline">
+        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/justmytwospence" data-widget-id="413946059455361024">Tweets by justmytwospence</a>
+    </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</div>
+    </div>
+</div>
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 Spencer Boucher
+            &middot; Powered by <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>, <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>, <a href="http://pages.github.com/" target="_blank">GitHub Pages</a>, and Viewers Like You         </div>
+         <div class="col-xs-2"><a href="#" class="pull-right"><i class="fa fa-arrow-circle-up fa-lg"></i></a></div>
+      </div>
+   </div>
+</footer>
+<script src="http://code.jquery.com/jquery.js"></script>
+
+<script src="http://spencerboucher.com/theme/js/dynamic.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://spencerboucher.com/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://spencerboucher.com/theme/js/respond.min.js"></script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'justmytwospence'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-45101202-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+</body>
+
+</html>
