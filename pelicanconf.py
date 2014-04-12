@@ -11,11 +11,12 @@ SITEURL = ''
 
 # Theme
 THEME = 'bootstrap3'
-BOOTSTRAP_NAVBAR_INVERSE = False
-BOOTSTRAP_THEME = 'lumen'
-TYPOGRIFY = True
-PYGMENTS_STYLE = 'github'
+BOOTSTRAP_THEME = 'solarizedlight'
+#BOOTSTRAP_NAVBAR_INVERSE = True
+PYGMENTS_STYLE = 'solarizeddark'
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 FAVICON = '/favicon.ico'
+TYPOGRIFY = True
 
 # Display Switches
 DISPLAY_ARCHIVES = False
@@ -51,7 +52,23 @@ EXTRA_PATH_METADATA = {
 PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['liquid_tags.notebook',
 		   'pelican-dynamic',
-		   'pelican_youtube']
+		   'pelican_youtube',
+		   'neighbors']
+
+# URLs these settings mean that articles, pages, and 
+# categorys share a namespace and collions will cause
+# an error! But I prefer the simpler URLs. 
+ARTICLE_URL = "{slug}/"
+ARTICLE_SAVE_AS = "{slug}/index.html"
+
+PAGE_URL = "{slug}/"
+PAGE_SAVE_AS = "{slug}/index.html"
+
+CATEGORY_URL = "{slug}"
+CATEGORY_SAVE_AS = "{slug}/index.html"
+
+TAG_URL = "tags/{slug}/"
+TAG_SAVE_AS = "tags/{slug}/index.html"
 
 # Development settings
 RELATIVE_URLS = True

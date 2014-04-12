@@ -16,3 +16,4 @@ TO DO
 =====
 - Switch from Knitr's syntax highlighting to Pygments. This might require custom hooks in Knitr?
 - Revamp the URL scheme
+- Add `next post/previous post` buttons
