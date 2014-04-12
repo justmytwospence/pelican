@@ -38,8 +38,16 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            background: black;
+            background-color: black;
         }
+        #iframe {
+            background: url('../img/loading.gif') center center no-repeat;
+            margin-top: 50px;
+         }
+         iframe {
+            margin-bottom: -10px;
+         }
+
     </style>
 
 </head>
@@ -80,8 +88,8 @@
     </div>
 </div> <!-- /.navbar -->
 
-<div id="iframe" style="width: 100%; height: 100%; margin-top: -20px">
-    <iframe src="http://justmytwospence.shinyapps.io/homework2" width="100%" height="100%" frameborder="0" style="margin-bottom: -10px">
+<div id="iframe">
+    <iframe src="http://justmytwospence.shinyapps.io/homework2" width="100%" height="100%" frameborder="0">
         <p>Your browser does not support iframes. Go download a real browser!</p>
     </iframe>
 </div>
