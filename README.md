@@ -15,4 +15,5 @@ None of this is particularly novel, I'm simply attempting build an out-of-the-bo
 TO DO
 =====
 - Write doumentation
+- Separate out base functionality from my preference tweaks into separate branches
 - Tweak media query breakpoints
