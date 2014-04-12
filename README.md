@@ -14,6 +14,5 @@ None of this is particularly novel, I'm simply attempting build an out-of-the-bo
 
 TO DO
 =====
-- Switch from Knitr's syntax highlighting to Pygments. This might require custom hooks in Knitr?
-- Revamp the URL scheme
-- Add `next post/previous post` buttons
+- Write doumentation
+- Tweak media query breakpoints

@@ -37,12 +37,6 @@ SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
 #ABOUT_ME = ''
 #AVATAR = 'images/avatar.png'
 
-# Set paths to resources
-DEFAULT_PAGINATION = 5
-DEFAULT_CATEGORY = 'Misc'
-FILENAME_METADATA = '(?P<slug>.*)' # Filename = slug
-USE_FOLDER_AS_CATEGORY = True
-
 # Plugins
 STATIC_PATHS = ['images', 'pdfs', 'extra']
 EXTRA_PATH_METADATA = {
@@ -55,9 +49,16 @@ PLUGINS = ['liquid_tags.notebook',
 		   'pelican_youtube',
 		   'neighbors']
 
-# URLs these settings mean that articles, pages, and 
-# categorys share a namespace and collions will cause
-# an error! But I prefer the simpler URLs. 
+# Set paths to resources
+DEFAULT_PAGINATION = 5
+DEFAULT_CATEGORY = 'Misc'
+FILENAME_METADATA = '(?P<slug>.*)' # Filename = slug
+USE_FOLDER_AS_CATEGORY = True
+
+# URLs 
+# These settings cause articles, pages, and 
+# categorys to share a namespace; collions will
+# generate an error! But I prefer the simpler URLs. 
 ARTICLE_URL = "{slug}/"
 ARTICLE_SAVE_AS = "{slug}/index.html"
 
