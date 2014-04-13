@@ -3,7 +3,7 @@ body {
     /*background: #eee8d5 url('../img/noise.png');*/
 }
 
-code {
+code, .tagcloud {
     background: #eee8d5;
 }
 
@@ -59,9 +59,6 @@ article h2 {
 }
 #categories .list-group-item {
     padding: .1px;
-}
-#tags, .stream {
-    background-color: #eee8d5;
 }
 
 .list-group-item.active h4 {
