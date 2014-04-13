@@ -8693,13 +8693,6 @@ ggplot(data = eu,
 	&lt;div id="svg"&gt;&lt;/div&gt;
 
 </summary></entry><entry><title>Product differentiation model</title><link href="http://spencerboucher.com/product-differentiation-model/" rel="alternate"></link><updated>2014-03-21T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-03-21:product-differentiation-model/</id><summary type="html">
-	&lt;p&gt;&lt;strong&gt;&lt;span class="caps"&gt;MSAN603&lt;/span&gt; Business Strategies for Big&amp;nbsp;Data&lt;/strong&gt;&lt;/p&gt;
-
-	&lt;p&gt;&lt;em&gt;Trevor Stephens, Spencer Boucher, and Lihua&amp;nbsp;Cai&lt;/em&gt;&lt;/p&gt;
-
-	&lt;h2&gt;Question&amp;nbsp;1&lt;/h2&gt;
-
-	&lt;h3&gt;Point of&amp;nbsp;Indifference&lt;/h3&gt;
 
 	&lt;p&gt;The geographic point of indifference is the point along our 1 dimensional space at which customers have no preference for one hospital over the other. Customers to the &amp;ldquo;right&amp;rdquo; of this point will be happier patronizing the hospital further to the right, and customers to the &amp;ldquo;left&amp;rdquo; of this point will be happier patronizing the hospital further to the left. Therefore, calculating this point of indifference is tantamount to calculating the proportion of the total customers that either company will claim. This indifference point is a function of the price that Hospital 1 charges (\(p_{1}\)) and the price that Hospital 2 charges&amp;nbsp;(\(p_{2}\)).&lt;/p&gt;
 
