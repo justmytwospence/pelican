@@ -70,6 +70,8 @@ CATEGORY_SAVE_AS = "{slug}/index.html"
 
 TAG_URL = "tags/{slug}/"
 TAG_SAVE_AS = "tags/{slug}/index.html"
+TAGS_URL = "tags/"
+TAGS_SAVE_AS = "tags/index.html"
 
 # Development settings
 RELATIVE_URLS = True
