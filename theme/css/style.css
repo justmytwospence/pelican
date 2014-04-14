@@ -3,8 +3,12 @@ body {
     /*background: #eee8d5 url('../img/noise.png');*/
 }
 
-code, .tagcloud {
+code, .tagcloud, #twitter_timeline {
     background: #eee8d5;
+}
+
+#twitter_timeline {
+    padding: 0px 10px;
 }
 
 .list-group-item .list-group-item:last-child {
