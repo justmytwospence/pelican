@@ -7,6 +7,10 @@ code, .tagcloud, #twitter_timeline {
     background: #eee8d5;
 }
 
+blockquote {
+    border-left: 5px solid #002b36;
+}
+
 #twitter_timeline {
     padding: 0px 10px;
 }
