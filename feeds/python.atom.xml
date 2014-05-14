@@ -338,7 +338,7 @@ In&amp;nbsp;[5]:
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Time for&amp;nbsp;R!&lt;/p&gt;
-&lt;p&gt;We will need to make sure that &lt;code&gt;d3Network&lt;/code&gt; is installed to the the instance of R that is used by IPython&amp;#39;s &lt;code&gt;Rmagic&lt;/code&gt; via &lt;code&gt;Rpy2&lt;/code&gt;. It was a different for me (I think?) so if you are running something like this for the first time, include the lines that are commented&amp;nbsp;out.&lt;/p&gt;
+&lt;p&gt;We will need to make sure that &lt;code&gt;d3Network&lt;/code&gt; is installed to the the instance of R that is used by IPython&amp;#39;s &lt;code&gt;Rmagic&lt;/code&gt; via &lt;code&gt;Rpy2&lt;/code&gt;. It was different for me (I think?) so if you are running something like this for the first time, include the lines that are commented&amp;nbsp;out.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;%%R&lt;/code&gt; denotes block-level R magicks in IPython (&lt;code&gt;%R&lt;/code&gt; will give you line-level&amp;nbsp;magicks)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
