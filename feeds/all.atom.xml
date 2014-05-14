@@ -5,7 +5,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I&amp;#39;m currently working on the final project for my data visualization course. The dataset that I&amp;#39;ve chosen to work with can be &lt;a href="http://snap.stanford.edu/data/web-Reddit.html"&gt;downloaded here&lt;/a&gt; &amp;#8212; it&amp;#39;s a compendium Reddit resubmissions over a period of several years (ie, images that were submitted to more than once and/or to multiple subreddits). I waffled for a long time trying to decide what the best way to visualize the &lt;em&gt;flow&lt;/em&gt; of images through various subreddits would be, but just in the nick of time, I stumbled across Christopher Gandrud&amp;#39;s new &lt;a href="http://christophergandrud.github.io/d3Network/"&gt;d3Network package for R&lt;/a&gt;, and that was enough cause for me to settle on a Sankey diagram. If you&amp;#39;ve never heard of Reddit, the illustrious &lt;span class="caps"&gt;CPG&lt;/span&gt; Grey will enlighten&amp;nbsp;you.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m currently working on the final project for my data visualization course. The dataset that I&amp;#39;ve chosen to work with can be &lt;a href="http://snap.stanford.edu/data/web-Reddit.html"&gt;downloaded here&lt;/a&gt; &amp;#8212; it&amp;#39;s a compendium Reddit resubmissions over a period of several years (ie, images that were submitted to more than one and/or to multiple subreddits). I waffled for a long time trying to decide what the best way to visualize the &lt;em&gt;flow&lt;/em&gt; of images through various subreddits would be, but just in the nick of time, I stumbled across Christopher Gandrud&amp;#39;s new &lt;a href="http://christophergandrud.github.io/d3Network/"&gt;d3Network package for R&lt;/a&gt;, and that was enough cause for me to settle on a Sankey diagram. If you&amp;#39;ve never heard of Reddit, the illustrious &lt;span class="caps"&gt;CPG&lt;/span&gt; Grey will enlighten&amp;nbsp;you.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -221,7 +221,7 @@ In&amp;nbsp;[2]:
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Note that I first called &lt;code&gt;csvclean&lt;/code&gt;, from the &lt;a href="http://csvkit.readthedocs.org/en/latest/index.html"&gt;csvkit suite of command line utilities&lt;/a&gt;. The bang (!) symbol calls the command line from IPython. &lt;code&gt;csvclean&lt;/code&gt; fixes a couple of formatting errors in the original dataset that interfere with R/Panda&amp;#39;s parsing functions (something to do with quotes or commas in the &amp;quot;title&amp;quot; field, I believe). The repaired &lt;span class="caps"&gt;CSV&lt;/span&gt; is saved with a &lt;code&gt;_out&lt;/code&gt; prepended to the filename. Nothing fancy is required for the &lt;code&gt;read_csv&lt;/code&gt; call in our&amp;nbsp;case.&lt;/p&gt;
-&lt;p&gt;Now for the hard/interesting part. How to we map the flow of each image submission through the various&amp;nbsp;subreddits?&lt;/p&gt;
+&lt;p&gt;Now for the hard/interesting part. How do we map the flow of each image submission through the various&amp;nbsp;subreddits?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;First we sort by image and (crucially) timetamp on line&amp;nbsp;4.&lt;/li&gt;
 &lt;li&gt;On line 5, I simply extract the 3 columns that we care&amp;nbsp;about. &lt;/li&gt;
@@ -259,7 +259,7 @@ In&amp;nbsp;[3]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now we need a function &lt;code&gt;window&lt;/code&gt; that rolls along each of the lists in &lt;code&gt;flow&lt;/code&gt; and connects every subsequent pair of subreddits that a a particular image was submitted to. We&amp;#39;ll do this with the help of the wonderful &lt;code&gt;itertools&lt;/code&gt; module, creating two dimensional tuples that encode the &amp;quot;from&amp;quot; subreddit and the &amp;quot;to&amp;quot; subreddit, respectively. In lines 14 and 15, we apply the function and flatten the result to a single&amp;nbsp;list.&lt;/p&gt;
+&lt;p&gt;Now we need a function &lt;code&gt;window&lt;/code&gt; that rolls along each of the lists in &lt;code&gt;flow&lt;/code&gt; and connects every subsequent pair of subreddits that a particular image was submitted to. We&amp;#39;ll do this with the help of the wonderful &lt;code&gt;itertools&lt;/code&gt; module, creating two dimensional tuples that encode the &amp;quot;from&amp;quot; subreddit and the &amp;quot;to&amp;quot; subreddit, respectively. In lines 14 and 15, we apply the function and flatten the result to a single&amp;nbsp;list.&lt;/p&gt;
 &lt;p&gt;In order to truly capture the &amp;quot;flow,&amp;quot; however, we need to distinguish between the &amp;quot;gifs&amp;quot; subreddit node where images are popping up for the first time and the &amp;quot;gifs&amp;quot; subreddit node when the image has already appeared in another subreddit (say, &amp;quot;pics&amp;quot;). The &lt;code&gt;enumerate&lt;/code&gt; in line 14 does this by tacking on the ordinality to the name of the node, admittedly very hacky, but we have a lot of tuples floating around&amp;nbsp;already.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
