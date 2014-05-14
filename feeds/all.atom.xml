@@ -1,5 +1,466 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://spencerboucher.com/" rel="alternate"></link><link href="http://spencerboucher.com/feeds/all.atom.xml" rel="self"></link><id>http://spencerboucher.com/</id><updated>2014-04-05T14:11:51-07:00</updated><entry><title>Exploring IMDB movie ratings with Shiny</title><link href="http://spencerboucher.com/imdb-shiny/" rel="alternate"></link><updated>2014-04-05T14:11:51-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-04-05:imdb-shiny/</id><summary type="html"></summary><category term="imdb"></category><category term="shiny"></category><category term="ggplot2"></category></entry><entry><title>A blogging framework a data scientist could love</title><link href="http://spencerboucher.com/moving-to-pelican/" rel="alternate"></link><updated>2014-04-05T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-04-05:moving-to-pelican/</id><summary type="html">&lt;p&gt;It has taken a few weeks of sporadic work, but I&amp;#8217;ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are &amp;#8220;&lt;em&gt;baked&lt;/em&gt;,&amp;#8221; meaning they don&amp;#8217;t have any databases or server-side &lt;span class="caps"&gt;PHP&lt;/span&gt; going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every &lt;code&gt;div&lt;/code&gt;, every script, every &lt;em&gt;anything&lt;/em&gt; on the site. This gives me the ability to write posts in &lt;a href="https://daringfireball.net/projects/markdown/"&gt;markdown&lt;/a&gt; plus tons of flexibility to incorporate hackery things like &lt;a href="http://yihui.name/knitr/"&gt;Knitr&lt;/a&gt; documents, &lt;a href="http://ipython.org/notebook.html"&gt;IPython notenooks&lt;/a&gt;, and even &lt;a href="d3js.org"&gt;D3.js&lt;/a&gt; visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via &lt;code&gt;git push&lt;/code&gt; rather than clicking a button in&amp;nbsp;WordPress.  &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>justmytwospence</title><link href="http://spencerboucher.com/" rel="alternate"></link><link href="http://spencerboucher.com/feeds/all.atom.xml" rel="self"></link><id>http://spencerboucher.com/</id><updated>2014-05-13T20:30:40-07:00</updated><entry><title>Sankey diagram fun</title><link href="http://spencerboucher.com/sankey/" rel="alternate"></link><updated>2014-05-13T20:30:40-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-05-13:sankey/</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I&amp;#39;m currently working on the final project for my data visualization course. The dataset that I&amp;#39;ve chosen to work with can be &lt;a href="http://snap.stanford.edu/data/web-Reddit.html"&gt;downloaded here&lt;/a&gt; &amp;#8212; it&amp;#39;s a compendium Reddit resubmissions over a period of several years (ie, images that were submitted to more than once and/or to multiple subreddits). I waffled for a long time trying to decide what the best way to visualize the &lt;em&gt;flow&lt;/em&gt; of images through various subreddits would be, but just in the nick of time, I stumbled across Christopher Gandrud&amp;#39;s new &lt;a href="http://christophergandrud.github.io/d3Network/"&gt;d3Network package for R&lt;/a&gt;, and that was enough cause for me to settle on a Sankey diagram. If you&amp;#39;ve never heard of Reddit, the illustrious &lt;span class="caps"&gt;CPG&lt;/span&gt; Grey will enlighten&amp;nbsp;you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;YouTubeVideo&lt;/span&gt;
+&lt;span class="n"&gt;YouTubeVideo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;tlI022aUWQQ&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[1]:&lt;/div&gt;
+
+&lt;div class="output_html rendered_html output_subarea output_pyout"&gt;
+
+        &lt;iframe
+            width="400"
+            height=300"
+            src="https://www.youtube.com/embed/tlI022aUWQQ"
+            frameborder="0"
+            allowfullscreen
+        &gt;&lt;/iframe&gt;
+        
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The task of massaging columnar data consisting of an image &lt;span class="caps"&gt;ID&lt;/span&gt;, subreddit name, and timestamp for each submission into a more networky format suitable for this type of visualization was interesting enough that I thought it might be a good post. If nothing else, Christopher&amp;#39;s awesome package deserves some&amp;nbsp;love.&lt;/p&gt;
+&lt;p&gt;Python is my go-to language for data munging of this calibre, so we will use a Pandas -&amp;gt; NetworkX -&amp;gt; R -&amp;gt; D3 worflow. Without further ado, lets load the Python modules we will need and take a look at the&amp;nbsp;data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[2]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Load modules and data&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;                        &lt;span class="c"&gt;# For reading/munging the data&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;networkx&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;nx&lt;/span&gt;                      &lt;span class="c"&gt;# For creating a graph structure&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;networkx.readwrite&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;json_graph&lt;/span&gt;  &lt;span class="c"&gt;# For exporting a graph structure&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;islice&lt;/span&gt;               &lt;span class="c"&gt;# For some more interesting munging&lt;/span&gt;
+
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;load_ext&lt;/span&gt; &lt;span class="n"&gt;rmagic&lt;/span&gt;                           
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HTML&lt;/span&gt;           &lt;span class="c"&gt;# To display results when we&amp;#39;re done&lt;/span&gt;
+
+&lt;span class="o"&gt;!&lt;/span&gt;csvclean redditSubmissions.csv
+&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;redditSubmissions_out.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+6 errors logged to redditSubmissions_err.csv
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[2]:&lt;/div&gt;
+
+&lt;div class="output_html rendered_html output_subarea output_pyout"&gt;
+&lt;div style="max-height:1000px;max-width:1500px;overflow:auto;"&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;#image_id&lt;/th&gt;
+      &lt;th&gt;unixtime&lt;/th&gt;
+      &lt;th&gt;rawtime&lt;/th&gt;
+      &lt;th&gt;title&lt;/th&gt;
+      &lt;th&gt;total_votes&lt;/th&gt;
+      &lt;th&gt;reddit_id&lt;/th&gt;
+      &lt;th&gt;number_of_upvotes&lt;/th&gt;
+      &lt;th&gt;subreddit&lt;/th&gt;
+      &lt;th&gt;number_of_downvotes&lt;/th&gt;
+      &lt;th&gt;localtime&lt;/th&gt;
+      &lt;th&gt;score&lt;/th&gt;
+      &lt;th&gt;number_of_comments&lt;/th&gt;
+      &lt;th&gt;username&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt; 0&lt;/td&gt;
+      &lt;td&gt; 1333172439&lt;/td&gt;
+      &lt;td&gt; 2012-03-31T12:40:39.590113-07:00&lt;/td&gt;
+      &lt;td&gt;          And here&amp;#8217;s a downvote.&lt;/td&gt;
+      &lt;td&gt; 63470&lt;/td&gt;
+      &lt;td&gt; rmqjs&lt;/td&gt;
+      &lt;td&gt; 32657&lt;/td&gt;
+      &lt;td&gt;    funny&lt;/td&gt;
+      &lt;td&gt; 30813&lt;/td&gt;
+      &lt;td&gt; 1333197639&lt;/td&gt;
+      &lt;td&gt; 1844&lt;/td&gt;
+      &lt;td&gt; 622&lt;/td&gt;
+      &lt;td&gt; Animates_Everything&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt; 0&lt;/td&gt;
+      &lt;td&gt; 1333178161&lt;/td&gt;
+      &lt;td&gt; 2012-03-31T14:16:01.093638-07:00&lt;/td&gt;
+      &lt;td&gt;                     Expectation&lt;/td&gt;
+      &lt;td&gt;    35&lt;/td&gt;
+      &lt;td&gt; rmun4&lt;/td&gt;
+      &lt;td&gt;    29&lt;/td&gt;
+      &lt;td&gt; GifSound&lt;/td&gt;
+      &lt;td&gt;     6&lt;/td&gt;
+      &lt;td&gt; 1333203361&lt;/td&gt;
+      &lt;td&gt;   23&lt;/td&gt;
+      &lt;td&gt;   3&lt;/td&gt;
+      &lt;td&gt;       Gangsta_Raper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt; 0&lt;/td&gt;
+      &lt;td&gt; 1333199913&lt;/td&gt;
+      &lt;td&gt; 2012-03-31T20:18:33.192906-07:00&lt;/td&gt;
+      &lt;td&gt;                        Downvote&lt;/td&gt;
+      &lt;td&gt;    41&lt;/td&gt;
+      &lt;td&gt; rna86&lt;/td&gt;
+      &lt;td&gt;    32&lt;/td&gt;
+      &lt;td&gt; GifSound&lt;/td&gt;
+      &lt;td&gt;     9&lt;/td&gt;
+      &lt;td&gt; 1333225113&lt;/td&gt;
+      &lt;td&gt;   23&lt;/td&gt;
+      &lt;td&gt;   0&lt;/td&gt;
+      &lt;td&gt;       Gangsta_Raper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt; 0&lt;/td&gt;
+      &lt;td&gt; 1333252330&lt;/td&gt;
+      &lt;td&gt;        2012-04-01T10:52:10-07:00&lt;/td&gt;
+      &lt;td&gt; Every time I downvote something&lt;/td&gt;
+      &lt;td&gt;    10&lt;/td&gt;
+      &lt;td&gt; ro7e4&lt;/td&gt;
+      &lt;td&gt;     6&lt;/td&gt;
+      &lt;td&gt; GifSound&lt;/td&gt;
+      &lt;td&gt;     4&lt;/td&gt;
+      &lt;td&gt; 1333277530&lt;/td&gt;
+      &lt;td&gt;    2&lt;/td&gt;
+      &lt;td&gt;   0&lt;/td&gt;
+      &lt;td&gt;       Gangsta_Raper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt; 0&lt;/td&gt;
+      &lt;td&gt; 1333272954&lt;/td&gt;
+      &lt;td&gt; 2012-04-01T16:35:54.393381-07:00&lt;/td&gt;
+      &lt;td&gt;  Downvote &amp;amp;quot;Dies Irae&amp;amp;quot;&lt;/td&gt;
+      &lt;td&gt;    65&lt;/td&gt;
+      &lt;td&gt; rooof&lt;/td&gt;
+      &lt;td&gt;    57&lt;/td&gt;
+      &lt;td&gt; GifSound&lt;/td&gt;
+      &lt;td&gt;     8&lt;/td&gt;
+      &lt;td&gt; 1333298154&lt;/td&gt;
+      &lt;td&gt;   49&lt;/td&gt;
+      &lt;td&gt;   0&lt;/td&gt;
+      &lt;td&gt;       Gangsta_Raper&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 13&amp;nbsp;columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Note that I first called &lt;code&gt;csvclean&lt;/code&gt;, from the &lt;a href="http://csvkit.readthedocs.org/en/latest/index.html"&gt;csvkit suite of command line utilities&lt;/a&gt;. The bang (!) symbol calls the command line from IPython. &lt;code&gt;csvclean&lt;/code&gt; fixes a couple of formatting errors in the original dataset that interfere with R/Panda&amp;#39;s parsing functions (something to do with quotes or commas in the &amp;quot;title&amp;quot; field, I believe). The repaired &lt;span class="caps"&gt;CSV&lt;/span&gt; is saved with a &lt;code&gt;_out&lt;/code&gt; prepended to the filename. Nothing fancy is required for the &lt;code&gt;read_csv&lt;/code&gt; call in our&amp;nbsp;case.&lt;/p&gt;
+&lt;p&gt;Now for the hard/interesting part. How to we map the flow of each image submission through the various&amp;nbsp;subreddits?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First we sort by image and (crucially) timetamp on line&amp;nbsp;4.&lt;/li&gt;
+&lt;li&gt;On line 5, I simply extract the 3 columns that we care&amp;nbsp;about. &lt;/li&gt;
+&lt;li&gt;Now we drop resubmissions of each image to the &lt;em&gt;same&lt;/em&gt; subreddit with drop_duplicates on line 6, which only keeps each image&amp;#39;s &lt;em&gt;first&lt;/em&gt; submission to a particular subreddit (why we sorted&amp;nbsp;first). &lt;/li&gt;
+&lt;li&gt;The last thing we need Pandas for is to group by image &lt;span class="caps"&gt;ID&lt;/span&gt; (line&amp;nbsp;7).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On line 7, we pull the list of subreddits (now unique and nicely ordered) for each image. The nested list comprehension is necessary only because calling &lt;code&gt;.subreddit&lt;/code&gt; on the groupby object &lt;code&gt;g&lt;/code&gt; returns a tuple by default, and we&amp;#39;d rather have a list of&amp;nbsp;lists.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[3]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Identify the order in which each image is submitted to various subreddits, &lt;/span&gt;
+&lt;span class="c"&gt;# removing repeats within a subreddit&lt;/span&gt;
+
+&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;#image_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;unixtime&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;\
+     &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[:,[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;#image_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;unixtime&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;subreddit&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;\
+     &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop_duplicates&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;#image_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;subreddit&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;\
+     &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;#image_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;flow&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;el&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;el&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subreddit&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now we need a function &lt;code&gt;window&lt;/code&gt; that rolls along each of the lists in &lt;code&gt;flow&lt;/code&gt; and connects every subsequent pair of subreddits that a a particular image was submitted to. We&amp;#39;ll do this with the help of the wonderful &lt;code&gt;itertools&lt;/code&gt; module, creating two dimensional tuples that encode the &amp;quot;from&amp;quot; subreddit and the &amp;quot;to&amp;quot; subreddit, respectively. In lines 14 and 15, we apply the function and flatten the result to a single&amp;nbsp;list.&lt;/p&gt;
+&lt;p&gt;In order to truly capture the &amp;quot;flow,&amp;quot; however, we need to distinguish between the &amp;quot;gifs&amp;quot; subreddit node where images are popping up for the first time and the &amp;quot;gifs&amp;quot; subreddit node when the image has already appeared in another subreddit (say, &amp;quot;pics&amp;quot;). The &lt;code&gt;enumerate&lt;/code&gt; in line 14 does this by tacking on the ordinality to the name of the node, admittedly very hacky, but we have a lot of tuples floating around&amp;nbsp;already.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[4]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Roll along the list of subreddits each image has been submitted to, &lt;/span&gt;
+&lt;span class="c"&gt;# creating an edge tuple for each subsequent pair&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;window&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;Returns a sliding window (of width n) over data from the iterable&lt;/span&gt;
+&lt;span class="sd"&gt;       s -&amp;gt; (s0,s1,...s[n-1]), (s1,s2,...,sn), ...&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;islice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;    
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;elem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;
+        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;
+
+&lt;span class="n"&gt;sankey&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sub&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;flow&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;sankey&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sublist&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sankey&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sublist&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# flatten&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;At last we have a list of edges that on some level describes the flow that we are trying to get at. Now we can just iterate through them and use &lt;code&gt;NetworkX&lt;/code&gt; to create the graph and weight the edges appropriately. In lines 10&amp;#8212;13, I prune back the tiny edges that clutter up the diagram, and then the nodes that are no longer associated with any edges. Last but not least, we export the structure to a &lt;span class="caps"&gt;JSON&lt;/span&gt; in line&amp;nbsp;16.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[5]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Create network structure&lt;/span&gt;
+&lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DiGraph&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;edge&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sankey&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;has_edge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]][&lt;/span&gt;&lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;weight&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_edge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;weight&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        
+&lt;span class="c"&gt;# Trim edges&lt;/span&gt;
+&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove_edges_from&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edges&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;weight&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;flagged&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;el&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out_degree&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;el&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove_edges_from&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edges&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;flagged&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove_nodes_from&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;degree&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c"&gt;# Export&lt;/span&gt;
+&lt;span class="n"&gt;json_graph&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dump&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;sankey.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Time for&amp;nbsp;R!&lt;/p&gt;
+&lt;p&gt;We will need to make sure that &lt;code&gt;d3Network&lt;/code&gt; is installed to the the instance of R that is used by IPython&amp;#39;s &lt;code&gt;Rmagic&lt;/code&gt; via &lt;code&gt;Rpy2&lt;/code&gt;. It was a different for me (I think?) so if you are running something like this for the first time, include the lines that are commented&amp;nbsp;out.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;%%R&lt;/code&gt; denotes block-level R magicks in IPython (&lt;code&gt;%R&lt;/code&gt; will give you line-level&amp;nbsp;magicks)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[6]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;R&lt;/span&gt;
+&lt;span class="c"&gt;#install.packages(&amp;#39;devtools&amp;#39;)&lt;/span&gt;
+&lt;span class="c"&gt;#library(devtools)&lt;/span&gt;
+&lt;span class="c"&gt;#devtools::install_github(&amp;quot;christophergandrud/d3Network&amp;quot;)&lt;/span&gt;
+&lt;span class="n"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d3Network&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This is finally the point at which Christopher Gandrud&amp;#39;s package simplifies everything for us. We simply read in the nodes and linkes (edges) from the &lt;span class="caps"&gt;JSON&lt;/span&gt; file (they get converted to two dataframes). Note that we have to strip the janky ordinality numbers that we tacked onto the node names (line 3). Now that different nodes have the same names, the package will even make sure that each subreddit node has the same color every time it&amp;nbsp;appears!&lt;/p&gt;
+&lt;p&gt;The call to &lt;code&gt;d3Sankey&lt;/code&gt; points to the the nodes dataframe, the links dataframe, the name of the sources/targets in the links dataframe, the name of the column that holds the link weights, and then some display configuration&amp;nbsp;stuff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[7]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;R&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="n"&gt;JSONtoDF&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paste0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;sankey.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;nodes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="n"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="n"&gt;JSONtoDF&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paste0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;sankey.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;links&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;d3Sankey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Nodes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Links&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;source&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+         &lt;span class="n"&gt;Target&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;target&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;weight&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;NodeID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+         &lt;span class="n"&gt;width&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+         &lt;span class="n"&gt;standAlone&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;iframe&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;../extra/sankey.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea "&gt;
+&lt;pre&gt;
+&amp;lt;iframe src=&amp;apos;../extra/sankey.html&amp;apos; height=428 width=618&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We can render the resulting iframe directly in our IPython notebook! Hover over edges for some nice brushing or click and drag the nodes to untangle a relationship you&amp;#39;re interested&amp;nbsp;in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[8]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;HTML&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;lt;iframe src=&amp;quot;../extra/sankey.html&amp;quot; height=420 width=700 frameBorder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[8]:&lt;/div&gt;
+
+&lt;div class="output_html rendered_html output_subarea output_pyout"&gt;
+&lt;iframe src="../extra/sankey.html" height=420 width=700 frameBorder="0"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This type of &amp;quot;tiered&amp;quot; Sankey diagram is a little unconventional, but so far its the best way I can come up with to visualize the interesting phenomenon of submisison flow through Reddit. Leave a comment if this gives you any interesting ideas, I&amp;#39;d love to hear&amp;nbsp;them!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Exploring IMDB movie ratings with Shiny</title><link href="http://spencerboucher.com/imdb-shiny/" rel="alternate"></link><updated>2014-04-05T14:11:51-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-04-05:imdb-shiny/</id><summary type="html"></summary><category term="imdb"></category><category term="shiny"></category><category term="ggplot2"></category></entry><entry><title>A blogging framework a data scientist could love</title><link href="http://spencerboucher.com/moving-to-pelican/" rel="alternate"></link><updated>2014-04-05T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-04-05:moving-to-pelican/</id><summary type="html">&lt;p&gt;It has taken a few weeks of sporadic work, but I&amp;#8217;ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are &amp;#8220;&lt;em&gt;baked&lt;/em&gt;,&amp;#8221; meaning they don&amp;#8217;t have any databases or server-side &lt;span class="caps"&gt;PHP&lt;/span&gt; going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every &lt;code&gt;div&lt;/code&gt;, every script, every &lt;em&gt;anything&lt;/em&gt; on the site. This gives me the ability to write posts in &lt;a href="https://daringfireball.net/projects/markdown/"&gt;markdown&lt;/a&gt; plus tons of flexibility to incorporate hackery things like &lt;a href="http://yihui.name/knitr/"&gt;Knitr&lt;/a&gt; documents, &lt;a href="http://ipython.org/notebook.html"&gt;IPython notenooks&lt;/a&gt;, and even &lt;a href="d3js.org"&gt;D3.js&lt;/a&gt; visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via &lt;code&gt;git push&lt;/code&gt; rather than clicking a button in&amp;nbsp;WordPress.  &lt;/p&gt;
 &lt;p&gt;Anyways, as far as I can tell, its an unwritten rule that your first blog post after switching to a static blogging framework is &lt;em&gt;required&lt;/em&gt; to be about how you did it. I think this may be of interest to some people because its actually rather involved to set up support for all the types of things that data sciencey people like to do, and I&amp;#8217;m doing my best to create a framework that can be used out of the box for all&amp;nbsp;this.  &lt;/p&gt;
 &lt;p&gt;The primo static blog generator out there seems to be &lt;a href="jekyllrb.com/"&gt;Jekyll&lt;/a&gt; (its even the one that GitHub Pages seems to recommend). Jekyll seems really nice, but its written in Ruby and I&amp;#8217;m more of a Python kinda guy. I actually built a quick and dirty version of the blog in &lt;a href="http://octopress.org/"&gt;Jekyll/Octopress&lt;/a&gt; to see what it was all about, which was a great exercise in learning the basics of Ruby and rbenv, etc., but in the end I opted for the pre-eminent &lt;em&gt;Python&lt;/em&gt; solution: &lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt; (an anagram of calepin, meaning &amp;#8220;notebook&amp;#8221; in French, in case you were wondering). Pelican blogs are highly themeable/customizable, and I knew that I wanted a theme based on &lt;a href="getbootstrap.com"&gt;Twitter Bootstrap&lt;/a&gt;, because I&amp;#8217;m familiar with it from building a few &lt;a href="http://shiny.rstudio.com/"&gt;Shiny applications&lt;/a&gt;, and its very ${powerful, simple, systematic, well-documented}. There&amp;#8217;s a few Bootstrap based Pelican themes out there, but &lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;pelican-bootstrap3&lt;/a&gt; by &lt;a href="http://dandydev.net/"&gt;DandyDev&lt;/a&gt; is my favorite and is based on the most recent Bootstrap&amp;nbsp;release.  &lt;/p&gt;
 &lt;p&gt;I&amp;#8217;ve made many aesthetic tweaks, including a full-page width article layout, custom typography via &lt;a href="https://www.google.com/fonts‎"&gt;Google Fonts&lt;/a&gt; and changes to the sidebar/article index/navbar. I&amp;#8217;ve added a few javascript and &lt;span class="caps"&gt;CSS&lt;/span&gt; files grant built-in support for MathJax, &lt;a href="http://spencerboucher.com/ggplot-goodness/"&gt;Knitr documents&lt;/a&gt;, GitHub themed Pygments code blocks, and interactive Bootstrap elements (like the tooltips on the Category section of the sidebar to the right). I&amp;#8217;m using the &lt;a href="https://github.com/wrobstory/pelican_dynamic‎"&gt;pelican_dynamic&lt;/a&gt; plugin to make &lt;a href="http://spencerboucher.com/d3-test/"&gt;D3&lt;/a&gt; and any other arbitrary scripts includeable within individual posts. A modified version of the &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags"&gt;liquid_tags&lt;/a&gt; plugin makes it possible to include &lt;a href="http://spencerboucher.com/contract-optimization/"&gt;IPython notebooks&lt;/a&gt; or even select pieces of a&amp;nbsp;notebook.  &lt;/p&gt;
@@ -10,32 +471,51 @@
     &lt;/a&gt;
 &lt;/div&gt;</summary><category term="blogging"></category><category term="pelican"></category><category term="bootstrap"></category><category term="design"></category><category term="knitr"></category><category term="ipython"></category><category term="ipython notebook"></category><category term="mathjax"></category><category term="d3.js"></category></entry><entry><title>Contract Optimization</title><link href="http://spencerboucher.com/contract-optimization/" rel="alternate"></link><updated>2014-03-30T01:23:48-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-03-30:contract-optimization/</id><summary type="html">&lt;p&gt;This was a recent homework assignment; I&amp;#8217;m including it here merely as my first test of embedding IPython notebooks into the&amp;nbsp;blog.&lt;/p&gt;
 &lt;p&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[1]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Question&amp;nbsp;1&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;The way our firm pays its employees can be modelled thusly: &lt;span class="math"&gt;\[\pi=a+\epsilon\]&lt;/span&gt; &lt;span class="math"&gt;\[U(w,a)=-e^{-(w-c\cdot a^{2})}\]&lt;/span&gt; &lt;span class="math"&gt;\[w=t+s\cdot \pi\]&lt;/span&gt; Where &lt;span class="math"&gt;\(t\)&lt;/span&gt; is the employee&amp;#8217;s base pay, &lt;span class="math"&gt;\(U\)&lt;/span&gt; is the employee&amp;#8217;s happiness, &lt;span class="math"&gt;\(a\)&lt;/span&gt; is the employee&amp;#8217;s disinclination towards work (which I will refer to as their &amp;quot;coefficient of laziness&amp;quot;), and &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; is the revenue earned by an employee. We can plug some numbers into these equations to observe how each of these variables affects an employee&amp;#8217;s happiness, holding the rest of the variables&amp;nbsp;constant.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The way our firm pays its employees can be modelled thusly:
+$$\pi=a+\epsilon$$
+$$U(w,a)=-e^{-(w-c\cdot a^{2})}$$
+$$w=t+s\cdot \pi$$
+Where $t$ is the employee&amp;#39;s base pay, $U$ is the employee&amp;#39;s happiness, $a$ is the employee&amp;#39;s disinclination towards work (which I will refer to as their &amp;quot;coefficient of laziness&amp;quot;), and $\pi$ is the revenue earned by an employee. We can plug some numbers into these equations to observe how each of these variables affects an employee&amp;#39;s happiness, holding the rest of the variables&amp;nbsp;constant.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[2]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;311&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Happiness as a function of $a$&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;U&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -56,15 +536,16 @@ In&amp;nbsp;[2]:
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
-
-
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABrEAAARvCAYAAAC/58/KAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xt4pHddN/53utndtmy2EFrEcioVWkBADAJSsCwQEWRt
 USogcigIjwdQHvxpWLFiPY8RBcFHfARa+hQuK+CBgwg1QKlYEEqQqlAKhUqBcihburttN3tIfn98
@@ -1188,30 +1669,44 @@ TO6Wsl/qdSmfl29M8rHcvkcMwDBYleTlSS5NckvKslg/SvLxJJ2KuQBWwu73CXd/zN8jXGx/qxOT
 fDJla5LZJN9I8pqYSAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAg+f/Ac4glD0+jrK7AAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We can take away a few patterns from these&amp;nbsp;graphs.&lt;/p&gt;
-&lt;p&gt;Our workers have a relatively stable happiness regardless of how hard they work, &lt;em&gt;until&lt;/em&gt; their level of work begins to approach their pay (at least for a worker whose &lt;span class="math"&gt;\(c=1\)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;As their pay increases they gradually become happier, plateauing when their pay reaches 2 or 3 times their level of work (again, for a worker whose &lt;span class="math"&gt;\(c=1\)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;As their disinclination towards work increases, their happiness stays relatively constant until their laziness approaches their pay, similar to the effect of &lt;span class="math"&gt;\(a\)&lt;/span&gt; but not quite as&amp;nbsp;abrupt.&lt;/p&gt;
+&lt;p&gt;Our workers have a relatively stable happiness regardless of how hard they work, &lt;em&gt;until&lt;/em&gt; their level of work begins to approach their pay (at least for a worker whose&amp;nbsp;$c=1$).&lt;/p&gt;
+&lt;p&gt;As their pay increases they gradually become happier, plateauing when their pay reaches 2 or 3 times their level of work (again, for a worker whose&amp;nbsp;$c=1$).&lt;/p&gt;
+&lt;p&gt;As their disinclination towards work increases, their happiness stays relatively constant until their laziness approaches their pay, similar to the effect of $a$ but not quite as&amp;nbsp;abrupt.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Question&amp;nbsp;2&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[3]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;optimize_work&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;For a given value of t and c, searches the space from s = 0% to s = 100%,&lt;/span&gt;
 &lt;span class="sd"&gt;    plotting the level of work the employee will choose to maximize his happiness&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
@@ -1234,15 +1729,16 @@ In&amp;nbsp;[3]:
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
-
-
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABa0AAAP4CAYAAADeU9DYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XucXHV9+P/XJgGBZEOYcEsN1ZVwK0bDeqFANeu6Wi9Y
 CPLlS/imEi1trWixbdwG661SzUjbyE/AtrYWbwlaBFsrtJKNWbCEaM2EcFGD3KKEkAC7BBJRSGZ/
@@ -1986,30 +2482,50 @@ sSf2ZSm2Drk6xT7Zzx+z9s0+p3Gm1Y19Z5InJnlLiq+/UYrO6nek2If6rdus8TlJ3pziDyuXJfmq
 FOH6xi1vXpfkH6R4nT5UHvuKJB9N8X8N/HSSb5vEJwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADApv5/GX+Wbi4H3yIAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;This plot demonstrates the somewhat surprising result that base pay &lt;span class="math"&gt;\(t\)&lt;/span&gt; has no effect on how hard an employee will work (at least for an employee whose &lt;span class="math"&gt;\(c=0.5\)&lt;/span&gt;). Although a higher base pay will certainly increase their happiness, it does &lt;em&gt;not&lt;/em&gt; incentivize them. This fact manifests itself in two ways, first in the &lt;span class="math"&gt;\((0,0)\)&lt;/span&gt; origin, reflecting the fact that if we do not include any commission at all, there is no incentive to do any work at all (a fact already noted and bemoaned by my dear father). Second, the slope of the effect is constant across both (read: any) values of base pay, which is why the lines are actually on top of each other (hence the purple) and base pay does not make a&amp;nbsp;difference.&lt;/p&gt;
+&lt;p&gt;This plot demonstrates the somewhat surprising result that base pay $t$ has no effect on how hard an employee will work (at least for an employee whose $c=0.5$). Although a higher base pay will certainly increase their happiness, it does &lt;em&gt;not&lt;/em&gt; incentivize them. This fact manifests itself in two ways, first in the $(0,0)$ origin, reflecting the fact that if we do not include any commission at all, there is no incentive to do  any work at all (a fact already noted and bemoaned by my dear father). Second, the slope of the effect is constant across both (read: any) values of base pay, which is why the lines are actually on top of each other (hence the purple) and base pay does not make a&amp;nbsp;difference.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Question&amp;nbsp;3&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now that we have a model for how hard each lawyer will work for a given commision rate, we can determine what our revenue will be for that given commission rate (at least in expectation). This allows us to optimize for our profits (&lt;span class="math"&gt;\(\pi-w\)&lt;/span&gt;), rather than for the happiness of our lazy-ass&amp;nbsp;employees.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now that we have a model for how hard each lawyer will work for a given commision rate, we can determine what our revenue will be for that given commission rate (at least in expectation). This allows us to optimize for our profits ($\pi-w$), rather than for the happiness of our lazy-ass&amp;nbsp;employees.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[4]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;optimize_profit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;For a given value of t and c, searches the space from s = 0% to s = 100%,&lt;/span&gt;
 &lt;span class="sd"&gt;    plots the profit that the firm will generate based on predicted employee behavior&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
@@ -2039,15 +2555,16 @@ In&amp;nbsp;[4]:
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
-
-
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABcoAAAP4CAYAAADtaM/RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xl8W9Wd9/GP5H2LHe+J48TZN8iekAQIThpoKEPZOjP0
 aaDpAIW2TKFMmtLClMAzTDO0ZZn2KR2g7LR9yPQZmk4nO0kgZCGJsycmTpw9XuJ432Jb0vPHlWzZ
@@ -4190,31 +4707,51 @@ jp1G9PWHjRznW420LBcaec+3V4x93ZxW+beizm9WT1fvNc6/240I8k8aecU/2DDGF6t3GxdztqqH
 Gxv6y+mE3qpON9bp8lR2X/VT498Rb1TP/hMTAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4K7wF/H/BVj59SwhAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Profits are clearly highest when base pay is set to zero (the purple curve), which represents a purely commission-based payment system. This makes sense in light of our previous finding that base pay does not incentivize working harder, which therefore means that it does not actually drive any&amp;nbsp;revenue.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Regardless of base pay&lt;/em&gt;, &lt;strong&gt;the optimal commission rate is 0.5&lt;/strong&gt;, or half of the employee&amp;#8217;s earned revenue, which is denoted by the dashed&amp;nbsp;line.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Regardless of base pay&lt;/em&gt;, &lt;strong&gt;the optimal commission rate is 0.5&lt;/strong&gt;, or half of the employee&amp;#39;s earned revenue, which is denoted by the dashed&amp;nbsp;line.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Question&amp;nbsp;4&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Different employees will obviously have different propensities for work, which we represent with different values of &lt;span class="math"&gt;\(c\)&lt;/span&gt; for each employee. Now we will visualize how the happiness of different employees changes over possible commission rates we could offer&amp;nbsp;them.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Different employees will obviously have different propensities for work, which we represent with different values of $c$ for each employee. Now we will visualize how the happiness of different employees changes over possible commission rates we could offer&amp;nbsp;them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[5]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;optimize_happiness&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;For a given value of t and c, searches the space from s = 0% to s = 100%,&lt;/span&gt;
 &lt;span class="sd"&gt;    plotting the maximum happiness possible at that value of s&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
@@ -4238,15 +4775,16 @@ In&amp;nbsp;[5]:
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
-
-
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABb0AAAP2CAYAAADD9zBAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xt8FfWd//FXEu4kJoSbLreICGorShAEXBE0VcR1vbWr
 tqBYdbXbbG1dRKu2pv62LYtWoLXqatXgba3U6tK6iETBS7mpURAlcg0XCyIkBIJckpzz++N7hpmc
@@ -5787,25 +6325,33 @@ M1OBtxHB+WLKnouBdxPn6fG0bjvgWeK/Fs4CDq/igCRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkjTu/D8WfPo8OfYoJwAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;All three of these employees would end up maximizing their happiness by choosing a commission rate of 100%, unsurprisingly (those greedy&amp;nbsp;bastards).&lt;/p&gt;
-&lt;p&gt;Lastly, we will check to see if our optimal commission rate is different for employees that have different values of &lt;span class="math"&gt;\(c\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Lastly, we will check to see if our optimal commission rate is different for employees that have different values of&amp;nbsp;$c$.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[6]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Best commission rate when c=0.1 is {}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;optimize_profit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Best commission rate when c=0.5 is {}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;optimize_profit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Best commission rate when c=1.0 is {}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;optimize_profit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -5814,13 +6360,14 @@ In&amp;nbsp;[6]:
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_stream output_stdout"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
 Best commission rate when c=0.1 is 0.5
 Best commission rate when c=0.5 is 0.5
@@ -5830,10 +6377,10 @@ Best commission rate when c=1.0 is 0.5
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
+&lt;div class="output_png output_subarea "&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABa0AAAP2CAYAAADkWbGoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xt8VPWd//HX5Aq5mAsQUEAQuWpFCWqBVgRLrdV1vdTf
 qhUsWi10Nz9vRcqqXdH9uWaxFdi66noFb+1K7Vq2FpEoqVouXqIoSuQiQcBwiQkhCYFcZn5/fGeY
@@ -7586,17 +8133,24 @@ ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 EREREREREREREREREREREREREREREREREREREREREQnp/wO6racrcJ0mAQAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;It appears that &lt;strong&gt;the optimal commission rate is independent of the employee&amp;#8217;s coefficient of laziness&lt;/strong&gt;, even though the actual profit the firm makes most certainly is &lt;em&gt;not&lt;/em&gt;. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&amp;#8217;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&amp;nbsp;same.&lt;/p&gt;
+&lt;p&gt;It appears that &lt;strong&gt;the optimal commission rate is independent of the employee&amp;#39;s coefficient of laziness&lt;/strong&gt;, even though the actual profit the firm makes most certainly is &lt;em&gt;not&lt;/em&gt;. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&amp;#39;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&amp;nbsp;same.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Basic Charts</title><link href="http://spencerboucher.com/ggplot-goodness/" rel="alternate"></link><updated>2014-03-30T01:23:48-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:spencerboucher.com,2014-03-30:ggplot-goodness/</id><summary type="html">
 
 &lt;p&gt;This was a recent homework assignment. I&amp;#8217;m including it here merely as my first test of embedding Knitr documents into the blog, but maybe you&amp;#8217;ll find something about ggplot2 in it that you find&amp;nbsp;useful!&lt;/p&gt;

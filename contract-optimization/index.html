@@ -130,32 +130,51 @@ justmytwospence            </a>
                 <div class="entry-content">
                     <p>This was a recent homework assignment; I&#8217;m including it here merely as my first test of embedding IPython notebooks into the&nbsp;blog.</p>
 <p>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[1]:
 </div>
-<div class="input_area box-flex1">
+<div class="inner_cell">
+    <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question&nbsp;1</strong></p>
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The way our firm pays its employees can be modelled thusly: <span class="math">\[\pi=a+\epsilon\]</span> <span class="math">\[U(w,a)=-e^{-(w-c\cdot a^{2})}\]</span> <span class="math">\[w=t+s\cdot \pi\]</span> Where <span class="math">\(t\)</span> is the employee&#8217;s base pay, <span class="math">\(U\)</span> is the employee&#8217;s happiness, <span class="math">\(a\)</span> is the employee&#8217;s disinclination towards work (which I will refer to as their &quot;coefficient of laziness&quot;), and <span class="math">\(\pi\)</span> is the revenue earned by an employee. We can plug some numbers into these equations to observe how each of these variables affects an employee&#8217;s happiness, holding the rest of the variables&nbsp;constant.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The way our firm pays its employees can be modelled thusly:
+$$\pi=a+\epsilon$$
+$$U(w,a)=-e^{-(w-c\cdot a^{2})}$$
+$$w=t+s\cdot \pi$$
+Where $t$ is the employee&#39;s base pay, $U$ is the employee&#39;s happiness, $a$ is the employee&#39;s disinclination towards work (which I will refer to as their &quot;coefficient of laziness&quot;), and $\pi$ is the revenue earned by an employee. We can plug some numbers into these equations to observe how each of these variables affects an employee&#39;s happiness, holding the rest of the variables&nbsp;constant.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[2]:
 </div>
-<div class="input_area box-flex1">
+<div class="inner_cell">
+    <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">311</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Happiness as a function of $a$&#39;</span><span class="p">)</span>
 <span class="n">w</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">U</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="n">c</span><span class="o">*</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
@@ -176,15 +195,16 @@ In&nbsp;[2]:
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABrEAAARvCAYAAAC/58/KAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xt4pHddN/53utndtmy2EFrEcioVWkBADAJSsCwQEWRt
 USogcigIjwdQHvxpWLFiPY8RBcFHfARa+hQuK+CBgwg1QKlYEEqQqlAKhUqBcihburttN3tIfn98
@@ -1308,30 +1328,44 @@ TO6Wsl/qdSmfl29M8rHcvkcMwDBYleTlSS5NckvKslg/SvLxJJ2KuQBWwu73CXd/zN8jXGx/qxOT
 fDJla5LZJN9I8pqYSAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAg+f/Ac4glD0+jrK7AAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can take away a few patterns from these&nbsp;graphs.</p>
-<p>Our workers have a relatively stable happiness regardless of how hard they work, <em>until</em> their level of work begins to approach their pay (at least for a worker whose <span class="math">\(c=1\)</span>).</p>
-<p>As their pay increases they gradually become happier, plateauing when their pay reaches 2 or 3 times their level of work (again, for a worker whose <span class="math">\(c=1\)</span>).</p>
-<p>As their disinclination towards work increases, their happiness stays relatively constant until their laziness approaches their pay, similar to the effect of <span class="math">\(a\)</span> but not quite as&nbsp;abrupt.</p>
+<p>Our workers have a relatively stable happiness regardless of how hard they work, <em>until</em> their level of work begins to approach their pay (at least for a worker whose&nbsp;$c=1$).</p>
+<p>As their pay increases they gradually become happier, plateauing when their pay reaches 2 or 3 times their level of work (again, for a worker whose&nbsp;$c=1$).</p>
+<p>As their disinclination towards work increases, their happiness stays relatively constant until their laziness approaches their pay, similar to the effect of $a$ but not quite as&nbsp;abrupt.</p>
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question&nbsp;2</strong></p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[3]:
 </div>
-<div class="input_area box-flex1">
+<div class="inner_cell">
+    <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">optimize_work</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;For a given value of t and c, searches the space from s = 0% to s = 100%,</span>
 <span class="sd">    plotting the level of work the employee will choose to maximize his happiness&#39;&#39;&#39;</span>
@@ -1354,15 +1388,16 @@ In&nbsp;[3]:
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABa0AAAP4CAYAAADeU9DYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XucXHV9+P/XJgGBZEOYcEsN1ZVwK0bDeqFANeu6Wi9Y
 CPLlS/imEi1trWixbdwG661SzUjbyE/AtrYWbwlaBFsrtJKNWbCEaM2EcFGD3KKEkAC7BBJRSGZ/
@@ -2106,30 +2141,50 @@ sSf2ZSm2Drk6xT7Zzx+z9s0+p3Gm1Y19Z5InJnlLiq+/UYrO6nek2If6rdus8TlJ3pziDyuXJfmq
 FOH6xi1vXpfkH6R4nT5UHvuKJB9N8X8N/HSSb5vEJwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADApv5/GX+Wbi4H3yIAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This plot demonstrates the somewhat surprising result that base pay <span class="math">\(t\)</span> has no effect on how hard an employee will work (at least for an employee whose <span class="math">\(c=0.5\)</span>). Although a higher base pay will certainly increase their happiness, it does <em>not</em> incentivize them. This fact manifests itself in two ways, first in the <span class="math">\((0,0)\)</span> origin, reflecting the fact that if we do not include any commission at all, there is no incentive to do any work at all (a fact already noted and bemoaned by my dear father). Second, the slope of the effect is constant across both (read: any) values of base pay, which is why the lines are actually on top of each other (hence the purple) and base pay does not make a&nbsp;difference.</p>
+<p>This plot demonstrates the somewhat surprising result that base pay $t$ has no effect on how hard an employee will work (at least for an employee whose $c=0.5$). Although a higher base pay will certainly increase their happiness, it does <em>not</em> incentivize them. This fact manifests itself in two ways, first in the $(0,0)$ origin, reflecting the fact that if we do not include any commission at all, there is no incentive to do  any work at all (a fact already noted and bemoaned by my dear father). Second, the slope of the effect is constant across both (read: any) values of base pay, which is why the lines are actually on top of each other (hence the purple) and base pay does not make a&nbsp;difference.</p>
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question&nbsp;3</strong></p>
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we have a model for how hard each lawyer will work for a given commision rate, we can determine what our revenue will be for that given commission rate (at least in expectation). This allows us to optimize for our profits (<span class="math">\(\pi-w\)</span>), rather than for the happiness of our lazy-ass&nbsp;employees.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we have a model for how hard each lawyer will work for a given commision rate, we can determine what our revenue will be for that given commission rate (at least in expectation). This allows us to optimize for our profits ($\pi-w$), rather than for the happiness of our lazy-ass&nbsp;employees.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[4]:
 </div>
-<div class="input_area box-flex1">
+<div class="inner_cell">
+    <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">optimize_profit</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;For a given value of t and c, searches the space from s = 0% to s = 100%,</span>
 <span class="sd">    plots the profit that the firm will generate based on predicted employee behavior&#39;&#39;&#39;</span>
@@ -2159,15 +2214,16 @@ In&nbsp;[4]:
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABcoAAAP4CAYAAADtaM/RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xl8W9Wd9/GP5H2LHe+J48TZN8iekAQIThpoKEPZOjP0
 aaDpAIW2TKFMmtLClMAzTDO0ZZn2KR2g7LR9yPQZmk4nO0kgZCGJsycmTpw9XuJ432Jb0vPHlWzZ
@@ -4310,31 +4366,51 @@ jp1G9PWHjRznW420LBcaec+3V4x93ZxW+beizm9WT1fvNc6/240I8k8aecU/2DDGF6t3GxdztqqH
 Gxv6y+mE3qpON9bp8lR2X/VT498Rb1TP/hMTAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4K7wF/H/BVj59SwhAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Profits are clearly highest when base pay is set to zero (the purple curve), which represents a purely commission-based payment system. This makes sense in light of our previous finding that base pay does not incentivize working harder, which therefore means that it does not actually drive any&nbsp;revenue.</p>
-<p><em>Regardless of base pay</em>, <strong>the optimal commission rate is 0.5</strong>, or half of the employee&#8217;s earned revenue, which is denoted by the dashed&nbsp;line.</p>
+<p><em>Regardless of base pay</em>, <strong>the optimal commission rate is 0.5</strong>, or half of the employee&#39;s earned revenue, which is denoted by the dashed&nbsp;line.</p>
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question&nbsp;4</strong></p>
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Different employees will obviously have different propensities for work, which we represent with different values of <span class="math">\(c\)</span> for each employee. Now we will visualize how the happiness of different employees changes over possible commission rates we could offer&nbsp;them.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Different employees will obviously have different propensities for work, which we represent with different values of $c$ for each employee. Now we will visualize how the happiness of different employees changes over possible commission rates we could offer&nbsp;them.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[5]:
 </div>
-<div class="input_area box-flex1">
+<div class="inner_cell">
+    <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">optimize_happiness</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;For a given value of t and c, searches the space from s = 0% to s = 100%,</span>
 <span class="sd">    plotting the maximum happiness possible at that value of s&#39;&#39;&#39;</span>
@@ -4358,15 +4434,16 @@ In&nbsp;[5]:
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABb0AAAP2CAYAAADD9zBAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xt8FfWd//FXEu4kJoSbLreICGorShAEXBE0VcR1vbWr
 tqBYdbXbbG1dRKu2pv62LYtWoLXqatXgba3U6tK6iETBS7mpURAlcg0XCyIkBIJckpzz++N7hpmc
@@ -5907,25 +5984,33 @@ M1OBtxHB+WLKnouBdxPn6fG0bjvgWeK/Fs4CDq/igCRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkjTu/D8WfPo8OfYoJwAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>All three of these employees would end up maximizing their happiness by choosing a commission rate of 100%, unsurprisingly (those greedy&nbsp;bastards).</p>
-<p>Lastly, we will check to see if our optimal commission rate is different for employees that have different values of <span class="math">\(c\)</span>.</p>
+<p>Lastly, we will check to see if our optimal commission rate is different for employees that have different values of&nbsp;$c$.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[6]:
 </div>
-<div class="input_area box-flex1">
+<div class="inner_cell">
+    <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="k">print</span> <span class="s">&#39;Best commission rate when c=0.1 is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optimize_profit</span><span class="p">(</span><span class="n">c</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
 <span class="k">print</span> <span class="s">&#39;Best commission rate when c=0.5 is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optimize_profit</span><span class="p">(</span><span class="n">c</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
 <span class="k">print</span> <span class="s">&#39;Best commission rate when c=1.0 is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optimize_profit</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
@@ -5934,13 +6019,14 @@ In&nbsp;[6]:
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Best commission rate when c=0.1 is 0.5
 Best commission rate when c=0.5 is 0.5
@@ -5950,10 +6036,10 @@ Best commission rate when c=1.0 is 0.5
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABa0AAAP2CAYAAADkWbGoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xt8VPWd//HX5Aq5mAsQUEAQuWpFCWqBVgRLrdV1vdTf
 qhUsWi10Nz9vRcqqXdH9uWaxFdi66noFb+1K7Vq2FpEoqVouXqIoSuQiQcBwiQkhCYFcZn5/fGeY
@@ -7706,17 +7792,24 @@ ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 EREREREREREREREREREREREREREREREREREREREREQnp/wO6racrcJ0mAQAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It appears that <strong>the optimal commission rate is independent of the employee&#8217;s coefficient of laziness</strong>, even though the actual profit the firm makes most certainly is <em>not</em>. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&#8217;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&nbsp;same.</p>
+<p>It appears that <strong>the optimal commission rate is independent of the employee&#39;s coefficient of laziness</strong>, even though the actual profit the firm makes most certainly is <em>not</em>. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&#39;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&nbsp;same.</p>
+</div>
+</div>
 </div></p>
                 </div>
                 <!-- /.entry-content -->
