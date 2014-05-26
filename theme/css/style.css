@@ -29,6 +29,9 @@ h1, h2, h3, h4, h5, h6, .navbar a {
 p, div {
     font-family: 'Bitter', serif;
 }
+p {
+  text-indent: 1.5em;
+}
 article h2 {
     margin-top: 0px;
 }
@@ -222,9 +225,7 @@ i {
     margin-bottom: 10px;
 }
  
-.video-container iframe,
-.video-container object,
-.video-container embed {
+.video-container iframe, video-container object, video-container embed {
     position: absolute;
     top: 0;
     left: 0;
