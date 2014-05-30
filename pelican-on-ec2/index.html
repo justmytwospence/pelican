@@ -7,7 +7,7 @@
     <!-- Google fonts! -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
 
-    <title>justmytwospence</title>
+    <title>Hosting a Pelican blog on EC2 - justmytwospence</title>
     
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +18,13 @@
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="justmytwospence"/>
-            <meta property="og:url" content="http://spencerboucher.com"/>
-            <meta property="og:description" content="justmytwospence"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Hosting a Pelican blog on EC2"/>
+            <meta property="og:url" content="http://spencerboucher.com/pelican-on-ec2/"/>
+            <meta property="og:description" content="This blog is hosted on the totally rad GitHub pages platform, but for my web analytics class, I need to mirror it on a server that I have full access to so that I can play around with server-side logging and all that jazz. I couldn’t find any good ..."/>
+            <meta property="article:published_time" content="2014-05-30" />
+                <meta property="article:section" content="Misc" />
+                <meta property="article:author" content="Spencer Boucher" />
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
@@ -104,199 +107,98 @@ justmytwospence            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+    
 
-            <article class="panel panel-default">
-                <div class="panel-heading">
+        <section id="content">
+            <article>
+                <header class="page-header">
+                    <h1>Hosting a Pelican blog on <span class="caps">EC2</span></h1>
 <footer class="post-info">
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-12T17:53:00"> Sun 12 January 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-05-30T16:15:55"> Fri 30 May 2014</time>
     </span>
 
 
-    <span class="Vizualization">
+    <span class="Misc">
         <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/vizualization">Vizualization</a>
+        <a href="http://spencerboucher.com/misc">Misc</a>
     </span>
 
 
-	<span>
-	<i class="fa fa-tag"></i>
-		<a href="http://spencerboucher.com/tags/api/">api</a>
-	        /
-		<a href="http://spencerboucher.com/tags/auto-scaling/">auto scaling</a>
-	        /
-		<a href="http://spencerboucher.com/tags/aws/">aws</a>
-	        /
-		<a href="http://spencerboucher.com/tags/cloud/">cloud</a>
-	        /
-		<a href="http://spencerboucher.com/tags/cron/">cron</a>
-	        /
-		<a href="http://spencerboucher.com/tags/ec2/">ec2</a>
 
     
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://spencerboucher.com/ec2-apis/" class="list-group-item">
-                        <h2>Scheduling tasks in the cloud with <span class="caps">EC2</span>&nbsp;APIs</h2>
-                        <div class="summary">
-                            <p>Learning how to take full control of the cloud.</p>
-                        </div>
-                    </a>
+</footer><!-- /.post-info -->                </header>
+                <div class="entry-content">
+                    <p>This blog is hosted on the totally rad GitHub pages platform, but for my web analytics class, I need to mirror it on a server that I have full access to so that I can play around with server-side logging and all that jazz. I couldn&#8217;t find any good tutorials about pushing a pelican blog to your own remote server, but some experimentation proved it to be rather simple, so here it is for&nbsp;classmates/posterity.</p>
+<p>Launch an Amazon <span class="caps">EC2</span> instance with the default Amazon Linux <span class="caps">AMI</span> (micro instance). Before you launch it, add an <code>HTTP</code> security rule. The port will default to 80. This allows anyone to access the site once the webserver is running. Launch the instance, specifying your <code>.pem</code> file.</p>
+<p>Give the instance an elastic <span class="caps">IP</span> address by clicking &#8220;Elastic IPs&#8221; on the console sidebar. Click &#8220;Allocate New Address&#8221; and then right click the resulting address and click &#8220;Associate Address&#8221; (the instance field should automatically populate when you click in it). Make note of your elastic <span class="caps">IP</span> (mine is <code>54.201.31.202</code>).</p>
+<p><span class="caps">SSH</span> into your new instance, substituting your own <span class="caps">IP</span> and <code>.pem</code> file of&nbsp;course:</p>
+<div class="highlight"><pre>ssh -i /PATH/TO/*.pem ec2-user@54.201.31.202
+</pre></div>
+
+
+<p>Once on your&nbsp;server:</p>
+<div class="highlight"><pre>sudo yum update
+sudo yum install httpd                          <span class="c"># install webserver</span>
+sudo chown -R ec2-user:ec2-user /var/www/html   <span class="c"># change permissions for future location of our website files</span>
+sudo service httpd start                        <span class="c"># start webserver</span>
+<span class="nb">exit</span>
+</pre></div>
+
+
+<p>Modify these lines in your local <code>Makefile</code> (again with your owwn <code>.pem</code> <span class="amp">&amp;</span> <span class="caps">IP</span>:</p>
+<div class="highlight"><pre><span class="nv">SSH_HOST</span><span class="o">=</span>54.201.31.202
+<span class="nv">SSH_USER</span><span class="o">=</span>ec2-user
+<span class="nv">SSH_TARGET_DIR</span><span class="o">=</span>/var/www/html
+
+ssh_upload: publish
+    scp -i ~/PATH/TO/*.pem -P <span class="k">$(</span>SSH_PORT<span class="k">)</span> -r <span class="k">$(</span>OUTPUTDIR<span class="k">)</span>/* <span class="k">$(</span>SSH_USER<span class="k">)</span>@<span class="k">$(</span>SSH_HOST<span class="k">)</span>:<span class="k">$(</span>SSH_TARGET_DIR<span class="k">)</span>
+</pre></div>
+
+
+<p>Now, <code>make ssh_upload</code> will act like <code>make github</code>, except for your <span class="caps">EC2</span> server. After you do this the first time, you should be able to access your website at the elastic <span class="caps">IP</span> address. For example, this website is now (temporarily) accessible at both spencerboucher.com <em>and</em> <a href="http://54.201.31.202/">54.201.31.202</a>. The advantage here is that now we have full access to the web server for using logstash and the&nbsp;like.</p>
+                </div>
+                <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'justmytwospence'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'pelican-on-ec2';
+                var disqus_url = 'http://spencerboucher.com/pelican-on-ec2/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
             </article>
-            <article class="panel panel-default">
-                <div class="panel-heading">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-11T22:05:00"> Sat 11 January 2014</time>
-    </span>
-
-
-    <span class="R">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/r">R</a>
-    </span>
-
-
-	<span>
-	<i class="fa fa-tag"></i>
-		<a href="http://spencerboucher.com/tags/kaggle/">kaggle</a>
-	        /
-		<a href="http://spencerboucher.com/tags/machine-learning/">machine learning</a>
-	        /
-		<a href="http://spencerboucher.com/tags/r/">R</a>
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://spencerboucher.com/titanic-getting-started-with-r/" class="list-group-item">
-                        <h2>Titanic: Getting Started With&nbsp;R</h2>
-                        <div class="summary">
-                            <p>Get a jump start on the Kaggle Titanic competition.</p>
-                        </div>
-                    </a>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-10T00:00:00"> Fri 10 January 2014</time>
-    </span>
-
-
-    <span class="R">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/r">R</a>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://spencerboucher.com/stratified-sampling-in-r/" class="list-group-item">
-                        <h2>Stratified sampling in&nbsp;R</h2>
-                        <div class="summary">
-                            <p>I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my&nbsp;own.  </p>
-<p>It is essentially a wrapper for a ddply call that ...</p>
-                        </div>
-                    </a>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-08T08:50:00"> Wed 08 January 2014</time>
-    </span>
-
-
-    <span class="Vizualization">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/vizualization">Vizualization</a>
-    </span>
-
-
-	<span>
-	<i class="fa fa-tag"></i>
-		<a href="http://spencerboucher.com/tags/api/">api</a>
-	        /
-		<a href="http://spencerboucher.com/tags/aws/">aws</a>
-	        /
-		<a href="http://spencerboucher.com/tags/cartodb/">cartoDB</a>
-	        /
-		<a href="http://spencerboucher.com/tags/cartography/">cartography</a>
-	        /
-		<a href="http://spencerboucher.com/tags/cron/">cron</a>
-	        /
-		<a href="http://spencerboucher.com/tags/ec2/">ec2</a>
-	        /
-		<a href="http://spencerboucher.com/tags/map/">map</a>
-	        /
-		<a href="http://spencerboucher.com/tags/quantifiedself/">quantifiedSelf</a>
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://spencerboucher.com/live-mapping/" class="list-group-item">
-                        <h2>Live&nbsp;mapping</h2>
-                        <div class="summary">
-                            <p>Let's put on our quantified-self hats and find out where we spend our time!</p>
-                        </div>
-                    </a>
-            </article>
-            <article class="panel panel-default">
-                <div class="panel-heading">
-<footer class="post-info">
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-12-01T02:37:00"> Sun 01 December 2013</time>
-    </span>
-
-
-    <span class="Vizualization">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/vizualization">Vizualization</a>
-    </span>
-
-
-	<span>
-	<i class="fa fa-tag"></i>
-		<a href="http://spencerboucher.com/tags/cartography/">cartography</a>
-	        /
-		<a href="http://spencerboucher.com/tags/maps/">maps</a>
-
-    
-</footer><!-- /.post-info -->                </div>
-                <div class="list-group">
-                    <a href="http://spencerboucher.com/map-time-at-stamen/" class="list-group-item">
-                        <h2>Map-time at&nbsp;Stamen</h2>
-                        <div class="summary">
-                            <p>Last week, a classmate and I took a break from coursework to attend one of the many great Meetup events that San Francisco has to offer for data science practitioners. I’ve been pushing myself to attend at least one data-centric Meetup every week, because these events are one of ...</p>
-                        </div>
-                    </a>
-            </article>
-    
-        <ul class="pagination">
-                <li class="prev"><a href="http://spencerboucher.com/index2.html">&laquo;</a>
-                </li>
-                    <li class=""><a
-                            href="http://spencerboucher.com/index.html">1</a></li>
-                    <li class=""><a
-                            href="http://spencerboucher.com/index2.html">2</a></li>
-                    <li class="active"><a
-                            href="http://spencerboucher.com/index3.html">3</a></li>
-                    <li class=""><a
-                            href="http://spencerboucher.com/index4.html">4</a></li>
-                    <li class=""><a
-                            href="http://spencerboucher.com/index5.html">5</a></li>
-                    <li class=""><a
-                            href="http://spencerboucher.com/index6.html">6</a></li>
-                <li class="next"><a
-                        href="http://spencerboucher.com/index4.html">&raquo;</a></li>
-        </ul>
+        </section>
     </div>
 
 
 <div class="col-sm-3" id="sidebar">
 
+        <div class="btn-group btn-group-lg btn-group-justified text-center" style="margin: 20px auto;">
+                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/sankey/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
+        </div>
  
 
 
