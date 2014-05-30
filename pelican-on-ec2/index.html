@@ -117,7 +117,7 @@ justmytwospence            </a>
                     <h1>Hosting a Pelican blog on <span class="caps">EC2</span></h1>
 <footer class="post-info">
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-05-30T16:22:10"> Fri 30 May 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-05-30T16:42:06"> Fri 30 May 2014</time>
     </span>
 
 
@@ -153,7 +153,7 @@ sudo service httpd start                        <span class="c"># start webserve
 </pre></div>
 
 
-<p>Modify these lines in your local <code>Makefile</code> (again with your owwn <code>.pem</code> <span class="amp">&amp;</span> <span class="caps">IP</span>:</p>
+<p>Modify these lines in your local <code>Makefile</code> (again with your own <code>.pem</code> <span class="amp">&amp;</span> <span class="caps">IP</span>:</p>
 <div class="highlight"><pre><span class="nv">SSH_HOST</span><span class="o">=</span>54.201.31.202
 <span class="nv">SSH_USER</span><span class="o">=</span>ec2-user
 <span class="nv">SSH_TARGET_DIR</span><span class="o">=</span>/var/www/html
@@ -163,7 +163,7 @@ ssh_upload: publish
 </pre></div>
 
 
-<p>Now, <code>make ssh_upload</code> will act like <code>make github</code>, except for your <span class="caps">EC2</span> server. After you do this the first time, you should be able to access your website at the elastic <span class="caps">IP</span> address. For example, this website is now (temporarily) accessible at both spencerboucher.com <em>and</em> <a href="http://54.201.31.202/">54.201.31.202</a>. The advantage here is that now we have full access to the web server for using logstash and the&nbsp;like.</p>
+<p>Now, <code>make ssh_upload</code> will act just like <code>make github</code> does, except it will push to your <span class="caps">EC2</span> server instead of your <code>gh-pages</code> branch. After you do this the first time, you should be able to access your website at the elastic <span class="caps">IP</span> address. For example, this website is now (temporarily) accessible at both spencerboucher.com <em>and</em> <a href="http://54.201.31.202/">54.201.31.202</a>. The advantage here is that now we have full access to the web server for using logstash and the&nbsp;like.</p>
                 </div>
                 <!-- /.entry-content -->
     <hr/>
