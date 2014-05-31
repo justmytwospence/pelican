@@ -10,7 +10,7 @@ DEFAULT_DATE = 'fs'
 SITEURL = ''
 
 # Theme
-THEME = 'bootstrap3'
+THEME = '../pelican-bootstrap3'
 BOOTSTRAP_THEME = 'solarizedlight'
 #BOOTSTRAP_NAVBAR_INVERSE = True
 PYGMENTS_STYLE = 'solarizeddark'
@@ -43,11 +43,11 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
-PLUGIN_PATH = 'pelican-plugins'
+PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = ['liquid_tags.notebook',
-		   'pelican-dynamic',
-		   'pelican_youtube',
-		   'neighbors']
+           'pelican-dynamic',
+           'pelican_youtube',
+           'neighbors']
 
 # Set paths to resources
 DEFAULT_PAGINATION = 5
@@ -55,10 +55,10 @@ DEFAULT_CATEGORY = 'Misc'
 FILENAME_METADATA = '(?P<slug>.*)' # Filename = slug
 USE_FOLDER_AS_CATEGORY = True
 
-# URLs 
-# These settings cause articles, pages, and 
+# URLs
+# These settings cause articles, pages, and
 # categorys to share a namespace; collions will
-# generate an error! But I prefer the simpler URLs. 
+# generate an error! But I prefer the simpler URLs.
 ARTICLE_URL = "{slug}/"
 ARTICLE_SAVE_AS = "{slug}/index.html"
 
