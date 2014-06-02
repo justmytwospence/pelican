@@ -7,7 +7,7 @@
 &lt;p&gt;&lt;img alt="ec2-3" src="http://spencerboucher.com/images/ec2-3.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="ec2-4" src="http://spencerboucher.com/images/ec2-4.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Give the instance an elastic IP address by clicking "Elastic IPs" on the console sidebar. Click "Allocate New Address" and then right click the resulting address and click "Associate Address" (the instance field should automatically populate when you click in it). Make note of your elastic IP (mine is &lt;code&gt;54.201.31.202&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img alt="ec2-5" src="{filename}/images/ec2-5.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ec2-5" src="http://spencerboucher.com/images/ec2-5.png" /&gt;&lt;/p&gt;
 &lt;p&gt;SSH into your new instance, substituting your own IP and &lt;code&gt;.pem&lt;/code&gt; file of course:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ssh -i /PATH/TO/*.pem ec2-user@54.201.31.202
 &lt;/pre&gt;&lt;/div&gt;
