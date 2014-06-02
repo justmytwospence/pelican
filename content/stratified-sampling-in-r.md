@@ -1,6 +1,6 @@
 title: Stratified sampling in R
 date: 2014-01-10
-scripts: tooltip.js
+tags: R, sampling
 
 I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my own.  
 
