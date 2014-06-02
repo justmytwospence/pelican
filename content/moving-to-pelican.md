@@ -12,6 +12,8 @@ I've made many aesthetic tweaks, including a full-page width article layout, cus
 
 It's all very much still a work in progress. As I have time, I will continue to update and document the framework. The hope is that eventually any data scientist with limited front-end knowledge (ie *me!*) can start publishing their work in one place within 20 minutes.  If anyone has thoughts or comments please comment! Pull requests would be very welcome but heads up because I'm still new to the world of collaborative open-source.
 
+</br>
+
 <div class="text-center">
 	<a type="button" class="btn btn-primary btn-lg" target="_blank" href="http://github.com/justmytwospence/pelican">
 		Check out the framework on GitHub
