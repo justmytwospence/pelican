@@ -158,6 +158,7 @@ justmytwospence            </a>
 <p>The primo static blog generator out there seems to be <a href="jekyllrb.com/">Jekyll</a> (its even the one that GitHub Pages seems to recommend). Jekyll seems really nice, but its written in Ruby and I'm more of a Python kinda guy. I actually built a quick and dirty version of the blog in <a href="http://octopress.org/">Jekyll/Octopress</a> to see what it was all about, which was a great exercise in learning the basics of Ruby and rbenv, etc., but in the end I opted for the pre-eminent <em>Python</em> solution: <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> (an anagram of calepin, meaning "notebook" in French, in case you were wondering). Pelican blogs are highly themeable/customizable, and I knew that I wanted a theme based on <a href="getbootstrap.com">Twitter Bootstrap</a>, because I'm familiar with it from building a few <a href="http://shiny.rstudio.com/">Shiny applications</a>, and its very ${powerful, simple, systematic, well-documented}. There's a few Bootstrap based Pelican themes out there, but <a href="https://github.com/DandyDev/pelican-bootstrap3">pelican-bootstrap3</a> by <a href="http://dandydev.net/">DandyDev</a> is my favorite and is based on the most recent Bootstrap release.  </p>
 <p>I've made many aesthetic tweaks, including a full-page width article layout, custom typography via <a href="https://www.google.com/fonts‎">Google Fonts</a> and changes to the sidebar/article index/navbar. I've added a few javascript and CSS files grant built-in support for MathJax, <a href="{filename}/R/ggplot-goodness.html">Knitr documents</a>, GitHub themed Pygments code blocks, and interactive Bootstrap elements (like the tooltips on the Category section of the sidebar to the right). I'm using the <a href="https://github.com/wrobstory/pelican_dynamic‎">pelican_dynamic</a> plugin to make <a href="{filename}/Vizualization/d3-test.html">D3</a> and any other arbitrary scripts includeable within individual posts. A modified version of the <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid_tags</a> plugin makes it possible to include <a href="{filename}/Python/contract-optimization.md">IPython notebooks</a> or even select pieces of a notebook.  </p>
 <p>It's all very much still a work in progress. As I have time, I will continue to update and document the framework. The hope is that eventually any data scientist with limited front-end knowledge (ie <em>me!</em>) can start publishing their work in one place within 20 minutes.  If anyone has thoughts or comments please comment! Pull requests would be very welcome but heads up because I'm still new to the world of collaborative open-source.</p>
+<p></br></p>
 <div class="text-center">
     <a type="button" class="btn btn-primary btn-lg" target="_blank" href="http://github.com/justmytwospence/pelican">
         Check out the framework on GitHub
@@ -204,7 +205,7 @@ justmytwospence            </a>
 
         <div class="btn-group btn-group-lg btn-group-justified text-center" style="margin: 20px auto;">
                 <a type="button" class="btn btn-primary" href="http://spencerboucher.com/contract-optimization/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
-                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/sankey/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
+                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/imdb-shiny/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
         </div>
  
 
@@ -234,16 +235,13 @@ justmytwospence            </a>
                     <a class="tag-3" href="http://spencerboucher.com/tags/cron/">
                         cron
                     </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/crowdsourcing/">
-                        crowdsourcing
-                    </a>
                     <a class="tag-3" href="http://spencerboucher.com/tags/d3js/">
                         D3.js
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/design/">
                         design
                     </a>
-                    <a class="tag-2" href="http://spencerboucher.com/tags/ec2/">
+                    <a class="tag-1" href="http://spencerboucher.com/tags/ec2/">
                         ec2
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/economics/">
@@ -294,7 +292,7 @@ justmytwospence            </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/sankey-diagram/">
                         Sankey diagram
                     </a>
-                    <a class="tag-2" href="http://spencerboucher.com/tags/shiny/">
+                    <a class="tag-1" href="http://spencerboucher.com/tags/shiny/">
                         shiny
                     </a>
                     <a class="tag-3" href="http://spencerboucher.com/tags/stepwise/">
@@ -305,6 +303,9 @@ justmytwospence            </a>
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/tex/">
                         tex
+                    </a>
+                    <a class="tag-5" href="http://spencerboucher.com/tags/visualization/">
+                        visualization
                     </a>
             </div>
         </section>
