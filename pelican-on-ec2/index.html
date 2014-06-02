@@ -22,7 +22,7 @@
             <meta property="og:title" content="Hosting a Pelican blog on EC2"/>
             <meta property="og:url" content="http://spencerboucher.com/pelican-on-ec2/"/>
             <meta property="og:description" content="Let&#39;s experiment with different ways of deploying websites!"/>
-            <meta property="article:published_time" content="2014-05-30" />
+            <meta property="article:published_time" content="2014-06-02" />
                 <meta property="article:section" content="Misc" />
                 <meta property="article:tag" content="ec2" />
                 <meta property="article:tag" content="pelican" />
@@ -117,7 +117,7 @@ justmytwospence            </a>
 <footer class="post-info">
 
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-05-30T16:42:06"> Fri 30 May 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-06-02T00:39:53"> Mon 02 June 2014</time>
     </span>
 
 
@@ -132,9 +132,15 @@ justmytwospence            </a>
 
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <p>This blog is hosted on the totally rad GitHub pages platform, but for my web analytics class, I need to mirror it on a server that I have full access to so that I can play around with server-side logging and all that jazz. I couldn't find any good tutorials about pushing a pelican blog to your own remote server, but some experimentation proved it to be rather simple, so here it is for classmates/posterity.</p>
-<p>Launch an Amazon EC2 instance with the default Amazon Linux AMI (micro instance). Before you launch it, add an <code>HTTP</code> security rule. The port will default to 80. This allows anyone to access the site once the webserver is running.</p>
+                    <p>This blog is hosted on the totally rad GitHub pages platform, but for my web analytics class, I need to mirror it on a server that I have full access to so that I can play around with server-side logging and all that jazz. I couldn't find any good tutorials about pushing a pelican blog to your own remote server, but some experimentation proved it to be rather simple, so here it is for classmates/posterity. I will assume general familiarity with AWS and <code>.pem</code> files, etc.</p>
+<p>Launch an Amazon EC2 instance with the default Amazon Linux AMI (micro instance). Most of this can be done from the command line (see some of my previous posts for some examples), but we'll stick with the console GUI. Just follow the red boxes.</p>
+<p><img alt="ec2-1" src="http://spencerboucher.com/images/ec2-1.png" /></p>
+<p><img alt="ec2-2" src="http://spencerboucher.com/images/ec2-2.png" /></p>
+<p>Before you launch it, add an <code>HTTP</code> security rule. The port will default to 80. This allows anyone to access the site once the webserver is running.</p>
+<p><img alt="ec2-3" src="http://spencerboucher.com/images/ec2-3.png" /></p>
+<p><img alt="ec2-4" src="http://spencerboucher.com/images/ec2-4.png" /></p>
 <p>Give the instance an elastic IP address by clicking "Elastic IPs" on the console sidebar. Click "Allocate New Address" and then right click the resulting address and click "Associate Address" (the instance field should automatically populate when you click in it). Make note of your elastic IP (mine is <code>54.201.31.202</code>).</p>
+<p><img alt="ec2-5" src="{filename}/images/ec2-5.png" /></p>
 <p>SSH into your new instance, substituting your own IP and <code>.pem</code> file of course:</p>
 <div class="highlight"><pre>ssh -i /PATH/TO/*.pem ec2-user@54.201.31.202
 </pre></div>
@@ -149,7 +155,7 @@ sudo service httpd start                        <span class="c"># start webserve
 </pre></div>
 
 
-<p>Modify these lines in your local <code>Makefile</code> (again with your own <code>.pem</code> &amp; IP:</p>
+<p>Modify these lines in your local <code>Makefile</code> (again with your own <code>.pem</code> &amp; IP):</p>
 <div class="highlight"><pre><span class="nv">SSH_HOST</span><span class="o">=</span>54.201.31.202
 <span class="nv">SSH_USER</span><span class="o">=</span>ec2-user
 <span class="nv">SSH_TARGET_DIR</span><span class="o">=</span>/var/www/html
@@ -200,8 +206,7 @@ ssh_upload: publish
 <div class="col-sm-3" id="sidebar">
 
         <div class="btn-group btn-group-lg btn-group-justified text-center" style="margin: 20px auto;">
-                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/sankey/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
-                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/reddit/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
+                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/ggplot-goodness/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
         </div>
  
 
@@ -228,16 +233,22 @@ ssh_upload: publish
                     <a class="tag-3" href="http://spencerboucher.com/tags/cartography/">
                         cartography
                     </a>
+                    <a class="tag-5" href="http://spencerboucher.com/tags/color/">
+                        color
+                    </a>
                     <a class="tag-3" href="http://spencerboucher.com/tags/cron/">
                         cron
                     </a>
-                    <a class="tag-3" href="http://spencerboucher.com/tags/d3js/">
+                    <a class="tag-5" href="http://spencerboucher.com/tags/crowdsourcing/">
+                        crowdsourcing
+                    </a>
+                    <a class="tag-2" href="http://spencerboucher.com/tags/d3js/">
                         D3.js
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/design/">
                         design
                     </a>
-                    <a class="tag-1" href="http://spencerboucher.com/tags/ec2/">
+                    <a class="tag-2" href="http://spencerboucher.com/tags/ec2/">
                         ec2
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/economics/">
@@ -252,20 +263,14 @@ ssh_upload: publish
                     <a class="tag-5" href="http://spencerboucher.com/tags/freesurfer/">
                         Freesurfer
                     </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/ggplot2/">
-                        ggplot2
+                    <a class="tag-3" href="http://spencerboucher.com/tags/ipython/">
+                        ipython
                     </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/hierarchy-of-needs/">
-                        Hierarchy of needs
-                    </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/ideas-worth-spreading/">
-                        ideas worth spreading
+                    <a class="tag-2" href="http://spencerboucher.com/tags/knitr/">
+                        knitr
                     </a>
                     <a class="tag-3" href="http://spencerboucher.com/tags/machine-learning/">
                         machine learning
-                    </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/mooc/">
-                        MOOC
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/networkx/">
                         NetworkX
@@ -276,19 +281,22 @@ ssh_upload: publish
                     <a class="tag-3" href="http://spencerboucher.com/tags/pelican/">
                         pelican
                     </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/politics/">
-                        politics
-                    </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/prediction/">
                         prediction
+                    </a>
+                    <a class="tag-3" href="http://spencerboucher.com/tags/python/">
+                        python
                     </a>
                     <a class="tag-1" href="http://spencerboucher.com/tags/r/">
                         R
                     </a>
+                    <a class="tag-5" href="http://spencerboucher.com/tags/sampling/">
+                        sampling
+                    </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/sankey-diagram/">
                         Sankey diagram
                     </a>
-                    <a class="tag-1" href="http://spencerboucher.com/tags/shiny/">
+                    <a class="tag-2" href="http://spencerboucher.com/tags/shiny/">
                         shiny
                     </a>
                     <a class="tag-3" href="http://spencerboucher.com/tags/stepwise/">
@@ -299,9 +307,6 @@ ssh_upload: publish
                     </a>
                     <a class="tag-5" href="http://spencerboucher.com/tags/tex/">
                         tex
-                    </a>
-                    <a class="tag-5" href="http://spencerboucher.com/tags/visualization/">
-                        visualization
                     </a>
             </div>
         </section>
