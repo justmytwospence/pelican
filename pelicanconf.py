@@ -12,11 +12,8 @@ SITEURL = ''
 # Theme
 THEME = '../pelican-bootstrap3'
 BOOTSTRAP_THEME = 'solarizedlight'
-#BOOTSTRAP_NAVBAR_INVERSE = True
 PYGMENTS_STYLE = 'solarizeddark'
-PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 FAVICON = '/favicon.ico'
-TYPOGRIFY = True
 
 # Display Switches
 DISPLAY_ARCHIVES = False
@@ -34,8 +31,6 @@ TAG_CLOUD_MAX_ITEMS = 30
 SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
           ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
           ('RSS', SITEURL + 'feeds/all.atom.xml'))
-#ABOUT_ME = ''
-#AVATAR = 'images/avatar.png'
 
 # Plugins
 STATIC_PATHS = ['images', 'pdfs', 'extra']
@@ -52,8 +47,8 @@ PLUGINS = ['liquid_tags.notebook',
 # Set paths to resources
 DEFAULT_PAGINATION = 5
 DEFAULT_CATEGORY = 'Misc'
-FILENAME_METADATA = '(?P<slug>.*)' # Filename = slug
-USE_FOLDER_AS_CATEGORY = True
+FILENAME_METADATA = '(?P<slug>.*)' #  Filename = slug
+USE_FOLDER_AS_CATEGORY = False
 
 # URLs
 # These settings cause articles, pages, and
