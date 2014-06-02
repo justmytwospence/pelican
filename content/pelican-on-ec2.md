@@ -1,4 +1,5 @@
 title: Hosting a Pelican blog on EC2
+date: 2014-05-29
 tags: ec2, pelican
 summary: Let's experiment with different ways of deploying websites!
 
