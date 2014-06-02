@@ -7,7 +7,7 @@
     <!-- Google fonts! -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
 
-    <title>Contract Optimization - justmytwospence</title>
+    <title>Contract Optimization - justmytwospence</title>
     
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,18 +19,17 @@
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Contract Optimization"/>
+            <meta property="og:title" content="Contract Optimization"/>
             <meta property="og:url" content="http://spencerboucher.com/contract-optimization/"/>
             <meta property="og:description" content="This was a recent homework assignment; I&#39;m including it here merely as my first test of embedding IPython notebooks into the blog."/>
             <meta property="article:published_time" content="2014-03-30" />
-                <meta property="article:section" content="Python" />
+                <meta property="article:section" content="Misc" />
                 <meta property="article:author" content="Spencer Boucher" />
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
     <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://spencerboucher.com/theme/css/pygments/solarizeddark.css" rel="stylesheet">
-        <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://spencerboucher.com/theme/css/style.css" type="text/css"/>
 
         <link href="http://spencerboucher.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -112,24 +111,21 @@ justmytwospence            </a>
         <section id="content">
             <article>
                 <header class="page-header">
-                    <h1>Contract&nbsp;Optimization</h1>
+                    <h1>Contract Optimization</h1>
 <footer class="post-info">
+
     <span class="published">
         <i class="fa fa-calendar"></i><time datetime="2014-03-30T01:23:48"> Sun 30 March 2014</time>
     </span>
 
 
-    <span class="Python">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/python">Python</a>
-    </span>
 
 
 
-    
+
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <p>This was a recent homework assignment; I&#8217;m including it here merely as my first test of embedding IPython notebooks into the&nbsp;blog.</p>
+                    <p>This was a recent homework assignment; I'm including it here merely as my first test of embedding IPython notebooks into the blog.</p>
 <p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -152,7 +148,7 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question&nbsp;1</strong></p>
+<p><strong>Question 1</strong></p>
 </div>
 </div>
 </div>
@@ -165,7 +161,7 @@ In&nbsp;[1]:
 $$\pi=a+\epsilon$$
 $$U(w,a)=-e^{-(w-c\cdot a^{2})}$$
 $$w=t+s\cdot \pi$$
-Where $t$ is the employee&#39;s base pay, $U$ is the employee&#39;s happiness, $a$ is the employee&#39;s disinclination towards work (which I will refer to as their &quot;coefficient of laziness&quot;), and $\pi$ is the revenue earned by an employee. We can plug some numbers into these equations to observe how each of these variables affects an employee&#39;s happiness, holding the rest of the variables&nbsp;constant.</p>
+Where $t$ is the employee&#39;s base pay, $U$ is the employee&#39;s happiness, $a$ is the employee&#39;s disinclination towards work (which I will refer to as their &quot;coefficient of laziness&quot;), and $\pi$ is the revenue earned by an employee. We can plug some numbers into these equations to observe how each of these variables affects an employee&#39;s happiness, holding the rest of the variables constant.</p>
 </div>
 </div>
 </div>
@@ -1344,10 +1340,10 @@ AAAAAAAAAAAAAAAAg+f/Ac4glD0+jrK7AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can take away a few patterns from these&nbsp;graphs.</p>
-<p>Our workers have a relatively stable happiness regardless of how hard they work, <em>until</em> their level of work begins to approach their pay (at least for a worker whose&nbsp;$c=1$).</p>
-<p>As their pay increases they gradually become happier, plateauing when their pay reaches 2 or 3 times their level of work (again, for a worker whose&nbsp;$c=1$).</p>
-<p>As their disinclination towards work increases, their happiness stays relatively constant until their laziness approaches their pay, similar to the effect of $a$ but not quite as&nbsp;abrupt.</p>
+<p>We can take away a few patterns from these graphs.</p>
+<p>Our workers have a relatively stable happiness regardless of how hard they work, <em>until</em> their level of work begins to approach their pay (at least for a worker whose $c=1$).</p>
+<p>As their pay increases they gradually become happier, plateauing when their pay reaches 2 or 3 times their level of work (again, for a worker whose $c=1$).</p>
+<p>As their disinclination towards work increases, their happiness stays relatively constant until their laziness approaches their pay, similar to the effect of $a$ but not quite as abrupt.</p>
 </div>
 </div>
 </div>
@@ -1356,7 +1352,7 @@ AAAAAAAAAAAAAAAAg+f/Ac4glD0+jrK7AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question&nbsp;2</strong></p>
+<p><strong>Question 2</strong></p>
 </div>
 </div>
 </div>
@@ -2157,7 +2153,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADApv5/GX+Wbi4H3yIAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This plot demonstrates the somewhat surprising result that base pay $t$ has no effect on how hard an employee will work (at least for an employee whose $c=0.5$). Although a higher base pay will certainly increase their happiness, it does <em>not</em> incentivize them. This fact manifests itself in two ways, first in the $(0,0)$ origin, reflecting the fact that if we do not include any commission at all, there is no incentive to do  any work at all (a fact already noted and bemoaned by my dear father). Second, the slope of the effect is constant across both (read: any) values of base pay, which is why the lines are actually on top of each other (hence the purple) and base pay does not make a&nbsp;difference.</p>
+<p>This plot demonstrates the somewhat surprising result that base pay $t$ has no effect on how hard an employee will work (at least for an employee whose $c=0.5$). Although a higher base pay will certainly increase their happiness, it does <em>not</em> incentivize them. This fact manifests itself in two ways, first in the $(0,0)$ origin, reflecting the fact that if we do not include any commission at all, there is no incentive to do  any work at all (a fact already noted and bemoaned by my dear father). Second, the slope of the effect is constant across both (read: any) values of base pay, which is why the lines are actually on top of each other (hence the purple) and base pay does not make a difference.</p>
 </div>
 </div>
 </div>
@@ -2166,7 +2162,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADApv5/GX+Wbi4H3yIAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question&nbsp;3</strong></p>
+<p><strong>Question 3</strong></p>
 </div>
 </div>
 </div>
@@ -2175,7 +2171,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADApv5/GX+Wbi4H3yIAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we have a model for how hard each lawyer will work for a given commision rate, we can determine what our revenue will be for that given commission rate (at least in expectation). This allows us to optimize for our profits ($\pi-w$), rather than for the happiness of our lazy-ass&nbsp;employees.</p>
+<p>Now that we have a model for how hard each lawyer will work for a given commision rate, we can determine what our revenue will be for that given commission rate (at least in expectation). This allows us to optimize for our profits ($\pi-w$), rather than for the happiness of our lazy-ass employees.</p>
 </div>
 </div>
 </div>
@@ -4382,8 +4378,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4K7wF/H/BVj59SwhAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Profits are clearly highest when base pay is set to zero (the purple curve), which represents a purely commission-based payment system. This makes sense in light of our previous finding that base pay does not incentivize working harder, which therefore means that it does not actually drive any&nbsp;revenue.</p>
-<p><em>Regardless of base pay</em>, <strong>the optimal commission rate is 0.5</strong>, or half of the employee&#39;s earned revenue, which is denoted by the dashed&nbsp;line.</p>
+<p>Profits are clearly highest when base pay is set to zero (the purple curve), which represents a purely commission-based payment system. This makes sense in light of our previous finding that base pay does not incentivize working harder, which therefore means that it does not actually drive any revenue.</p>
+<p><em>Regardless of base pay</em>, <strong>the optimal commission rate is 0.5</strong>, or half of the employee&#39;s earned revenue, which is denoted by the dashed line.</p>
 </div>
 </div>
 </div>
@@ -4392,7 +4388,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4K7wF/H/BVj59SwhAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question&nbsp;4</strong></p>
+<p><strong>Question 4</strong></p>
 </div>
 </div>
 </div>
@@ -4401,7 +4397,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4K7wF/H/BVj59SwhAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Different employees will obviously have different propensities for work, which we represent with different values of $c$ for each employee. Now we will visualize how the happiness of different employees changes over possible commission rates we could offer&nbsp;them.</p>
+<p>Different employees will obviously have different propensities for work, which we represent with different values of $c$ for each employee. Now we will visualize how the happiness of different employees changes over possible commission rates we could offer them.</p>
 </div>
 </div>
 </div>
@@ -6000,8 +5996,8 @@ kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkjTu/D8WfPo8OfYoJwAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All three of these employees would end up maximizing their happiness by choosing a commission rate of 100%, unsurprisingly (those greedy&nbsp;bastards).</p>
-<p>Lastly, we will check to see if our optimal commission rate is different for employees that have different values of&nbsp;$c$.</p>
+<p>All three of these employees would end up maximizing their happiness by choosing a commission rate of 100%, unsurprisingly (those greedy bastards).</p>
+<p>Lastly, we will check to see if our optimal commission rate is different for employees that have different values of $c$.</p>
 </div>
 </div>
 </div>
@@ -7808,7 +7804,7 @@ EREREREREREREREREREREREREREREREREREREREREQnp/wO6racrcJ0mAQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It appears that <strong>the optimal commission rate is independent of the employee&#39;s coefficient of laziness</strong>, even though the actual profit the firm makes most certainly is <em>not</em>. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&#39;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the&nbsp;same.</p>
+<p>It appears that <strong>the optimal commission rate is independent of the employee&#39;s coefficient of laziness</strong>, even though the actual profit the firm makes most certainly is <em>not</em>. Therefore, 0.5 would be our ideal choice for a company-wide commission rate. Even if the distribution of our employee&#39;s coefficients of laziness was not uniform (for example if we had more lazy employees than hard-working employees), this optimal commission rate will remain the same.</p>
 </div>
 </div>
 </div></p>

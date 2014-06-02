@@ -7,7 +7,7 @@
     <!-- Google fonts! -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
 
-    <title>Sankey diagram fun - justmytwospence</title>
+    <title>Sankey diagram fun - justmytwospence</title>
     
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +19,11 @@
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Sankey diagram fun"/>
+            <meta property="og:title" content="Sankey diagram fun"/>
             <meta property="og:url" content="http://spencerboucher.com/sankey/"/>
             <meta property="og:description" content="Let&#39;s have some fun with some unconventional data munging and an unconventional data visualization technique, using our three favorite tools: Python, R, and D3."/>
             <meta property="article:published_time" content="2014-05-13" />
-                <meta property="article:section" content="Python" />
+                <meta property="article:section" content="Misc" />
                 <meta property="article:tag" content="Python" />
                 <meta property="article:tag" content="R" />
                 <meta property="article:tag" content="Sankey diagram" />
@@ -36,7 +36,6 @@
         <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
     <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://spencerboucher.com/theme/css/pygments/solarizeddark.css" rel="stylesheet">
-        <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://spencerboucher.com/theme/css/style.css" type="text/css"/>
 
         <link href="http://spencerboucher.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -116,17 +115,14 @@ justmytwospence            </a>
         <section id="content">
             <article>
                 <header class="page-header">
-                    <h1>Sankey diagram&nbsp;fun</h1>
+                    <h1>Sankey diagram fun</h1>
 <footer class="post-info">
+
     <span class="published">
         <i class="fa fa-calendar"></i><time datetime="2014-05-13T21:11:46"> Tue 13 May 2014</time>
     </span>
 
 
-    <span class="Python">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/python">Python</a>
-    </span>
 
 
 	<span>
@@ -143,7 +139,7 @@ justmytwospence            </a>
 	        /
 		<a href="http://spencerboucher.com/tags/d3js/">D3.js</a>
 
-    
+
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
                     <p>
@@ -152,7 +148,7 @@ justmytwospence            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I&#39;m currently working on the final project for my data visualization course. The dataset that I&#39;ve chosen to work with can be <a href="http://snap.stanford.edu/data/web-Reddit.html">downloaded here</a> &#8212; it&#39;s a compendium Reddit resubmissions over a period of several years (ie, images that were submitted to more than one and/or to multiple subreddits). I waffled for a long time trying to decide what the best way to visualize the <em>flow</em> of images through various subreddits would be, but just in the nick of time, I stumbled across Christopher Gandrud&#39;s new <a href="http://christophergandrud.github.io/d3Network/">d3Network package for R</a>, and that was enough cause for me to settle on a Sankey diagram. If you&#39;ve never heard of Reddit, the illustrious <span class="caps">CPG</span> Grey will enlighten&nbsp;you.</p>
+<p>I&#39;m currently working on the final project for my data visualization course. The dataset that I&#39;ve chosen to work with can be <a href="http://snap.stanford.edu/data/web-Reddit.html">downloaded here</a> -- it&#39;s a compendium Reddit resubmissions over a period of several years (ie, images that were submitted to more than one and/or to multiple subreddits). I waffled for a long time trying to decide what the best way to visualize the <em>flow</em> of images through various subreddits would be, but just in the nick of time, I stumbled across Christopher Gandrud&#39;s new <a href="http://christophergandrud.github.io/d3Network/">d3Network package for R</a>, and that was enough cause for me to settle on a Sankey diagram. If you&#39;ve never heard of Reddit, the illustrious CPG Grey will enlighten you.</p>
 </div>
 </div>
 </div>
@@ -201,8 +197,8 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The task of massaging columnar data consisting of an image <span class="caps">ID</span>, subreddit name, and timestamp for each submission into a more networky format suitable for this type of visualization was interesting enough that I thought it might be a good post. If nothing else, Christopher&#39;s awesome package deserves some&nbsp;love.</p>
-<p>Python is my go-to language for data munging of this calibre, so we will use a Pandas -&gt; NetworkX -&gt; R -&gt; D3 worflow. Without further ado, lets load the Python modules we will need and take a look at the&nbsp;data.</p>
+<p>The task of massaging columnar data consisting of an image ID, subreddit name, and timestamp for each submission into a more networky format suitable for this type of visualization was interesting enough that I thought it might be a good post. If nothing else, Christopher&#39;s awesome package deserves some love.</p>
+<p>Python is my go-to language for data munging of this calibre, so we will use a Pandas -&gt; NetworkX -&gt; R -&gt; D3 worflow. Without further ado, lets load the Python modules we will need and take a look at the data.</p>
 </div>
 </div>
 </div>
@@ -275,7 +271,7 @@ In&nbsp;[2]:
       <td> 0</td>
       <td> 1333172439</td>
       <td> 2012-03-31T12:40:39.590113-07:00</td>
-      <td>          And here&#8217;s a downvote.</td>
+      <td>          And here's a downvote.</td>
       <td> 63470</td>
       <td> rmqjs</td>
       <td> 32657</td>
@@ -352,7 +348,7 @@ In&nbsp;[2]:
     </tr>
   </tbody>
 </table>
-<p>5 rows × 13&nbsp;columns</p>
+<p>5 rows × 13 columns</p>
 </div>
 </div>
 
@@ -367,15 +363,15 @@ In&nbsp;[2]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that I first called <code>csvclean</code>, from the <a href="http://csvkit.readthedocs.org/en/latest/index.html">csvkit suite of command line utilities</a>. The bang (!) symbol calls the command line from IPython. <code>csvclean</code> fixes a couple of formatting errors in the original dataset that interfere with R/Panda&#39;s parsing functions (something to do with quotes or commas in the &quot;title&quot; field, I believe). The repaired <span class="caps">CSV</span> is saved with a <code>_out</code> prepended to the filename. Nothing fancy is required for the <code>read_csv</code> call in our&nbsp;case.</p>
-<p>Now for the hard/interesting part. How do we map the flow of each image submission through the various&nbsp;subreddits?</p>
+<p>Note that I first called <code>csvclean</code>, from the <a href="http://csvkit.readthedocs.org/en/latest/index.html">csvkit suite of command line utilities</a>. The bang (!) symbol calls the command line from IPython. <code>csvclean</code> fixes a couple of formatting errors in the original dataset that interfere with R/Panda&#39;s parsing functions (something to do with quotes or commas in the &quot;title&quot; field, I believe). The repaired CSV is saved with a <code>_out</code> prepended to the filename. Nothing fancy is required for the <code>read_csv</code> call in our case.</p>
+<p>Now for the hard/interesting part. How do we map the flow of each image submission through the various subreddits?</p>
 <ul>
-<li>First we sort by image and (crucially) timetamp on line&nbsp;4.</li>
-<li>On line 5, I simply extract the 3 columns that we care&nbsp;about. </li>
-<li>Now we drop resubmissions of each image to the <em>same</em> subreddit with drop_duplicates on line 6, which only keeps each image&#39;s <em>first</em> submission to a particular subreddit (why we sorted&nbsp;first). </li>
-<li>The last thing we need Pandas for is to group by image <span class="caps">ID</span> (line&nbsp;7).</li>
+<li>First we sort by image and (crucially) timetamp on line 4.</li>
+<li>On line 5, I simply extract the 3 columns that we care about. </li>
+<li>Now we drop resubmissions of each image to the <em>same</em> subreddit with drop_duplicates on line 6, which only keeps each image&#39;s <em>first</em> submission to a particular subreddit (why we sorted first). </li>
+<li>The last thing we need Pandas for is to group by image ID (line 7).</li>
 </ul>
-<p>On line 7, we pull the list of subreddits (now unique and nicely ordered) for each image. The nested list comprehension is necessary only because calling <code>.subreddit</code> on the groupby object <code>g</code> returns a tuple by default, and we&#39;d rather have a list of&nbsp;lists.</p>
+<p>On line 7, we pull the list of subreddits (now unique and nicely ordered) for each image. The nested list comprehension is necessary only because calling <code>.subreddit</code> on the groupby object <code>g</code> returns a tuple by default, and we&#39;d rather have a list of lists.</p>
 </div>
 </div>
 </div>
@@ -406,8 +402,8 @@ In&nbsp;[3]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we need a function <code>window</code> that rolls along each of the lists in <code>flow</code> and connects every subsequent pair of subreddits that a particular image was submitted to. We&#39;ll do this with the help of the wonderful <code>itertools</code> module, creating two dimensional tuples that encode the &quot;from&quot; subreddit and the &quot;to&quot; subreddit, respectively. In lines 14 and 15, we apply the function and flatten the result to a single&nbsp;list.</p>
-<p>In order to truly capture the &quot;flow,&quot; however, we need to distinguish between the &quot;gifs&quot; subreddit node where images are popping up for the first time and the &quot;gifs&quot; subreddit node when the image has already appeared in another subreddit (say, &quot;pics&quot;). The <code>enumerate</code> in line 14 does this by tacking on the ordinality to the name of the node, admittedly very hacky, but we have a lot of tuples floating around&nbsp;already.</p>
+<p>Now we need a function <code>window</code> that rolls along each of the lists in <code>flow</code> and connects every subsequent pair of subreddits that a particular image was submitted to. We&#39;ll do this with the help of the wonderful <code>itertools</code> module, creating two dimensional tuples that encode the &quot;from&quot; subreddit and the &quot;to&quot; subreddit, respectively. In lines 14 and 15, we apply the function and flatten the result to a single list.</p>
+<p>In order to truly capture the &quot;flow,&quot; however, we need to distinguish between the &quot;gifs&quot; subreddit node where images are popping up for the first time and the &quot;gifs&quot; subreddit node when the image has already appeared in another subreddit (say, &quot;pics&quot;). The <code>enumerate</code> in line 14 does this by tacking on the ordinality to the name of the node, admittedly very hacky, but we have a lot of tuples floating around already.</p>
 </div>
 </div>
 </div>
@@ -445,7 +441,7 @@ In&nbsp;[4]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>At last we have a list of edges that on some level describes the flow that we are trying to get at. Now we can just iterate through them and use <code>NetworkX</code> to create the graph and weight the edges appropriately. In lines 10&#8212;13, I prune back the tiny edges that clutter up the diagram, and then the nodes that are no longer associated with any edges. Last but not least, we export the structure to a <span class="caps">JSON</span> in line&nbsp;16.</p>
+<p>At last we have a list of edges that on some level describes the flow that we are trying to get at. Now we can just iterate through them and use <code>NetworkX</code> to create the graph and weight the edges appropriately. In lines 10--13, I prune back the tiny edges that clutter up the diagram, and then the nodes that are no longer associated with any edges. Last but not least, we export the structure to a JSON in line 16.</p>
 </div>
 </div>
 </div>
@@ -484,9 +480,9 @@ In&nbsp;[5]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Time for&nbsp;R!</p>
-<p>We will need to make sure that <code>d3Network</code> is installed to the the instance of R that is used by IPython&#39;s <code>Rmagic</code> via <code>Rpy2</code>. It was different for me (I think?) so if you are running something like this for the first time, include the lines that are commented&nbsp;out.</p>
-<p>The <code>%%R</code> denotes block-level R magicks in IPython (<code>%R</code> will give you line-level&nbsp;magicks)</p>
+<p>Time for R!</p>
+<p>We will need to make sure that <code>d3Network</code> is installed to the the instance of R that is used by IPython&#39;s <code>Rmagic</code> via <code>Rpy2</code>. It was different for me (I think?) so if you are running something like this for the first time, include the lines that are commented out.</p>
+<p>The <code>%%R</code> denotes block-level R magicks in IPython (<code>%R</code> will give you line-level magicks)</p>
 </div>
 </div>
 </div>
@@ -514,8 +510,8 @@ In&nbsp;[6]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is finally the point at which Christopher Gandrud&#39;s package simplifies everything for us. We simply read in the nodes and linkes (edges) from the <span class="caps">JSON</span> file (they get converted to two dataframes). Note that we have to strip the janky ordinality numbers that we tacked onto the node names (line 3). Now that different nodes have the same names, the package will even make sure that each subreddit node has the same color every time it&nbsp;appears!</p>
-<p>The call to <code>d3Sankey</code> points to the the nodes dataframe, the links dataframe, the name of the sources/targets in the links dataframe, the name of the column that holds the link weights, and then some display configuration&nbsp;stuff.</p>
+<p>This is finally the point at which Christopher Gandrud&#39;s package simplifies everything for us. We simply read in the nodes and linkes (edges) from the JSON file (they get converted to two dataframes). Note that we have to strip the janky ordinality numbers that we tacked onto the node names (line 3). Now that different nodes have the same names, the package will even make sure that each subreddit node has the same color every time it appears!</p>
+<p>The call to <code>d3Sankey</code> points to the the nodes dataframe, the links dataframe, the name of the sources/targets in the links dataframe, the name of the column that holds the link weights, and then some display configuration stuff.</p>
 </div>
 </div>
 </div>
@@ -564,7 +560,7 @@ In&nbsp;[7]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can render the resulting iframe directly in our IPython notebook! Hover over edges for some nice brushing or click and drag the nodes to untangle a relationship you&#39;re interested&nbsp;in.</p>
+<p>We can render the resulting iframe directly in our IPython notebook! Hover over edges for some nice brushing or click and drag the nodes to untangle a relationship you&#39;re interested in.</p>
 </div>
 </div>
 </div>
@@ -604,7 +600,7 @@ In&nbsp;[8]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This type of &quot;tiered&quot; Sankey diagram is a little unconventional, but so far its the best way I can come up with to visualize the interesting phenomenon of submisison flow through Reddit. Leave a comment if this gives you any interesting ideas, I&#39;d love to hear&nbsp;them!</p>
+<p>This type of &quot;tiered&quot; Sankey diagram is a little unconventional, but so far its the best way I can come up with to visualize the interesting phenomenon of submisison flow through Reddit. Leave a comment if this gives you any interesting ideas, I&#39;d love to hear them!</p>
 </div>
 </div>
 </div></p>

@@ -32,7 +32,6 @@
         <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
     <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://spencerboucher.com/theme/css/pygments/solarizeddark.css" rel="stylesheet">
-        <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://spencerboucher.com/theme/css/style.css" type="text/css"/>
 
         <link href="http://spencerboucher.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -114,17 +113,14 @@ justmytwospence            </a>
         <section id="content">
             <article>
                 <header class="page-header">
-                    <h1>Hosting a Pelican blog on <span class="caps">EC2</span></h1>
+                    <h1>Hosting a Pelican blog on EC2</h1>
 <footer class="post-info">
+
     <span class="published">
         <i class="fa fa-calendar"></i><time datetime="2014-05-30T16:42:06"> Fri 30 May 2014</time>
     </span>
 
 
-    <span class="Misc">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/misc">Misc</a>
-    </span>
 
 
 	<span>
@@ -133,18 +129,18 @@ justmytwospence            </a>
 	        /
 		<a href="http://spencerboucher.com/tags/pelican/">pelican</a>
 
-    
+
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <p>This blog is hosted on the totally rad GitHub pages platform, but for my web analytics class, I need to mirror it on a server that I have full access to so that I can play around with server-side logging and all that jazz. I couldn&#8217;t find any good tutorials about pushing a pelican blog to your own remote server, but some experimentation proved it to be rather simple, so here it is for&nbsp;classmates/posterity.</p>
-<p>Launch an Amazon <span class="caps">EC2</span> instance with the default Amazon Linux <span class="caps">AMI</span> (micro instance). Before you launch it, add an <code>HTTP</code> security rule. The port will default to 80. This allows anyone to access the site once the webserver is&nbsp;running.</p>
-<p>Give the instance an elastic <span class="caps">IP</span> address by clicking &#8220;Elastic IPs&#8221; on the console sidebar. Click &#8220;Allocate New Address&#8221; and then right click the resulting address and click &#8220;Associate Address&#8221; (the instance field should automatically populate when you click in it). Make note of your elastic <span class="caps">IP</span> (mine is <code>54.201.31.202</code>).</p>
-<p><span class="caps">SSH</span> into your new instance, substituting your own <span class="caps">IP</span> and <code>.pem</code> file of&nbsp;course:</p>
+                    <p>This blog is hosted on the totally rad GitHub pages platform, but for my web analytics class, I need to mirror it on a server that I have full access to so that I can play around with server-side logging and all that jazz. I couldn't find any good tutorials about pushing a pelican blog to your own remote server, but some experimentation proved it to be rather simple, so here it is for classmates/posterity.</p>
+<p>Launch an Amazon EC2 instance with the default Amazon Linux AMI (micro instance). Before you launch it, add an <code>HTTP</code> security rule. The port will default to 80. This allows anyone to access the site once the webserver is running.</p>
+<p>Give the instance an elastic IP address by clicking "Elastic IPs" on the console sidebar. Click "Allocate New Address" and then right click the resulting address and click "Associate Address" (the instance field should automatically populate when you click in it). Make note of your elastic IP (mine is <code>54.201.31.202</code>).</p>
+<p>SSH into your new instance, substituting your own IP and <code>.pem</code> file of course:</p>
 <div class="highlight"><pre>ssh -i /PATH/TO/*.pem ec2-user@54.201.31.202
 </pre></div>
 
 
-<p>Once on your&nbsp;server:</p>
+<p>Once on your server:</p>
 <div class="highlight"><pre>sudo yum update
 sudo yum install httpd                          <span class="c"># install webserver</span>
 sudo chown -R ec2-user:ec2-user /var/www/html   <span class="c"># chown future location of our website files</span>
@@ -153,7 +149,7 @@ sudo service httpd start                        <span class="c"># start webserve
 </pre></div>
 
 
-<p>Modify these lines in your local <code>Makefile</code> (again with your own <code>.pem</code> <span class="amp">&amp;</span> <span class="caps">IP</span>:</p>
+<p>Modify these lines in your local <code>Makefile</code> (again with your own <code>.pem</code> &amp; IP:</p>
 <div class="highlight"><pre><span class="nv">SSH_HOST</span><span class="o">=</span>54.201.31.202
 <span class="nv">SSH_USER</span><span class="o">=</span>ec2-user
 <span class="nv">SSH_TARGET_DIR</span><span class="o">=</span>/var/www/html
@@ -163,7 +159,7 @@ ssh_upload: publish
 </pre></div>
 
 
-<p>Now, <code>make ssh_upload</code> will act just like <code>make github</code> does, except it will push to your <span class="caps">EC2</span> server instead of your <code>gh-pages</code> branch. After you do this the first time, you should be able to access your website at the elastic <span class="caps">IP</span> address. For example, this website is now (temporarily) accessible at both spencerboucher.com <em>and</em> <a href="http://54.201.31.202/">54.201.31.202</a>. The advantage here is that now we have full access to the web server for using logstash and the&nbsp;like.</p>
+<p>Now, <code>make ssh_upload</code> will act just like <code>make github</code> does, except it will push to your EC2 server instead of your <code>gh-pages</code> branch. After you do this the first time, you should be able to access your website at the elastic IP address. For example, this website is now (temporarily) accessible at both spencerboucher.com <em>and</em> <a href="http://54.201.31.202/">54.201.31.202</a>. The advantage here is that now we have full access to the web server for using logstash and the like.</p>
                 </div>
                 <!-- /.entry-content -->
     <hr/>
@@ -205,6 +201,7 @@ ssh_upload: publish
 
         <div class="btn-group btn-group-lg btn-group-justified text-center" style="margin: 20px auto;">
                 <a type="button" class="btn btn-primary" href="http://spencerboucher.com/sankey/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
+                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/imdb-shiny/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
         </div>
  
 

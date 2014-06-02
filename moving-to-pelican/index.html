@@ -7,7 +7,7 @@
     <!-- Google fonts! -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
 
-    <title>A blogging framework a data scientist could love - justmytwospence</title>
+    <title>A blogging framework a data scientist could love - justmytwospence</title>
     
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +19,11 @@
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="A blogging framework a data scientist could love"/>
+            <meta property="og:title" content="A blogging framework a data scientist could love"/>
             <meta property="og:url" content="http://spencerboucher.com/moving-to-pelican/"/>
-            <meta property="og:description" content="It has taken a few weeks of sporadic work, but I’ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are “baked,” meaning they don’t have any databases or server-side PHP going on behind the scenes, building the website on-the-fly every ..."/>
+            <meta property="og:description" content="It has taken a few weeks of sporadic work, but I&#39;ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are &#34;baked,&#34; meaning they don&#39;t have any databases or server-side PHP going on behind the scenes, building the website on-the-fly every ..."/>
             <meta property="article:published_time" content="2014-04-05" />
-                <meta property="article:section" content="Python" />
+                <meta property="article:section" content="Misc" />
                 <meta property="article:tag" content="blogging" />
                 <meta property="article:tag" content="pelican" />
                 <meta property="article:tag" content="bootstrap" />
@@ -39,7 +39,6 @@
         <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
     <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://spencerboucher.com/theme/css/pygments/solarizeddark.css" rel="stylesheet">
-        <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://spencerboucher.com/theme/css/style.css" type="text/css"/>
 
         <link href="http://spencerboucher.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -121,17 +120,14 @@ justmytwospence            </a>
         <section id="content">
             <article>
                 <header class="page-header">
-                    <h1>A blogging framework a data scientist could&nbsp;love</h1>
+                    <h1>A blogging framework a data scientist could love</h1>
 <footer class="post-info">
+
     <span class="published">
         <i class="fa fa-calendar"></i><time datetime="2014-04-05T00:00:00"> Sat 05 April 2014</time>
     </span>
 
 
-    <span class="Python">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/python">Python</a>
-    </span>
 
 
 	<span>
@@ -154,14 +150,14 @@ justmytwospence            </a>
 	        /
 		<a href="http://spencerboucher.com/tags/d3js/">d3.js</a>
 
-    
+
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <p>It has taken a few weeks of sporadic work, but I&#8217;ve finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are &#8220;<em>baked</em>,&#8221; meaning they don&#8217;t have any databases or server-side <span class="caps">PHP</span> going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every <code>div</code>, every script, every <em>anything</em> on the site. This gives me the ability to write posts in <a href="https://daringfireball.net/projects/markdown/">markdown</a> plus tons of flexibility to incorporate hackery things like <a href="http://yihui.name/knitr/">Knitr</a> documents, <a href="http://ipython.org/notebook.html">IPython notenooks</a>, and even <a href="d3js.org">D3.js</a> visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on <a href="https://pages.github.com/">GitHub Pages</a>, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via <code>git push</code> rather than clicking a button in&nbsp;WordPress.  </p>
-<p>Anyways, as far as I can tell, its an unwritten rule that your first blog post after switching to a static blogging framework is <em>required</em> to be about how you did it. I think this may be of interest to some people because its actually rather involved to set up support for all the types of things that data sciencey people like to do, and I&#8217;m doing my best to create a framework that can be used out of the box for all&nbsp;this.  </p>
-<p>The primo static blog generator out there seems to be <a href="jekyllrb.com/">Jekyll</a> (its even the one that GitHub Pages seems to recommend). Jekyll seems really nice, but its written in Ruby and I&#8217;m more of a Python kinda guy. I actually built a quick and dirty version of the blog in <a href="http://octopress.org/">Jekyll/Octopress</a> to see what it was all about, which was a great exercise in learning the basics of Ruby and rbenv, etc., but in the end I opted for the pre-eminent <em>Python</em> solution: <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> (an anagram of calepin, meaning &#8220;notebook&#8221; in French, in case you were wondering). Pelican blogs are highly themeable/customizable, and I knew that I wanted a theme based on <a href="getbootstrap.com">Twitter Bootstrap</a>, because I&#8217;m familiar with it from building a few <a href="http://shiny.rstudio.com/">Shiny applications</a>, and its very ${powerful, simple, systematic, well-documented}. There&#8217;s a few Bootstrap based Pelican themes out there, but <a href="https://github.com/DandyDev/pelican-bootstrap3">pelican-bootstrap3</a> by <a href="http://dandydev.net/">DandyDev</a> is my favorite and is based on the most recent Bootstrap&nbsp;release.  </p>
-<p>I&#8217;ve made many aesthetic tweaks, including a full-page width article layout, custom typography via <a href="https://www.google.com/fonts‎">Google Fonts</a> and changes to the sidebar/article index/navbar. I&#8217;ve added a few javascript and <span class="caps">CSS</span> files grant built-in support for MathJax, <a href="http://spencerboucher.com/ggplot-goodness/">Knitr documents</a>, GitHub themed Pygments code blocks, and interactive Bootstrap elements (like the tooltips on the Category section of the sidebar to the right). I&#8217;m using the <a href="https://github.com/wrobstory/pelican_dynamic‎">pelican_dynamic</a> plugin to make <a href="http://spencerboucher.com/d3-test/">D3</a> and any other arbitrary scripts includeable within individual posts. A modified version of the <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid_tags</a> plugin makes it possible to include <a href="http://spencerboucher.com/contract-optimization/">IPython notebooks</a> or even select pieces of a&nbsp;notebook.  </p>
-<p>It&#8217;s all very much still a work in progress. As I have time, I will continue to update and document the framework. The hope is that eventually any data scientist with limited front-end knowledge (ie <em>me!</em>) can start publishing their work in one place within 20 minutes.  If anyone has thoughts or comments please comment! Pull requests would be very welcome but heads up because I&#8217;m still new to the world of collaborative&nbsp;open-source.</p>
+                    <p>It has taken a few weeks of sporadic work, but I've finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are "<em>baked</em>," meaning they don't have any databases or server-side PHP going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every <code>div</code>, every script, every <em>anything</em> on the site. This gives me the ability to write posts in <a href="https://daringfireball.net/projects/markdown/">markdown</a> plus tons of flexibility to incorporate hackery things like <a href="http://yihui.name/knitr/">Knitr</a> documents, <a href="http://ipython.org/notebook.html">IPython notenooks</a>, and even <a href="d3js.org">D3.js</a> visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on <a href="https://pages.github.com/">GitHub Pages</a>, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via <code>git push</code> rather than clicking a button in WordPress.  </p>
+<p>Anyways, as far as I can tell, its an unwritten rule that your first blog post after switching to a static blogging framework is <em>required</em> to be about how you did it. I think this may be of interest to some people because its actually rather involved to set up support for all the types of things that data sciencey people like to do, and I'm doing my best to create a framework that can be used out of the box for all this.  </p>
+<p>The primo static blog generator out there seems to be <a href="jekyllrb.com/">Jekyll</a> (its even the one that GitHub Pages seems to recommend). Jekyll seems really nice, but its written in Ruby and I'm more of a Python kinda guy. I actually built a quick and dirty version of the blog in <a href="http://octopress.org/">Jekyll/Octopress</a> to see what it was all about, which was a great exercise in learning the basics of Ruby and rbenv, etc., but in the end I opted for the pre-eminent <em>Python</em> solution: <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> (an anagram of calepin, meaning "notebook" in French, in case you were wondering). Pelican blogs are highly themeable/customizable, and I knew that I wanted a theme based on <a href="getbootstrap.com">Twitter Bootstrap</a>, because I'm familiar with it from building a few <a href="http://shiny.rstudio.com/">Shiny applications</a>, and its very ${powerful, simple, systematic, well-documented}. There's a few Bootstrap based Pelican themes out there, but <a href="https://github.com/DandyDev/pelican-bootstrap3">pelican-bootstrap3</a> by <a href="http://dandydev.net/">DandyDev</a> is my favorite and is based on the most recent Bootstrap release.  </p>
+<p>I've made many aesthetic tweaks, including a full-page width article layout, custom typography via <a href="https://www.google.com/fonts‎">Google Fonts</a> and changes to the sidebar/article index/navbar. I've added a few javascript and CSS files grant built-in support for MathJax, <a href="{filename}/R/ggplot-goodness.html">Knitr documents</a>, GitHub themed Pygments code blocks, and interactive Bootstrap elements (like the tooltips on the Category section of the sidebar to the right). I'm using the <a href="https://github.com/wrobstory/pelican_dynamic‎">pelican_dynamic</a> plugin to make <a href="{filename}/Vizualization/d3-test.html">D3</a> and any other arbitrary scripts includeable within individual posts. A modified version of the <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid_tags</a> plugin makes it possible to include <a href="{filename}/Python/contract-optimization.md">IPython notebooks</a> or even select pieces of a notebook.  </p>
+<p>It's all very much still a work in progress. As I have time, I will continue to update and document the framework. The hope is that eventually any data scientist with limited front-end knowledge (ie <em>me!</em>) can start publishing their work in one place within 20 minutes.  If anyone has thoughts or comments please comment! Pull requests would be very welcome but heads up because I'm still new to the world of collaborative open-source.</p>
 <div class="text-center">
     <a type="button" class="btn btn-primary btn-lg" target="_blank" href="http://github.com/justmytwospence/pelican">
         Check out the framework on GitHub
@@ -208,7 +204,7 @@ justmytwospence            </a>
 
         <div class="btn-group btn-group-lg btn-group-justified text-center" style="margin: 20px auto;">
                 <a type="button" class="btn btn-primary" href="http://spencerboucher.com/contract-optimization/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
-                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/imdb-shiny/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
+                <a type="button" class="btn btn-primary" href="http://spencerboucher.com/sankey/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
         </div>
  
 

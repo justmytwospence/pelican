@@ -7,7 +7,7 @@
     <!-- Google fonts! -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Patua+One' rel='stylesheet' type='text/css'>
 
-    <title>Peeking into a black box - justmytwospence</title>
+    <title>Peeking into a black box - justmytwospence</title>
     
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +19,11 @@
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="justmytwospence" />
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Peeking into a black box"/>
+            <meta property="og:title" content="Peeking into a black box"/>
             <meta property="og:url" content="http://spencerboucher.com/peeking-into-a-black-box/"/>
             <meta property="og:description" content="I’ve been meaning to try my hand at Shiny for a while now, and I’ve finally gotten around to it. Shiny is an R package from the people who brought you RStudio that allows you to take R code and embed it within an interactive HTML UI that ..."/>
             <meta property="article:published_time" content="2013-10-22" />
-                <meta property="article:section" content="R" />
+                <meta property="article:section" content="Misc" />
                 <meta property="article:tag" content="R" />
                 <meta property="article:tag" content="Shiny" />
                 <meta property="article:tag" content="stepwise" />
@@ -33,7 +33,6 @@
         <link rel="stylesheet" href="http://spencerboucher.com/theme/css/bootstrap.solarizedlight.min.css" type="text/css"/>
     <link href="http://spencerboucher.com/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://spencerboucher.com/theme/css/pygments/solarizeddark.css" rel="stylesheet">
-        <link href="http://spencerboucher.com/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://spencerboucher.com/theme/css/style.css" type="text/css"/>
 
         <link href="http://spencerboucher.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -115,17 +114,14 @@ justmytwospence            </a>
         <section id="content">
             <article>
                 <header class="page-header">
-                    <h1>Peeking into a black&nbsp;box</h1>
+                    <h1>Peeking into a black box</h1>
 <footer class="post-info">
+
     <span class="published">
         <i class="fa fa-calendar"></i><time datetime="2013-10-22T23:59:00"> Tue 22 October 2013</time>
     </span>
 
 
-    <span class="R">
-        <i class="fa fa-folder-open"></i>
-        <a href="http://spencerboucher.com/r">R</a>
-    </span>
 
 
 	<span>
@@ -136,24 +132,24 @@ justmytwospence            </a>
 	        /
 		<a href="http://spencerboucher.com/tags/stepwise/">stepwise</a>
 
-    
+
 </footer><!-- /.post-info -->                </header>
                 <div class="entry-content">
-                    <p>I’ve been meaning to try my hand at Shiny for a while now, and I’ve finally gotten around to it. Shiny is an R package from the people who brought you RStudio that allows you to take R code and embed it within an interactive <span class="caps">HTML</span> <span class="caps">UI</span> that uses Bootstrap styling. You can get surprising mileage out of R visualization when it magically animates (I would have named the package “pinocchio” but they didn’t ask me). <a href="http://www.rstudio.com/shiny/showcase/">Check out the Shiny showcase if you don’t believe&nbsp;me.</a>  </p>
-<p>My original idea to get my feet wet was a real-time visualization of least-angle regression, because I’m fascinated by how it turns a discrete algorithm like step-wise regression into an analogue algorithm (or at least an approximation of one). I think it would be neat to watch this analogue “dialing in” of regression&nbsp;coefficients.  </p>
-<p>Making that happen would require ripping apart the code in the <span class="caps">LARS</span> package. I wasn’t feeling quite that ambitious considering a few other looming assignments, but the fact that its even an option for me to explore in the future is one of the beautiful features of an open source language like R. Ultimately I settled on visualizing a plain vanilla forward stepwise regression, because I had a home-brew implementation lying around from a previous&nbsp;assignment.  </p>
-<p>Without further ado, here’s a preview in .gif&nbsp;format:  </p>
+                    <p>I’ve been meaning to try my hand at Shiny for a while now, and I’ve finally gotten around to it. Shiny is an R package from the people who brought you RStudio that allows you to take R code and embed it within an interactive HTML UI that uses Bootstrap styling. You can get surprising mileage out of R visualization when it magically animates (I would have named the package “pinocchio” but they didn’t ask me). <a href="http://www.rstudio.com/shiny/showcase/">Check out the Shiny showcase if you don’t believe me.</a>  </p>
+<p>My original idea to get my feet wet was a real-time visualization of least-angle regression, because I’m fascinated by how it turns a discrete algorithm like step-wise regression into an analogue algorithm (or at least an approximation of one). I think it would be neat to watch this analogue “dialing in” of regression coefficients.  </p>
+<p>Making that happen would require ripping apart the code in the LARS package. I wasn’t feeling quite that ambitious considering a few other looming assignments, but the fact that its even an option for me to explore in the future is one of the beautiful features of an open source language like R. Ultimately I settled on visualizing a plain vanilla forward stepwise regression, because I had a home-brew implementation lying around from a previous assignment.  </p>
+<p>Without further ado, here’s a preview in .gif format:  </p>
 <p><img alt="Step-lively, now!" src="http://spencerboucher.com/images/steplively.gif" />  </p>
-<p>You can run the actual app for yourself in your R console with only three lines of code (two if you already have shiny&nbsp;installed!)</p>
+<p>You can run the actual app for yourself in your R console with only three lines of code (two if you already have shiny installed!)</p>
 <div class="highlight"><pre>install.packages<span class="p">(</span><span class="s">&#39;shiny&#39;</span><span class="p">)</span>
 library<span class="p">(</span>shiny<span class="p">)</span>
 runGitHub<span class="p">(</span><span class="s">&#39;shiny_stepwise&#39;</span><span class="p">,</span> <span class="s">&#39;justmytwospence&#39;</span><span class="p">)</span>
 </pre></div>
 
 
-<p>The ability to run anyone’s shiny app straight from their GitHub profile is super cool. You can see the source code on my GitHub as well. Once I hear back from the RStudio folks about getting in on the beta version of their web hosting service, I can try to make it available to people who don’t have R installed (but really, will anyone who cares about stepwise regression <em>not</em> have R&nbsp;installed?).  </p>
-<p>I think its actually a pretty cool glimpse into an algorithm that is (justifiably) distrusted by many for being too opaque. I’ll continue adding functionality and hopefully it will useful for someone other than myself in the not too distant future; either as a simple learning demonstration or maybe even in an actual modeling context. I will definitely be making more Shiny apps in the future as I become more familiar with its advanced features. Building dashboards, as I am discovering, can be quite&nbsp;addicting.  </p>
-<p><span class="caps">EDIT</span>: The app is now live! See it at <a href="http://steplively.spencerboucher.com">steplively.spencerboucher.com</a></p>
+<p>The ability to run anyone’s shiny app straight from their GitHub profile is super cool. You can see the source code on my GitHub as well. Once I hear back from the RStudio folks about getting in on the beta version of their web hosting service, I can try to make it available to people who don’t have R installed (but really, will anyone who cares about stepwise regression <em>not</em> have R installed?).  </p>
+<p>I think its actually a pretty cool glimpse into an algorithm that is (justifiably) distrusted by many for being too opaque. I’ll continue adding functionality and hopefully it will useful for someone other than myself in the not too distant future; either as a simple learning demonstration or maybe even in an actual modeling context. I will definitely be making more Shiny apps in the future as I become more familiar with its advanced features. Building dashboards, as I am discovering, can be quite addicting.  </p>
+<p>EDIT: The app is now live! See it at <a href="http://steplively.spencerboucher.com">steplively.spencerboucher.com</a></p>
                 </div>
                 <!-- /.entry-content -->
     <hr/>
