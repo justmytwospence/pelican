@@ -13,9 +13,10 @@ SITEURL = ''
 THEME = '../pelican-bootstrap3'
 BOOTSTRAP_THEME = 'solarizedlight'
 PYGMENTS_STYLE = 'solarizeddark'
-FAVICON = '/favicon.ico'
+FAVICON = 'favicon.ico'
 
 # Display Switches
+HIDE_SIDEBAR = False
 DISPLAY_ARCHIVES = False
 DISPLAY_ARTICLE_INFO = True
 DISPLAY_TAGS_INLINE = True
@@ -24,9 +25,11 @@ DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
 # Variables
+DEFAULT_PAGINATION = 6
+CLEAN_SUMMARY_MAXIMUM = 0
 TWITTER_USERNAME = 'justmytwospence'
 TWITTER_WIDGET_ID = '413946059455361024'
-TAG_CLOUD_STEPS = 5
+TAG_CLOUD_STEPS = 10
 TAG_CLOUD_MAX_ITEMS = 30
 SOCIAL = (('GitHub', 'http://github.com/justmytwospence'),
           ('LinkedIn', 'http://linkedin.com/in/spencerboucher'),
@@ -39,21 +42,20 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
 PLUGIN_PATH = '../pelican-plugins'
-PLUGINS = ['liquid_tags.notebook',
+PLUGINS = ['better_figures_and_images',
+           'liquid_tags.notebook',
            'pelican-dynamic',
            'pelican_youtube',
+           'render_math'
            'neighbors']
-
-# Set paths to resources
-DEFAULT_PAGINATION = 5
-DEFAULT_CATEGORY = 'Misc'
-FILENAME_METADATA = '(?P<slug>.*)' #  Filename = slug
-USE_FOLDER_AS_CATEGORY = False
 
 # URLs
 # These settings cause articles, pages, and
 # categorys to share a namespace; collions will
 # generate an error! But I prefer the simpler URLs.
+
+FILENAME_METADATA = '(?P<slug>.*)' #  Filename = slug
+
 ARTICLE_URL = "{slug}/"
 ARTICLE_SAVE_AS = "{slug}/index.html"
 
