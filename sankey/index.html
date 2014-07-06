@@ -166,7 +166,7 @@ In [1]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In [2]:
+In [3]:
 </div>
 <div class="inner_cell">
 <div class="input_area">
@@ -192,13 +192,14 @@ In [2]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
+Couldn't import dot_parser, loading of dot files will not be possible.
 6 errors logged to redditSubmissions_err.csv
 
 </pre>
 </div>
 </div>
 <div class="output_area"><div class="prompt output_prompt">
-    Out[2]:</div>
+    Out[3]:</div>
 <div class="output_html rendered_html output_subarea output_pyout">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
@@ -473,7 +474,7 @@ In [7]:
 <span class="n">d3Sankey</span><span class="p">(</span><span class="n">Nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">Links</span> <span class="o">=</span> <span class="n">links</span><span class="p">,</span> <span class="n">Source</span> <span class="o">=</span> <span class="s">'source'</span><span class="p">,</span>
          <span class="n">Target</span> <span class="o">=</span> <span class="s">'target'</span><span class="p">,</span> <span class="n">Value</span> <span class="o">=</span> <span class="s">'weight'</span><span class="p">,</span> <span class="n">NodeID</span> <span class="o">=</span> <span class="s">'id'</span><span class="p">,</span> 
          <span class="n">width</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
-         <span class="n">standAlone</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">iframe</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="nb">file</span> <span class="o">=</span> <span class="s">'../extra/sankey.html'</span><span class="p">)</span>
+         <span class="n">standAlone</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">iframe</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="nb">file</span> <span class="o">=</span> <span class="s">'sankey.html'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -481,9 +482,10 @@ In [7]:
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area"><div class="prompt"></div>
-<div class="output_text output_subarea ">
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>
-&lt;iframe src='../extra/sankey.html' height=535 width=618&gt;&lt;/iframe&gt;
+Error in withVisible({ : could not find function "JSONtoDF"
+
 </pre>
 </div>
 </div>
@@ -502,11 +504,11 @@ In [7]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In [8]:
+In [6]:
 </div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">HTML</span><span class="p">(</span><span class="s">'&lt;iframe src="../extra/sankey.html" height=540 width=700 frameBorder="0"&gt;&lt;/iframe&gt;'</span><span class="p">)</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">HTML</span><span class="p">(</span><span class="s">'&lt;iframe src="//gist.githubusercontent.com/justmytwospence/2c4e103693636b645f62/raw/71119ea1b0f427abd5d1d6cd4ec1e1f57e7ebf32/sankey.html" height=540 width=700 frameBorder="0"&gt;&lt;/iframe&gt;'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -514,9 +516,9 @@ In [8]:
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area"><div class="prompt output_prompt">
-    Out[8]:</div>
+    Out[6]:</div>
 <div class="output_html rendered_html output_subarea output_pyout">
-<iframe frameborder="0" height="540" src="../extra/sankey.html" width="700"></iframe>
+<iframe frameborder="0" height="540" src="//gist.githubusercontent.com/justmytwospence/2c4e103693636b645f62/raw/71119ea1b0f427abd5d1d6cd4ec1e1f57e7ebf32/sankey.html" width="700"></iframe>
 </div>
 </div>
 </div>
