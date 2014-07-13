@@ -418,7 +418,37 @@ In [6]:
 &lt;p&gt;This type of "tiered" Sankey diagram is a little unconventional, but so far its the best way I can come up with to visualize the interesting phenomenon of submisison flow through Reddit. Leave a comment if this gives you any interesting ideas, I'd love to hear them!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="Python"></category><category term="R"></category><category term="Sankey diagram"></category><category term="Pandas"></category><category term="NetworkX"></category><category term="D3.js"></category></entry><entry><title>Exploring IMDB movie ratings with Shiny</title><link href="http://pelican.spencerboucher.com/imdb-shiny/" rel="alternate"></link><updated>2014-04-26T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-04-26:imdb-shiny/</id><summary type="html"></summary><category term="imdb"></category><category term="shiny"></category><category term="ggplot2"></category></entry><entry><title>A blogging framework a data scientist could love</title><link href="http://pelican.spencerboucher.com/moving-to-pelican/" rel="alternate"></link><updated>2014-04-05T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-04-05:moving-to-pelican/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;It has taken a few weeks of sporadic work, but I've finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are "&lt;em&gt;baked&lt;/em&gt;," meaning they don't have any databases or server-side PHP going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every &lt;code&gt;div&lt;/code&gt;, every script, every &lt;em&gt;anything&lt;/em&gt; on the site. This gives me the ability to write posts in &lt;a href="https://daringfireball.net/projects/markdown/"&gt;markdown&lt;/a&gt; plus tons of flexibility to incorporate hackery things like &lt;a href="http://yihui.name/knitr/"&gt;Knitr&lt;/a&gt; documents, &lt;a href="http://ipython.org/notebook.html"&gt;IPython notenooks&lt;/a&gt;, and even &lt;a href="d3js.org"&gt;D3.js&lt;/a&gt; visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via &lt;code&gt;git push&lt;/code&gt; rather than clicking a button in WordPress.  &lt;/p&gt;
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary><category term="Python"></category><category term="R"></category><category term="Sankey diagram"></category><category term="Pandas"></category><category term="NetworkX"></category><category term="D3.js"></category></entry><entry><title>Exploring IMDB movie ratings with Shiny</title><link href="http://pelican.spencerboucher.com/imdb-shiny/" rel="alternate"></link><updated>2014-04-26T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-04-26:imdb-shiny/</id><summary type="html"></summary><category term="imdb"></category><category term="shiny"></category><category term="ggplot2"></category></entry><entry><title>A blogging framework a data scientist could love</title><link href="http://pelican.spencerboucher.com/moving-to-pelican/" rel="alternate"></link><updated>2014-04-05T00:00:00-07:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-04-05:moving-to-pelican/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;It has taken a few weeks of sporadic work, but I've finally dumped my old webhost and WordPress in favor of a static blogging framework. Static blogs are "&lt;em&gt;baked&lt;/em&gt;," meaning they don't have any databases or server-side PHP going on behind the scenes, building the website on-the-fly every time someone requests to view the page. Rather, every time there is an update (new post, new page, etc.), a script is run that goes bakes the entire shebang into nothing more than a bunch of html files. There are a ton of advantages to this paradigm, principally speed and security. The main reason I decided to make the switch, however, is that I now have 100% control over every &lt;code&gt;div&lt;/code&gt;, every script, every &lt;em&gt;anything&lt;/em&gt; on the site. This gives me the ability to write posts in &lt;a href="https://daringfireball.net/projects/markdown/"&gt;markdown&lt;/a&gt; plus tons of flexibility to incorporate hackery things like &lt;a href="http://yihui.name/knitr/"&gt;Knitr&lt;/a&gt; documents, &lt;a href="http://ipython.org/notebook.html"&gt;IPython notenooks&lt;/a&gt;, and even &lt;a href="d3js.org"&gt;D3.js&lt;/a&gt; visualizations. Additionally, because there is no backend required, the blog can now be hosted for free on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;, saving somewhere in the neigborhood of 100 bucks every year. And theres just something so much cooler about publishing via &lt;code&gt;git push&lt;/code&gt; rather than clicking a button in WordPress.  &lt;/p&gt;
 &lt;p&gt;Anyways, as far as I can tell, its an unwritten rule that your first blog post after switching to a static blogging framework is &lt;em&gt;required&lt;/em&gt; to be about how you did it. I think this may be of interest to some people because its actually rather involved to set up support for all the types of things that data sciencey people like to do, and I'm doing my best to create a framework that can be used out of the box for all this.  &lt;/p&gt;
 &lt;p&gt;The primo static blog generator out there seems to be &lt;a href="jekyllrb.com/"&gt;Jekyll&lt;/a&gt; (its even the one that GitHub Pages seems to recommend). Jekyll seems really nice, but its written in Ruby and I'm more of a Python kinda guy. I actually built a quick and dirty version of the blog in &lt;a href="http://octopress.org/"&gt;Jekyll/Octopress&lt;/a&gt; to see what it was all about, which was a great exercise in learning the basics of Ruby and rbenv, etc., but in the end I opted for the pre-eminent &lt;em&gt;Python&lt;/em&gt; solution: &lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt; (an anagram of calepin, meaning "notebook" in French, in case you were wondering). Pelican blogs are highly themeable/customizable, and I knew that I wanted a theme based on &lt;a href="getbootstrap.com"&gt;Twitter Bootstrap&lt;/a&gt;, because I'm familiar with it from building a few &lt;a href="http://shiny.rstudio.com/"&gt;Shiny applications&lt;/a&gt;, and its very ${powerful, simple, systematic, well-documented}. There's a few Bootstrap based Pelican themes out there, but &lt;a href="https://github.com/DandyDev/pelican-bootstrap3"&gt;pelican-bootstrap3&lt;/a&gt; by &lt;a href="http://dandydev.net/"&gt;DandyDev&lt;/a&gt; is my favorite and is based on the most recent Bootstrap release.  &lt;/p&gt;
 &lt;p&gt;I've made many aesthetic tweaks, including a full-page width article layout, custom typography via &lt;a href="https://www.google.com/fonts‎"&gt;Google Fonts&lt;/a&gt; and changes to the sidebar/article index/navbar. I've added a few javascript and CSS files grant built-in support for MathJax, &lt;a href="{filename}/R/ggplot-goodness.html"&gt;Knitr documents&lt;/a&gt;, GitHub themed Pygments code blocks, and interactive Bootstrap elements (like the tooltips on the Category section of the sidebar to the right). I'm using the &lt;a href="https://github.com/wrobstory/pelican_dynamic‎"&gt;pelican_dynamic&lt;/a&gt; plugin to make &lt;a href="{filename}/Vizualization/d3-test.html"&gt;D3&lt;/a&gt; and any other arbitrary scripts includeable within individual posts. A modified version of the &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags"&gt;liquid_tags&lt;/a&gt; plugin makes it possible to include &lt;a href="{filename}/Python/contract-optimization.md"&gt;IPython notebooks&lt;/a&gt; or even select pieces of a notebook.  &lt;/p&gt;
@@ -460,7 +490,37 @@ obliterated. &lt;a href="http://writelatex.com"&gt;Give it a try&lt;/a&gt;, or j
 and send it to that collaborator that always sends you everything in a
 poorly formatted Word document. I myself will be experimenting with
 using $\LaTeX$ to take math-heavy notes in real-time, which sounds
-crazy but the live rendering makes the attempt feasible.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="latex"></category><category term="tex"></category><category term="typesetting"></category><category term="writelatex"></category></entry><entry><title>Scheduling tasks in the cloud with EC2 APIs</title><link href="http://pelican.spencerboucher.com/ec2-apis/" rel="alternate"></link><updated>2014-01-12T17:53:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-01-12:ec2-apis/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;This post is sort of an addendum to our &lt;a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping"&gt;live-mapping project&lt;/a&gt;, but it should also be of use to anyone looking to run an arbitrary script on a recurring schedule. Originally, we set up a 24/7 instance on &lt;a href="http://aws.amazon.com/ec2/"&gt;Amazon's Elastic Compute Cloud&lt;/a&gt; that ran a daily &lt;code&gt;cron&lt;/code&gt; job. This works, but its a bit wasteful because we're paying for 24 hours of cloud even though we're only actually using it for maybe 5 minutes a day.  &lt;/p&gt;
+crazy but the live rendering makes the attempt feasible.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary><category term="latex"></category><category term="tex"></category><category term="typesetting"></category><category term="writelatex"></category></entry><entry><title>Scheduling tasks in the cloud with EC2 APIs</title><link href="http://pelican.spencerboucher.com/ec2-apis/" rel="alternate"></link><updated>2014-01-12T17:53:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-01-12:ec2-apis/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;This post is sort of an addendum to our &lt;a href="http://www.spencerboucher.com/live-mapping/" title="Live mapping"&gt;live-mapping project&lt;/a&gt;, but it should also be of use to anyone looking to run an arbitrary script on a recurring schedule. Originally, we set up a 24/7 instance on &lt;a href="http://aws.amazon.com/ec2/"&gt;Amazon's Elastic Compute Cloud&lt;/a&gt; that ran a daily &lt;code&gt;cron&lt;/code&gt; job. This works, but its a bit wasteful because we're paying for 24 hours of cloud even though we're only actually using it for maybe 5 minutes a day.  &lt;/p&gt;
 &lt;p&gt;Fortunately, Amazon provides a &lt;a href="http://aws.amazon.com/developertools/"&gt;schmorgesborg&lt;/a&gt; of command line interface (CLI) tools that allow us to manage our cloud instances more efficiently. Specifically, we want to schedule an instance to spin up only once a day, execute our script, then shut back down. To accomplish this, we will want three CLI tools: &lt;a href="http://aws.amazon.com/developertools/368"&gt;the Amazon EC2 AMI Tools&lt;/a&gt;, &lt;a href="http://aws.amazon.com/developertools/351"&gt;the Amazon EC2 API Tools&lt;/a&gt;,and &lt;a href="http://aws.amazon.com/developertools/2535"&gt;the Auto Scaling Command Line Tool&lt;/a&gt;. If you're on a Mac, it's way easier to get these with &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt; than by downloading from Amazon's website:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;brew install ec2-ami-tools &lt;span class="c"&gt;# For creating an AMI from an existing machine&lt;/span&gt;
 brew install ec2-api-tools &lt;span class="c"&gt;# For registering and launching instances&lt;/span&gt;
@@ -635,7 +695,37 @@ as-describe-scheduled-actions --headers
     Scaling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.robertsindall.co.uk/blog/how-to-use-amazons-auto-scaling-groups/"&gt;Summary of API commands&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.cardinalpath.com/autoscaling-your-website-with-amazon-web-services-part-2/"&gt;Auto Scaling Your Website with Amazon Web Services&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="api"></category><category term="auto scaling"></category><category term="aws"></category><category term="cloud"></category><category term="cron"></category><category term="ec2"></category></entry><entry><title>Titanic: Getting Started With R</title><link href="http://pelican.spencerboucher.com/titanic-getting-started-with-r/" rel="alternate"></link><updated>2014-01-11T22:05:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-01-11:titanic-getting-started-with-r/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;My friend and classmate &lt;a href="http://trevorstephens.com"&gt;Trevor Stephens&lt;/a&gt; has created some &lt;a href="http://trevorstephens.com/post/72916401642/titanic-getting-started-with-r"&gt;pretty stellar R tutorials&lt;/a&gt; that will take you to about halfway up the leaderboard of Kaggle's &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted"&gt;Titanic: Machine Learning from Disaster&lt;/a&gt; competition. While the competition has a &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-python"&gt;Python tutorial&lt;/a&gt; and even a beginner's &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-excel"&gt;Excel tutorial&lt;/a&gt;, any R equivalent had been suspiciously lacking. This is the competition that served as our first foray into machine learning, so kudos to Trevor for giving back to the community!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="kaggle"></category><category term="machine learning"></category><category term="R"></category></entry><entry><title>Stratified sampling in R</title><link href="http://pelican.spencerboucher.com/stratified-sampling-in-r/" rel="alternate"></link><updated>2014-01-10T00:00:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-01-10:stratified-sampling-in-r/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my own.  &lt;/p&gt;
+&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary><category term="api"></category><category term="auto scaling"></category><category term="aws"></category><category term="cloud"></category><category term="cron"></category><category term="ec2"></category></entry><entry><title>Titanic: Getting Started With R</title><link href="http://pelican.spencerboucher.com/titanic-getting-started-with-r/" rel="alternate"></link><updated>2014-01-11T22:05:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-01-11:titanic-getting-started-with-r/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;My friend and classmate &lt;a href="http://trevorstephens.com"&gt;Trevor Stephens&lt;/a&gt; has created some &lt;a href="http://trevorstephens.com/post/72916401642/titanic-getting-started-with-r"&gt;pretty stellar R tutorials&lt;/a&gt; that will take you to about halfway up the leaderboard of Kaggle's &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted"&gt;Titanic: Machine Learning from Disaster&lt;/a&gt; competition. While the competition has a &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-python"&gt;Python tutorial&lt;/a&gt; and even a beginner's &lt;a href="http://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-excel"&gt;Excel tutorial&lt;/a&gt;, any R equivalent had been suspiciously lacking. This is the competition that served as our first foray into machine learning, so kudos to Trevor for giving back to the community!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</summary><category term="kaggle"></category><category term="machine learning"></category><category term="R"></category></entry><entry><title>Stratified sampling in R</title><link href="http://pelican.spencerboucher.com/stratified-sampling-in-r/" rel="alternate"></link><updated>2014-01-10T00:00:00-08:00</updated><author><name>Spencer Boucher</name></author><id>tag:pelican.spencerboucher.com,2014-01-10:stratified-sampling-in-r/</id><summary type="html">&lt;html&gt;&lt;body&gt;&lt;p&gt;I was surprised to find that R doesn’t have a base function for stratified random sampling. There’s not even a well known package I could find that does this in a straight forward way. So heres my own.  &lt;/p&gt;
 &lt;p&gt;It is essentially a wrapper for a ddply call that samples each subset and then combines them. If the size argument is less than 1, it will be interpreted as the percentage of each stratification subset that should be sampled. If the size argument is greater than 1, it will be interpreted as the number of observations to sample from each stratification subset.  &lt;/p&gt;
 &lt;p&gt;Note that in the first case, a different number of observations will be taken from each subset depending on their total number of observations. In the second case however, an equal number of observations will be sampled from each subset, regardless of their total number of observations.  &lt;/p&gt;
 &lt;p&gt;The .by argument is formulated the same way it is for any other ddply call.  &lt;/p&gt;

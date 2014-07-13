@@ -22,7 +22,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="writeLaTeX"/>
             <meta property="og:url" content="http://pelican.spencerboucher.com/writelatex/"/>
-            <meta property="og:description" content="If you use $\LaTeX$ and haven&#39;t yet heard of $write\LaTeX$, do yourself a favor and check it out. On one level its a really great version of Google Docs for documents that are properly typeset, which is incredibly useful because a huge swathe of the documents created with ..."/>
+            <meta property="og:description" content="If you use $\LaTeX$ and haven&#39;t yet heard of $write\LaTeX$, do yourself a favor and check it out. On one level its a really great version of Google Docs for documents that are properly typeset, which is incredibly useful because a huge swathe of the documents created with ... if (!document.getElementById(&#39;mathjaxscript_pelican_#%@#$@#&#39;)) { var mathjaxscript = document.createElement(&#39;script&#39;); mathjaxscript.id = &#39;mathjaxscript_pelican_#%@#$@#&#39;; mathjaxscript.type = &#39;text/javascript&#39;; mathjaxscript.src = &#39;https:&#39; == document.location.protocol ? &#39;https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39; : &#39;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39;; mathjaxscript[(window.opera ? &#34;innerHTML&#34; : &#34;text&#34;)] = &#34;MathJax.Hub.Config({&#34; + &#34; config: [&#39;MMLorHTML.js&#39;],&#34; + &#34; TeX: { extensions: [&#39;AMSmath.js&#39;,&#39;AMSsymbols.js&#39;,&#39;noErrors.js&#39;,&#39;noUndefined.js&#39;], equationNumbers: { autoNumber: &#39;AMS&#39; } },&#34; + &#34; jax: [&#39;input/TeX&#39;,&#39;input/MathML&#39;,&#39;output/HTML-CSS&#39;],&#34; + &#34; extensions: [&#39;tex2jax.js&#39;,&#39;mml2jax.js&#39;,&#39;MathMenu.js&#39;,&#39;MathZoom.js&#39;],&#34; + &#34; displayAlign: &#39;center&#39;,&#34; + &#34; displayIndent: &#39;0em&#39;,&#34; + &#34; showMathMenu: true,&#34; + &#34; tex2jax: { &#34; + &#34; inlineMath: [ [&#39;$&#39;,&#39;$&#39;] ], &#34; + &#34; displayMath: [ [&#39;$$&#39;,&#39;$$&#39;] ],&#34; + &#34; processEscapes: true,&#34; + &#34; preview: &#39;TeX&#39;,&#34; + &#34; }, &#34; + &#34; &#39;HTML-CSS&#39;: { &#34; + &#34; styles: { &#39;.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn&#39;: {color: &#39;black ! important&#39;} }&#34; + &#34; } &#34; + &#34;}); &#34;; (document.body || document.getElementsByTagName(&#39;head&#39;)[0]).appendChild(mathjaxscript); }"/>
             <meta property="article:published_time" content="2014-01-25" />
                 <meta property="article:section" content="misc" />
                 <meta property="article:tag" content="latex" />
@@ -134,7 +134,37 @@ obliterated. <a href="http://writelatex.com">Give it a try</a>, or just be passi
 and send it to that collaborator that always sends you everything in a
 poorly formatted Word document. I myself will be experimenting with
 using $\LaTeX$ to take math-heavy notes in real-time, which sounds
-crazy but the live rendering makes the attempt feasible.</p></body></html>
+crazy but the live rendering makes the attempt feasible.</p></body></html><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+
                 </div>
                 <!-- /.entry-content -->
     <hr/>
@@ -175,6 +205,8 @@ crazy but the live rendering makes the attempt feasible.</p></body></html>
 <div class="col-sm-3" id="sidebar">
 
         <div class="btn-group btn-group-lg btn-group-justified text-center" style="margin: 20px auto;">
+                <a type="button" class="btn btn-primary" href="http://pelican.spencerboucher.com/ec2-apis/"><i class="fa fa-angle-double-left fa-inverse fa-lg"></i></a>
+                <a type="button" class="btn btn-primary" href="http://pelican.spencerboucher.com/whats-a-mooc/"><i class="fa fa-angle-double-right fa-inverse fa-lg"></i></a>
         </div>
  
 
