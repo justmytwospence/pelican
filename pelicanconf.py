@@ -41,12 +41,12 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
-PLUGIN_PATH = '../pelican-plugins'
+PLUGIN_PATHS = ['../pelican-plugins']
 PLUGINS = ['better_figures_and_images',
            'liquid_tags.notebook',
            'pelican-dynamic',
            'pelican_youtube',
-           'render_math'
+           'render_math',
            'neighbors']
 
 # URLs
@@ -54,7 +54,7 @@ PLUGINS = ['better_figures_and_images',
 # categorys to share a namespace; collions will
 # generate an error! But I prefer the simpler URLs.
 
-FILENAME_METADATA = '(?P<slug>.*)' #  Filename = slug
+FILENAME_METADATA = '(?P<slug>.*)'  # Filename = slug
 
 ARTICLE_URL = "{slug}/"
 ARTICLE_SAVE_AS = "{slug}/index.html"

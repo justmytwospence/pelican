@@ -2,5 +2,5 @@
 /venv
 .env
 _nb_header.html
-*.pyc
-*.pid
+*pyc
+*pid
